@@ -189,7 +189,14 @@ async function measure(browser, url, vp, shotFile) {
       .filter(shown)
       .filter((img) => img.complete && img.naturalWidth === 0 && img.getAttribute('src'))
       .map((img) => img.currentSrc || img.src);
-    return { text: document.body.innerText, links, broken, height: document.documentElement.scrollHeight, title: document.title };
+    /* the hero loading line is a progress state that depends on how fast the 3D model arrives, so it stays out of the
+       text compare (the wait above usually lets it finish, but not always when three workers load the model at once) */
+    const loading = document.querySelector('[data-loading]');
+    const display = loading ? loading.style.display : '';
+    if (loading) loading.style.display = 'none';
+    const text = document.body.innerText;
+    if (loading) loading.style.display = display;
+    return { text, links, broken, height: document.documentElement.scrollHeight, title: document.title };
   });
   if (shotFile) await screenshot(page, vp, shotFile);
   await page.close();
