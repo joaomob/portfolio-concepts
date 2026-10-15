@@ -142,7 +142,7 @@ export default function ReportSection() {
                       <span className="report_mock-bar-fill is-40" />
                     </span>
                     <span className="report_mock-value">
-                      $20k–40k
+                      $20k to $40k
                     </span>
                   </div>
                   <div className="report_mock-bar-row">
@@ -153,7 +153,7 @@ export default function ReportSection() {
                       <span className="report_mock-bar-fill is-90" />
                     </span>
                     <span className="report_mock-value">
-                      $50k–100k
+                      $50k to $100k
                     </span>
                   </div>
                 </div>
