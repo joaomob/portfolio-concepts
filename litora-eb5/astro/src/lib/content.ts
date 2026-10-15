@@ -231,7 +231,7 @@ export function pageView(route: Route, base: string): PageView {
   if (!header || !footer) throw new Error(`${pageId} ${lang}: a page needs a site-header and a site-footer`);
 
   const absolute = (id: PageId, l: Lang) => `${ORIGIN}${href(id, l)}`;
-  const alternates = (Object.keys(site.pages[pageId]) as Lang[]).map((l) => ({ lang: l, href: absolute(pageId, l) }));
+  const alternates: PageView['alternates'] = (Object.keys(site.pages[pageId]) as Lang[]).map((l) => ({ lang: l, href: absolute(pageId, l) }));
   alternates.push({ lang: 'x-default', href: absolute(pageId, site.defaultLang) });
   const share = manifest.share.wide[0];
   // the hero photo is the largest element of the first screen: one preload per crop, each with its media

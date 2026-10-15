@@ -1,0 +1,8 @@
+{
+  "name": "litora-eb5-next",
+  "private": true,
+  "scripts": {
+    "build": "node ../../node_modules/next/dist/bin/next build",
+    "check": "node ../../node_modules/typescript/bin/tsc --noEmit -p ."
+  }
+}
