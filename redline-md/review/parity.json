@@ -1,10 +1,27 @@
 {
-  "date": "2026-10-15T20:12:42.229Z",
+  "date": "2026-10-15T20:33:27.618Z",
   "rows": [
     {
       "page": "home",
       "width": "1440",
       "build": "astro",
+      "pass": true,
+      "height": "9726/9725",
+      "drift": "0.01%",
+      "links": 36,
+      "images": 13,
+      "svgs": 11,
+      "problems": [],
+      "notes": [
+        "note, original console error: 404 http://127.0.0.1:4644/favicon.ico",
+        "note, original console error: Failed to load resource: the server responded with a status of 404 (Not Found)",
+        "note, the original loads from other hosts: cdn.jsdelivr.net/npm/@finsweet/attributes@2/attributes.js, fonts.googleapis.com/css2, cdn.jsdelivr.net/npm/@finsweet/cookie-consent@1/fs-cc.js, fonts.gstatic.com/s/*, cdn.jsdelivr.net/npm/@finsweet/attributes@2/dist/*"
+      ]
+    },
+    {
+      "page": "home",
+      "width": "1440",
+      "build": "next",
       "pass": true,
       "height": "9726/9725",
       "drift": "0.01%",
@@ -34,9 +51,39 @@
       ]
     },
     {
+      "page": "home",
+      "width": "375",
+      "build": "next",
+      "pass": true,
+      "height": "13339/13339",
+      "drift": "0.00%",
+      "links": 36,
+      "images": 13,
+      "svgs": 11,
+      "problems": [],
+      "notes": [
+        "note, the original loads from other hosts: cdn.jsdelivr.net/npm/@finsweet/attributes@2/attributes.js, fonts.googleapis.com/css2, cdn.jsdelivr.net/npm/@finsweet/cookie-consent@1/fs-cc.js, cdn.jsdelivr.net/npm/@finsweet/attributes@2/dist/*, fonts.gstatic.com/s/*"
+      ]
+    },
+    {
       "page": "case-study",
       "width": "1440",
       "build": "astro",
+      "pass": true,
+      "height": "11276/11276",
+      "drift": "0.00%",
+      "links": 30,
+      "images": 24,
+      "svgs": 1,
+      "problems": [],
+      "notes": [
+        "note, the original loads from other hosts: cdn.jsdelivr.net/npm/@finsweet/attributes@2/attributes.js, fonts.googleapis.com/css2, cdn.jsdelivr.net/npm/@finsweet/cookie-consent@1/fs-cc.js, cdn.jsdelivr.net/npm/@finsweet/attributes@2/dist/*, fonts.gstatic.com/s/*"
+      ]
+    },
+    {
+      "page": "case-study",
+      "width": "1440",
+      "build": "next",
       "pass": true,
       "height": "11276/11276",
       "drift": "0.00%",
@@ -64,6 +111,21 @@
       ]
     },
     {
+      "page": "case-study",
+      "width": "375",
+      "build": "next",
+      "pass": true,
+      "height": "12718/12718",
+      "drift": "0.00%",
+      "links": 30,
+      "images": 24,
+      "svgs": 1,
+      "problems": [],
+      "notes": [
+        "note, the original loads from other hosts: cdn.jsdelivr.net/npm/@finsweet/attributes@2/attributes.js, fonts.googleapis.com/css2, cdn.jsdelivr.net/npm/@finsweet/cookie-consent@1/fs-cc.js, cdn.jsdelivr.net/npm/@finsweet/attributes@2/dist/*, fonts.gstatic.com/s/*"
+      ]
+    },
+    {
       "page": "style-guide",
       "width": "1440",
       "build": "astro",
@@ -75,13 +137,43 @@
       "svgs": 1,
       "problems": [],
       "notes": [
-        "note, the original loads from other hosts: cdn.jsdelivr.net/npm/@finsweet/attributes@2/attributes.js, fonts.googleapis.com/css2, cdn.jsdelivr.net/npm/@finsweet/cookie-consent@1/fs-cc.js, fonts.gstatic.com/s/*, cdn.jsdelivr.net/npm/@finsweet/attributes@2/dist/*"
+        "note, the original loads from other hosts: cdn.jsdelivr.net/npm/@finsweet/attributes@2/attributes.js, fonts.googleapis.com/css2, cdn.jsdelivr.net/npm/@finsweet/cookie-consent@1/fs-cc.js, cdn.jsdelivr.net/npm/@finsweet/attributes@2/dist/*, fonts.gstatic.com/s/*"
+      ]
+    },
+    {
+      "page": "style-guide",
+      "width": "1440",
+      "build": "next",
+      "pass": true,
+      "height": "16339/16339",
+      "drift": "0.00%",
+      "links": 30,
+      "images": 24,
+      "svgs": 1,
+      "problems": [],
+      "notes": [
+        "note, the original loads from other hosts: cdn.jsdelivr.net/npm/@finsweet/attributes@2/attributes.js, fonts.googleapis.com/css2, cdn.jsdelivr.net/npm/@finsweet/cookie-consent@1/fs-cc.js, cdn.jsdelivr.net/npm/@finsweet/attributes@2/dist/*, fonts.gstatic.com/s/*"
       ]
     },
     {
       "page": "style-guide",
       "width": "375",
       "build": "astro",
+      "pass": true,
+      "height": "25036/25036",
+      "drift": "0.00%",
+      "links": 30,
+      "images": 24,
+      "svgs": 1,
+      "problems": [],
+      "notes": [
+        "note, the original loads from other hosts: cdn.jsdelivr.net/npm/@finsweet/attributes@2/attributes.js, fonts.googleapis.com/css2, cdn.jsdelivr.net/npm/@finsweet/cookie-consent@1/fs-cc.js, cdn.jsdelivr.net/npm/@finsweet/attributes@2/dist/*, fonts.gstatic.com/s/*"
+      ]
+    },
+    {
+      "page": "style-guide",
+      "width": "375",
+      "build": "next",
       "pass": true,
       "height": "25036/25036",
       "drift": "0.00%",
@@ -185,6 +277,54 @@
     },
     {
       "build": "astro",
+      "page": "style-guide",
+      "width": "375",
+      "reveals": 164,
+      "counters": "",
+      "problems": []
+    },
+    {
+      "build": "next",
+      "page": "home",
+      "width": "1440",
+      "reveals": 39,
+      "counters": "10,000 30 10,000 3000",
+      "problems": []
+    },
+    {
+      "build": "next",
+      "page": "home",
+      "width": "375",
+      "reveals": 39,
+      "counters": "10,000 30 10,000 3000",
+      "problems": []
+    },
+    {
+      "build": "next",
+      "page": "case-study",
+      "width": "1440",
+      "reveals": 45,
+      "counters": "",
+      "problems": []
+    },
+    {
+      "build": "next",
+      "page": "case-study",
+      "width": "375",
+      "reveals": 45,
+      "counters": "",
+      "problems": []
+    },
+    {
+      "build": "next",
+      "page": "style-guide",
+      "width": "1440",
+      "reveals": 164,
+      "counters": "",
+      "problems": []
+    },
+    {
+      "build": "next",
       "page": "style-guide",
       "width": "375",
       "reveals": 164,

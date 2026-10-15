@@ -132,7 +132,16 @@ async function measure(browser, version, slug, vp) {
   });
   await new Promise((r) => setTimeout(r, 600));
   const data = await page.evaluate(() => ({
-    text: document.body.innerText.replace(/\s+/g, ' ').trim(),
+    // a closed accordion item reads as closed whatever hides it: the original's Finsweet sometimes leaves a closed
+    // answer at display block with 0 height (innerText then includes it), the local stand-in sets display none
+    text: (() => {
+      const closed = [...document.querySelectorAll('[fs-accordion-element="content"]')].filter((el) => el.getBoundingClientRect().height === 0);
+      const saved = closed.map((el) => el.style.display);
+      closed.forEach((el) => { el.style.display = 'none'; });
+      const text = document.body.innerText.replace(/\s+/g, ' ').trim();
+      closed.forEach((el, i) => { el.style.display = saved[i]; });
+      return text;
+    })(),
     links: [...document.querySelectorAll('a[href]')].map((a) => a.href),
     // an image that is not rendered (the dark theme twin, display none) is never fetched when lazy; it is not broken
     images: [...document.images].map((img) => ({ src: img.currentSrc || img.src, ok: (img.complete && img.naturalWidth > 0) || (img.loading === 'lazy' && img.getClientRects().length === 0) })),
