@@ -1,0 +1,32 @@
+---
+// The walking times to nine places and the paper map; a place in the list lights its route on the map.
+import { useTranslate, type Lang } from '@i18n/index';
+import { PLACES } from '@data/experiences';
+import map from '@data/old-town-map.svg?raw';
+import { translateMarkup } from '@i18n/index';
+
+interface Props {
+  lang: Lang;
+}
+const t = useTranslate(Astro.props.lang);
+---
+<section class="where_home_wrap u-section u-theme-light u-background-2" aria-labelledby="where-title" data-map>
+  <div class="where_home_contain u-container">
+    <div class="where_home_layout">
+      <div class="where_home_content">
+        <p class="eyebrow_text">{t("Where we are")}</p>
+        <h2 class="where_home_title u-text-style-h2" id="where-title">{t("Walk everywhere in the old town")}</h2>
+        <ul class="walk_list_wrap">
+{PLACES.map((place) => (
+          <li><button class="walk_list_item" type="button" data-place={place.number}><span class="walk_list_number">{place.number}</span><span class="walk_list_place">{t(place.name)}</span><span class="walk_list_time">{t(`${place.minutes} min`)}</span></button></li>
+        ))}
+        </ul>
+        <h3 class="where_home_subtitle u-text-style-h3">{t("Arriving by taxi or car")}</h3>
+        <p class="where_home_text">{t("Taxis can't turn into our lane. Tell us your arrival time and we'll meet you at the corner with a trolley for the bags. If you drive, our valet takes the car to a garage 400 metres away, for €32 a day.")}</p>
+      </div>
+      <div class="where_home_map">
+<Fragment set:html={translateMarkup(map, t)} />
+      </div>
+    </div>
+  </div>
+</section>

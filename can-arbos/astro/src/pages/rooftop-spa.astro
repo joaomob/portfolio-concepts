@@ -1,0 +1,23 @@
+---
+// Rooftop & Spa: the bar and plunge pool on the roof, and the small spa in the old cellar.
+import BaseLayout from '@layouts/BaseLayout.astro';
+import RooftopHero from '@components/rooftop/RooftopHero.astro';
+import PoolDay from '@components/rooftop/PoolDay.astro';
+import RooftopBar from '@components/rooftop/RooftopBar.astro';
+import SpaTreatments from '@components/rooftop/SpaTreatments.astro';
+import FaqBlock from '@components/ui/FaqBlock.astro';
+import { ROOFTOP_FAQ } from '@data/rooftop';
+import CloseBand from '@components/ui/CloseBand.astro';
+---
+<BaseLayout
+  title="Rooftop Bar and Spa in Palma Old Town · Can Arbós"
+  description="A rooftop bar and plunge pool over Palma's old town, with drinks for visitors after 18:00, and a small spa with a steam room in the old cellar."
+  slug="rooftop-spa"
+>
+  <RooftopHero />
+  <PoolDay />
+  <RooftopBar />
+  <SpaTreatments />
+  <FaqBlock title="Questions about the rooftop and spa" items={ROOFTOP_FAQ} />
+  <CloseBand />
+</BaseLayout>

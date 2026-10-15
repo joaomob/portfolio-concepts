@@ -1,0 +1,22 @@
+/* ---------- Celebrations page: the green panel over the dinner, the three places in the three shapes of the house ---------- */
+.fest_page_wrap { padding-top: 4.5rem; }
+.fest_home_panel.is-wide { grid-column: 1 / span 9; }
+.fest_home_panel.is-wide .fest_home_text { max-width: 40rem; }
+.space_page_title { margin: 0 0 clamp(2.5rem, 5vw, 4.5rem); text-wrap: balance; }
+.space_card_list { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); column-gap: var(--site--gutter); row-gap: 3rem; margin: 0; padding: 0; list-style: none; }
+/* every photo sits at the foot of a box of the same proportion, so the three shapes share one baseline */
+.space_card_media { display: flex; align-items: flex-end; aspect-ratio: 4 / 5; }
+.space_card_image { width: 100%; height: 100%; object-fit: cover; }
+.space_card_image.is-circle { height: auto; aspect-ratio: 1; border-radius: 50%; }
+.space_card_count { margin: 1.5rem 0 0; font-size: var(--_typography---font-size--text-small); letter-spacing: 0.06em; text-transform: uppercase; color: var(--_theme---text-faded); }
+.space_card_title { margin: 1.25rem 0 0; }
+.space_card_text { margin: 1.25rem 0 0; color: var(--_theme---text-faded); }
+.care_page_bring { margin-top: var(--_spacing---section-space--small); padding-top: var(--_spacing---section-space--small); border-top: 1px solid var(--_theme---border); }
+.event_form_layout { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: var(--site--gutter); align-items: start; }
+.event_form_intro { grid-column: 1 / span 4; }
+.event_form_title { margin: 0; text-wrap: balance; }
+.event_form_text { margin: 2.25rem 0 0; color: var(--_theme---text-faded); }
+.event_form_quote { margin: 3rem 0 0; padding: 1.75rem 0 0; border-top: 1px solid var(--_theme---border); }
+.event_form_words { margin: 0; padding: 0; border: 0; }
+.event_form_quote .team_list_role { margin-top: 1.5rem; text-align: left; }
+.event_form_fields { grid-column: 6 / span 7; display: flex; flex-direction: column; gap: var(--_spacing---space--4); }

@@ -1,0 +1,20 @@
+---
+// The page shown for an address that does not exist: an empty arch, the line and the way back home.
+import BaseLayout from '@layouts/BaseLayout.astro';
+import Button from '@components/ui/Button.astro';
+import { page } from '@lib/paths';
+---
+<BaseLayout title="Page Not Found · Can Arbós" description="This page isn't here. It may have moved, or the link has a typo." slug="404">
+  <section class="lost_page_wrap u-theme-light" aria-labelledby="page-title">
+    <div class="lost_page_contain u-container">
+      <div class="lost_page_layout">
+        <div class="lost_page_arch is-arch" aria-hidden="true"></div>
+        <div class="lost_page_content">
+          <h1 class="lost_page_title u-text-style-h1" id="page-title">This page isn't here</h1>
+          <p class="lost_page_text u-text-style-large">It may have moved, or the link has a typo.</p>
+          <div class="u-button-wrapper"><Button label="Back to home" href={page()} /></div>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

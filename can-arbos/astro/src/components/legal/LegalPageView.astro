@@ -1,0 +1,16 @@
+---
+// A whole legal page: the small intro and the text, from one entry of the Legal collection.
+import BaseLayout from '@layouts/BaseLayout.astro';
+import PageIntro from '@components/ui/PageIntro.astro';
+import LegalText from './LegalText.astro';
+import { LEGAL } from '@data/legal';
+
+interface Props {
+  slug: 'legal' | 'privacy';
+}
+const legal = LEGAL.find((entry) => entry.slug === Astro.props.slug)!;
+---
+<BaseLayout title={legal.title} description={legal.meta} slug={legal.slug}>
+  <PageIntro title={legal.h1} small />
+  <LegalText legal={legal} />
+</BaseLayout>

@@ -1,0 +1,22 @@
+---
+// The paper map of the Home inside the guide of things to do: the nine places in walking order, each lighting its route.
+import map from '@data/old-town-map.svg?raw';
+import { PLACES } from '@data/experiences';
+---
+<section class="where_home_wrap u-section u-theme-light u-background-2" aria-labelledby="walk-title" data-map>
+  <div class="where_home_contain u-container">
+    <div class="where_home_layout">
+      <div class="where_home_content">
+        <h2 class="where_home_title u-text-style-h2" id="walk-title">The nine places on one map</h2>
+        <ul class="walk_list_wrap">
+          {PLACES.map((place) => (
+            <li><button class="walk_list_item" type="button" data-place={place.number}><span class="walk_list_number">{place.number}</span><span class="walk_list_place">{place.name}</span><span class="walk_list_time">{place.minutes} min</span></button></li>
+          ))}
+        </ul>
+      </div>
+      <div class="where_home_map">
+        <Fragment set:html={map} />
+      </div>
+    </div>
+  </div>
+</section>

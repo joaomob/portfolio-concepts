@@ -1,0 +1,30 @@
+---
+// One page per experience of the Experiences collection.
+import type { GetStaticPaths } from 'astro';
+import BaseLayout from '@layouts/BaseLayout.astro';
+import PageHero from '@components/ui/PageHero.astro';
+import Button from '@components/ui/Button.astro';
+import SaveButton from '@components/ui/SaveButton.astro';
+import CloseBand from '@components/ui/CloseBand.astro';
+import ExperienceAbout from '@components/experiences/ExperienceAbout.astro';
+import ExperienceWalk from '@components/experiences/ExperienceWalk.astro';
+import MoreExperiences from '@components/experiences/MoreExperiences.astro';
+import { page } from '@lib/paths';
+import { experiences, EXPERIENCE_ALT, ASK, WALKS, type Experience } from '@data/experiences';
+
+export const getStaticPaths = (() =>
+  experiences.map((experience) => ({ params: { slug: experience.slug }, props: { experience } }))) satisfies GetStaticPaths;
+
+const { experience } = Astro.props as { experience: Experience };
+const walk = WALKS[experience.slug];
+---
+<BaseLayout title={experience.title} description={experience.meta} slug={`experience-${experience.slug}`}>
+  <PageHero title={experience.heading} text={experience.summary} image={`experiences/${experience.slug}.webp`} alt={EXPERIENCE_ALT[experience.slug]} long>
+    <a slot="eyebrow" href={page('explore-experiences')}>Experiences</a>
+    <ul class="fact_line_list"><li>{experience.type}</li><li>{experience.duration}</li><li>{experience.price}</li></ul><div class="u-button-wrapper"><Button label={experience.button} modal="contact-modal" data-contact="Experience" data-contact-detail={experience.name} aria-label={`${experience.button}: ${experience.name}`} /><SaveButton kind="experience" item={experience.slug} name={experience.name} /></div><p class="page_hero_note">{ASK}</p>
+  </PageHero>
+  <ExperienceAbout experience={experience} />
+  {walk && <ExperienceWalk place={walk.place} heading={walk.heading} />}
+  <MoreExperiences current={experience} tinted={!walk} />
+  <CloseBand />
+</BaseLayout>

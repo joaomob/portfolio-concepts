@@ -1,0 +1,77 @@
+---
+// The dialogs every page can open: room, table, contact, sign up and sign in.
+import Button from '@components/ui/Button.astro';
+import ContactFields from './ContactFields.astro';
+
+import { useTranslate, type Lang } from '@i18n/index';
+
+interface Props {
+  lang: Lang;
+}
+const { lang } = Astro.props;
+const t = useTranslate(lang);
+---
+<dialog class="modal_dialog" id="room-modal" aria-labelledby="room-modal-title">
+  <form class="modal_inner" data-demo-form="room" method="dialog" novalidate>
+    <div class="modal_head"><h2 class="u-text-style-h3 u-margin-bottom-0" id="room-modal-title">{t("Book a room")}</h2><button type="button" class="modal_close" data-modal-close>{t("Close")}</button></div>
+    <div class="modal_grid">
+      <div class="field_wrap"><label class="field_label" for="room-arrival">{t("Arrival")}</label><input class="field_input" id="room-arrival" name="arrival" type="date" required /></div>
+      <div class="field_wrap"><label class="field_label" for="room-departure">{t("Departure")}</label><input class="field_input" id="room-departure" name="departure" type="date" required /></div>
+      <div class="field_wrap"><label class="field_label" for="room-guests">{t("Guests")}</label><select class="field_input" id="room-guests" name="guests"><option value="1">1</option><option selected value="2">2</option><option value="3">3</option><option value="4">4</option></select></div>
+      <div class="field_wrap"><label class="field_label" for="room-type">{t("Room type")}</label><select class="field_input" id="room-type" name="room"><option value="Any room">{t("Any room")}</option><option value="Courtyard Room">{t("Courtyard Room")}</option><option value="Old Town Room">{t("Old Town Room")}</option><option value="Junior Suite">{t("Junior Suite")}</option><option value="Terrace Suite">{t("Terrace Suite")}</option><option value="The Arbós Suite">{t("The Arbós Suite")}</option></select></div>
+    </div>
+    <p class="modal_note">{t("Free cancellation up to 7 days before arrival. Booking direct includes breakfast and a drink on the roof.")}</p>
+    <Button label={t("Check availability")} type="submit" />
+    <p class="modal_result" data-form-success data-visible="false">{t("This is a portfolio demo, so nothing gets booked here. A real hotel would send your dates, guests and room type to its booking engine from this step.")}</p>
+  </form>
+</dialog>
+
+<dialog class="modal_dialog" id="table-modal" aria-labelledby="table-modal-title">
+  <form class="modal_inner" data-demo-form="table" method="dialog" novalidate>
+    <div class="modal_head"><h2 class="u-text-style-h3 u-margin-bottom-0" id="table-modal-title">{t("Book a table at Aljub")}</h2><button type="button" class="modal_close" data-modal-close>{t("Close")}</button></div>
+    <div class="modal_grid">
+      <div class="field_wrap"><label class="field_label" for="table-date">{t("Date")}</label><input class="field_input" id="table-date" name="date" type="date" required /></div>
+      <div class="field_wrap"><label class="field_label" for="table-time">{t("Time")}</label><select class="field_input" id="table-time" name="time"><option value="19:30">19:30</option><option value="20:00">20:00</option><option value="20:30">20:30</option><option value="21:00">21:00</option><option value="21:30">21:30</option></select></div>
+      <div class="field_wrap"><label class="field_label" for="table-guests">{t("Guests")}</label><select class="field_input" id="table-guests" name="guests"><option value="1">1</option><option selected value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option></select></div>
+      <div class="field_wrap"><label class="field_label" for="table-name">{t("Name")}</label><input class="field_input" id="table-name" name="name" type="text" autocomplete="name" required /></div>
+      <div class="field_wrap"><label class="field_label" for="table-email">{t("Email")}</label><input class="field_input" id="table-email" name="email" type="email" autocomplete="email" required /></div>
+      <div class="field_wrap"><label class="field_label" for="table-diet">{t("Diet or allergy (optional)")}</label><input class="field_input" id="table-diet" name="diet" type="text" /></div>
+    </div>
+    <p class="modal_note">{t("Hotel guests and members can book 60 days ahead. Everyone else, 30 days.")}</p>
+    <Button label={t("Book this table")} type="submit" />
+    <p class="field_error" data-form-error data-visible="false">{t("Please fill in the date, your name and an email address like name@example.com.")}</p>
+    <p class="modal_result" data-form-success data-visible="false"></p>
+  </form>
+</dialog>
+
+<dialog class="modal_dialog" id="contact-modal" aria-labelledby="contact-modal-title">
+  <form class="modal_inner" data-demo-form="contact" method="dialog" novalidate>
+    <div class="modal_head"><h2 class="u-text-style-h3 u-margin-bottom-0" id="contact-modal-title">{t("Contact us")}</h2><button type="button" class="modal_close" data-modal-close>{t("Close")}</button></div>
+    <ContactFields prefix="contact" lang={lang} />
+  </form>
+</dialog>
+
+<dialog class="modal_dialog" id="signup-modal" aria-labelledby="signup-modal-title">
+  <form class="modal_inner" data-member-form="signup" method="dialog" novalidate>
+    <div class="modal_head"><h2 class="u-text-style-h3 u-margin-bottom-0" id="signup-modal-title">{t("Create your account")}</h2><button type="button" class="modal_close" data-modal-close>{t("Close")}</button></div>
+    <div class="field_wrap"><label class="field_label" for="signup-name">{t("First name")}</label><input class="field_input" id="signup-name" name="first_name" type="text" autocomplete="given-name" required /></div>
+    <div class="field_wrap"><label class="field_label" for="signup-email">{t("Email")}</label><input class="field_input" id="signup-email" name="email" type="email" autocomplete="email" required /></div>
+    <div class="field_wrap"><label class="field_label" for="signup-password">{t("Password")}</label><input class="field_input" id="signup-password" name="password" type="password" autocomplete="new-password" minlength="8" required /></div>
+    <p class="modal_note">{t("We'll only email you about your bookings, unless you subscribe to our letters.")}</p>
+    <p class="modal_note">{t("This is a portfolio demo. Accounts are test accounts and are deleted every month.")}</p>
+    <Button label={t("Create account")} type="submit" />
+    <p class="field_error" data-form-error data-visible="false">{t("Please use at least 8 characters for your password.")}</p>
+  </form>
+</dialog>
+
+<dialog class="modal_dialog" id="signin-modal" aria-labelledby="signin-modal-title">
+  <form class="modal_inner" data-member-form="signin" method="dialog" novalidate>
+    <div class="modal_head"><h2 class="u-text-style-h3 u-margin-bottom-0" id="signin-modal-title">{t("Sign in")}</h2><button type="button" class="modal_close" data-modal-close>{t("Close")}</button></div>
+    <div class="field_wrap"><label class="field_label" for="signin-email">{t("Email")}</label><input class="field_input" id="signin-email" name="email" type="email" autocomplete="email" required /></div>
+    <div class="field_wrap"><label class="field_label" for="signin-password">{t("Password")}</label><input class="field_input" id="signin-password" name="password" type="password" autocomplete="current-password" required /></div>
+    <p class="modal_note">{t("This is a portfolio demo. Accounts are test accounts and are deleted every month.")}</p>
+    <Button label={t("Sign in")} type="submit" />
+    <p class="field_error" data-form-error data-visible="false">{t("That email and password don't match. Try again or reset your password.")}</p>
+    <p class="modal_note"><a href="#" data-modal-close>{t("Forgot your password?")}</a></p>
+  </form>
+</dialog>

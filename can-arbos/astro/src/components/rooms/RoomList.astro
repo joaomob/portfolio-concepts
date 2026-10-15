@@ -1,0 +1,46 @@
+---
+// The rooms hub: filters by guests and view, then one row per room. On hover and focus the photo of the room gives way
+// to the view from its window.
+import Button from '@components/ui/Button.astro';
+import SaveButton from '@components/ui/SaveButton.astro';
+import { img, page } from '@lib/paths';
+import { rooms, ROOM_PHOTOS, ROOM_SUMMARY } from '@data/rooms';
+
+const GUESTS = ['2', '3', '4'];
+const VIEWS = ['Courtyard', 'Square', 'Rooftops'];
+---
+<section class="room_list_wrap u-section u-theme-light" aria-label="Rooms">
+  <div class="room_list_contain u-container">
+    <form class="filter_bar_wrap" data-filter-list="rooms-list" aria-label="Filter rooms">
+      <fieldset class="filter_group"><legend class="field_label">Guests</legend>
+        <label class="filter_chip"><input type="radio" name="guests" value="" checked /> Any</label>
+        {GUESTS.map((value) => <label class="filter_chip"><input type="radio" name="guests" value={value} /> {value}</label>)}
+      </fieldset>
+      <fieldset class="filter_group"><legend class="field_label">View</legend>
+        <label class="filter_chip"><input type="radio" name="view" value="" checked /> Any</label>
+        {VIEWS.map((value) => <label class="filter_chip"><input type="radio" name="view" value={value} /> {value}</label>)}
+      </fieldset>
+    </form>
+    <p class="filter_empty" data-filter-empty data-visible="false">No room matches both filters. Clear one to see more.</p>
+    <ul class="room_list_rows" id="rooms-list">
+      {rooms.map((room, i) => {
+        const summary = ROOM_SUMMARY[room.slug];
+        const href = page(`room-${room.slug}`);
+        return (
+          <li class={`room_list_item${i % 2 ? ' is-reverse' : ''}`} data-filter-guests={room.guests} data-filter-view={room.view_filter}>
+            <a class={`room_list_media${i % 2 ? '' : ' is-arch'}`} href={href} aria-label={`${room.name}: see the room`}>
+              <img {...img(`rooms/${room.slug}.webp`, 900)} class="room_list_image" alt={ROOM_PHOTOS[room.slug].main} width="900" height="1117" loading="lazy" />
+              <img {...img(`rooms/${room.slug}-view.webp`, 900)} class="room_list_image is-view" alt={ROOM_PHOTOS[room.slug].view} width="900" height="1117" loading="lazy" />
+            </a>
+            <div class="room_list_content">
+              <h2 class="room_list_title u-text-style-h2">{room.name}</h2>
+              <p class="room_list_text">{summary.light ? `${summary.line} ${summary.light}` : summary.line}</p>
+              <dl class="room_list_facts"><div class="room_list_fact"><dt class="room_list_label">Size</dt><dd class="room_list_value">{room.size}</dd></div><div class="room_list_fact"><dt class="room_list_label">Guests</dt><dd class="room_list_value">{room.guests}</dd></div><div class="room_list_fact"><dt class="room_list_label">View</dt><dd class="room_list_value">{room.view}</dd></div></dl>
+              <div class="u-button-wrapper"><Button label="Book this room" modal="room-modal" data-room-type={room.name} /><Button label="See the room" href={href} variant="secondary" /><SaveButton kind="room" item={room.slug} name={room.name} /></div>
+            </div>
+          </li>
+        );
+      })}
+    </ul>
+  </div>
+</section>

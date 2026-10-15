@@ -1,0 +1,16 @@
+/* ---------- Offer page: what it includes and what to know; the members' offer shows closed until sign-in ---------- */
+.offer_page_wrap, .legal_page_wrap { padding-top: var(--_spacing---section-space--small); }
+.offer_badge_text { display: inline-block; margin-left: 0.75rem; padding: 0.25rem 0.75rem; border: 1px solid currentColor; border-radius: var(--radius--round); letter-spacing: 0.08em; }
+.offer_page_layout { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: var(--site--gutter); align-items: start; }
+.offer_page_block { grid-column: 1 / span 5; }
+.offer_page_block.is-second { grid-column: 7 / span 6; }
+.offer_page_title { margin: 0; }
+/* in Webflow "What's included" is a Rich Text bound to the CMS: its list carries no class (offer_page_rich > ul) */
+.offer_page_list, .offer_page_rich > ul { margin: 2rem 0 0; padding: 0; list-style: none; border-top: 1px solid var(--_theme---border); }
+.offer_page_item, .offer_page_rich > ul > li { padding: 1rem 0; border-bottom: 1px solid var(--_theme---border); }
+.offer_page_text { margin: 2rem 0 0; color: var(--_theme---text-faded); }
+.offer_lock_wrap { max-width: 46rem; padding: clamp(2rem, 4vw, 3.5rem); background: var(--swatch--light-200); }
+.offer_lock_text { margin: 0; }
+.offer_list_rows { grid-column: 6 / span 7; margin-top: 0; }
+/* the list of other offers and guides has one class (a CMS list takes one): the line on top and the list reset are here */
+.offer_list_wrap .offer_list_rows { margin-bottom: 0; padding: 0; list-style: none; border-top: 1px solid var(--_theme---border); }

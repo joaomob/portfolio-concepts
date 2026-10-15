@@ -1,0 +1,10 @@
+---
+// Save to My stay: the kind and the item go in two attributes and the name in its own span (one CMS field each).
+interface Props {
+  kind: string;
+  item: string;
+  name: string;
+}
+const { kind, item, name } = Astro.props;
+---
+<button type="button" class="save_button" data-save={kind} data-save-item={item} aria-pressed="false"><span class="u-sr-only">{name}</span> <span data-save-label>Save</span></button>

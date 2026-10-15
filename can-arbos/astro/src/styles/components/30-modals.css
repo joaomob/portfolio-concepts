@@ -1,0 +1,101 @@
+/* ---------- Modals ---------- */
+.field_input.is-textarea { padding-top: 0.75rem; padding-bottom: 0.75rem; min-height: 8rem; }
+/* inset 0 with margin auto centres the dialog: the Lumos dialog base is full height with margin 0 and no bottom inset,
+   and every modal opened in the top left corner of the screen */
+/* the theme text Variable too: the Lumos dialog sets it to its own darker default, so the fields of a dialog, which read
+   the Variable, came out a shade darker than their labels (#1b1916 against #231f1a) */
+.modal_dialog { inset: 0; width: min(40rem, calc(100% - 2rem)); height: fit-content; max-height: calc(100svh - 2rem); margin: auto; padding: 0; border: 0; border-radius: var(--radius--main); background: var(--swatch--light-100); color: var(--swatch--dark-800); --_theme---text: var(--swatch--dark-800); }
+.modal_dialog::backdrop { background: color-mix(in srgb, var(--swatch--dark-900), transparent 40%); }
+/* the Lumos modal_inner is a full-screen centring box (height 100dvh): here it is the dialog's own column */
+.modal_inner { width: auto; height: auto; padding: var(--_spacing---space--6); display: flex; flex-direction: column; justify-content: flex-start; align-items: stretch; gap: var(--_spacing---space--4); }
+.modal_head { display: flex; align-items: baseline; justify-content: space-between; gap: 1rem; }
+.modal_close { flex: none; background: none; border: 0; font: inherit; min-height: 3rem; min-width: 3rem; cursor: pointer; text-decoration: underline; }
+.modal_grid { display: grid; grid-template-columns: 1fr 1fr; gap: var(--_spacing---space--3); }
+.modal_note { margin: 0; font-size: var(--_typography---font-size--text-small); color: var(--swatch--faded); }
+.modal_result { margin: 0; padding: var(--_spacing---space--4); background: var(--swatch--light-200); border-radius: var(--radius--small); }
+@media screen and (max-width: 479px) { .modal_grid { grid-template-columns: 1fr; } }
+
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { transition: none !important; animation: none !important; scroll-behavior: auto !important; } }
+
+
+/* Date picker (src/scripts/date-picker.js): the field the visitor sees and the dialog with the Cally calendar, in the brand.
+   Selected day: paper on shutter green (#faf6ee on #3f5d49); days between arrival and departure: ink on sand. */
+.date_field_wrap { position: relative; display: block; }
+.date_field { width: 100%; padding-right: 3rem; cursor: pointer; text-overflow: ellipsis; }
+.date_field::placeholder { color: var(--_theme---text-faded); opacity: 1; }
+.date_field_icon { position: absolute; top: 50%; right: 1rem; transform: translateY(-50%); pointer-events: none; }
+.date_dialog { width: min(46rem, calc(100% - 2rem)); }
+.date_dialog.is-single { width: min(26rem, calc(100% - 2rem)); }
+.date_inner { gap: var(--_spacing---space--3); align-items: stretch; }
+.date_cally { --color-accent: var(--swatch--brand-500); --color-text-on-accent: var(--swatch--light-100); display: block; width: 100%; }
+.date_cally::part(container), .date_cally::part(months) { width: 100%; }
+.date_months { display: grid; grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr)); gap: 2rem; }
+.date_cally::part(header) { display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.5rem; }
+.date_cally::part(heading) { font-size: var(--_typography---font-size--text-small); font-weight: inherit; letter-spacing: 0.12em; color: var(--swatch--faded); }
+.date_cally::part(button) { display: inline-flex; align-items: center; justify-content: center; min-width: 3rem; min-height: 3rem; border: 1px solid var(--swatch--field-border); border-radius: var(--radius--round); background: none; color: var(--swatch--dark-800); cursor: pointer; }
+.date_cally::part(disabled) { opacity: 0.35; cursor: default; }
+calendar-month { width: 100%; }
+calendar-month::part(heading) { font-family: var(--_typography---font--secondary-family); font-size: var(--_typography---font-size--text-main); text-align: center; padding-bottom: 0.5rem; }
+calendar-month::part(table) { width: 100%; }
+calendar-month::part(th) { font-size: var(--_typography---font-size--text-small); color: var(--swatch--faded); font-weight: inherit; padding-bottom: 0.25rem; }
+calendar-month::part(button) { width: 100%; aspect-ratio: 1; min-height: 2.5rem; border: 0; border-radius: var(--radius--round); background: none; color: var(--swatch--dark-800); font: inherit; cursor: pointer; }
+calendar-month::part(button):hover { background: var(--swatch--light-200); }
+calendar-month::part(selected):hover, calendar-range calendar-month::part(range-start):hover, calendar-range calendar-month::part(range-end):hover { background: var(--swatch--brand-700); color: var(--swatch--light-100); }
+calendar-range calendar-month::part(range-inner):hover { background: var(--swatch--light-300); color: var(--swatch--dark-800); }
+calendar-month::part(today) { box-shadow: inset 0 0 0 1px var(--swatch--field-border); }
+/* in a range every chosen day is "selected": the nights between are sand, arrival and departure are green */
+calendar-month::part(selected) { background: var(--swatch--brand-500); color: var(--swatch--light-100); }
+calendar-range calendar-month::part(selected) { border-radius: 0; background: var(--swatch--light-200); color: var(--swatch--dark-800); }
+calendar-range calendar-month::part(range-start) { border-radius: var(--radius--round) 0 0 var(--radius--round); background: var(--swatch--brand-500); color: var(--swatch--light-100); }
+calendar-range calendar-month::part(range-end) { border-radius: 0 var(--radius--round) var(--radius--round) 0; background: var(--swatch--brand-500); color: var(--swatch--light-100); }
+calendar-range calendar-month::part(range-start range-end) { border-radius: var(--radius--round); }
+calendar-month::part(disallowed) { color: var(--swatch--field-border); text-decoration: line-through; cursor: default; background: none; }
+calendar-month::part(outside) { visibility: hidden; }
+.date_summary { margin: 0; min-height: 1.5em; color: var(--swatch--faded); }
+.date_actions { display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
+.date_clear { min-height: 2.75rem; padding: 0; border: 0; background: none; color: inherit; font: inherit; text-decoration: underline; text-underline-offset: 0.3em; cursor: pointer; }
+@media screen and (max-width: 767px) {
+  .date_dialog { width: 100%; max-width: none; height: 100%; max-height: none; margin: 0; border-radius: 0; }
+  .date_inner { min-height: 100%; }
+  .date_actions { margin-top: auto; }
+}
+
+/* Four dishes in the Aljub circle above the menu: the round photo is the cistern shape of the restaurant */
+.dish_feature_list { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: var(--site--gutter); margin: 0 0 var(--_spacing---space--7); padding: 0; list-style: none; }
+.dish_feature_item { display: flex; flex-direction: column; align-items: center; gap: 0.5rem; text-align: center; }
+.dish_feature_circle { width: 100%; max-width: 16rem; aspect-ratio: 1; margin-bottom: 0.75rem; border-radius: 50%; overflow: hidden; background: var(--swatch--light-200); }
+.dish_feature_image { display: block; width: 100%; height: 100%; object-fit: cover; }
+.dish_feature_item > .dish_feature_name, .dish_feature_item > .dish_feature_price { margin: 0; }
+.dish_feature_price { color: var(--_theme---text-faded); }
+.dish_feature_item > .dish_feature_price { margin-top: 0.25rem; }
+@media screen and (max-width: 767px) { .dish_feature_list { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+
+/* Own select (src/scripts/field-select.js): the same field, with the chevron in the stroke and place of the calendar icon,
+   and a list in the site's colours; the native select stays hidden for the form */
+.field_select_native { position: absolute; width: 1px; height: 1px; opacity: 0; pointer-events: none; }
+.field_select_wrap { position: relative; display: block; }
+.field_select { width: 100%; padding-right: 3rem; cursor: pointer; text-overflow: ellipsis; }
+.field_select_icon { position: absolute; top: 50%; right: 1rem; transform: translateY(-50%); pointer-events: none; transition: transform 0.2s; }
+.field_select[aria-expanded="true"] ~ .field_select_icon { transform: translateY(-50%) rotate(180deg); }
+.field_select_list { display: none; position: absolute; left: 0; right: 0; top: calc(100% + 0.25rem); z-index: 20; max-height: 16rem; margin: 0; padding: 0.25rem 0; overflow-y: auto; list-style: none; background: var(--swatch--light-100); color: var(--swatch--dark-800); border: 1px solid var(--swatch--field-border); border-radius: var(--radius--small); box-shadow: 0 0.75rem 2rem color-mix(in srgb, var(--swatch--dark-900) 18%, transparent); }
+.field_select_list[data-open="true"] { display: block; }
+.field_select_list[data-up="true"] { top: auto; bottom: calc(100% + 0.25rem); }
+.field_select_option { display: flex; align-items: center; min-height: 2.75rem; padding: 0 1rem; cursor: pointer; }
+/* one highlighted option at a time: the mouse moves the active option */
+.field_select_option.is-active { background: var(--swatch--light-200); }
+.field_select_option[aria-selected="true"] { font-weight: var(--_typography---font--primary-medium); }
+.field_select_option[aria-selected="true"]::after { content: ""; width: 0.875rem; height: 0.5rem; margin-left: auto; border-left: 1.5px solid currentColor; border-bottom: 1.5px solid currentColor; transform: rotate(-45deg) translateY(-0.1rem); }
+
+/* Entrances on the first screen start at their first frame: until site.js has set the starting states (html.is-ready),
+   the parts that enter are not drawn, so the finished page never flashes before the animation. The hero photo is drawn from the start at
+   the scale its entrance begins with, so the largest image of the screen is never delayed. */
+html.is-motion:not(.is-ready) [data-hero] .eyebrow_text,
+html.is-motion:not(.is-ready) .hero_home_title,
+html.is-motion:not(.is-ready) .hero_home_text,
+html.is-motion:not(.is-ready) .hero_home_content .button_main_wrap,
+html.is-motion:not(.is-ready) .stay_bar_wrap,
+html.is-motion:not(.is-ready) .page_main .u-text-style-h1,
+html.is-motion:not(.is-ready) .page_main .u-text-style-h2,
+html.is-motion:not(.is-ready) .page_main .eyebrow_text { visibility: hidden; }
+html.is-motion:not(.is-ready) .hero_home_image { transform: scale(1.18); }
+.footer_brand_mark { display: block; width: 11rem; height: auto; margin-bottom: 1.5rem; }

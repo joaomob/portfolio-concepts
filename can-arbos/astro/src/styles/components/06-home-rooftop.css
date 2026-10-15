@@ -1,0 +1,10 @@
+/* ---------- Rooftop and spa ---------- */
+.roof_home_layout { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: var(--site--gutter); row-gap: clamp(2.5rem, 5vw, 5rem); }
+.roof_home_media { grid-column: 1 / span 8; overflow: clip; margin: 0; }
+.roof_home_image { width: 100%; aspect-ratio: 16 / 10; object-fit: cover; }
+.roof_home_content { grid-column: 9 / span 4; align-self: end; }
+.roof_home_title, .roof_home_subtitle { margin: 0; text-wrap: balance; }
+.roof_home_text { margin: 1.75rem 0 0; color: var(--_theme---text-faded); }
+.roof_home_spa { grid-column: 5 / span 8; display: grid; grid-template-columns: minmax(0, 3fr) minmax(0, 5fr); column-gap: var(--site--gutter); align-items: end; }
+.roof_home_arch { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; }
+.roof_home_spa .roof_home_text { max-width: 26rem; margin-top: 1.25rem; }

@@ -1,0 +1,45 @@
+/* ---------- Tablet (Webflow 991) ---------- */
+@media screen and (max-width: 991px) {
+  .hero_home_wrap { min-height: 0; }
+  .hero_home_contain { display: block; padding-top: 2rem; }
+  .hero_home_content { max-width: 39rem; }
+  .hero_home_arch { position: relative; inset: auto; width: min(100% - var(--site--margin) * 2, 34rem); margin: 2.5rem auto 0; aspect-ratio: 4 / 5; clip-path: none; border-radius: 999px 999px 0 0; overflow: hidden; }
+  .hero_home_arch::after { display: none; }
+  .hero_home_image { object-position: 62% 50%; }
+  .house_home_head { grid-column: 1 / span 8; }
+  .house_home_body { grid-column: 6 / span 7; margin-top: 2.5rem; }
+  .dining_home_media { grid-column: 1 / span 5; padding-right: 1rem; }
+  .dining_home_content { grid-column: 6 / span 7; }
+  .where_home_content { grid-column: 1 / span 5; }
+  .where_home_map { grid-column: 6 / span 7; }
+  .faq_home_head { grid-column: 1 / span 12; margin-bottom: 2.5rem; }
+  .menu_page_grid { column-gap: var(--site--gutter); }
+  .tasting_menu_content { grid-column: 1 / span 12; }
+  .tasting_menu_list { grid-column: 1 / span 12; margin-top: 2.5rem; }
+  .every_room_title { grid-column: 1 / span 12; margin-bottom: 2.5rem; }
+  .every_room_list { grid-column: 1 / span 12; }
+  .faq_list_wrap { grid-column: 1 / span 12; }
+  .roof_page_content { grid-column: 1 / span 12; }
+  .every_room_list { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .dining_home_layout.is-page .dining_home_media { grid-column: 1 / span 5; }
+  .dining_home_layout.is-page .dining_home_content { grid-column: 6 / span 7; }
+  .fest_page_facts { grid-column: 1 / span 12; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); column-gap: var(--site--gutter); padding: 0; margin-top: 2.5rem; }
+  .fest_page_fact { flex-direction: column; gap: 0.5rem; border-top: 1px solid var(--_theme---border); }
+  .exp_page_body { grid-column: 1 / span 12; margin-bottom: 2.5rem; }
+  .member_out_list { grid-column: 1 / span 7; }
+  .member_grid_layout { grid-template-columns: 1fr; }
+  .member_out_content { grid-column: 1 / span 12; }
+  .member_out_list { grid-column: 1 / span 12; margin-top: 3rem; }
+  .journal_page_body { grid-column: 2 / span 10; }
+  .journal_list_content { grid-column: 6 / span 7; }
+  .offer_list_rows { grid-column: 1 / span 12; }
+  .exp_hub_list { grid-column: 1 / span 12; }
+  .exp_hub_media { display: none; }
+  .exp_hub_item { display: grid; grid-template-columns: 9rem minmax(0, 1fr); column-gap: var(--site--gutter); align-items: start; }
+  .exp_hub_thumb { display: block; }
+  .roof_page_media { grid-column: 1 / span 12; margin-top: 2.5rem; }
+  .spa_page_content { grid-column: 5 / span 8; }
+  .fest_home_panel.is-wide { grid-column: 1 / span 11; }
+  .event_form_intro { grid-column: 1 / span 12; margin-bottom: 2.5rem; }
+  .event_form_fields { grid-column: 1 / span 12; }
+}

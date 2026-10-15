@@ -1,0 +1,66 @@
+/* Can Arbós project styles on top of Lumos. Class names follow Lumos: custom classes type_variation_element
+   with _wrap at the start of each component, u- utilities stacked on them, is- combos. Values come from the Variables
+   in can-arbos.css; nothing here holds a loose colour or size. */
+
+body {
+  background-color: var(--_theme---background);
+  color: var(--_theme---text);
+  font-family: var(--_typography---font--primary-family);
+  font-size: var(--_typography---font-size--text-main);
+  line-height: var(--_typography---line-height--huge);
+}
+
+/* Square-ish buttons for a boutique hotel: the Lumos button uses --radius--round, the Can Arbós one --radius--small. */
+.button_main_wrap { border-radius: var(--radius--round); }
+.button_main_element { border-radius: inherit; min-height: 3rem; padding-left: 1.5rem; padding-right: 1.5rem; }
+
+/* Eyebrow: small capitals with spacing, at the smallest size of the scale. */
+.eyebrow_text {
+  font-size: var(--_typography---font-size--text-small);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--_theme---accent);
+  margin: 0 0 1.5rem;
+}
+
+.u-color-faded { color: var(--_theme---text-faded); }
+
+/* Form field: 16 px fixed (B5), border at 3:1 against the paper (B6), visible focus (B8), error written in text. */
+.field_wrap { display: flex; flex-direction: column; gap: var(--_spacing---space--1); }
+.field_label { font-size: var(--_typography---font-size--text-small); font-weight: var(--_typography---font--primary-medium); }
+.field_input {
+  /* longhands, not the font shorthand: Webflow writes the shorthand after the size, and it took the size back to 17 px */
+  font-family: inherit;
+  font-weight: inherit;
+  line-height: inherit;
+  font-size: 16px;
+  min-height: 3rem;
+  padding: 0 1rem;
+  color: var(--_theme---text);
+  background-color: transparent;
+  border: 1px solid var(--_theme---field--border);
+  border-radius: var(--radius--small);
+}
+.field_input:focus-visible { outline: 2px solid var(--_theme---text); outline-offset: 2px; }
+.field_error { font-size: var(--_typography---font-size--text-small); color: var(--swatch--error); margin: 0; }
+.field_row { display: flex; gap: var(--_spacing---space--3); align-items: flex-end; flex-wrap: wrap; }
+.field_row .field_wrap { flex: 1 1 16rem; }
+
+/* Style guide only */
+.guide_swatch_list { display: grid; grid-template-columns: repeat(auto-fill, minmax(11rem, 1fr)); gap: var(--site--gutter); }
+.guide_swatch_item { border: 1px solid var(--_theme---border); border-radius: var(--radius--main); overflow: hidden; }
+.guide_swatch_color { height: 6rem; }
+.guide_swatch_text { display: flex; flex-direction: column; gap: 0.625rem; padding: var(--_spacing---space--3); font-size: var(--_typography---font-size--text-small); }
+.guide_swatch_text p { margin: 0; }
+.guide_table { width: 100%; border-collapse: collapse; font-size: var(--_typography---font-size--text-main); }
+.guide_table th, .guide_table td { text-align: left; padding: var(--_spacing---space--2) var(--_spacing---space--3); border-bottom: 1px solid var(--_theme---border); }
+.guide_type_item { display: grid; grid-template-columns: 12rem 1fr; gap: var(--site--gutter); align-items: baseline; padding: var(--_spacing---space--4) 0; border-bottom: 1px solid var(--_theme---border); }
+.guide_type_label { font-size: var(--_typography---font-size--text-small); color: var(--_theme---text-faded); margin: 0; }
+.guide_theme_list { display: grid; grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr)); gap: var(--site--gutter); }
+.guide_theme_item { display: flex; flex-direction: column; gap: 1rem; padding: var(--_spacing---space--6); border-radius: var(--radius--main); }
+.guide_theme_item > * { margin: 0; }
+.guide_theme_item.u-theme-light { border: 1px solid var(--swatch--dark-900-o20); }
+.guide_theme_item.u-background-2 { background-color: var(--_theme---background-2); }
+@media screen and (max-width: 767px) {
+  .guide_type_item { grid-template-columns: 1fr; gap: var(--_spacing---space--1); }
+}

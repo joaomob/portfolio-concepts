@@ -1,0 +1,28 @@
+---
+// For an experience that starts on foot: the paper map of the Home with only the walk from our door to its place, and
+// a label that says so to a screen reader.
+import map from '@data/old-town-map.svg?raw';
+import { PLACES } from '@data/experiences';
+
+interface Props {
+  /** the number of the place on the map */
+  place: number;
+  heading: string;
+}
+const { place, heading } = Astro.props;
+const { name, minutes } = PLACES.find((p) => p.number === place)!;
+const ownMap = map.replace('the walking routes to nine places', `the walk to ${name.replace(/'/g, '&#x27;')}`);
+---
+<section class="where_home_wrap u-section u-theme-light u-background-2" aria-labelledby="walk-title" data-map>
+  <div class="where_home_contain u-container">
+    <div class="where_home_layout is-single">
+      <div class="where_home_content">
+        <h2 class="where_home_title u-text-style-h2" id="walk-title">{heading}</h2>
+        <p class="walk_single_text"><span class="walk_single_place">{name}</span><span class="walk_list_time">{minutes} min on foot</span></p>
+      </div>
+      <div class="where_home_map is-single" data-map-fixed={place}>
+        <Fragment set:html={ownMap} />
+      </div>
+    </div>
+  </div>
+</section>

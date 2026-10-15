@@ -1,0 +1,7 @@
+/* ---------- 404: the arch of the house, empty ---------- */
+.lost_page_wrap { padding: calc(4.5rem + var(--_spacing---section-space--small)) 0 var(--_spacing---section-space--main); }
+.lost_page_layout { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: var(--site--gutter); align-items: center; }
+.lost_page_arch { grid-column: 2 / span 3; aspect-ratio: 4 / 5; border: 1px solid var(--_theme---text); }
+.lost_page_content { grid-column: 7 / span 6; }
+.lost_page_title { margin: 0; text-wrap: balance; }
+.lost_page_text { margin: 2rem 0 0; color: var(--_theme---text-faded); }

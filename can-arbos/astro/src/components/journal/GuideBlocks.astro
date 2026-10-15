@@ -1,0 +1,19 @@
+---
+// A run of body blocks: headings, paragraphs and paragraphs with a link, whose page address is rewritten for this build.
+import { page } from '@lib/paths';
+import type { GuideBlock } from '@data/journal';
+
+interface Props {
+  blocks: GuideBlock[];
+}
+const { blocks } = Astro.props;
+const withLinks = (html: string) => html.replace(/href="([a-z0-9-]+)\.html"/g, (_, name) => `href="${page(name)}"`);
+---
+<div class="journal_page_rich">
+  {blocks.map((block) =>
+    block.kind === 'h' ? <h2 class="journal_page_heading u-text-style-h3">{block.text}</h2>
+    : block.kind === 'raw' ? <p class="journal_page_text" set:html={withLinks(block.text)} />
+    : block.kind === 'p' ? <p class="journal_page_text">{block.text}</p>
+    : null
+  )}
+</div>

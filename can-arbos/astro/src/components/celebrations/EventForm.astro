@@ -1,0 +1,18 @@
+---
+// The request form, with the contact fields of the modal and the type already set to Celebration.
+import ContactFields from '@components/layout/ContactFields.astro';
+---
+<section class="event_form_wrap u-section u-theme-light u-background-2" id="event-form" aria-labelledby="form-title">
+  <div class="event_form_contain u-container">
+    <div class="event_form_layout">
+      <div class="event_form_intro">
+        <h2 class="event_form_title u-text-style-h2" id="form-title">Tell us about your day</h2>
+        <p class="event_form_text">We reply within two working days.</p>
+        <figure class="event_form_quote"><p class="event_form_words u-text-style-large">I answer every celebration request myself, and I'm the person you call on the day.</p><p class="team_list_role">Neus Vallespir · Events coordinator</p></figure>
+      </div>
+      <form class="event_form_fields" data-demo-form="event" data-contact-preset="Celebration" novalidate>
+        <ContactFields prefix="event" />
+      </form>
+    </div>
+  </div>
+</section>

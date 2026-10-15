@@ -1,0 +1,11 @@
+/* ---------- Celebrations ---------- */
+.fest_home_wrap { overflow: clip; padding-bottom: var(--_spacing---section-space--small); }
+.fest_home_image { width: 100%; aspect-ratio: 21 / 9; object-fit: cover; }
+/* the panel rises over the photo; the negative margin sits on the container, because Lumos trims the top margin of the
+   first child of a u-container (lumos-global.css, margin trim) */
+.fest_home_contain { margin-top: clamp(-11rem, -12vw, -3rem); }
+.fest_home_layout { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: var(--site--gutter); align-items: end; }
+.fest_home_panel { position: relative; grid-column: 1 / span 6; padding: clamp(2rem, 4vw, 3.5rem); background: var(--_theme---background); }
+.fest_home_title { margin: 0; text-wrap: balance; }
+.fest_home_text { margin: 2rem 0 0; color: var(--_theme---text-faded); }
+.fest_home_small { grid-column: 9 / span 3; width: 100%; aspect-ratio: 4 / 5; object-fit: cover; border: 0.5rem solid var(--swatch--brand-500); }

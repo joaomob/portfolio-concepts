@@ -1,0 +1,45 @@
+---
+// The menu: four dishes in a round photo, the diet filter (it dims the dishes outside the diet and leaves them in
+// place, so the menu keeps its shape), the four courses, the allergens and the tasting menu.
+import { img } from '@lib/paths';
+import DishRow from './DishRow.astro';
+import { dishes, dishByOrder, COURSES, DIETS, FEATURED_DISHES, TASTING_COURSES } from '@data/dining';
+
+const tasting = dishes.find((dish) => dish.course === 'tasting')!;
+---
+<section class="menu_page_wrap u-section u-theme-dark" id="menu" aria-labelledby="menu-title">
+  <div class="menu_page_contain u-container">
+    <div class="menu_page_head">
+      <h2 class="menu_page_title u-text-style-h2" id="menu-title">The menu, with prices and allergens</h2>
+      <p class="menu_page_note">Prices include VAT.</p>
+    </div>
+    <ul class="dish_feature_list" role="list" aria-label="Four dishes from the menu">{FEATURED_DISHES.map(({ order, photo, alt }) => {
+      const dish = dishByOrder(order);
+      return <li class="dish_feature_item"><div class="dish_feature_circle"><img {...img(`dining/${photo}`, 1024)} class="dish_feature_image" alt={alt} width="1024" height="1024" loading="lazy" /></div><p class="dish_feature_name u-text-style-h4">{dish.name}</p><p class="dish_feature_price">€{dish.price}</p></li>;
+    })}</ul>
+    <form class="filter_bar_wrap" data-filter-scope data-filter-mode="dim" aria-label="Filter the menu by diet">
+      <fieldset class="filter_group"><legend class="field_label">Diet</legend>
+        <label class="filter_chip"><input type="radio" name="diet" value="" checked /> All</label>
+        {DIETS.map((diet) => <label class="filter_chip"><input type="radio" name="diet" value={diet} /> {diet}</label>)}
+      </fieldset>
+    </form>
+    <p class="filter_empty" data-filter-empty data-visible="false">No dish matches this diet.</p>
+    <div class="menu_page_grid">
+      {COURSES.map((course) => (
+        <div class="menu_course_wrap"><h3 class="menu_course_title eyebrow_text">{course.label}</h3><ul class="dish_list_wrap">{dishes.filter((dish) => dish.course === course.key).map((dish) => <DishRow dish={dish} />)}</ul></div>
+      ))}
+    </div>
+    <div class="menu_diet_wrap">
+      <h2 class="menu_diet_title u-text-style-h4" id="diet-title">Vegetarian, vegan and the 14 allergens</h2>
+      <div class="menu_diet_body"><p class="menu_diet_text">We cook for vegetarian, vegan, gluten-free and dairy-free diets. Every dish shows which of the 14 allergens in EU law it contains.</p><p class="menu_diet_text">Every dish comes from one kitchen, so traces are possible. The pine nuts in the black pig loin aren't on the EU list. Our wines contain sulphites.</p></div>
+    </div>
+    <div class="tasting_menu_wrap">
+      <div class="tasting_menu_content">
+        <h3 class="tasting_menu_title u-text-style-h3">Tasting menu, seven courses for €{tasting.price}</h3>
+        <p class="tasting_menu_text">Served to the whole table, priced per person. Island wines with each course add €60 per person. Vegetarian or vegan table? Tell us when you book, and the kitchen cooks its own version of each course for you.</p>
+        <p class="dish_list_meta">Contains: {tasting.allergens.join(', ')}</p>
+      </div>
+      <ol class="tasting_menu_list">{TASTING_COURSES.map((course) => <li class="tasting_menu_item">{course}</li>)}</ol>
+    </div>
+  </div>
+</section>

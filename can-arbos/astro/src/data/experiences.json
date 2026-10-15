@@ -1,0 +1,102 @@
+{
+ "collection": "Experiences",
+ "hub": {
+  "title": "Experiences in Palma · Can Arbós",
+  "meta": "Six Palma experiences our concierge books for guests. Sail the bay at sunset, shop Mercat de l'Olivar with our chef or taste wine in Binissalem.",
+  "h1": "Palma experiences, booked by our concierge",
+  "intro": "Six ways to spend a morning or an evening in Palma. Our chef leads one and our concierge another, while local skippers, a licensed guide and a family winery in Binissalem take care of the other four. To book one, ask at the door or send a request from its page. We confirm within the day.",
+  "empty": "No experiences of this type right now. Try another one."
+ },
+ "items": [
+  {
+   "name": "Sunset sail in the Bay of Palma",
+   "slug": "sunset-sail",
+   "title": "Sunset Sail in the Bay of Palma · Can Arbós",
+   "meta": "A sunset sail in the Bay of Palma for up to eight guests, with a local skipper and white wine from Binissalem. April to October.",
+   "heading": "Sunset sail in the Bay of Palma",
+   "type": "On the water",
+   "summary": "Two and a half hours under sail with a local skipper. The boat leaves the marina two hours before sunset.",
+   "text": "A local skipper takes you out two hours before sunset. You share the boat with up to seven other guests. We drive you to the marina on the Passeig Marítim. You sail west along the bay while the cathedral gets smaller behind you, and if the water is warm enough the skipper stops so you can swim, with towels on board. There's a bottle of white wine from Binissalem, with olives and almonds. The boat is back about half an hour after sunset. Our driver waits at the gate. Sails run April to October. Too much wind? The skipper calls us by noon and we move you to another evening.",
+   "duration": "2 hours 30 minutes",
+   "price": "€110 per person",
+   "guide": "A local skipper",
+   "days": "Daily, April to October, shared, up to 8 guests",
+   "button": "Request this sail"
+  },
+  {
+   "name": "Morning at Mercat de l'Olivar with our chef",
+   "slug": "market-morning",
+   "title": "Cooking Class in Palma with a Market Tour · Can Arbós",
+   "meta": "A cooking class in Palma with the chef of Aljub. Shop Mercat de l'Olivar, cook three dishes in our kitchen and eat lunch in the courtyard.",
+   "heading": "A cooking class in Palma with our chef, after the market",
+   "type": "Food and wine",
+   "summary": "Shop the market with the chef of Aljub. Then cook what you bought in our kitchen and eat it for lunch.",
+   "text": "This cooking class starts with the shopping. Margalida Bauzà, our chef, meets you in the courtyard at 9:00 and walks you to Mercat de l'Olivar, 14 minutes away, where she takes you to the stalls our kitchen buys from every week. You choose the fish for lunch and taste sobrassada at the counter. The market has sold fish, meat, fruit and cheese in Palma since 1951. Back at Can Arbós, you cook three dishes with her in the Aljub kitchen. Lunch is at 12:30. You eat in the courtyard, with a glass of wine from the island. Tell us what you can't eat when you book. The class runs Tuesday to Saturday, for up to six guests.",
+   "duration": "4 hours 30 minutes (9:00 to 13:30)",
+   "price": "€135 per person",
+   "guide": "Margalida Bauzà, our chef",
+   "days": "Tuesday to Saturday, up to 6 guests",
+   "button": "Cook with the chef"
+  },
+  {
+   "name": "Old town courtyards walk",
+   "slug": "courtyards-walk",
+   "title": "Old Town Courtyards Walking Tour in Palma · Can Arbós",
+   "meta": "A walking tour of the courtyards in Palma's old town, led by our concierge. Can Vivot, Can Oms and Casal Solleric in 90 minutes. Free for hotel guests.",
+   "heading": "Old town courtyards walk",
+   "type": "Culture",
+   "summary": "Our concierge walks you through the courtyards of the old town.",
+   "text": "Aina, our concierge, leads this walk on Tuesday, Thursday and Saturday at 10:00, and she keeps the group to eight so everyone can hear her in the narrow streets. Palma's manor houses keep their courtyards behind tall doors. You stop first at the iron gate of Can Vivot. The house has kept its baroque courtyard since a rebuild that ended in 1711. At Can Oms, look for the octagonal cistern mouth against the courtyard wall. The Oms family bought the house in 1642. You finish on the Passeig del Born, in the courtyard of Casal Solleric. The Morell family built it in the middle of the 18th century. Today it shows contemporary art. Wear flat shoes.",
+   "duration": "1 hour 30 minutes",
+   "price": "Free, for hotel guests only",
+   "guide": "Aina Ferrer, our concierge",
+   "days": "Tuesday, Thursday and Saturday at 10:00, up to 8 guests",
+   "button": "Join the walk"
+  },
+  {
+   "name": "Wine tasting in Binissalem",
+   "slug": "wine-tasting",
+   "title": "Wine Tasting in Binissalem from Palma · Can Arbós",
+   "meta": "Wine tasting in Binissalem, Mallorca's first wine DO, about 25 minutes from Palma. Walk the vines and taste four wines with bread, oil and cheese.",
+   "heading": "Wine tasting in Binissalem",
+   "type": "Food and wine",
+   "summary": "A winery in the DO Binissalem, about 25 minutes by car. Walk the vines and taste four wines, Manto Negro among them.",
+   "text": "A family in Binissalem grows its own grapes, and they'll walk you through the vines and the cellar before you taste four of their wines with bread, olive oil and cheese from the island. Manto Negro is the red to try. Binissalem became the first Denomination of Origin in the Balearics in 1990, and its white wines use Moll, also called Prensal Blanc. Our driver meets you at the corner of the square at 10:00. It's about 25 minutes by car. You're back by 14:00. Like a bottle? Buy it there and we'll open it for you at Aljub. Tastings run Monday to Saturday, for two to eight guests.",
+   "duration": "4 hours (10:00 to 14:00)",
+   "price": "€95 per person",
+   "guide": "A family winery in Binissalem, with our driver",
+   "days": "Monday to Saturday, 2 to 8 guests",
+   "button": "Request the tasting"
+  },
+  {
+   "name": "A llaüt to a cove",
+   "slug": "llaut-cove",
+   "title": "Private Boat Trip to a Cove from Palma · Can Arbós",
+   "meta": "A private boat trip from Palma on a wooden llaüt, for up to six guests. A local skipper picks the calmest cove, and Aljub packs your lunch.",
+   "heading": "A private boat trip from Palma on a wooden llaüt",
+   "type": "On the water",
+   "summary": "A private day on a llaüt, the old Mallorcan fishing boat, with a local skipper and lunch from Aljub.",
+   "text": "We drive you to the marina at 10:00, and from there the boat and its skipper are yours for five hours, for up to six people. The one we book is wooden, and its skipper fished the bay before he took guests. He reads the wind in the morning and picks the cove with the calmest water. You swim and snorkel with the masks on board. A cool box holds water, beer and a white wine from Binissalem, and Aljub packs your lunch. Mallorcan fishermen have worked from the llaüt since the late Middle Ages. We collect you at the marina. It sails May to October.",
+   "duration": "5 hours (10:00 to 15:00)",
+   "price": "€640 for the boat, up to 6 guests",
+   "guide": "A local skipper",
+   "days": "Daily, May to October",
+   "button": "Request the llaüt"
+  },
+  {
+   "name": "Palma Cathedral and its terraces",
+   "slug": "cathedral-terraces",
+   "title": "Palma Cathedral Terraces Tour with a Guide · Can Arbós",
+   "meta": "Palma Cathedral with a licensed guide, then an hour on its roof terraces. Monday to Friday, April to November, with tickets included.",
+   "heading": "Palma Cathedral and its terraces",
+   "type": "Culture",
+   "summary": "An hour inside the cathedral with a licensed guide, then an hour on its roof terraces. April to November.",
+   "text": "A licensed guide meets you at our door and walks you to the cathedral, 10 minutes away. Inside, you look up at a nave about 44 metres high, and the guide shows you the canopy by Gaudí and the ceramic mural by Miquel Barceló, which is 12 metres high. Then the cathedral's own visit takes you up to the terraces for an hour. You walk among the flying buttresses, pass the main rose window and see the bell tower up close. The terraces open April to November, Monday to Friday. The route is demanding. It doesn't suit anyone with vertigo, a heart or breathing condition, or limited mobility.",
+   "duration": "2 hours 30 minutes",
+   "price": "€75 per person, tickets included",
+   "guide": "A licensed Palma guide, then the cathedral's terrace team",
+   "days": "Monday to Friday, April to November",
+   "button": "Request this visit"
+  }
+ ]
+}

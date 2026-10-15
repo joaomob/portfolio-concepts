@@ -1,0 +1,21 @@
+---
+// One page per offer of the Offers collection.
+import type { GetStaticPaths } from 'astro';
+import BaseLayout from '@layouts/BaseLayout.astro';
+import CloseBand from '@components/ui/CloseBand.astro';
+import OfferIntro from '@components/offers/OfferIntro.astro';
+import OfferDetails from '@components/offers/OfferDetails.astro';
+import OtherOffers from '@components/offers/OtherOffers.astro';
+import { OFFERS, type Offer } from '@data/offers';
+
+export const getStaticPaths = (() =>
+  OFFERS.map((offer) => ({ params: { slug: offer.slug }, props: { offer } }))) satisfies GetStaticPaths;
+
+const { offer } = Astro.props as { offer: Offer };
+---
+<BaseLayout title={offer.title} description={offer.meta} slug={`offer-${offer.slug}`}>
+  <OfferIntro offer={offer} />
+  <OfferDetails offer={offer} />
+  <OtherOffers current={offer} />
+  <CloseBand />
+</BaseLayout>

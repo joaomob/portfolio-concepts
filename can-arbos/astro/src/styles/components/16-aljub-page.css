@@ -1,0 +1,37 @@
+/* ---------- Aljub page: the opening inside the cistern, the menu, the blocks of photo and text ---------- */
+.dining_page_wrap { padding: calc(4.5rem + var(--_spacing---section-space--small)) 0 var(--_spacing---section-space--small); }
+.menu_page_wrap { border-top: 1px solid var(--_theme---border); }
+.menu_page_head { display: flex; flex-wrap: wrap; align-items: end; justify-content: space-between; gap: 1.5rem; }
+.menu_page_title { margin: 0; text-wrap: balance; }
+.menu_page_note { margin: 0; font-size: var(--_typography---font-size--text-small); color: var(--_theme---text-faded); }
+.menu_page_grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: calc(var(--site--gutter) * 3); row-gap: var(--_spacing---section-space--small); }
+.menu_course_title { margin: 0 0 0.5rem; }
+.menu_page_grid .dish_list_wrap { margin-top: 0; }
+.dish_list_meta { grid-column: 1 / -1; margin: 0.625rem 0 0; font-size: var(--_typography---font-size--text-small); color: var(--_theme---accent); }
+/* the diet filter dims what is outside the diet and leaves it in place, so the menu keeps its shape */
+/* the diet filter dims with filter, not opacity: the entrance animates opacity, and a CSS transition on the same
+   property left the rows transparent after the entrance */
+.dish_list_item { transition: filter 0.3s; }
+.dish_list_item.is-dim { filter: opacity(0.28); }
+.tasting_menu_wrap { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: var(--site--gutter); margin-top: var(--_spacing---section-space--small); padding-top: var(--_spacing---section-space--small); border-top: 1px solid var(--_theme---border); }
+.tasting_menu_content { grid-column: 1 / span 5; }
+.tasting_menu_title { margin: 0; text-wrap: balance; }
+.tasting_menu_text { margin: 2.25rem 0 0; color: var(--_theme---text-faded); }
+.tasting_menu_list { grid-column: 7 / span 6; margin: 0; padding: 0; list-style: none; counter-reset: course; border-top: 1px solid var(--_theme---border); }
+.tasting_menu_item { counter-increment: course; display: flex; gap: 1.5rem; padding: 0.875rem 0; border-bottom: 1px solid var(--_theme---border); }
+.tasting_menu_item::before { content: counter(course); width: 1.5rem; color: var(--_theme---text-faded); font-variant-numeric: tabular-nums; }
+
+/* a photo on one side and a title with text on the other; the side alternates with is-reverse */
+.split_block_layout { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: var(--site--gutter); align-items: center; }
+.split_block_image { grid-column: 1 / span 5; width: 100%; aspect-ratio: 4 / 5; object-fit: cover; }
+.split_block_content { grid-column: 7 / span 6; }
+.split_block_layout.is-reverse .split_block_image { grid-column: 8 / span 5; order: 2; }
+.split_block_layout.is-reverse .split_block_content { grid-column: 1 / span 6; order: 1; }
+.split_block_title { margin: 0; text-wrap: balance; }
+.split_block_lead { margin: 2.5rem 0 0; }
+.split_block_text { margin: 2.25rem 0 0; color: var(--_theme---text-faded); }
+.split_block_lead + .split_block_text { margin-top: 1.5rem; }
+.split_block_text + .split_block_text { margin-top: 1.25rem; }
+.team_list_wrap { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: var(--site--gutter); margin: 2.5rem 0 0; padding: 1.5rem 0 0; list-style: none; border-top: 1px solid var(--_theme---border); }
+.team_list_name { margin: 0; }
+.team_list_role { margin: 0.875rem 0 0; font-size: var(--_typography---font-size--text-small); letter-spacing: 0.06em; text-transform: uppercase; color: var(--_theme---text-faded); }

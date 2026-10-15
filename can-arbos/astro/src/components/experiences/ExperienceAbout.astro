@@ -1,0 +1,26 @@
+---
+// The text of an experience (the first sentence as the lead, the rest in two paragraphs) and who leads it, and when.
+import { splitText, type Experience } from '@data/experiences';
+
+interface Props {
+  experience: Experience;
+}
+const { experience } = Astro.props;
+const [lead, first, second] = splitText(experience.text);
+const facts: [string, string][] = [
+  ['Led by', experience.guide],
+  ['When', experience.days],
+];
+---
+<section class="room_page_wrap u-section u-theme-light" aria-label={`About ${experience.name}`}>
+  <div class="room_page_contain u-container">
+    <div class="room_page_layout">
+      <div class="exp_page_body"><p class="exp_page_lead u-text-style-large">{lead}</p><div class="exp_page_rich"><p class="exp_page_text">{first}</p><p class="exp_page_text">{second}</p></div></div>
+      <dl class="fact_table_wrap">
+        {facts.map(([name, value]) => (
+          <div class="fact_table_row"><dt class="fact_table_name">{name}</dt><dd class="fact_table_value">{value}</dd></div>
+        ))}
+      </dl>
+    </div>
+  </div>
+</section>

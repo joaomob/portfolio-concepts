@@ -1,0 +1,23 @@
+---
+// Aljub, the restaurant: the menu with its filter, the chef, the hours and the questions.
+import BaseLayout from '@layouts/BaseLayout.astro';
+import AljubHero from '@components/aljub/AljubHero.astro';
+import AljubMenu from '@components/aljub/AljubMenu.astro';
+import AljubChef from '@components/aljub/AljubChef.astro';
+import AljubHours from '@components/aljub/AljubHours.astro';
+import FaqBlock from '@components/ui/FaqBlock.astro';
+import { ALJUB_FAQ } from '@data/dining';
+import CloseBand from '@components/ui/CloseBand.astro';
+---
+<BaseLayout
+  title="Mallorcan Restaurant in Palma Old Town · Aljub"
+  description="Aljub is a Mallorcan restaurant in Palma's old town, open for dinner Tuesday to Saturday. See every dish, price and allergen before you book."
+  slug="aljub"
+>
+  <AljubHero />
+  <AljubMenu />
+  <AljubChef />
+  <AljubHours />
+  <FaqBlock title="Questions about Aljub" items={ALJUB_FAQ} />
+  <CloseBand />
+</BaseLayout>

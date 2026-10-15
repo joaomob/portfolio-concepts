@@ -1,0 +1,9 @@
+/* The whole style sheet of Can Arbós, in the order of the prototype's all.min.css: the Lumos framework, the Lumos
+   globals, the self-hosted fonts, the brand tokens (the values of the Lumos Variables), the base rules and the
+   components. */
+@import './vendor/lumos.css';
+@import './vendor/lumos-global.css';
+@import './fonts.css';
+@import './tokens.css';
+@import './base.css';
+@import './components.css';

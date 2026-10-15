@@ -1,0 +1,41 @@
+/* Can Arbós fonts. Only the faces the design uses: Newsreader 400 and Instrument Sans 400 to 600. Files in src/assets/fonts, latin subset from Google Fonts (U+0000-00FF and the usual
+   punctuation: covers English, Spanish and Catalan accents, the middle dot, the euro sign and m²).
+   Licenses: SIL Open Font License 1.1, OFL-newsreader.txt and OFL-instrumentsans.txt beside the files.
+   Fallbacks measured from the files with fontTools: average lowercase width and vertical metrics against
+   Arial and Georgia, so the swap does not move the layout. */
+
+@font-face {
+  font-family: "Newsreader";
+  src: url("/concepts/can-arbos/assets/fonts/newsreader-latin-400.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Instrument Sans";
+  src: url("/concepts/can-arbos/assets/fonts/instrument-sans-latin-var.woff2") format("woff2");
+  font-weight: 400 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Newsreader: average lowercase 0.4625 em against Georgia 0.4991 em; ascent 1470 and descent 530 of 2000 units. */
+@font-face {
+  font-family: "Newsreader Fallback";
+  src: local("Georgia");
+  size-adjust: 92.7%;
+  ascent-override: 79.3%;
+  descent-override: 28.6%;
+  line-gap-override: 0%;
+}
+
+/* Instrument Sans: average lowercase 0.5249 em against Arial 0.4895 em; ascent 970 and descent 250 of 1000 units. */
+@font-face {
+  font-family: "Instrument Sans Fallback";
+  src: local("Arial");
+  size-adjust: 107.2%;
+  ascent-override: 90.5%;
+  descent-override: 23.3%;
+  line-gap-override: 0%;
+}

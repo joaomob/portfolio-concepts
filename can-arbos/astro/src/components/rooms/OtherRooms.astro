@@ -1,0 +1,25 @@
+---
+// The four other rooms, as cards, at the end of a room page.
+import { img, page } from '@lib/paths';
+import { rooms, ROOM_PHOTOS, type Room } from '@data/rooms';
+
+interface Props {
+  current: Room;
+}
+const others = rooms.filter((room) => room.slug !== Astro.props.current.slug);
+---
+<section class="other_room_wrap u-section u-theme-light" aria-labelledby="other-title">
+  <div class="other_room_contain u-container">
+    <div class="other_room_head"><h2 class="other_room_title u-text-style-h2" id="other-title">Other rooms</h2><a class="link_arrow_wrap" href={page('explore-rooms')}>See all rooms</a></div>
+    <ul class="other_room_list">
+      {others.map((room) => (
+        <li class="room_card_wrap">
+          <img {...img(`rooms/${room.slug}.webp`, 900)} class="room_card_image" alt={ROOM_PHOTOS[room.slug].main} width="900" height="1117" loading="lazy" />
+          <h3 class="room_card_title u-text-style-h3"><a href={page(`room-${room.slug}`)}>{room.name}</a></h3>
+          <p class="room_card_facts"><span>{room.size}</span> · <span>{room.guests}</span> guests</p>
+          <p class="room_card_text"><span>{room.light}</span>.</p>
+        </li>
+      ))}
+    </ul>
+  </div>
+</section>

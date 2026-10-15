@@ -1,0 +1,20 @@
+---
+// The light opening of a list page (experiences, journal) or, small, of a legal page.
+interface Props {
+  title: string;
+  eyebrow?: string;
+  text?: string;
+  /** the legal pages: a small title and no eyebrow */
+  small?: boolean;
+}
+const { title, eyebrow, text, small = false } = Astro.props;
+---
+<section class={`page_intro_wrap${small ? ' is-small' : ''} u-theme-light`} aria-labelledby="page-title">
+  <div class="page_intro_contain u-container">
+    <div class="page_intro_layout">
+      {eyebrow && <p class="eyebrow_text">{eyebrow}</p>}
+      <h1 class={`page_intro_title u-text-style-${small ? 'h3' : 'h1'}`} id="page-title">{title}</h1>
+      {text && <p class="page_intro_text">{text}</p>}
+    </div>
+  </div>
+</section>

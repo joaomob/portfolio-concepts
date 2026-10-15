@@ -1,0 +1,21 @@
+/* ---------- Members: what the club gives (signed out) and My stay, five blocks in a grid (signed in) ---------- */
+.member_out_wrap, .member_in_wrap { padding: calc(4.5rem + var(--_spacing---section-space--small)) 0 var(--_spacing---section-space--main); }
+.member_out_layout { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: var(--site--gutter); align-items: end; }
+.member_out_content { grid-column: 1 / span 7; }
+.member_out_title, .member_in_title { margin: 0; text-wrap: balance; }
+.member_out_text { margin: 2rem 0 0; max-width: 38rem; color: var(--_theme---text-faded); }
+.member_out_list { grid-column: 9 / span 4; margin: 0; padding: 0; list-style: none; border-top: 1px solid var(--_theme---border); }
+.member_out_item { padding: 1rem 0; border-bottom: 1px solid var(--_theme---border); }
+.member_in_head { display: flex; flex-wrap: wrap; align-items: end; justify-content: space-between; gap: 1.5rem; }
+.member_in_head .eyebrow_text { flex: 0 0 100%; margin-bottom: 0; }
+.member_grid_layout { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--site--gutter); margin-top: clamp(2.5rem, 5vw, 4.5rem); }
+.member_card_wrap { padding: clamp(1.5rem, 3vw, 2.5rem); background: var(--swatch--light-100); }
+.member_card_wrap.is-wide { grid-column: 1 / -1; }
+.member_card_title { margin: 0; }
+.member_card_text { margin: 1.75rem 0 0; color: var(--_theme---text-faded); }
+.member_link_list { margin: 1rem 0 0; padding: 0; list-style: none; }
+.member_link_button { display: inline-flex; align-items: center; min-height: 2.75rem; padding: 0; border: 0; background: none; color: var(--_theme---text); font: inherit; text-decoration: underline; text-underline-offset: 0.3em; cursor: pointer; }
+.member_form_wrap { display: flex; flex-direction: column; align-items: flex-start; gap: var(--_spacing---space--4); margin-top: 1.75rem; }
+.member_form_wrap .modal_grid { width: 100%; }
+.member_form_group { display: flex; flex-wrap: wrap; column-gap: 1.5rem; margin: 0; padding: 0; border: 0; }
+.member_form_group legend { float: left; width: 100%; margin-bottom: 0.25rem; }

@@ -1,0 +1,22 @@
+/* ---------- Rooms: one row that moves sideways while the page scrolls down ---------- */
+.rooms_home_wrap { padding: var(--_spacing---section-space--small) 0 var(--_spacing---section-space--main); overflow: hidden; }
+.rooms_home_head { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: var(--site--gutter); align-items: end; }
+.rooms_home_intro { grid-column: 1 / span 6; }
+.rooms_home_title { margin: 0; text-wrap: balance; }
+.rooms_home_aside { grid-column: 8 / span 5; }
+.rooms_home_aside p { margin: 0; }
+.rooms_home_viewport { margin-top: clamp(2.5rem, 5vw, 4.5rem); overflow-x: auto; scrollbar-width: none; }
+.rooms_home_viewport::-webkit-scrollbar { display: none; }
+.rooms_home_track { display: flex; gap: var(--site--gutter); width: max-content; margin: 0; padding: 0 var(--site--margin); list-style: none; }
+.room_card_wrap { width: clamp(15.5rem, 25vw, 23rem); }
+.room_card_image { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; }
+/* every other card opens in an arch; by position, so a CMS list (one item design) alternates the same way */
+.other_room_list > :nth-child(odd) .room_card_image { border-radius: 999px 999px 0 0; }
+.room_card_count { margin: 1.25rem 0 0; font-size: var(--_typography---font-size--text-small); letter-spacing: 0.08em; color: var(--_theme---text-faded); }
+.room_card_title { margin: 0.875rem 0 0; }
+.room_card_title a { text-decoration: none; }
+.room_card_facts { margin: 1.125rem 0 0; font-size: var(--_typography---font-size--text-small); letter-spacing: 0.06em; text-transform: uppercase; }
+.room_card_text { margin: 0.75rem 0 0; color: var(--_theme---text-faded); }
+.rooms_home_foot { margin-top: 2.5rem; }
+.rooms_home_rail { height: 1px; background: var(--_theme---border); }
+.rooms_home_fill { display: block; height: 3px; width: 20%; margin-top: -1px; background: var(--_theme---accent); transform-origin: left; }

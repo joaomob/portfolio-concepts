@@ -1,0 +1,15 @@
+/* ---------- Experiences hub: the list of the Home made larger; the photo in the arch follows the item in focus ---------- */
+.exp_hub_wrap { padding-top: var(--_spacing---section-space--small); }
+.exp_hub_layout { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: var(--site--gutter); align-items: start; }
+.exp_hub_list { grid-column: 1 / span 6; margin: 0; padding: 0; list-style: none; border-top: 1px solid var(--_theme---border); }
+.exp_hub_item { position: relative; padding: 2rem 0 1.25rem; border-bottom: 1px solid var(--_theme---border); }
+.exp_hub_thumb { display: none; width: 100%; aspect-ratio: 4 / 5; object-fit: cover; }
+.exp_hub_name { margin: 0.875rem 0 0; }
+.exp_hub_name a { text-decoration: none; }
+.exp_hub_name a::after { content: ""; position: absolute; inset: 0; }
+.exp_hub_text { margin: 1.25rem 0 0; max-width: 34rem; color: var(--_theme---text-faded); }
+.exp_hub_item .exp_list_facts { margin-top: 1rem; }
+.exp_hub_item .save_button { position: relative; z-index: 1; margin: 0.5rem 0 0 -1.25rem; }
+.exp_hub_media { grid-column: 8 / span 5; position: sticky; top: 6.5rem; }
+/* experience page: the long text beside the table of facts */
+.exp_page_text { grid-column: 1 / span 6; margin: 0; }

@@ -1,0 +1,90 @@
+/* ---------- Refinements over the section styles ---------- */
+/* H2: the last line of the room cards was cut by the row that scrolls sideways */
+.rooms_home_viewport { padding-bottom: 0.5rem; }
+/* Q2, Q3, Q4: a row of the rooms hub: the name in the size of a section title, the facts as a small table, the text at the foot of the photo */
+.room_list_item { align-items: end; }
+.room_list_title { margin: 0; }
+.room_list_text { margin: 2rem 0 0; color: var(--_theme---text-faded); }
+.room_list_facts { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); column-gap: var(--site--gutter); margin: 2rem 0 0; padding: 1.25rem 0; border-top: 1px solid var(--_theme---border); border-bottom: 1px solid var(--_theme---border); }
+.room_list_label { font-size: var(--_typography---font-size--text-small); letter-spacing: 0.06em; text-transform: uppercase; color: var(--_theme---text-faded); }
+.room_list_value { margin: 0.5rem 0 0; }
+/* Q7: the list of every room in three columns, in a shorter band */
+.every_room_wrap { padding-top: var(--_spacing---section-space--small); padding-bottom: var(--_spacing---section-space--small); }
+.every_room_list { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+/* R3: the title of the other rooms with the link to the hub, closer to its cards */
+.other_room_head { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 1rem 2rem; }
+.other_room_head .link_arrow_wrap { margin-top: 0; }
+.other_room_list { margin-top: clamp(2rem, 4vw, 3rem); }
+.other_room_list .room_card_title { margin-top: 1.25rem; }
+/* The cards of "Other rooms" and "More experiences" follow the space of their container, the Lumos u-container
+   (container-type: inline-size), and not the screen: two columns below the Lumos
+   medium size (53em), one on the experiences below 40em. The em of a container query is the container's own font
+   size (about 16.5 px here), so the Lumos small size (42em) put a 768 px tablet at one column; 40em keeps two
+   columns at 768 */
+@container (width < 53em) { .other_room_list { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@container (width < 40em) { .other_room_list.is-stack { grid-template-columns: 1fr; } .other_room_list.is-stack .room_card_image { width: 62%; } }
+/* A1: on the Aljub page the title has six columns beside a smaller circle */
+.dining_home_layout.is-page .dining_home_media { grid-column: 1 / span 5; }
+.dining_home_layout.is-page .dining_home_content { grid-column: 7 / span 6; }
+.dining_home_layout.is-page .dining_home_title { text-wrap: balance; }
+/* A3: diets and allergens as a note under the dishes */
+.menu_diet_wrap { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: var(--site--gutter); margin-top: var(--_spacing---section-space--small); padding-top: 2rem; border-top: 1px solid var(--_theme---border); }
+.menu_diet_wrap .menu_diet_title { grid-column: 1 / span 4; margin: 0; text-wrap: balance; }
+.menu_diet_body { grid-column: 6 / span 7; }
+.menu_diet_text { margin: 0 0 1rem; color: var(--_theme---text-faded); }
+/* A2: breakfast as a smaller block in the band of the chef */
+.breakfast_block_layout { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: var(--site--gutter); align-items: end; margin-top: var(--_spacing---section-space--small); padding-top: var(--_spacing---section-space--small); border-top: 1px solid var(--_theme---border); }
+.breakfast_block_image { grid-column: 1 / span 3; width: 100%; aspect-ratio: 4 / 5; object-fit: cover; }
+.breakfast_block_content { grid-column: 5 / span 6; }
+.breakfast_block_title { margin: 0; text-wrap: balance; }
+.breakfast_block_text { margin: 1.75rem 0 0; color: var(--_theme---text-faded); }
+.breakfast_block_text + .breakfast_block_text { margin-top: 1.25rem; }
+/* B-R1: name, length, price and button on one centre line */
+.treatment_list_item { align-items: center; }
+/* B-R3: the band of the day with the weight of a piece of the page */
+.day_band_wrap .eyebrow_text { margin-bottom: 1.5rem; }
+.day_band_sky { height: 2rem; border-radius: 999px; }
+.day_band_scale { margin-top: 0.5rem; }
+/* B-C2: the three numbers of the celebrations in the green beside the panel */
+/* a second green panel beside the first: it also rises over the photo, so the numbers never sit on the picture */
+.fest_page_facts { position: relative; grid-column: 10 / span 3; margin: 0; padding: 0.75rem 1.5rem 1.5rem; background: var(--_theme---background); }
+.fest_page_fact { display: flex; align-items: center; gap: 1rem; padding: 1.25rem 0; border-bottom: 1px solid var(--_theme---border); }
+.fest_page_number { order: 1; margin: 0; min-width: 4.25rem; }
+.fest_page_label { order: 2; color: var(--_theme---text-faded); }
+/* B-C4 and B-C7: no double space between two sections of the same colour; the title closer to the three places */
+.care_page_wrap { padding-top: 0; }
+.space_page_title { margin-bottom: clamp(2rem, 4vw, 3rem); }
+/* B-H1: the arrow of the list on the hub; B-H3: the pill shows the choice, the radio circle is kept for the keyboard only */
+.exp_hub_arrow { position: absolute; top: 2.75rem; right: 0; }
+/* B-E4: the text of an experience: the first sentence as the lead, then two paragraphs */
+.exp_page_body { grid-column: 1 / span 6; }
+.exp_page_lead { margin: 0; }
+.exp_page_body .exp_page_text, .exp_page_rich > p { margin: 1.5rem 0 0; color: var(--_theme---text-faded); }
+/* in Webflow the body is a Rich Text bound to the CMS: its paragraphs carry no class (exp_page_rich > p) */
+/* B-E2: the map of an experience shows its own walk only */
+.walk_single_text { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 0.25rem 1rem; margin: 2.25rem 0 0; padding: 1rem 0; border-top: 1px solid var(--_theme---border); border-bottom: 1px solid var(--_theme---border); }
+/* the place's name never breaks; the time goes under it when the column is narrow */
+.walk_single_place { white-space: nowrap; }
+.where_home_map.is-single .map_pin:not(.is-active), .where_home_map.is-single .map_route:not(.is-active) { display: none; }
+/* C-A1: an offer opens with a photo in an arch */
+.page_intro_layout.is-photo { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: var(--site--gutter); align-items: end; }
+.page_intro_content { grid-column: 1 / span 7; }
+.page_intro_image { grid-column: 9 / span 4; width: 100%; aspect-ratio: 4 / 5; object-fit: cover; }
+.offer_lock_text { text-wrap: balance; }
+/* P1: a legal page is small, title included */
+.page_intro_wrap.is-small { padding-bottom: 1.5rem; }
+.legal_page_wrap { padding-top: 1.5rem; }
+/* the block of a single walk: a wider text column, so its short title stays in one line */
+.where_home_layout.is-single .where_home_content { grid-column: 1 / span 5; }
+.where_home_layout.is-single .where_home_map { grid-column: 7 / span 6; }
+/* J1, J2: the middle row of the journal turns, and each row carries the arrow */
+.journal_list_item.is-reverse .journal_list_image { grid-column: 9 / span 4; order: 2; }
+.journal_list_item.is-reverse .journal_list_content { grid-column: 2 / span 6; order: 1; }
+.journal_list_content .exp_list_arrow { display: block; margin-top: 1.75rem; }
+/* G2, G3: the photo of a guide takes the reading column; paragraphs keep their distance after the line-height trim */
+.journal_page_image { width: 100%; aspect-ratio: 4 / 3; }
+/* M3, M4: the club opens with an arch of the house; My stay in three short cards and two whole rows */
+.member_out_image { grid-column: 9 / span 4; grid-row: 1 / span 2; width: 100%; aspect-ratio: 4 / 5; object-fit: cover; }
+.member_out_list { grid-column: 1 / span 7; margin-top: 3rem; }
+.member_grid_layout { grid-template-columns: repeat(3, minmax(0, 1fr)); grid-auto-flow: dense; }
+.member_card_wrap.is-row .member_link_list { display: flex; flex-wrap: wrap; column-gap: 2.5rem; }

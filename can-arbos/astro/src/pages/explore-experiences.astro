@@ -1,0 +1,13 @@
+---
+// The experiences hub.
+import BaseLayout from '@layouts/BaseLayout.astro';
+import PageIntro from '@components/ui/PageIntro.astro';
+import CloseBand from '@components/ui/CloseBand.astro';
+import ExperienceHub from '@components/experiences/ExperienceHub.astro';
+import { experiencesHub } from '@data/experiences';
+---
+<BaseLayout title={experiencesHub.title} description={experiencesHub.meta} slug="explore-experiences">
+  <PageIntro eyebrow="Experiences" title={experiencesHub.h1} text={experiencesHub.intro} />
+  <ExperienceHub />
+  <CloseBand />
+</BaseLayout>

@@ -1,0 +1,466 @@
+[
+  {
+    "name": "404",
+    "width": "1440",
+    "version": "astro",
+    "pass": true,
+    "delta": 0,
+    "problems": []
+  },
+  {
+    "name": "404",
+    "width": "375",
+    "version": "astro",
+    "pass": true,
+    "delta": 0,
+    "problems": []
+  },
+  {
+    "name": "aljub",
+    "width": "1440",
+    "version": "astro",
+    "pass": true,
+    "delta": 0,
+    "problems": []
+  },
+  {
+    "name": "aljub",
+    "width": "375",
+    "version": "astro",
+    "pass": true,
+    "delta": 0,
+    "problems": []
+  },
+  {
+    "name": "celebrations",
+    "width": "1440",
+    "version": "astro",
+    "pass": true,
+    "delta": 0,
+    "problems": []
+  },
+  {
+    "name": "celebrations",
+    "width": "375",
+    "version": "astro",
+    "pass": true,
+    "delta": 0,
+    "problems": []
+  },
+  {
+    "name": "experience-cathedral-terraces",
+    "width": "1440",
+    "version": "astro",
+    "pass": true,
+    "delta": 0,
+    "problems": []
+  },
+  {
+    "name": "experience-cathedral-terraces",
+    "width": "375",
+    "version": "astro",
+    "pass": true,
+    "delta": 0,
+    "problems": []
+  },
+  {
+    "name": "experience-courtyards-walk",
+    "width": "1440",
+    "version": "astro",
+    "pass": true,
+    "delta": 0,
+    "problems": []
+  },
+  {
+    "name": "experience-courtyards-walk",
+    "width": "375",
+    "version": "astro",
+    "pass": true,
+    "delta": 0,
+    "problems": []
+  },
+  {
+    "name": "experience-llaut-cove",
+    "width": "1440",
+    "version": "astro",
+    "pass": true,
+    "delta": 0,
+    "problems": []
+  },
+  {
+    "name": "experience-llaut-cove",
+    "width": "375",
+    "version": "astro",
+    "pass": true,
+    "delta": 0,
+    "problems": []
+  },
+  {
+    "name": "experience-market-morning",
+    "width": "1440",
+    "version": "astro",
+    "pass": true,
+    "delta": 0,
+    "problems": []
+  },
+  {
+    "name": "experience-market-morning",
+    "width": "375",
+    "version": "astro",
+    "pass": true,
+    "delta": 0,
+    "problems": []
+  },
+  {
+    "name": "experience-sunset-sail",
+    "width": "1440",
+    "version": "astro",
+    "pass": true,
+    "delta": 0,
+    "problems": []
+  },
+  {
+    "name": "experience-sunset-sail",
+    "width": "375",
+    "version": "astro",
+    "pass": true,
+    "delta": 0,
+    "problems": []
+  },
+  {
+    "name": "experience-wine-tasting",
+    "width": "1440",
+    "version": "astro",
+    "pass": true,
+    "delta": 0,
+    "problems": []
+  },
+  {
+    "name": "experience-wine-tasting",
+    "width": "375",
+    "version": "astro",
+    "pass": true,
+    "delta": 0,
+    "problems": []
+  },
+  {
+    "name": "explore-experiences",
+    "width": "1440",
+    "version": "astro",
+    "pass": true,
+    "delta": 0,
+    "problems": []
+  },
+  {
+    "name": "explore-experiences",
+    "width": "375",
+    "version": "astro",
+    "pass": true,
+    "delta": 0,
+    "problems": []
+  },
+  {
+    "name": "explore-rooms",
+    "width": "1440",
+    "version": "astro",
+    "pass": true,
+    "delta": 0,
+    "problems": []
+  },
+  {
+    "name": "explore-rooms",
+    "width": "375",
+    "version": "astro",
+    "pass": true,
+    "delta": 0,
+    "problems": []
+  },
+  {
+    "name": "index",
+    "width": "1440",
+    "version": "astro",
+    "pass": true,
+    "delta": 0,
+    "problems": []
+  },
+  {
+    "name": "index",
+    "width": "375",
+    "version": "astro",
+    "pass": true,
+    "delta": 0,
+    "problems": []
+  },
+  {
+    "name": "index-es",
+    "width": "1440",
+    "version": "astro",
+    "pass": true,
+    "delta": 0,
+    "problems": []
+  },
+  {
+    "name": "index-es",
+    "width": "375",
+    "version": "astro",
+    "pass": true,
+    "delta": 0,
+    "problems": []
+  },
+  {
+    "name": "journal",
+    "width": "1440",
+    "version": "astro",
+    "pass": true,
+    "delta": 0,
+    "problems": []
+  },
+  {
+    "name": "journal",
+    "width": "375",
+    "version": "astro",
+    "pass": true,
+    "delta": 0,
+    "problems": []
+  },
+  {
+    "name": "journal-mallorcan-food-palma-old-town",
+    "width": "1440",
+    "version": "astro",
+    "pass": true,
+    "delta": 0,
+    "problems": []
+  },
+  {
+    "name": "journal-mallorcan-food-palma-old-town",
+    "width": "375",
+    "version": "astro",
+    "pass": true,
+    "delta": 0,
+    "problems": []
+  },
+  {
+    "name": "journal-palma-in-winter",
+    "width": "1440",
+    "version": "astro",
+    "pass": true,
+    "delta": 0,
+    "problems": []
+  },
+  {
+    "name": "journal-palma-in-winter",
+    "width": "375",
+    "version": "astro",
+    "pass": true,
+    "delta": 0,
+    "problems": []
+  },
+  {
+    "name": "journal-things-to-do-palma-old-town",
+    "width": "1440",
+    "version": "astro",
+    "pass": true,
+    "delta": 0,
+    "problems": []
+  },
+  {
+    "name": "journal-things-to-do-palma-old-town",
+    "width": "375",
+    "version": "astro",
+    "pass": true,
+    "delta": 0,
+    "problems": []
+  },
+  {
+    "name": "legal",
+    "width": "1440",
+    "version": "astro",
+    "pass": true,
+    "delta": 0,
+    "problems": []
+  },
+  {
+    "name": "legal",
+    "width": "375",
+    "version": "astro",
+    "pass": true,
+    "delta": 0,
+    "problems": []
+  },
+  {
+    "name": "members",
+    "width": "1440",
+    "version": "astro",
+    "pass": true,
+    "delta": 0,
+    "problems": []
+  },
+  {
+    "name": "members",
+    "width": "375",
+    "version": "astro",
+    "pass": true,
+    "delta": 0,
+    "problems": []
+  },
+  {
+    "name": "offer-fourth-night-free",
+    "width": "1440",
+    "version": "astro",
+    "pass": true,
+    "delta": 0,
+    "problems": []
+  },
+  {
+    "name": "offer-fourth-night-free",
+    "width": "375",
+    "version": "astro",
+    "pass": true,
+    "delta": 0,
+    "problems": []
+  },
+  {
+    "name": "offer-members-rate",
+    "width": "1440",
+    "version": "astro",
+    "pass": true,
+    "delta": 0,
+    "problems": []
+  },
+  {
+    "name": "offer-members-rate",
+    "width": "375",
+    "version": "astro",
+    "pass": true,
+    "delta": 0,
+    "problems": []
+  },
+  {
+    "name": "offer-three-nights",
+    "width": "1440",
+    "version": "astro",
+    "pass": true,
+    "delta": 0,
+    "problems": []
+  },
+  {
+    "name": "offer-three-nights",
+    "width": "375",
+    "version": "astro",
+    "pass": true,
+    "delta": 0,
+    "problems": []
+  },
+  {
+    "name": "privacy",
+    "width": "1440",
+    "version": "astro",
+    "pass": true,
+    "delta": 0,
+    "problems": []
+  },
+  {
+    "name": "privacy",
+    "width": "375",
+    "version": "astro",
+    "pass": true,
+    "delta": 0,
+    "problems": []
+  },
+  {
+    "name": "rooftop-spa",
+    "width": "1440",
+    "version": "astro",
+    "pass": true,
+    "delta": 0,
+    "problems": []
+  },
+  {
+    "name": "rooftop-spa",
+    "width": "375",
+    "version": "astro",
+    "pass": true,
+    "delta": 0,
+    "problems": []
+  },
+  {
+    "name": "room-courtyard-room",
+    "width": "1440",
+    "version": "astro",
+    "pass": true,
+    "delta": 0,
+    "problems": []
+  },
+  {
+    "name": "room-courtyard-room",
+    "width": "375",
+    "version": "astro",
+    "pass": true,
+    "delta": 0,
+    "problems": []
+  },
+  {
+    "name": "room-junior-suite",
+    "width": "1440",
+    "version": "astro",
+    "pass": true,
+    "delta": 0,
+    "problems": []
+  },
+  {
+    "name": "room-junior-suite",
+    "width": "375",
+    "version": "astro",
+    "pass": true,
+    "delta": 0,
+    "problems": []
+  },
+  {
+    "name": "room-old-town-room",
+    "width": "1440",
+    "version": "astro",
+    "pass": true,
+    "delta": 0,
+    "problems": []
+  },
+  {
+    "name": "room-old-town-room",
+    "width": "375",
+    "version": "astro",
+    "pass": true,
+    "delta": 0,
+    "problems": []
+  },
+  {
+    "name": "room-terrace-suite",
+    "width": "1440",
+    "version": "astro",
+    "pass": true,
+    "delta": 0,
+    "problems": []
+  },
+  {
+    "name": "room-terrace-suite",
+    "width": "375",
+    "version": "astro",
+    "pass": true,
+    "delta": 0,
+    "problems": []
+  },
+  {
+    "name": "room-the-arbos-suite",
+    "width": "1440",
+    "version": "astro",
+    "pass": true,
+    "delta": 0,
+    "problems": []
+  },
+  {
+    "name": "room-the-arbos-suite",
+    "width": "375",
+    "version": "astro",
+    "pass": true,
+    "delta": 0,
+    "problems": []
+  }
+]

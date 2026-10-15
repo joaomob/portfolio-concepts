@@ -1,0 +1,17 @@
+---
+// The text of a legal page, one paragraph per entry (some carry a link), and the date when the page shows one.
+import { UPDATED, type LegalPage } from '@data/legal';
+
+interface Props {
+  legal: LegalPage;
+}
+const { legal } = Astro.props;
+---
+<section class="legal_page_wrap u-section u-theme-light" aria-label={legal.h1}>
+  <div class="legal_page_contain u-container">
+    <div class="legal_page_layout">
+      {legal.body.map((html) => <p class="legal_page_text" set:html={html} />)}
+      {legal.updated && <p class="legal_page_date">{UPDATED}</p>}
+    </div>
+  </div>
+</section>

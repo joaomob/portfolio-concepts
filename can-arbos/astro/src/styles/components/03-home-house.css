@@ -1,0 +1,18 @@
+/* ---------- The house ---------- */
+.house_home_wrap { padding-top: var(--_spacing---section-space--main); }
+.house_home_layout { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: var(--site--gutter); }
+.house_home_head { grid-column: 1 / span 7; }
+.house_home_title { margin: 0; text-wrap: balance; }
+.house_home_body { grid-column: 9 / span 4; align-self: end; }
+.house_home_body p { margin: 0; }
+.house_home_body p + p { margin-top: 1.25rem; }
+/* the wide photos settle from a larger scale while they enter: the excess is clipped, never added to the page width */
+.house_home_media { position: relative; overflow: clip; margin-top: clamp(3rem, 6vw, 6rem); padding-bottom: var(--_spacing---section-space--small); background: linear-gradient(var(--swatch--light-100) 55%, var(--swatch--light-200) 55%); }
+/* edge to edge: stopping at the right margin left a strip of the page beside the photo */
+.house_home_wide { width: 100%; aspect-ratio: 21 / 9; object-fit: cover; }
+.house_home_small { position: absolute; right: var(--site--margin); bottom: clamp(1rem, 3vw, 3rem); width: clamp(9rem, 19vw, 18rem); aspect-ratio: 4 / 5; object-fit: cover; border: 0.5rem solid var(--swatch--light-200); }
+
+/* While a section is pinned, ScrollTrigger wraps it in a taller spacer: the spacer takes the colour of its section, so a
+   window taller than the section never shows a band of the page background under it. In Webflow: the pin wrapper. */
+.pin-spacer:has(> .hero_home_wrap) { background-color: var(--swatch--dark-900); }
+.pin-spacer:has(> .rooms_home_wrap) { background-color: var(--swatch--light-200); }

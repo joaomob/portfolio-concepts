@@ -1,0 +1,11 @@
+---
+// Questions before you book, the first one open.
+import FaqBlock from '@components/ui/FaqBlock.astro';
+import { HOME_FAQ } from '@data/home';
+import type { Lang } from '@i18n/index';
+
+interface Props {
+  lang: Lang;
+}
+---
+<FaqBlock title="Questions before you book" items={HOME_FAQ} lang={Astro.props.lang} />

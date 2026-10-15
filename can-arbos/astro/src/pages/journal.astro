@@ -1,0 +1,13 @@
+---
+// The journal hub: the three guides of the concierge.
+import BaseLayout from '@layouts/BaseLayout.astro';
+import PageIntro from '@components/ui/PageIntro.astro';
+import CloseBand from '@components/ui/CloseBand.astro';
+import JournalList from '@components/journal/JournalList.astro';
+import { journalHub } from '@data/journal';
+---
+<BaseLayout title={journalHub.title} description={journalHub.meta} slug="journal">
+  <PageIntro eyebrow="Journal" title={journalHub.h1} />
+  <JournalList />
+  <CloseBand />
+</BaseLayout>

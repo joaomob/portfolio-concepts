@@ -1,0 +1,172 @@
+{
+ "collection": "Dishes",
+ "page": {
+  "title": "Mallorcan Restaurant in Palma Old Town · Aljub",
+  "meta": "Aljub is a Mallorcan restaurant in Palma's old town, open for dinner Tuesday to Saturday. See every dish, price and allergen before you book."
+ },
+ "items": [
+  {
+   "order": 1,
+   "name": "Mallorcan cracked olives",
+   "description": "Green olives from Mallorca, cured with fennel and chilli.",
+   "price": 5,
+   "course": "snack",
+   "diets": [
+    "Vegetarian",
+    "Vegan",
+    "Gluten-free",
+    "Dairy-free"
+   ],
+   "allergens": []
+  },
+  {
+   "order": 2,
+   "name": "Coca de trempó",
+   "description": "Thin flatbread with chopped tomato, green pepper and onion.",
+   "price": 9,
+   "course": "snack",
+   "diets": [
+    "Vegetarian",
+    "Vegan",
+    "Dairy-free"
+   ],
+   "allergens": [
+    "Cereals containing gluten"
+   ]
+  },
+  {
+   "order": 3,
+   "name": "Sobrassada on toast",
+   "description": "Black pig sobrassada with Maó cheese and honey.",
+   "price": 12,
+   "course": "snack",
+   "diets": [],
+   "allergens": [
+    "Cereals containing gluten",
+    "Milk"
+   ]
+  },
+  {
+   "order": 4,
+   "name": "Trempó salad",
+   "description": "Tomato, green pepper and onion, dressed with Mallorcan olive oil.",
+   "price": 16,
+   "course": "starter",
+   "diets": [
+    "Vegetarian",
+    "Vegan",
+    "Gluten-free",
+    "Dairy-free"
+   ],
+   "allergens": []
+  },
+  {
+   "order": 5,
+   "name": "Red prawns from Sóller",
+   "description": "Four prawns, grilled with sea salt and olive oil.",
+   "price": 34,
+   "course": "starter",
+   "diets": [
+    "Gluten-free",
+    "Dairy-free"
+   ],
+   "allergens": [
+    "Crustaceans"
+   ]
+  },
+  {
+   "order": 6,
+   "name": "Frit mallorquí",
+   "description": "Lamb and lamb offal, fried with potato, red pepper and fennel.",
+   "price": 22,
+   "course": "starter",
+   "diets": [
+    "Gluten-free",
+    "Dairy-free"
+   ],
+   "allergens": []
+  },
+  {
+   "order": 7,
+   "name": "Tumbet",
+   "description": "Fried potato, aubergine and red pepper, baked under tomato sauce.",
+   "price": 27,
+   "course": "main",
+   "diets": [
+    "Vegetarian",
+    "Vegan",
+    "Gluten-free",
+    "Dairy-free"
+   ],
+   "allergens": []
+  },
+  {
+   "order": 8,
+   "name": "Arròs brut",
+   "description": "Soupy spiced rice with rabbit, pork and seasonal vegetables.",
+   "price": 32,
+   "course": "main",
+   "diets": [
+    "Gluten-free",
+    "Dairy-free"
+   ],
+   "allergens": []
+  },
+  {
+   "order": 9,
+   "name": "Black pig loin with cabbage",
+   "description": "Mallorcan black pig wrapped in cabbage, with sobrassada and pine nuts.",
+   "price": 38,
+   "course": "main",
+   "diets": [
+    "Gluten-free",
+    "Dairy-free"
+   ],
+   "allergens": []
+  },
+  {
+   "order": 10,
+   "name": "Gató with almond ice cream",
+   "description": "Mallorcan almond cake, made without flour.",
+   "price": 13,
+   "course": "dessert",
+   "diets": [
+    "Vegetarian",
+    "Gluten-free",
+    "Dairy-free"
+   ],
+   "allergens": [
+    "Eggs",
+    "Nuts"
+   ]
+  },
+  {
+   "order": 11,
+   "name": "Ensaïmada with cream",
+   "description": "Pork lard pastry, filled with custard and served warm.",
+   "price": 12,
+   "course": "dessert",
+   "diets": [],
+   "allergens": [
+    "Cereals containing gluten",
+    "Eggs",
+    "Milk"
+   ]
+  },
+  {
+   "order": 12,
+   "name": "Tasting menu",
+   "description": "Seven courses, served to the whole table, priced per person. Island wines with each course add €60 per person.",
+   "price": 95,
+   "course": "tasting",
+   "diets": [],
+   "allergens": [
+    "Cereals containing gluten",
+    "Crustaceans",
+    "Eggs",
+    "Milk",
+    "Nuts"
+   ]
+  }
+ ]
+}

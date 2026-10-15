@@ -1,0 +1,13 @@
+/* ---------- Inner pages: the opening, in the night theme, with the photo in an arch ---------- */
+/* the arch ends before the edge of the section: nothing sits glued to the next section (ds-consistency.mjs) */
+.page_hero_wrap { padding: calc(4.5rem + var(--_spacing---section-space--small)) 0 var(--_spacing---section-space--small); overflow: clip; }
+.page_hero_layout { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: var(--site--gutter); align-items: center; }
+.page_hero_content { grid-column: 1 / span 6; }
+.page_hero_layout.is-long .page_hero_content { grid-column: 1 / span 7; }
+.page_hero_layout.is-long .page_hero_image { grid-column: 9 / span 4; }
+.page_hero_layout.is-guide .page_hero_content { grid-column: 1 / span 8; }
+.page_hero_layout.is-guide .page_hero_image { grid-column: 10 / span 3; }
+.page_hero_title { margin: 0; text-wrap: balance; }
+.page_hero_text { margin: 2rem 0 0; max-width: 34rem; color: var(--_theme---text-faded); }
+.page_hero_note { margin: 1.25rem 0 0; font-size: var(--_typography---font-size--text-small); color: var(--_theme---text-faded); }
+.page_hero_image { grid-column: 8 / span 5; width: 100%; aspect-ratio: 4 / 5; object-fit: cover; }

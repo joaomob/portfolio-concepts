@@ -1,0 +1,20 @@
+---
+// Celebrations: small weddings and private dinners, the three places and the request form.
+import BaseLayout from '@layouts/BaseLayout.astro';
+import CelebrationsHero from '@components/celebrations/CelebrationsHero.astro';
+import SpaceList from '@components/celebrations/SpaceList.astro';
+import CelebrationsCare from '@components/celebrations/CelebrationsCare.astro';
+import EventForm from '@components/celebrations/EventForm.astro';
+import CloseBand from '@components/ui/CloseBand.astro';
+---
+<BaseLayout
+  title="Intimate Wedding Venue in Palma · Can Arbós"
+  description="Small weddings and private dinners in a 1600s house in Palma's old town. Up to 40 guests in the courtyard, 30 on the roof, and all 21 rooms."
+  slug="celebrations"
+>
+  <CelebrationsHero />
+  <SpaceList />
+  <CelebrationsCare />
+  <EventForm />
+  <CloseBand />
+</BaseLayout>

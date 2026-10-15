@@ -1,0 +1,24 @@
+/* ---------- Shared rules that came from the first prototype and are still in use ---------- */
+.filter_bar_wrap { display: flex; flex-wrap: wrap; gap: var(--_spacing---space--5); margin-bottom: var(--_spacing---space--6); padding: var(--_spacing---space--4) 0; border-top: 1px solid var(--_theme---border); border-bottom: 1px solid var(--_theme---border); }
+.filter_group { display: flex; flex-wrap: wrap; align-items: center; gap: var(--_spacing---space--2); border: 0; margin: 0; padding: 0; }
+.filter_group legend { float: left; margin-right: var(--_spacing---space--2); }
+.filter_empty { padding: var(--_spacing---space--5) 0; }
+/* ---------- Page hero, menu, team ---------- */
+.hero_page_wrap .hero_home_contain { padding-bottom: var(--_spacing---space--8); }
+.menu_course_title { margin: 0 0 var(--_spacing---space--3); }
+/* ---------- Spaces, treatments, event form ---------- */
+.contact_fields { border: 0; margin: 0; padding: 0; display: flex; flex-direction: column; gap: var(--_spacing---space--3); min-width: 0; }
+.check_wrap { display: inline-flex; align-items: center; gap: 0.5rem; min-height: 2.75rem; cursor: pointer; }
+.check_wrap input { width: 1.25rem; height: 1.25rem; accent-color: var(--swatch--brand-500); }
+/* ---------- Experiences hub ---------- */
+.experience_card_wrap .save_button { margin-top: var(--_spacing---space--3); }
+/* Image slot: a colour block where a photo goes until a photo is set (TODO, never goes live). */
+.u-text-style-h4:not(.faq_question_text) { margin-top: var(--_spacing---space--6); margin-bottom: var(--_spacing---space--3); }
+/* Brand theme (Variable Mode "Brand" of the Lumos Theme collection): the primary button turns paper on the olive,
+   because olive on olive disappeared in the first capture. */
+.u-theme-brand { --_theme---button-primary--background: var(--swatch--light-100); --_theme---button-primary--text: var(--swatch--dark-900); --_theme---button-primary--background-hover: var(--swatch--dark-900); --_theme---button-primary--text-hover: var(--swatch--light-100); --_theme---button-secondary--text: var(--swatch--light-100); }
+.split_content .button_main_wrap, .split_content .u-button-wrapper, .split_content > .button_main_wrap { margin-top: var(--_spacing---space--4); }
+.footer_news h2 { margin: 0 0 var(--_spacing---space--3); }
+/* ---------- Layout helpers ---------- */
+/* ---------- Split block ---------- */
+/* Wider text column for a long section title (Aljub's H2 wrapped to 3 lines at 1440 with 6 columns). */

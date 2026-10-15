@@ -1,0 +1,5 @@
+/* ---------- In every room ---------- */
+.every_room_layout { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: var(--site--gutter); align-items: start; }
+.every_room_title { grid-column: 1 / span 4; margin: 0; }
+.every_room_list { grid-column: 6 / span 7; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: var(--site--gutter); margin: 0; padding: 0; list-style: none; border-top: 1px solid var(--_theme---border); }
+.every_room_item { padding: 1rem 0; border-bottom: 1px solid var(--_theme---border); }

@@ -1,0 +1,4 @@
+/* ---------- Legal pages: a short reading column, no index ---------- */
+.legal_page_layout { max-width: 42rem; }
+.legal_page_text { margin: 0 0 1.75rem; }
+.legal_page_date { margin: 2.5rem 0 0; font-size: var(--_typography---font-size--text-small); color: var(--_theme---text-faded); }

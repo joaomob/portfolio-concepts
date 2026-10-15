@@ -1,0 +1,30 @@
+---
+// One page per room of the Rooms collection.
+import type { GetStaticPaths } from 'astro';
+import BaseLayout from '@layouts/BaseLayout.astro';
+import PageHero from '@components/ui/PageHero.astro';
+import Button from '@components/ui/Button.astro';
+import SaveButton from '@components/ui/SaveButton.astro';
+import CloseBand from '@components/ui/CloseBand.astro';
+import RoomAbout from '@components/rooms/RoomAbout.astro';
+import RoomGallery from '@components/rooms/RoomGallery.astro';
+import EveryRoom from '@components/rooms/EveryRoom.astro';
+import OtherRooms from '@components/rooms/OtherRooms.astro';
+import { page } from '@lib/paths';
+import { rooms, ROOM_PHOTOS, ROOM_SUMMARY, type Room } from '@data/rooms';
+
+export const getStaticPaths = (() => rooms.map((room) => ({ params: { slug: room.slug }, props: { room } }))) satisfies GetStaticPaths;
+
+const { room } = Astro.props as { room: Room };
+---
+<BaseLayout title={room.title} description={room.meta} slug={`room-${room.slug}`}>
+  <PageHero title={room.name} text={ROOM_SUMMARY[room.slug].line} image={`rooms/${room.slug}.webp`} alt={ROOM_PHOTOS[room.slug].main}>
+    <a slot="eyebrow" href={page('explore-rooms')}>Rooms</a>
+    <ul class="fact_line_list"><li>{room.size}</li><li><span>{room.guests}</span> guests</li><li>View: <span>{room.view}</span></li></ul><div class="u-button-wrapper"><Button label="Book this room" modal="room-modal" data-room-type={room.name} /><SaveButton kind="room" item={room.slug} name={room.name} /></div><p class="page_hero_note">Free cancellation up to 7 days before arrival.</p>
+  </PageHero>
+  <RoomAbout room={room} />
+  <RoomGallery room={room} />
+  <EveryRoom />
+  <OtherRooms current={room} />
+  <CloseBand />
+</BaseLayout>

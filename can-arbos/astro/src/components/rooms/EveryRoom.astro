@@ -1,0 +1,12 @@
+---
+// What every room has, on the rooms hub and on each room page.
+import { EVERY_ROOM } from '@data/rooms';
+---
+<section class="every_room_wrap u-section u-theme-light u-background-2" aria-labelledby="every-title">
+  <div class="every_room_contain u-container">
+    <div class="every_room_layout">
+      <h2 class="every_room_title u-text-style-h2" id="every-title">In every room</h2>
+      <ul class="every_room_list">{EVERY_ROOM.map((item) => <li class="every_room_item">{item}</li>)}</ul>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,26 @@
+---
+// The other two offers at the end of an offer page.
+import { page } from '@lib/paths';
+import { OFFERS, type Offer } from '@data/offers';
+
+interface Props {
+  current: Offer;
+}
+const { current } = Astro.props;
+---
+<section class="offer_list_wrap u-section u-theme-light u-background-2" aria-labelledby="other-title">
+  <div class="offer_list_contain u-container">
+    <div class="every_room_layout">
+      <h2 class="every_room_title u-text-style-h2" id="other-title">Other offers</h2>
+      <ul class="offer_list_rows">
+        {OFFERS.filter((offer) => offer.slug !== current.slug).map((offer) => (
+          <li class="exp_list_item">
+            <h3 class="exp_list_name u-text-style-h4"><a href={page(`offer-${offer.slug}`)}>{offer.name}</a></h3>
+            <p class="exp_list_facts">{offer.summary}</p>
+            <svg class="exp_list_arrow" viewBox="0 0 32 12" width="32" height="12" aria-hidden="true"><path d="M0 6h30M25 1l5 5-5 5" fill="none" stroke="currentColor" /></svg>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </div>
+</section>

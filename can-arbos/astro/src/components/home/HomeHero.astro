@@ -1,0 +1,37 @@
+---
+// The first screen: the title, the two booking buttons, the courtyard photo and the availability bar.
+import Button from '@components/ui/Button.astro';
+import { img } from '@lib/paths';
+import { useTranslate, type Lang } from '@i18n/index';
+
+interface Props {
+  lang: Lang;
+}
+const t = useTranslate(Astro.props.lang);
+---
+<section class="hero_home_wrap u-theme-dark" aria-labelledby="hero-title" data-hero>
+  <div class="hero_home_contain u-container">
+    <div class="hero_home_content">
+      <p class="eyebrow_text">{t("La Calatrava · Palma, Mallorca")}</p>
+      <h1 class="hero_home_title u-text-style-display" id="hero-title">{t("A boutique hotel in Palma's old town, on a quiet square")}</h1>
+      <p class="hero_home_text u-text-style-large">{t("21 rooms around a courtyard from the 1600s, in a residential corner of the old town. At night you hear the fountain. The cathedral is ten minutes on foot.")}</p>
+      <div class="u-button-wrapper">
+        <Button label={t("Book a room")} modal="room-modal" />
+        <Button label={t("Book a table")} variant="secondary" modal="table-modal" />
+      </div>
+    </div>
+  </div>
+  <div class="hero_home_arch">
+    <img {...img("hero/courtyard-dusk.webp", 1920, { hero: true })} class="hero_home_image" alt={t("The stone courtyard of the house at dusk, with lit lanterns, round arches, a stone staircase and a small fountain among potted trees")} width="1920" height="1072" fetchpriority="high" />
+  </div>
+  <form class="stay_bar_wrap u-theme-light u-background-2" aria-label={t("Check availability")} data-stay-bar>
+    <div class="stay_bar_contain u-container">
+      <div class="stay_bar_layout">
+        <div class="field_wrap"><label class="field_label" for="stay-arrival">{t("Arrival")}</label><input class="field_input" id="stay-arrival" name="arrival" type="date" /></div>
+        <div class="field_wrap"><label class="field_label" for="stay-departure">{t("Departure")}</label><input class="field_input" id="stay-departure" name="departure" type="date" /></div>
+        <div class="field_wrap is-full"><label class="field_label" for="stay-guests">{t("Guests")}</label><select class="field_input" id="stay-guests" name="guests"><option value="1">1</option><option selected value="2">2</option><option value="3">3</option><option value="4">4</option></select></div>
+        <Button label={t("Check availability")} type="submit" wrapClass="is-full" />
+      </div>
+    </div>
+  </form>
+</section>

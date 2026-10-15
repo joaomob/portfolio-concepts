@@ -1,0 +1,51 @@
+/* ---------- Where: our own paper map of the old town, with the walking times ---------- */
+.where_home_layout { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: var(--site--gutter); align-items: center; }
+.where_home_content { grid-column: 1 / span 4; }
+.where_home_title, .where_home_subtitle { margin: 0; text-wrap: balance; }
+.where_home_subtitle { margin-top: 2.5rem; }
+.where_home_text { margin: 1.5rem 0 0; color: var(--_theme---text-faded); }
+.walk_list_wrap { margin: 2rem 0 0; padding: 0; list-style: none; }
+.walk_list_item { display: grid; grid-template-columns: 1.75rem 1fr auto; align-items: center; gap: 0.5rem; width: 100%; min-height: 3rem; padding: 0.5rem 0; border: 0; border-bottom: 1px solid var(--_theme---border); background: none; color: inherit; font: inherit; text-align: left; cursor: pointer; }
+.walk_list_number { display: grid; place-items: center; width: 1.5rem; height: 1.5rem; border-radius: 50%; background: var(--swatch--brand-700); color: var(--swatch--light-100); font-size: 0.8125rem; font-weight: var(--_typography---font--primary-bold); transition: background-color 0.25s; }
+.walk_list_item:hover .walk_list_number, .walk_list_item.is-active .walk_list_number { background: var(--swatch--clay); }
+/* a long place name ("Palacio de la Almudaina" on the Spanish Home) splits in two even lines, never one word alone */
+.walk_list_place { text-wrap: balance; }
+.walk_list_item.is-active .walk_list_place { text-decoration: underline; text-underline-offset: 0.3em; }
+.walk_list_time { white-space: nowrap; font-variant-numeric: tabular-nums; }
+.where_home_map { grid-column: 6 / span 7; position: relative; box-shadow: 0 1.5rem 3rem -1.5rem rgba(35, 31, 26, 0.45), 0 0 0 1px rgba(35, 31, 26, 0.18); transform: rotate(-0.6deg); }
+.map_svg { display: block; width: 100%; height: auto; background: var(--swatch--map-paper); font-family: var(--_typography---font--primary-family); }
+.map_land { fill: var(--swatch--map-land); }
+.map_sea { fill: var(--swatch--map-sea); }
+.map_green { fill: var(--swatch--map-green); opacity: 0.75; }
+.map_street_case { fill: none; stroke: var(--swatch--map-street-edge); stroke-opacity: 0.5; stroke-linecap: round; stroke-linejoin: round; }
+.map_street { fill: none; stroke: var(--swatch--map-paper-light); stroke-linecap: round; stroke-linejoin: round; }
+.map_square { fill: var(--swatch--map-paper-light); stroke: var(--swatch--map-square-edge); stroke-opacity: 0.4; stroke-width: 0.6; }
+.map_landmark { fill: var(--swatch--map-landmark); fill-opacity: 0.62; stroke: var(--swatch--map-ink); stroke-width: 0.7; }
+.map_wall { fill: none; stroke: var(--swatch--map-ink); stroke-width: 3; stroke-linejoin: round; }
+.map_route { fill: none; stroke: var(--swatch--clay); stroke-width: 3.2; stroke-linecap: round; stroke-linejoin: round; stroke-dasharray: 1; stroke-dashoffset: 0; opacity: 0.8; transition: opacity 0.3s, stroke-width 0.3s; }
+.map_pin { cursor: pointer; }
+.map_pin circle { fill: var(--swatch--brand-700); stroke: var(--swatch--map-paper-light); stroke-width: 2; transition: fill 0.25s; }
+.map_pin_number { font-weight: 600; font-size: 14px; fill: var(--swatch--light-100); pointer-events: none; }
+.map_pin_label { font-family: var(--_typography---font--secondary-family); font-size: 21px; fill: var(--swatch--dark-800); paint-order: stroke; stroke: var(--swatch--map-paper-light); stroke-width: 7px; stroke-linejoin: round; opacity: 0; transition: opacity 0.25s; pointer-events: none; }
+.map_house circle:first-child { fill: var(--swatch--clay); stroke: var(--swatch--map-paper-light); stroke-width: 2.5; }
+.map_house path { fill: none; stroke: var(--swatch--map-paper-light); stroke-width: 1.8; }
+.map_house_well { fill: var(--swatch--map-paper-light); }
+.map_house_label { font-family: var(--_typography---font--secondary-family); font-size: 26px; fill: var(--swatch--dark-800); paint-order: stroke; stroke: var(--swatch--map-paper-light); stroke-width: 8px; stroke-linejoin: round; }
+.map_title_small { font-weight: 500; font-size: 13px; letter-spacing: 0.32em; fill: var(--swatch--map-ink); paint-order: stroke; stroke: var(--swatch--map-paper); stroke-width: 6px; }
+.map_title_large { font-family: var(--_typography---font--secondary-family); font-size: 46px; fill: var(--swatch--map-ink-dark); paint-order: stroke; stroke: var(--swatch--map-paper); stroke-width: 8px; }
+.map_title_note { font-family: Georgia, serif; font-style: italic; font-size: 16px; fill: var(--swatch--map-ink); paint-order: stroke; stroke: var(--swatch--map-paper); stroke-width: 6px; }
+.map_compass circle { fill: var(--swatch--map-paper); fill-opacity: 0.8; stroke: var(--swatch--map-ink); stroke-width: 1; }
+.map_compass path { fill: var(--swatch--map-paper); stroke: var(--swatch--map-ink); stroke-width: 1; }
+.map_compass .map_compass_north { fill: var(--swatch--map-ink); }
+.map_compass text { font-weight: 500; font-size: 13px; fill: var(--swatch--map-ink); }
+.map_scale path { fill: none; stroke: var(--swatch--map-ink); stroke-width: 1.2; }
+.map_scale text, .map_credit { font-size: 12px; fill: var(--swatch--map-ink); paint-order: stroke; stroke: var(--swatch--map-paper-dark); stroke-width: 4px; }
+.map_sea_label { font-family: Georgia, serif; font-style: italic; font-size: 20px; letter-spacing: 0.3em; fill: var(--swatch--map-sea-ink); }
+.map_border { fill: none; stroke: var(--swatch--map-ink); stroke-width: 2; }
+.map_border.is-inner { stroke-width: 0.6; }
+/* one place in focus: its route and its label stay, the others step back */
+.where_home_map.is-focused .map_route { opacity: 0.16; }
+.where_home_map.is-focused .map_route.is-active { opacity: 1; stroke-width: 4.5; }
+.where_home_map.is-focused .map_pin:not(.is-active) circle { fill: var(--swatch--map-pin-muted); }
+.map_pin.is-active circle { fill: var(--swatch--clay); }
+.map_pin.is-active .map_pin_label { opacity: 1; }

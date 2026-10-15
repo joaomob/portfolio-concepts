@@ -1,0 +1,14 @@
+---
+// Members: the free club for a visitor, and "My stay" for a member who signed in (both in the page, the script keeps one).
+import BaseLayout from '@layouts/BaseLayout.astro';
+import MemberWelcome from '@components/members/MemberWelcome.astro';
+import MemberStay from '@components/members/MemberStay.astro';
+---
+<BaseLayout
+  title="Members · Can Arbós, Palma"
+  description="The free Can Arbós club for guests and diners: book Aljub 60 days ahead, keep what you like and get the members' rate."
+  slug="members"
+>
+  <MemberWelcome />
+  <MemberStay />
+</BaseLayout>

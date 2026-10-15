@@ -1,0 +1,38 @@
+---
+// The Home, in English at / and in Spanish at /es: the same sections, each one translated by its lang prop.
+import BaseLayout from '@layouts/BaseLayout.astro';
+import HomeHero from './HomeHero.astro';
+import HouseIntro from './HouseIntro.astro';
+import RoomsCarousel from './RoomsCarousel.astro';
+import DiningIntro from './DiningIntro.astro';
+import RooftopIntro from './RooftopIntro.astro';
+import WhereWeAre from './WhereWeAre.astro';
+import ExperiencesList from './ExperiencesList.astro';
+import CelebrationsBand from './CelebrationsBand.astro';
+import HomeFaq from './HomeFaq.astro';
+import HomeClose from './HomeClose.astro';
+import type { Lang } from '@i18n/index';
+
+interface Props {
+  lang: Lang;
+}
+const { lang } = Astro.props;
+---
+<BaseLayout
+  title="Boutique Hotel in Palma Old Town, Rooftop Pool · Can Arbós"
+  description="A boutique hotel in Palma's old town, with 21 rooms around a courtyard from the 1600s, a rooftop pool and Aljub, our Mallorcan restaurant. Adults only."
+  slug={lang === 'es' ? 'es' : ''}
+  lang={lang}
+  alternates
+>
+  <HomeHero lang={lang} />
+  <HouseIntro lang={lang} />
+  <RoomsCarousel lang={lang} />
+  <DiningIntro lang={lang} />
+  <RooftopIntro lang={lang} />
+  <WhereWeAre lang={lang} />
+  <ExperiencesList lang={lang} />
+  <CelebrationsBand lang={lang} />
+  <HomeFaq lang={lang} />
+  <HomeClose lang={lang} />
+</BaseLayout>

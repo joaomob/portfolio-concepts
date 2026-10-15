@@ -1,0 +1,34 @@
+/* ---------- Rooftop & Spa page: the opening on lime, the band of the day, the spa with its treatments ---------- */
+.roof_page_wrap { padding: calc(4.5rem + var(--_spacing---section-space--small)) 0 var(--_spacing---section-space--small); }
+.pool_page_wrap { padding-top: var(--_spacing---section-space--small); }
+.roof_page_layout { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: var(--site--gutter); align-items: end; }
+.roof_page_content { grid-column: 1 / span 5; }
+.roof_page_title { margin: 0; text-wrap: balance; }
+.roof_page_media { grid-column: 7 / span 6; margin: 0; overflow: clip; }
+.roof_page_image { width: 100%; aspect-ratio: 16 / 10; object-fit: cover; }
+/* the band of the day: one line from 9:00 to 23:00 that goes from morning to night; the round mark crosses it while
+   the page scrolls (site.js sets --p), and each row shows its hours on the same line */
+.day_band_wrap { margin-top: var(--_spacing---section-space--small); }
+.day_band_sky { position: relative; height: 0.75rem; border: 1px solid var(--_theme---border); background: linear-gradient(90deg, var(--swatch--light-100) 0%, var(--swatch--light-200) 42%, var(--swatch--clay) 74%, var(--swatch--dark-900) 100%); }
+.day_band_mark { position: absolute; top: 50%; left: calc(var(--p, 0.64) * 100%); width: 2.75rem; height: 2.75rem; border: 1px solid var(--_theme---text); border-radius: 50%; background: var(--_theme---background); transform: translate(-50%, -50%); }
+.day_band_scale { position: relative; height: 2.25rem; font-size: var(--_typography---font-size--text-small); color: var(--_theme---text-faded); font-variant-numeric: tabular-nums; }
+.day_band_tick { position: absolute; left: var(--at); top: 1rem; transform: translateX(-50%); }
+.day_band_tick:first-child { transform: none; }
+.day_band_tick:last-child { transform: translateX(-100%); }
+.day_band_list { margin: 1.5rem 0 0; padding: 0; list-style: none; border-top: 1px solid var(--_theme---border); }
+.day_band_row { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; column-gap: 1.5rem; padding: 1.25rem 0 0; }
+.day_band_name { margin: 0; font-weight: var(--_typography---font--primary-medium); }
+.day_band_hours { margin: 0; color: var(--_theme---text-faded); }
+.day_band_track { position: relative; flex: 0 0 100%; height: 1.25rem; border-bottom: 1px solid var(--_theme---border); }
+.day_band_span { position: absolute; left: var(--from); right: calc(100% - var(--to)); bottom: -2px; height: 3px; background: var(--_theme---accent); }
+.spa_page_layout { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: var(--site--gutter); align-items: start; }
+.spa_page_image { grid-column: 1 / span 4; width: 100%; aspect-ratio: 4 / 5; object-fit: cover; }
+.spa_page_content { grid-column: 6 / span 7; }
+.spa_page_title { margin: 0; text-wrap: balance; }
+.spa_page_text { margin: 2.25rem 0 0; max-width: 40rem; color: var(--_theme---text-faded); }
+.spa_page_note { margin: 1.5rem 0 0; font-size: var(--_typography---font-size--text-small); color: var(--_theme---text-faded); }
+.treatment_list_wrap { margin: 2.5rem 0 0; padding: 0; list-style: none; border-top: 1px solid var(--_theme---border); }
+.treatment_list_item { display: grid; grid-template-columns: minmax(0, 1fr) 4.5rem 4rem auto; column-gap: 1.5rem; align-items: baseline; padding: 1rem 0; border-bottom: 1px solid var(--_theme---border); }
+.treatment_list_item .button_main_wrap { align-self: center; }
+.treatment_list_name, .treatment_list_price, .treatment_list_length { margin: 0; }
+.treatment_list_length { color: var(--_theme---text-faded); }

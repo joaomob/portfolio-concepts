@@ -1,0 +1,20 @@
+/* ---------- Journal: the list of guides and the guide in a reading column ---------- */
+.journal_list_wrap, .journal_page_wrap { padding-top: var(--_spacing---section-space--small); }
+.journal_list_rows { display: grid; row-gap: var(--_spacing---section-space--small); margin: 0; padding: 0; list-style: none; }
+.journal_list_item { position: relative; display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: var(--site--gutter); align-items: center; }
+.journal_list_image { grid-column: 1 / span 4; width: 100%; aspect-ratio: 4 / 5; object-fit: cover; }
+.journal_list_content { grid-column: 6 / span 6; }
+.journal_list_title { margin: 1rem 0 0; text-wrap: balance; }
+.journal_list_title a { text-decoration: none; }
+.journal_list_title a::after { content: ""; position: absolute; inset: 0; }
+.journal_list_text { margin: 1.5rem 0 0; color: var(--_theme---text-faded); }
+.journal_author_text { margin: 1.5rem 0 0; font-size: var(--_typography---font-size--text-small); letter-spacing: 0.06em; text-transform: uppercase; }
+.journal_page_layout { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: var(--site--gutter); }
+.journal_page_body { grid-column: 4 / span 7; max-width: 42rem; }
+/* in Webflow the guide is a Rich Text bound to the CMS: its headings and paragraphs carry no class (journal_page_rich > h2, > p);
+   the heading takes the h3 text style the prototype gives it with u-text-style-h3 */
+.journal_page_heading, .journal_page_rich > h2 { margin: 3.5rem 0 2rem; text-wrap: balance; }
+.journal_page_rich > h2 { font-family: var(--_typography---font--secondary-family); font-size: var(--_typography---font-size--h3); line-height: 1.15; font-weight: 400; letter-spacing: var(--_typography---letter-spacing--tight); }
+.journal_page_text, .journal_page_rich > p { margin: 0 0 2.25rem; }
+.journal_page_image { width: 62%; margin: 2.5rem 0; aspect-ratio: 4 / 5; object-fit: cover; }
+.journal_page_image:not(.is-arch) { width: 100%; aspect-ratio: 16 / 9; }

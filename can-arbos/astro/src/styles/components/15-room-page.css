@@ -1,0 +1,22 @@
+/* ---------- Room page ---------- */
+.room_page_layout { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: var(--site--gutter); align-items: start; }
+.room_page_text { grid-column: 1 / span 6; margin: 0; }
+.fact_table_wrap { grid-column: 8 / span 5; margin: 0; border-top: 1px solid var(--_theme---border); }
+.fact_table_row { display: flex; justify-content: space-between; gap: 1.5rem; padding: 0.875rem 0; border-bottom: 1px solid var(--_theme---border); }
+.fact_table_name { color: var(--_theme---text-faded); white-space: nowrap; }
+.fact_table_value { margin: 0; text-align: right; }
+/* the three photos move sideways while the page scrolls down, as the row of rooms does on the Home */
+.room_shot_wrap { padding: 0 0 var(--_spacing---section-space--main); overflow: hidden; background-color: var(--_theme---background); }
+.room_shot_viewport { overflow-x: auto; scrollbar-width: none; }
+.room_shot_viewport::-webkit-scrollbar { display: none; }
+.room_shot_track { display: flex; gap: var(--site--gutter); width: max-content; margin: 0; padding: 0 var(--site--margin); list-style: none; }
+.room_shot_item { width: clamp(17rem, 42vw, 40rem); }
+.room_shot_figure { margin: 0; }
+.room_shot_image { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; }
+.room_shot_item:nth-child(even) .room_shot_image { border-radius: 999px 999px 0 0; }
+.room_shot_caption { margin-top: 1rem; text-align: left; font-size: var(--_typography---font-size--text-small); letter-spacing: 0.06em; text-transform: uppercase; color: var(--_theme---text-faded); }
+.room_shot_foot { margin-top: 2.5rem; }
+.pin-spacer:has(> .room_shot_wrap) { background-color: var(--swatch--light-100); }
+.other_room_title { margin: 0; }
+.other_room_list { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: var(--site--gutter); margin: clamp(2.5rem, 5vw, 4.5rem) 0 0; padding: 0; list-style: none; }
+.other_room_list .room_card_wrap { width: auto; }

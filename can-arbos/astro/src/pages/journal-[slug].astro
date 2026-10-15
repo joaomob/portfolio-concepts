@@ -1,0 +1,27 @@
+---
+// One page per guide of the Journal collection.
+import type { GetStaticPaths } from 'astro';
+import BaseLayout from '@layouts/BaseLayout.astro';
+import PageHero from '@components/ui/PageHero.astro';
+import CloseBand from '@components/ui/CloseBand.astro';
+import GuideBody from '@components/journal/GuideBody.astro';
+import GuideMap from '@components/journal/GuideMap.astro';
+import MoreGuides from '@components/journal/MoreGuides.astro';
+import { page } from '@lib/paths';
+import { GUIDES, AUTHOR, type Guide } from '@data/journal';
+
+export const getStaticPaths = (() =>
+  GUIDES.map((guide) => ({ params: { slug: guide.slug }, props: { guide } }))) satisfies GetStaticPaths;
+
+const { guide } = Astro.props as { guide: Guide };
+---
+<BaseLayout title={guide.title} description={guide.meta} slug={`journal-${guide.slug}`}>
+  <PageHero title={guide.h1} text={guide.summary} image={`${guide.cover.path}.webp`} alt={guide.cover.alt} long guide>
+    <a slot="eyebrow" href={page('journal')}>Journal</a>
+    <p class="journal_author_text">{AUTHOR}</p>
+  </PageHero>
+  <GuideBody guide={guide} />
+  {guide.map && <GuideMap />}
+  <MoreGuides current={guide} tinted={!guide.map} />
+  <CloseBand />
+</BaseLayout>

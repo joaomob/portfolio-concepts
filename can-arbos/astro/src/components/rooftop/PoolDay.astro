@@ -1,0 +1,27 @@
+---
+// The plunge pool, and the day on the roof as a band from 9:00 to 23:00 with the hours of the pool, the rooftop and the bar.
+import { img } from '@lib/paths';
+import { DAY_ROWS, DAY_TICKS, dayPercent } from '@data/rooftop';
+---
+<section class="pool_page_wrap u-section u-theme-light" aria-labelledby="pool-title">
+  <div class="pool_page_contain u-container">
+    <div class="split_block_layout">
+      <img {...img("rooftop/loungers.webp", 900)} class="split_block_image is-arch" alt="A row of loungers with rolled towels under a wooden pergola, beside a narrow stone pool on the roof terrace" width="900" height="1117" loading="lazy" />
+      <div class="split_block_content">
+        <h2 class="split_block_title u-text-style-h2" id="pool-title">A plunge pool above the old town</h2>
+        <p class="split_block_text">The pool is 6 by 3 metres and 1.4 metres deep. It's for cooling off between hours in the sun. A pergola covers half the deck from noon, and there are twelve loungers, so ask for one at breakfast in August. Towels are by the stairs.</p>
+        <p class="split_block_text">After 18:00, anyone can come up to the bar. The pool is for hotel guests.</p>
+      </div>
+    </div>
+    <div class="day_band_wrap" data-day-band>
+      <p class="eyebrow_text">The day on the roof</p>
+      <div class="day_band_sky" aria-hidden="true"><span class="day_band_mark" data-day-mark></span></div>
+      <div class="day_band_scale" aria-hidden="true">{DAY_TICKS.map((hour) => <span class="day_band_tick" data-at={dayPercent(hour)}>{hour}:00</span>)}</div>
+      <ul class="day_band_list">
+        {DAY_ROWS.map((row) => (
+          <li class="day_band_row"><p class="day_band_name">{row.name}</p><p class="day_band_hours">{row.hours}</p><span class="day_band_track" aria-hidden="true"><span class="day_band_span" data-from={dayPercent(row.from)} data-to={dayPercent(row.to)}></span></span></li>
+        ))}
+      </ul>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,60 @@
+---
+// The shell of every page: the head, the menu, <main>, the footer, the dialogs and the scripts.
+import '../styles/index.css';
+import Nav from '@components/layout/Nav.astro';
+import Footer from '@components/layout/Footer.astro';
+import Modals from '@components/layout/Modals.astro';
+import { asset, canonical } from '@lib/paths';
+import { useTranslate, type Lang } from '@i18n/index';
+
+interface Props {
+  title: string;
+  description: string;
+  /** the page's slug for its canonical address ('' is the Home) */
+  slug: string;
+  lang?: Lang;
+  /** the two Homes name each other with hreflang */
+  alternates?: boolean;
+}
+
+const { title, description, slug, lang = 'en', alternates = false } = Astro.props;
+const t = useTranslate(lang);
+---
+<!doctype html>
+<html lang={lang}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{t(title)}</title>
+    <meta name="description" content={t(description)} />
+    <meta name="robots" content="noindex" />
+    <link rel="canonical" href={canonical(slug)} />
+    <link rel="icon" href={asset('favicon.svg')} type="image/svg+xml" />
+    <link rel="preload" href={asset('fonts/newsreader-latin-400.woff2')} as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href={asset('fonts/instrument-sans-latin-var.woff2')} as="font" type="font/woff2" crossorigin />
+    {alternates && (
+      <>
+        <link rel="alternate" hreflang="en" href={canonical('')} />
+        <link rel="alternate" hreflang="es" href={canonical('es')} />
+        <link rel="alternate" hreflang="x-default" href={canonical('')} />
+      </>
+    )}
+    {/* the first screen starts at the first frame of its entrance; it is shown after 3 s whatever happens */}
+    <script is:inline>(function(){var d=document.documentElement;if(matchMedia('(prefers-reduced-motion: reduce)').matches)return;d.classList.add('is-motion');setTimeout(function(){d.classList.add('is-ready')},3000)})()</script>
+  </head>
+  <body>
+    <div class="page_wrap" lang={lang === 'es' ? 'es' : undefined}>
+      <a class="skip_link" href="#main">{t('Skip to content')}</a>
+      <Nav lang={lang} />
+      <main class="page_main" id="main">
+        <slot />
+      </main>
+      <Footer lang={lang} />
+      <Modals lang={lang} />
+    </div>
+    <script>
+      import { initPage } from '../scripts/index.js';
+      initPage();
+    </script>
+  </body>
+</html>

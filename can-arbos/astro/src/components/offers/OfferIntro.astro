@@ -1,0 +1,23 @@
+---
+// The opening of an offer: the light intro with its photo in an arch, and the badge on the members' offer.
+import { img } from '@lib/paths';
+import type { Offer } from '@data/offers';
+
+interface Props {
+  offer: Offer;
+}
+const { offer } = Astro.props;
+const { path, alt, width, height } = offer.photo;
+---
+<section class="page_intro_wrap u-theme-light" aria-labelledby="page-title">
+  <div class="page_intro_contain u-container">
+    <div class="page_intro_layout is-photo">
+      <div class="page_intro_content">
+        <p class="eyebrow_text">Offer{offer.members && <> <span class="offer_badge_text">Members only</span></>}</p>
+        <h1 class="page_intro_title u-text-style-h1" id="page-title">{offer.h1}</h1>
+        <p class="page_intro_text">{offer.summary}</p>
+      </div>
+      <img {...img(`${path}.webp`, width)} class="page_intro_image is-arch" alt={alt} width={width} height={height} fetchpriority="high" />
+    </div>
+  </div>
+</section>

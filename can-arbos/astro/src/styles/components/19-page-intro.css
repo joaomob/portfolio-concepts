@@ -1,0 +1,4 @@
+/* ---------- Inner page without a photo at the top: the title on lime ---------- */
+.page_intro_wrap { padding: calc(4.5rem + var(--_spacing---section-space--small)) 0 var(--_spacing---section-space--small); }
+.page_intro_title { margin: 0; max-width: var(--max-width--small); text-wrap: balance; }
+.page_intro_text { margin: 2rem 0 0; max-width: 44rem; color: var(--_theme---text-faded); }

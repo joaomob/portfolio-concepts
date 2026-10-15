@@ -1,0 +1,29 @@
+---
+// The members page for a visitor who is not signed in: what the free club gives and the two buttons. The site script
+// removes it once a member signs in.
+import Button from '@components/ui/Button.astro';
+import { img } from '@lib/paths';
+
+const PERKS = [
+  'Book Aljub 60 days ahead',
+  'Keep the rooms and experiences you like',
+  "The members' rate on every stay",
+  "Tell the kitchen once what you can't eat",
+];
+---
+<section class="member_out_wrap u-theme-light u-background-2" aria-labelledby="page-title" data-member-out>
+  <div class="member_out_contain u-container">
+    <div class="member_out_layout">
+      <div class="member_out_content">
+        <p class="eyebrow_text">Members</p>
+        <h1 class="member_out_title u-text-style-h1" id="page-title">The Can Arbós club</h1>
+        <p class="member_out_text u-text-style-large">A free account for guests and diners.</p>
+        <div class="u-button-wrapper"><Button label="Create an account" modal="signup-modal" /><Button label="Sign in" variant="secondary" modal="signin-modal" /></div>
+      </div>
+      <img {...img('dining/wine-courtyard.webp', 700)} class="member_out_image is-arch" alt="A glass of red wine and a bottle on a stone table in the courtyard at dusk" width="700" height="869" fetchpriority="high" />
+      <ul class="member_out_list">
+        {PERKS.map((perk) => <li class="member_out_item">{perk}</li>)}
+      </ul>
+    </div>
+  </div>
+</section>
