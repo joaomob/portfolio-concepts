@@ -220,9 +220,10 @@ export function initOlimpo({ gsap = null, ScrollTrigger = null, Flip = null, Dra
     };
     new IntersectionObserver(([en]) => { visible = en.isIntersecting; if (visible && !raf) { last = 0; raf = requestAnimationFrame(step); } }).observe(wrap);
   }
-  addEventListener('load', () => {
-    $$('[data-marquee]').forEach(w => { const t = $('[data-marquee-list]', w); if (t) makeLoop(w, t, parseFloat(w.dataset.marqueeSpeed) || 25); });
-  });
+  // the original waits for the load event; the Next client component can start after it has fired, so run now then
+  const startMarquees = () => $$('[data-marquee]').forEach(w => { const t = $('[data-marquee-list]', w); if (t) makeLoop(w, t, parseFloat(w.dataset.marqueeSpeed) || 25); });
+  if (document.readyState === 'complete') startMarquees();
+  else addEventListener('load', startMarquees, { once: true });
 
   /* ------------------------------------------------------------------
      3 · the sentence that lights up word by word (scrub)

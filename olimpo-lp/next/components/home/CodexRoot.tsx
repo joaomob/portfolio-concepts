@@ -1,0 +1,32 @@
+// The Codex: the reader and the dock. The dock is always visible; with zero tabs it shows only "Códex".
+// The reader rises from it and goes back into it when minimized. olimpo.js fills the index and the panes
+// from data/codex-content.json. It is the only layer that covers the page.
+export default function CodexRoot() {
+  return (
+    <div className="codex" id="codex" data-codex-root="">
+      <div className="codex_backdrop" data-codex-backdrop="" hidden />
+      <div className="codex_panel" data-codex-panel="" hidden>
+        <h2 className="sr-only" id="codex-title">Códex</h2>
+        <div className="codex_body">
+          <nav className="codex_index" aria-label="Índice do Códex" data-codex-index="" />
+          <div className="codex_panes" data-codex-panes="" />
+        </div>
+      </div>
+      <nav className="dock" aria-label="Códex" data-dock="">
+        <div className="dock_sec" data-dock-sec="">
+          <button className="dock_step" type="button" data-sec-prev="" aria-label="Seção anterior"><span aria-hidden="true">‹</span></button>{' '}
+          <a className="dock_sec-label" href="#opening" data-sec-label=""><span className="nav_n" data-sec-n="">01</span> <span data-sec-name="">Abertura</span></a>{' '}
+          <button className="dock_step" type="button" data-sec-next="" aria-label="Próxima seção"><span aria-hidden="true">›</span></button>
+        </div>
+        <button className="dock_home" type="button" data-dock-home="" aria-label="Abrir o Códex no índice">
+          <svg className="dock_icon" viewBox="0 0 310 336" aria-hidden="true"><path fill="#f97316" d="M222.83,183.82l-2.36-2.1-18.37,10.46-46.83-49.48-46.83,49.48-18.37-10.460-2.36,2.1-61.98,55.13c25.070,45.81,73.73,76.95,129.54,76.95s104.46-31.14,129.53-76.95l-61.98-55.13ZM155.27,168.31l32.29,33.34-32.29,24.28v-57.62Z"/><path fill="currentColor" d="M162.95,99.46c15.77,1.75,29.95,8.8,40.72,19.33l64.65-45.14c-25.55-30.45-63.13-50.49-105.37-52.67v78.48Z"/><path fill="currentColor" d="M106.77,118.88c10.73-10.53,24.87-17.6,40.58-19.4V21c-42.19,2.24-79.720,22.29-105.23,52.75l64.64,45.14Z"/><path fill="currentColor" d="M277.73,86.1l-64.16,44.8c6.28,9.75,10.2,21.17,10.9,33.44l67.35,59.9c7.09-17.25,11.01-36.13,11.01-55.910,0-30.42-9.26-58.72-25.1-82.24Z"/><path fill="currentColor" d="M32.74,86.21c-15.8,23.49-25.03,51.75-25.03,82.12,0,19.78,3.92,38.66,11.01,55.91l67.35-59.9c.7-12.22,4.59-23.6,10.83-33.33l-64.16-44.8Z"/></svg>{' '}
+          <span className="dock_label">Códex</span>{' '}
+          <span className="dock_count" data-dock-count="" hidden>0</span>
+        </button>
+        <div className="dock_tabs" role="tablist" aria-label="Abas abertas" data-codex-tabs="" />
+        <button className="dock_more" type="button" data-dock-more="" hidden />
+        <button className="dock_min" type="button" data-codex-min="" hidden aria-label="Minimizar o Códex"><span aria-hidden="true" /></button>
+      </nav>
+    </div>
+  );
+}

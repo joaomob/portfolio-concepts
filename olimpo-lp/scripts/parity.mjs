@@ -152,7 +152,8 @@ async function measure(browser, version, slug, vp) {
     images: [...document.images].map((img) => ({ src: img.currentSrc || img.src, ok: (img.complete && img.naturalWidth > 0) || (img.loading === 'lazy' && img.getClientRects().length === 0) })),
     // the streak counter of the original is drawn by lottie-web from a CDN; lottie-web is not installed here, so the
     // port shows the counter without that drawing and the Lottie SVG is left out of the comparison
-    svgs: [...document.querySelectorAll('svg')].filter((s) => !s.querySelector('[id^="__lottie_element"]')).map((s) => s.innerHTML.replace(/\s+/g, ' ').trim()),
+    // whitespace between SVG tags draws nothing; JSX drops it, so it is left out of the comparison
+    svgs: [...document.querySelectorAll('svg')].filter((s) => !s.querySelector('[id^="__lottie_element"]')).map((s) => s.innerHTML.replace(/>\s+</g, '><').replace(/\s+/g, ' ').trim()),
     lottie: document.querySelectorAll('svg [id^="__lottie_element"]').length > 0,
     height: Math.max(document.documentElement.scrollHeight, document.body.scrollHeight),
     title: document.title,

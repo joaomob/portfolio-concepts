@@ -1,0 +1,8 @@
+{
+  "name": "olimpo-lp-next",
+  "private": true,
+  "scripts": {
+    "build": "node ../../node_modules/next/dist/bin/next build",
+    "typecheck": "node ../../node_modules/typescript/bin/tsc --noEmit -p ."
+  }
+}
