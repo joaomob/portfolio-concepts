@@ -8,6 +8,7 @@
     "astro:build": "cd astro && node ../../node_modules/astro/bin/astro.mjs build",
     "next:build": "cd next && node ../../node_modules/next/dist/bin/next build",
     "storybook:build": "node ../node_modules/storybook/dist/bin/dispatcher.js build -c storybook/.storybook -o storybook/storybook-static",
+    "storybook:check": "node scripts/storybook-check.mjs",
     "parity": "node scripts/parity.mjs"
   }
 }
