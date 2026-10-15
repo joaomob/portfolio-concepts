@@ -1,0 +1,18 @@
+/* =====================================================================
+   3 · THE TURN
+   ===================================================================== */
+.section_turn { padding-bottom: 0; }
+.turn_card { min-height: 100vh; display: flex; align-items: center; justify-content: center; }
+.statement_component { display: flex; flex-direction: column; gap: 2.2rem; max-width: 42em; margin: 0 auto; font-size: 16px; }
+.statement_text { color: var(--c-ink); font-size: 2.7em; line-height: 1.3; font-weight: 500; letter-spacing: -.035em; }
+.statement_h2 { font: inherit; letter-spacing: inherit; }
+.statement_turn { display: block; }
+.statement_break { display: block; height: .7em; }
+.statement_p { font: inherit; letter-spacing: inherit; line-height: inherit; }
+.statement_image-wrap { display: inline-flex; vertical-align: middle; width: 3.9em; height: 2em; border-radius: .45em; overflow: hidden; position: relative; top: -.06em; margin: 0 .08em; }
+.js .statement_image-wrap { width: 0; transition: width var(--t-reveal) var(--ease); }
+.js .statement_image-wrap.is-open { width: 3.9em; }
+.statement_inline-image { width: 100%; height: 100%; object-fit: cover; object-position: 50% 70%; }
+.fade-word { display: inline-block; opacity: .15; transition: opacity .25s linear; }
+@media (max-width: 767px) { .statement_text { font-size: 1.85em; } }
+@media (max-width: 479px) { .turn_card { min-height: 0; padding-top: 5rem; padding-bottom: 5rem; } .statement_text { font-size: 1.6em; } }

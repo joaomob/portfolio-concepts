@@ -1,0 +1,29 @@
+---
+// One style guide section, rendered from data/style-guide.json: header, rows, color grids and the free blocks
+// (intro paragraphs, group titles and spacers), in the order of the original page.
+import SgSectionHeader from './SgSectionHeader.astro';
+import SgRow from './SgRow.astro';
+import SgCard from './SgCard.astro';
+
+type Card = { cardClass: string | null; chipClass: string | null; color: string | null; name: string; meta: string };
+type Block =
+  | { type: 'gap' }
+  | { type: 'header'; num: string; title: string }
+  | { type: 'row'; spec: string; body: string }
+  | { type: 'grid'; cards: Card[] }
+  | { type: 'html'; html: string };
+
+interface Props { className: string; id: string; blocks: Block[] }
+const { className, id, blocks } = Astro.props;
+---
+<section class={className} id={id}><div class="padding-global is-large"><div class="container-large"><div class="padding-section-medium">
+  {blocks.map((b) => {
+    switch (b.type) {
+      case 'header': return <SgSectionHeader num={b.num} title={b.title} />;
+      case 'row': return <SgRow spec={b.spec} body={b.body} />;
+      case 'grid': return <div class="sg-grid">{b.cards.map((c) => <SgCard {...c} />)}</div>;
+      case 'html': return <Fragment set:html={b.html} />;
+      default: return null;
+    }
+  })}
+</div></div></div></section>

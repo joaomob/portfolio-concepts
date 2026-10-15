@@ -1,0 +1,18 @@
+/* =====================================================================
+   10 · TRUST · layers in an open list
+   ===================================================================== */
+.faq-grid { display: grid; grid-template-columns: 1fr 1.6fr; gap: 100px; align-items: start; }
+/* security must read without reading: a padlock seal on the guarded door, and one icon per layer
+   (lock = encrypted on the device, shield = protected in transit, crossed eye = not used to train AI) */
+.trust_scene { position: relative; max-width: 460px; }
+.trust_video { aspect-ratio: 4 / 3; }
+.trust_seal { position: absolute; right: -22px; bottom: -22px; display: grid; place-items: center; width: 88px; height: 88px; border-radius: 50%; background: var(--c-orange); color: var(--c-white); box-shadow: 0 0 0 6px var(--c-white), 0 18px 36px -14px rgba(27, 23, 19, .55); }
+.trust_seal svg { width: 40px; height: 40px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.layers { display: grid; }
+.layer { display: flex; align-items: center; gap: 24px; padding: 28px 0; border-top: 1px solid var(--c-line-light); }
+.layer:last-child { border-bottom: 1px solid var(--c-line-light); }
+.layer p { font-family: var(--f-display); font-size: 1.7rem; font-weight: 600; letter-spacing: -.02em; line-height: 1.2; max-width: 26ch; }
+.layer_icon { flex: none; display: grid; place-items: center; width: 64px; height: 64px; border-radius: 50%; background: rgba(226, 86, 15, .1); color: var(--c-orange); }
+.layer_icon svg { width: 30px; height: 30px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+@media (max-width: 991px) { .faq-grid { gap: 50px; } }
+@media (max-width: 767px) { .faq-grid { grid-template-columns: 1fr; } .layer p { font-size: 1.3rem; } .layer { gap: 16px; padding: 22px 0; } .layer_icon { width: 48px; height: 48px; } .layer_icon svg { width: 24px; height: 24px; } .trust_seal { right: 12px; bottom: -20px; width: 68px; height: 68px; } .trust_seal svg { width: 30px; height: 30px; } }

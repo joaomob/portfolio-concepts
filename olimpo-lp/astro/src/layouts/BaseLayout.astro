@@ -1,0 +1,36 @@
+---
+// The document shell every page carries: language, theme, title, robots, canonical and the icon.
+// The prototype is a concept build, so every page is noindex and points its canonical at joaomob.com.
+import { canonicalFor, ASSETS } from '../lib/site';
+
+interface Props {
+  title: string;
+  description?: string;
+  /** page path under the case, '' for the home */
+  path: string;
+  lang: string;
+  theme?: string;
+  ogImage?: string;
+}
+
+const { title, description, path, lang, theme, ogImage } = Astro.props;
+---
+<!doctype html>
+<html lang={lang} data-theme={theme}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    {description && <meta name="description" content={description} />}
+    {description && <meta property="og:title" content={title} />}
+    {description && <meta property="og:description" content={description} />}
+    {ogImage && <meta property="og:image" content={ogImage} />}
+    <meta name="robots" content="noindex" />
+    <link rel="canonical" href={canonicalFor(path)} />
+    <link rel="icon" href={`${ASSETS}icon.svg`} type="image/svg+xml" />
+    <slot name="head" />
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>

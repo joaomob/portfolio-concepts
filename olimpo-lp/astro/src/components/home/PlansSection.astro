@@ -1,0 +1,28 @@
+---
+// 11 · Plans: the billing switch (annual by default) and the three plan cards.
+import Eyebrow from './Eyebrow.astro';
+import PlanCard from './PlanCard.astro';
+import { plans } from '../../data/plans';
+import { eyebrowOf } from '../../data/sections';
+---
+<section class="section section_plans" id="plans" aria-labelledby="h-plans">
+  <div class="section-card is-gray">
+    <div class="container">
+      <Eyebrow text={eyebrowOf('plans')} variant="center dark" />
+      <h2 class="h2-display" id="h-plans" data-reveal>Com o Oráculo, ninguém sobe <span class="gray-font"><span class="otherfont">sozinho.</span></span></h2>
+      <div class="divider-s" />
+      <div class="annual-row" data-reveal>
+        <span class="pricing-text" data-bill-label="monthly">Mensal</span>
+        <button class="switch" type="button" role="switch" aria-checked="true" aria-label="Cobrança anual" data-billing-switch><span class="switch-circle" /></button>
+        <span class="pricing-text is-on" data-bill-label="annual">Anual</span>
+        <span class="save-badge">−17%</span>
+      </div>
+      <div class="divider-s" />
+      <div class="pircing-wrapper" data-reveal>
+        <div class="pricing-grid">
+          {plans.map((plan) => <PlanCard {...plan} />)}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

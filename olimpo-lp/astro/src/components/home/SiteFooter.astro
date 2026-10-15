@@ -1,0 +1,42 @@
+---
+// The footer: the section list, the legal documents and the Codex (both open in the reader), the language
+// switcher and the credit.
+import { sections } from '../../data/sections';
+import { legalLinks, codexLinks, languages } from '../../data/footer';
+import { asset } from '../../lib/site';
+---
+<footer class="section section_footer">
+  <div class="section-card footer">
+    <img class="footer_logo" src={asset('logo-white.svg')} alt="Olimpo" width="103" height="32" loading="lazy" />
+    <div class="footer-grid">
+      <div class="footer-column">
+        <p class="text-footer light">Navegação</p>
+        <ul class="footer-nav">
+          {sections.map((s) => <li><a class="navigation-link" href={`#${s.id}`}>{s.name}</a></li>)}
+        </ul>
+      </div>
+      <div class="grid-right-footer">
+        <div class="flex-footer">
+          <p class="text-footer light">Legal</p>
+          {legalLinks.map((l) => <button class="footer-link" type="button" data-codex={l.codex} data-section={l.section}>{l.label}</button>)}
+        </div>
+        <div class="flex-footer">
+          <p class="text-footer light">Códex</p>
+          {codexLinks.map((l) => <button class="footer-link" type="button" data-codex={l.codex}>{l.label}</button>)}
+        </div>
+        <div class="flex-footer">
+          <p class="text-footer light">Idioma</p>
+          <div class="lang-switcher" role="group" aria-label="Idioma">
+            {languages.map((lang) => (
+              <button type="button" aria-pressed={lang.ready ? 'true' : 'false'} aria-disabled={lang.ready ? undefined : 'true'} data-lang={lang.code} title={lang.ready ? undefined : 'Tradução pendente'}>{lang.label}</button>
+            ))}
+          </div>
+        </div>
+        <div class="flex-footer">
+          <p class="text-footer light">Crédito</p>
+          <p class="text-footer">Design e código · Response Design</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>

@@ -1,0 +1,18 @@
+---
+// The row of Codex doors that closes most sections. variant carries the layout classes (center, is-light).
+import CodexDoor from './CodexDoor.astro';
+
+interface Props {
+  entries: string[];
+  variant?: string;
+  /** which entrance motion picks the row up: the section reveal, the hero sequence, or none */
+  motion?: 'reveal' | 'hero' | 'none';
+}
+
+const { entries, variant = '', motion = 'reveal' } = Astro.props;
+const className = ['learn-more', variant].filter(Boolean).join(' ');
+---
+<div class={className} data-reveal={motion === 'reveal' ? '' : undefined} data-hero-in={motion === 'hero' ? '' : undefined}>
+  <span class="learn-more_label">Saiba mais</span>
+  {entries.map((entry) => <CodexDoor entry={entry} />)}
+</div>

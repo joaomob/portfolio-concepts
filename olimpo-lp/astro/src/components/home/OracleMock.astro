@@ -1,0 +1,26 @@
+---
+// The Oracle phone. Scrolling types the request and builds the plan: phones.js shows each .om-step when the
+// section progress passes its data-show value (and hides it again past data-hide).
+import { oracleGoal, oraclePlan } from '../../data/planner';
+---
+<div class="oracle-mock" data-oracle data-goal={oracleGoal} aria-hidden="true">
+  <div class="om-hd"><span class="om-sig">◇</span><span class="om-ht">Oráculo</span><span class="om-hs">IA · SMART</span></div>
+  <div class="om-body">
+    <div class="om-feed" data-feed>
+      <div class="om-msg om-user om-step" data-show="0.18"><span data-typed /></div>
+      <div class="om-msg om-ai om-step" data-show="0.26">
+        <span class="om-dots om-step" data-show="0.26" data-hide="0.34"><span /><span /><span /></span>
+        <span class="om-aitext om-step" data-show="0.34">Pronto. Montei um plano SMART em 3 fases:</span>
+      </div>
+      <div class="om-card om-step" data-show="0.40">
+        <div class="om-loading om-step" data-show="0.40" data-hide="0.48">Montando seu plano <span class="om-dots dim"><span /><span /><span /></span></div>
+        <div class="om-content om-step" data-show="0.48">
+          {oraclePlan.map((row) => (
+            <div class={`om-row om-${row.kind} om-step`} data-show={row.show}><span class="om-chk">✓</span> <span>{row.text}</span>{row.date && <> <span class="om-date">{row.date}</span></>}</div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="om-inputbar"><span class="om-itext ph" data-itext>Descreva seu objetivo…</span><span class="om-caret" /><span class="om-send">↑</span></div>
+</div>

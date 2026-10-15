@@ -1,0 +1,29 @@
+---
+// 4 · The method: goal, project, task. Each row carries a light and a dark illustration; the theme shows one.
+import Eyebrow from './Eyebrow.astro';
+import LearnMore from './LearnMore.astro';
+import { methodRows } from '../../data/method';
+import { eyebrowOf } from '../../data/sections';
+import { asset } from '../../lib/site';
+---
+<section class="section section_method" id="method" aria-labelledby="h-method">
+  <div class="section-card is-dark">
+    <div class="container">
+      <Eyebrow text={eyebrowOf('method')} variant="center" />
+      <h2 class="h2-display is-light" id="h-method" data-reveal>O dia de hoje <span class="gray-font">cabe num <span class="otherfont">degrau.</span></span></h2>
+      <div class="method_stage">
+        <ol class="method_rows">
+          {methodRows.map((row, tier) => (
+            <li class="method_row" data-tier={String(tier)}>
+              <figure class="method_illustration" aria-hidden="true"><img class="th-l" src={asset(`img/${row.image}-light.webp`)} alt="" width="823" height="1100" loading="lazy" /><img class="th-d" src={asset(`img/${row.image}-dark.webp`)} alt="" width="823" height="1100" loading="lazy" /></figure>
+              <span class="service-index">{row.n}</span>
+              <h3 class="service-name">{row.name}</h3>
+              <p class="service-title">{row.line}</p>
+            </li>
+          ))}
+        </ol>
+      </div>
+      <LearnMore entries={['C1', 'A4']} variant="center is-light" />
+    </div>
+  </div>
+</section>

@@ -1,0 +1,13 @@
+---
+// One "Saiba mais" door: a button that opens a Codex entry as a tab in the dock (olimpo.js listens on data-codex).
+import { codexDoors } from '../../data/codex-doors';
+
+interface Props {
+  entry: string;
+}
+
+const { entry } = Astro.props;
+const door = codexDoors[entry];
+if (!door) throw new Error(`No Codex door for ${entry}`);
+---
+<button class="codex-door" type="button" data-codex={entry}><svg class="codex-door_icon" viewBox="0 0 24 24" aria-hidden="true" set:html={door.icon} />{door.label}</button>

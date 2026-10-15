@@ -1,0 +1,25 @@
+---
+// One plan. The price shows the annual value first; olimpo.js swaps data-annual and data-monthly with the switch.
+import type { Plan } from '../../data/plans';
+
+type Props = Plan;
+
+const { name, tag, featured, price, freeNote, cta, features } = Astro.props;
+---
+<article class={featured ? 'plan-1 white' : 'plan-1 no-bg'}>
+  <div class="plan-head"><h3 class="card-title">{name}</h3>{tag && <span class="plan-tag">{tag}</span>}</div>
+  {price ? (
+    <p class="pricing-title" aria-live="polite"><span class="dollar">$</span><span data-price data-annual={String(price.annual)} data-monthly={String(price.monthly)}>{price.annual}</span> <span class="month-gray" data-period>por ano</span></p>
+  ) : (
+    <p class="pricing-title">Grátis <span class="month-gray">{freeNote}</span></p>
+  )}
+  <a class={cta.dark ? 'button is-dark' : 'button'} href="#plans"><span>{cta.label}</span></a>
+  <div class="line-divider-gray" />
+  <ul class="plan-feats">
+    {features.map((f) => f.state === 'off' ? (
+      <li class="is-off"><span class="minus-icon" aria-hidden="true" /><span class="sr-only">Não inclui: </span>{f.text}</li>
+    ) : (
+      <li class={f.state === 'key' ? 'is-key' : undefined}><span class="plus-icon" aria-hidden="true" />{f.text}</li>
+    ))}
+  </ul>
+</article>

@@ -1,0 +1,46 @@
+---
+// The Focus Mode phone, ported from the landing with the same markup and phases. phones.js drives the ring,
+// the phase and the time from the active step.
+---
+<div class="oracle-mock focus-mock" data-focus aria-hidden="true">
+  <div class="om-status"><span>9:41</span><span class="om-sb" /></div>
+  <div class="om-hd">
+    <span class="om-sig">◴</span>
+    <span class="om-ht">Modo Foco</span>
+    <span class="om-hs" data-focus-cycle>CONFIGURAR ▾</span>
+  </div>
+  <div class="om-body focus-body">
+    <div class="fm-icons">
+      <span class="fm-ic" aria-label="Respiração"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" /><circle cx="12" cy="12" r="5" opacity=".55" /><circle cx="12" cy="12" r="1.8" fill="currentColor" /></svg></span>
+      <span class="fm-ic" aria-label="Microfone"><svg viewBox="0 0 24 24" fill="none"><rect x="9" y="1" width="6" height="11" rx="3" /><path d="M5 10a7 7 0 0 0 14 0" /><path d="M12 19v3M8 23h8" /></svg></span>
+      <span class="fm-ic fm-ic-x" aria-label="Fechar">×</span>
+    </div>
+    <div class="fm-ring">
+      <svg viewBox="0 0 220 220" class="fm-ring-svg">
+        <circle class="fm-ring-bg" cx="110" cy="110" r="100" />
+        <circle class="fm-ring-fg" cx="110" cy="110" r="100" data-focus-ring />
+      </svg>
+      <div class="fm-ring-inner">
+        <span class="fm-phase" data-focus-phase>FOCO</span>
+        <span class="fm-time" data-focus-time>25:00</span>
+        <span class="fm-pct" data-focus-pct>0%</span>
+      </div>
+    </div>
+    <div class="fm-task">
+      <div class="fm-task-name" data-focus-task>Somar os gastos fixos</div>
+      <div class="fm-task-tag" data-focus-task-meta>🏠 Entrada do apartamento · Fase 1</div>
+    </div>
+    <div class="fm-actions">
+      <button class="fm-btn fm-primary" data-focus-pausebtn><span data-focus-pauseicon>❚❚</span> <span data-focus-pauselabel>Pausar</span></button>
+      <button class="fm-btn fm-ghost">■ Encerrar</button>
+    </div>
+    <div class="fm-music" data-focus-music>
+      <div class="fm-music-cover"><svg viewBox="0 0 24 24" fill="none"><path d="M9 18V5l12-2v13" /><circle cx="6" cy="18" r="3" /><circle cx="18" cy="16" r="3" /></svg></div>
+      <div class="fm-music-info">
+        <div class="fm-music-title">Lo-Fi Beats</div>
+        <div class="fm-music-sub">Chillhop · Foco profundo</div>
+      </div>
+      <div class="fm-music-eq"><span /><span /><span /><span /></div>
+    </div>
+  </div>
+</div>

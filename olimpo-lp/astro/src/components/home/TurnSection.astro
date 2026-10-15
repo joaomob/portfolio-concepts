@@ -1,0 +1,20 @@
+---
+// 3 · The turn: the statement whose words fade in with the scroll (data-text-fade), with the traveler inline.
+import Eyebrow from './Eyebrow.astro';
+import LearnMore from './LearnMore.astro';
+import { eyebrowOf } from '../../data/sections';
+import { asset } from '../../lib/site';
+---
+<section class="section section_turn" id="turn" aria-labelledby="h-turn">
+  <div class="section-card turn_card">
+    <div class="statement_component">
+      <Eyebrow text={eyebrowOf('turn')} variant="center dark" />
+      <div class="statement_text" data-text-fade>
+        <h2 class="statement_h2" id="h-turn">Os sistemas contavam dias. <span class="statement_turn">Nenhum perguntou o <span class="otherfont">destino.</span></span></h2>
+        <span class="statement_break" aria-hidden="true" />
+        <p class="statement_p">O destino sobreviveu a todos eles. <span class="statement_image-wrap" aria-hidden="true"><img class="statement_inline-image" src={asset('img/s1-traveler-light.webp')} alt="" width="1100" height="804" loading="lazy" /></span> O Olimpo começa por ele.</p>
+      </div>
+      <LearnMore entries={['A7', 'A1']} variant="center" />
+    </div>
+  </div>
+</section>

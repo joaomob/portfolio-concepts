@@ -1,0 +1,834 @@
+{
+  "sections": [
+    {
+      "className": "section_typography",
+      "id": "typography",
+      "blocks": [
+        {
+          "type": "header",
+          "num": "01",
+          "title": "Typography"
+        },
+        {
+          "type": "html",
+          "html": "<p class=\"text-size-regular text-color-secondary max-width-60ch\">The root is fluid: 16px at 320px wide, 22px at 1600px, in one formula with no\n    breakpoint. Everything below is in <code>em</code>, so it scales with the root instead\n    of stepping. Nine heading levels, as in Love Ignites Peace.</p>"
+        },
+        {
+          "type": "html",
+          "html": "<div class=\"spacer-medium\"></div>"
+        },
+        {
+          "type": "gap"
+        },
+        {
+          "type": "row",
+          "spec": "<b>.heading-style-h1</b>4.5em · 700 · 1.0<br>Barlow Condensed",
+          "body": "<div class=\"heading-style-h1\">Consistency beats intensity</div>"
+        },
+        {
+          "type": "row",
+          "spec": "<b>.heading-style-h2</b>3.25em · 700 · 1.1",
+          "body": "<div class=\"heading-style-h2\">Consistency beats intensity</div>"
+        },
+        {
+          "type": "row",
+          "spec": "<b>.heading-style-h3</b>2.5em · 700 · 1.1",
+          "body": "<div class=\"heading-style-h3\">Consistency beats intensity</div>"
+        },
+        {
+          "type": "row",
+          "spec": "<b>.heading-style-h4</b>2em · 600 · 1.25",
+          "body": "<div class=\"heading-style-h4\">Consistency beats intensity</div>"
+        },
+        {
+          "type": "row",
+          "spec": "<b>.heading-style-h5</b>1.5em · 600 · 1.25<br>DM Sans",
+          "body": "<div class=\"heading-style-h5\">Consistency beats intensity</div>"
+        },
+        {
+          "type": "row",
+          "spec": "<b>.heading-style-h6</b>1.25em · 600 · 1.25",
+          "body": "<div class=\"heading-style-h6\">Consistency beats intensity</div>"
+        },
+        {
+          "type": "row",
+          "spec": "<b>.heading-style-h7</b>1.125em · 600 · 1.4",
+          "body": "<div class=\"heading-style-h7\">Consistency beats intensity</div>"
+        },
+        {
+          "type": "row",
+          "spec": "<b>.heading-style-h8</b>1em · 600 · 1.4",
+          "body": "<div class=\"heading-style-h8\">Consistency beats intensity</div>"
+        },
+        {
+          "type": "row",
+          "spec": "<b>.heading-style-h9</b>.875em · 600 · allcaps",
+          "body": "<div class=\"heading-style-h9\">Consistency beats intensity</div>"
+        },
+        {
+          "type": "row",
+          "spec": "<b>.heading-style-h9-italic</b>.875em · 500 · italic",
+          "body": "<div class=\"heading-style-h9-italic\">Consistency beats intensity</div>"
+        },
+        {
+          "type": "gap"
+        },
+        {
+          "type": "html",
+          "html": "<div class=\"spacer-medium\"></div><h3 class=\"heading-style-h5\">Body sizes</h3><div class=\"spacer-xsmall\"></div>"
+        },
+        {
+          "type": "row",
+          "spec": "<b>.text-size-large</b>1.25em · 1.25",
+          "body": "<div class=\"text-size-large text-color-secondary max-width-60ch\">A goal is not abandoned for lack of will. It is abandoned for lack of a system.</div>"
+        },
+        {
+          "type": "row",
+          "spec": "<b>.text-size-medium</b>1.125em · 1.55",
+          "body": "<div class=\"text-size-medium text-color-secondary max-width-60ch\">A goal is not abandoned for lack of will. It is abandoned for lack of a system.</div>"
+        },
+        {
+          "type": "row",
+          "spec": "<b>.text-size-regular</b>1em · 1.55",
+          "body": "<div class=\"text-size-regular text-color-secondary max-width-60ch\">A goal is not abandoned for lack of will. It is abandoned for lack of a system.</div>"
+        },
+        {
+          "type": "row",
+          "spec": "<b>.text-size-small</b>.875em · 1.4",
+          "body": "<div class=\"text-size-small text-color-secondary max-width-60ch\">A goal is not abandoned for lack of will. It is abandoned for lack of a system.</div>"
+        },
+        {
+          "type": "row",
+          "spec": "<b>.text-size-tiny</b>.75em · 1.4",
+          "body": "<div class=\"text-size-tiny text-color-secondary max-width-60ch\">A goal is not abandoned for lack of will. It is abandoned for lack of a system.</div>"
+        },
+        {
+          "type": "gap"
+        },
+        {
+          "type": "html",
+          "html": "<div class=\"spacer-medium\"></div><h3 class=\"heading-style-h5\">Weights</h3><div class=\"spacer-xsmall\"></div>"
+        },
+        {
+          "type": "row",
+          "spec": "<b>.text-weight-light</b>300",
+          "body": "<div class=\"text-size-medium text-weight-light\">DM Sans Light</div>"
+        },
+        {
+          "type": "row",
+          "spec": "<b>.text-weight-normal</b>400",
+          "body": "<div class=\"text-size-medium text-weight-normal\">DM Sans Regular</div>"
+        },
+        {
+          "type": "row",
+          "spec": "<b>.text-weight-medium</b>500",
+          "body": "<div class=\"text-size-medium text-weight-medium\">DM Sans Medium</div>"
+        },
+        {
+          "type": "row",
+          "spec": "<b>.text-weight-semibold</b>600",
+          "body": "<div class=\"text-size-medium text-weight-semibold\">DM Sans Semibold</div>"
+        },
+        {
+          "type": "row",
+          "spec": "<b>.text-weight-bold</b>700",
+          "body": "<div class=\"text-size-medium text-weight-bold\">DM Sans Bold</div>"
+        },
+        {
+          "type": "row",
+          "spec": "<b>.text-weight-xbold</b>800",
+          "body": "<div class=\"text-size-medium text-weight-xbold\">DM Sans Extra Bold</div>"
+        },
+        {
+          "type": "gap"
+        },
+        {
+          "type": "html",
+          "html": "<div class=\"spacer-medium\"></div><h3 class=\"heading-style-h5\">Project text styles</h3><div class=\"spacer-xsmall\"></div>"
+        },
+        {
+          "type": "row",
+          "spec": "<b>.text-style-eyebrow</b>mono · .14em",
+          "body": "<div class=\"text-style-eyebrow\">Four archetypes</div>"
+        },
+        {
+          "type": "row",
+          "spec": "<b>.text-style-label</b>.75em · 600",
+          "body": "<div class=\"text-style-label\">Streak</div>"
+        },
+        {
+          "type": "row",
+          "spec": "<b>.text-style-tagline</b>1.5em · 500",
+          "body": "<div class=\"text-style-tagline\">The plan adapts to who you are.</div>"
+        },
+        {
+          "type": "row",
+          "spec": "<b>.text-style-quote</b>1.75em · 500",
+          "body": "<div class=\"text-style-quote max-width-large\">Discipline is a system you can keep, not a mood you have to summon.</div>"
+        },
+        {
+          "type": "row",
+          "spec": "<b>.text-style-quote-large</b>2.5em · 600",
+          "body": "<div class=\"text-style-quote-large max-width-large\">Discipline is a system you can keep.</div>"
+        },
+        {
+          "type": "gap"
+        },
+        {
+          "type": "html",
+          "html": "<div class=\"spacer-medium\"></div><h3 class=\"heading-style-h5\">Text utilities</h3><div class=\"spacer-xsmall\"></div>"
+        },
+        {
+          "type": "row",
+          "spec": "<b>.text-style-allcaps</b>",
+          "body": "<div class=\"text-size-small text-style-allcaps text-weight-medium\">Four archetypes, one system</div>"
+        },
+        {
+          "type": "row",
+          "spec": "<b>.text-style-italic</b>",
+          "body": "<div class=\"text-size-regular text-style-italic\">Four archetypes, one system</div>"
+        },
+        {
+          "type": "row",
+          "spec": "<b>.text-style-muted</b>opacity .6",
+          "body": "<div class=\"text-size-regular text-style-muted\">Four archetypes, one system</div>"
+        },
+        {
+          "type": "row",
+          "spec": "<b>.text-style-link</b>",
+          "body": "<div class=\"text-size-regular\"><a href=\"#\" class=\"text-style-link\">Four archetypes, one system</a></div>"
+        },
+        {
+          "type": "row",
+          "spec": "<b>.text-style-strikethrough</b>",
+          "body": "<div class=\"text-size-regular text-style-strikethrough\">Four archetypes, one system</div>"
+        },
+        {
+          "type": "row",
+          "spec": "<b>.text-align-center</b>",
+          "body": "<div class=\"text-size-regular text-align-center\">Four archetypes, one system</div>"
+        }
+      ]
+    },
+    {
+      "className": "section_rich-text background-color-secondary",
+      "id": "richtext",
+      "blocks": [
+        {
+          "type": "header",
+          "num": "02",
+          "title": "Rich Text"
+        },
+        {
+          "type": "html",
+          "html": "<p class=\"text-size-regular text-color-secondary max-width-60ch\">Every CMS field renders through this block: the glossary, the changelog and each\n    archetype page. Style it once and the whole collection follows.</p>"
+        },
+        {
+          "type": "html",
+          "html": "<div class=\"spacer-medium\"></div>"
+        },
+        {
+          "type": "html",
+          "html": "<div class=\"sg-row\">\n    <div class=\"sg-spec\"><b>.text-rich-text</b>h2–h4 · p · a<br>strong · em · code<br>blockquote<br>ul · ol · hr<br>figure · figcaption</div>\n    <div class=\"text-rich-text max-width-large\">\n      <h2>The four temperaments</h2>\n      <p>Olimpo sorts every user into one of four archetypes. The archetype does not change\n        what you can do. It changes <strong>how the plan is written for you</strong>, because a\n        choleric abandons a goal for different reasons than a phlegmatic.</p>\n      <blockquote>A goal is not abandoned for lack of will. It is abandoned for lack of a system.</blockquote>\n      <h3>What the Oracle reads</h3>\n      <p>The plan is assembled from three signals, in this order:</p>\n      <ol><li>The goal, stated in your own words</li><li>The time you actually have, not the time you wish you had</li><li>Your archetype, which sets the pace and the tone</li></ol>\n      <h4>What it never does</h4>\n      <ul><li>Fill a calendar you cannot keep</li><li>Treat a missed day as a failed week</li><li>Ask you to start over</li></ul>\n      <p>The glossary defines each term and the <a href=\"#\">changelog</a> records every change\n        to the model. Inline code reads like <code>streak_recovery</code>.</p>\n      <hr>\n      <figure><div class=\"sg-box aspect-ratio-widescreen\"></div><figcaption>Figure and caption, as they render inside a CMS field.</figcaption></figure>\n    </div>\n  </div>"
+        }
+      ]
+    },
+    {
+      "className": "section_color",
+      "id": "color",
+      "blocks": [
+        {
+          "type": "header",
+          "num": "03",
+          "title": "Color"
+        },
+        {
+          "type": "html",
+          "html": "<p class=\"text-size-regular text-color-secondary max-width-60ch\">Two layers. The palette holds the values, and nothing references it by hex. The\n    semantic layer holds no value at all, only a pointer. Rebranding means editing the\n    palette, and text, background and border follow.</p>"
+        },
+        {
+          "type": "html",
+          "html": "<div class=\"spacer-medium\"></div>"
+        },
+        {
+          "type": "gap"
+        },
+        {
+          "type": "html",
+          "html": "<h3 class=\"heading-style-h5\">Brand palette</h3><div class=\"spacer-xsmall\"></div>"
+        },
+        {
+          "type": "grid",
+          "cards": [
+            {
+              "cardClass": null,
+              "chipClass": null,
+              "color": "#F97316",
+              "name": "Ember",
+              "meta": "#F97316"
+            },
+            {
+              "cardClass": null,
+              "chipClass": null,
+              "color": "#c2410c",
+              "name": "Ember Deep",
+              "meta": "#c2410c"
+            },
+            {
+              "cardClass": null,
+              "chipClass": null,
+              "color": "#FDEEE1",
+              "name": "Ember Tint",
+              "meta": "#FDEEE1"
+            },
+            {
+              "cardClass": null,
+              "chipClass": null,
+              "color": "#1A1A1A",
+              "name": "Ink",
+              "meta": "#1A1A1A"
+            },
+            {
+              "cardClass": null,
+              "chipClass": null,
+              "color": "#4A4A4A",
+              "name": "Slate",
+              "meta": "#4A4A4A"
+            },
+            {
+              "cardClass": null,
+              "chipClass": null,
+              "color": "#71716D",
+              "name": "Stone",
+              "meta": "#71716D"
+            },
+            {
+              "cardClass": null,
+              "chipClass": null,
+              "color": "#FBFBFA",
+              "name": "Bone",
+              "meta": "#FBFBFA"
+            },
+            {
+              "cardClass": null,
+              "chipClass": null,
+              "color": "#F3F3F1",
+              "name": "Ash",
+              "meta": "#F3F3F1"
+            },
+            {
+              "cardClass": null,
+              "chipClass": null,
+              "color": "#C8C8C4",
+              "name": "Line",
+              "meta": "#C8C8C4"
+            },
+            {
+              "cardClass": null,
+              "chipClass": null,
+              "color": "#059669",
+              "name": "Jade",
+              "meta": "#059669"
+            },
+            {
+              "cardClass": null,
+              "chipClass": null,
+              "color": "#dc2626",
+              "name": "Rust",
+              "meta": "#dc2626"
+            },
+            {
+              "cardClass": null,
+              "chipClass": null,
+              "color": "#f59e0b",
+              "name": "Amber",
+              "meta": "#f59e0b"
+            }
+          ]
+        },
+        {
+          "type": "gap"
+        },
+        {
+          "type": "html",
+          "html": "<div class=\"spacer-medium\"></div><h3 class=\"heading-style-h5\">Semantic mapping</h3><div class=\"spacer-xsmall\"></div>"
+        },
+        {
+          "type": "row",
+          "spec": "<b>.text-color-primary</b>→ Ink",
+          "body": "<div class=\"text-size-medium text-color-primary\">Primary text, for every heading and lead.</div>"
+        },
+        {
+          "type": "row",
+          "spec": "<b>.text-color-secondary</b>→ Slate",
+          "body": "<div class=\"text-size-medium text-color-secondary\">Secondary text, for body copy.</div>"
+        },
+        {
+          "type": "row",
+          "spec": "<b>.text-color-tertiary</b>→ Stone",
+          "body": "<div class=\"text-size-medium text-color-tertiary\">Tertiary text, for labels and meta.</div>"
+        },
+        {
+          "type": "row",
+          "spec": "<b>.text-color-accent</b>→ Ember Deep",
+          "body": "<div class=\"text-size-medium text-color-accent\">Accent text. The deep tone, so it passes AA on light ground.</div>"
+        },
+        {
+          "type": "html",
+          "html": "<div class=\"spacer-small\"></div>"
+        },
+        {
+          "type": "grid",
+          "cards": [
+            {
+              "cardClass": null,
+              "chipClass": "background-color-primary",
+              "color": null,
+              "name": "background-color-primary",
+              "meta": "→ Bone"
+            },
+            {
+              "cardClass": null,
+              "chipClass": "background-color-secondary",
+              "color": null,
+              "name": "background-color-secondary",
+              "meta": "→ Ash"
+            },
+            {
+              "cardClass": null,
+              "chipClass": "background-color-tertiary",
+              "color": null,
+              "name": "background-color-tertiary",
+              "meta": "→ White"
+            },
+            {
+              "cardClass": null,
+              "chipClass": "background-color-accent",
+              "color": null,
+              "name": "background-color-accent",
+              "meta": "→ Ember"
+            },
+            {
+              "cardClass": null,
+              "chipClass": "background-color-inverse",
+              "color": null,
+              "name": "background-color-inverse",
+              "meta": "→ Ink"
+            },
+            {
+              "cardClass": null,
+              "chipClass": "background-color-alternate",
+              "color": null,
+              "name": "background-color-alternate",
+              "meta": "→ Ember Tint"
+            }
+          ]
+        },
+        {
+          "type": "gap"
+        },
+        {
+          "type": "html",
+          "html": "<div class=\"spacer-medium\"></div><h3 class=\"heading-style-h5\">Archetypes</h3><div class=\"spacer-xxsmall\"></div>"
+        },
+        {
+          "type": "html",
+          "html": "<p class=\"text-size-small text-color-tertiary max-width-60ch\">Each temperament carries a full tone and a tint. These become the Archetypes CMS\n    Collection, one item per temperament.</p><div class=\"spacer-xsmall\"></div>"
+        },
+        {
+          "type": "grid",
+          "cards": [
+            {
+              "cardClass": "archetype-melancholic",
+              "chipClass": null,
+              "color": "#1E2545",
+              "name": "Melancholic",
+              "meta": "#1E2545 · #E8EAF4"
+            },
+            {
+              "cardClass": "archetype-choleric",
+              "chipClass": null,
+              "color": "#6B2D0A",
+              "name": "Choleric",
+              "meta": "#6B2D0A · #F5EBE0"
+            },
+            {
+              "cardClass": "archetype-sanguine",
+              "chipClass": null,
+              "color": "#6B1A2A",
+              "name": "Sanguine",
+              "meta": "#6B1A2A · #F5E0E4"
+            },
+            {
+              "cardClass": "archetype-phlegmatic",
+              "chipClass": null,
+              "color": "#14433C",
+              "name": "Phlegmatic",
+              "meta": "#14433C · #DFF0EE"
+            }
+          ]
+        },
+        {
+          "type": "gap"
+        },
+        {
+          "type": "html",
+          "html": "<div class=\"spacer-medium\"></div><h3 class=\"heading-style-h5\">State</h3><div class=\"spacer-xsmall\"></div>"
+        },
+        {
+          "type": "row",
+          "spec": "<b>.is-success</b>→ Jade",
+          "body": "<div class=\"text-size-regular text-weight-medium is-success\">Streak recovered</div>"
+        },
+        {
+          "type": "row",
+          "spec": "<b>.is-error</b>→ Rust",
+          "body": "<div class=\"text-size-regular text-weight-medium is-error\">Goal could not be saved</div>"
+        },
+        {
+          "type": "row",
+          "spec": "<b>.is-warning</b>→ Amber",
+          "body": "<div class=\"text-size-regular text-weight-medium is-warning\">Two days without a check-in</div>"
+        }
+      ]
+    },
+    {
+      "className": "section_spacing background-color-secondary",
+      "id": "spacing",
+      "blocks": [
+        {
+          "type": "header",
+          "num": "04",
+          "title": "Spacing"
+        },
+        {
+          "type": "html",
+          "html": "<p class=\"text-size-regular text-color-secondary max-width-60ch\">Client First spacing is a combo: one direction class plus one size class. The direction\n    class zeroes the other three sides, so <code>margin-bottom margin-small</code> gives bottom\n    margin only. Never merge them, or editing the base stops reaching what already exists.</p>"
+        },
+        {
+          "type": "html",
+          "html": "<div class=\"spacer-medium\"></div>"
+        },
+        {
+          "type": "gap"
+        },
+        {
+          "type": "html",
+          "html": "<h3 class=\"heading-style-h5\">Spacing scale</h3><div class=\"spacer-xsmall\"></div>"
+        },
+        {
+          "type": "row",
+          "spec": "<b>tiny</b>.125em",
+          "body": "<div class=\"sg-bar\" style=\"width:1%\"></div>"
+        },
+        {
+          "type": "row",
+          "spec": "<b>xxsmall</b>.25em",
+          "body": "<div class=\"sg-bar\" style=\"width:2%\"></div>"
+        },
+        {
+          "type": "row",
+          "spec": "<b>xsmall</b>.5em",
+          "body": "<div class=\"sg-bar\" style=\"width:4%\"></div>"
+        },
+        {
+          "type": "row",
+          "spec": "<b>small</b>1em",
+          "body": "<div class=\"sg-bar\" style=\"width:8%\"></div>"
+        },
+        {
+          "type": "row",
+          "spec": "<b>medium</b>2em",
+          "body": "<div class=\"sg-bar\" style=\"width:16%\"></div>"
+        },
+        {
+          "type": "row",
+          "spec": "<b>large</b>3em",
+          "body": "<div class=\"sg-bar\" style=\"width:24%\"></div>"
+        },
+        {
+          "type": "row",
+          "spec": "<b>xlarge</b>4em",
+          "body": "<div class=\"sg-bar\" style=\"width:32%\"></div>"
+        },
+        {
+          "type": "row",
+          "spec": "<b>xxlarge</b>5em",
+          "body": "<div class=\"sg-bar\" style=\"width:40%\"></div>"
+        },
+        {
+          "type": "row",
+          "spec": "<b>huge</b>6em",
+          "body": "<div class=\"sg-bar\" style=\"width:48%\"></div>"
+        },
+        {
+          "type": "row",
+          "spec": "<b>xhuge</b>8em",
+          "body": "<div class=\"sg-bar\" style=\"width:64%\"></div>"
+        },
+        {
+          "type": "gap"
+        },
+        {
+          "type": "html",
+          "html": "<div class=\"spacer-medium\"></div><h3 class=\"heading-style-h5\">Spacers</h3><div class=\"spacer-xxsmall\"></div>"
+        },
+        {
+          "type": "html",
+          "html": "<p class=\"text-size-small text-color-tertiary max-width-60ch\">An empty div with a fixed height, for vertical rhythm between blocks. Use it when the\n    gap belongs to the layout rather than to either element.</p><div class=\"spacer-xsmall\"></div>"
+        },
+        {
+          "type": "row",
+          "spec": "<b>.spacer-small</b>1em",
+          "body": "<div class=\"sg-box spacer-small\"></div>"
+        },
+        {
+          "type": "row",
+          "spec": "<b>.spacer-medium</b>2em",
+          "body": "<div class=\"sg-box spacer-medium\"></div>"
+        },
+        {
+          "type": "row",
+          "spec": "<b>.spacer-large</b>3em",
+          "body": "<div class=\"sg-box spacer-large\"></div>"
+        },
+        {
+          "type": "row",
+          "spec": "<b>.spacer-xlarge</b>4em",
+          "body": "<div class=\"sg-box spacer-xlarge\"></div>"
+        },
+        {
+          "type": "gap"
+        },
+        {
+          "type": "html",
+          "html": "<div class=\"spacer-medium\"></div><h3 class=\"heading-style-h5\">Section padding</h3><div class=\"spacer-xsmall\"></div>"
+        },
+        {
+          "type": "row",
+          "spec": "<b>.padding-section-xsmall</b>2em · 2em",
+          "body": "<div class=\"sg-box\" style=\"height:2em\"></div>"
+        },
+        {
+          "type": "row",
+          "spec": "<b>.padding-section-small</b>3em · 3em",
+          "body": "<div class=\"sg-box\" style=\"height:3em\"></div>"
+        },
+        {
+          "type": "row",
+          "spec": "<b>.padding-section-medium</b>5em · 5em",
+          "body": "<div class=\"sg-box\" style=\"height:5em\"></div>"
+        },
+        {
+          "type": "row",
+          "spec": "<b>.padding-section-large</b>8em · 8em",
+          "body": "<div class=\"sg-box\" style=\"height:8em\"></div>"
+        }
+      ]
+    },
+    {
+      "className": "section_sizing",
+      "id": "sizing",
+      "blocks": [
+        {
+          "type": "header",
+          "num": "05",
+          "title": "Sizing"
+        },
+        {
+          "type": "html",
+          "html": "<p class=\"text-size-regular text-color-secondary max-width-60ch\">Containers are sized in <code>em</code>, so they widen with the root scale instead of\n    snapping. Reading measure is capped in <code>ch</code>, which counts characters rather\n    than pixels and holds at any root size.</p>"
+        },
+        {
+          "type": "html",
+          "html": "<div class=\"spacer-medium\"></div>"
+        },
+        {
+          "type": "gap"
+        },
+        {
+          "type": "html",
+          "html": "<h3 class=\"heading-style-h5\">Containers</h3><div class=\"spacer-xsmall\"></div>"
+        },
+        {
+          "type": "row",
+          "spec": "<b>.container-large</b>80em",
+          "body": "<div class=\"sg-box\" style=\"height:2.5em;width:100%\"></div>"
+        },
+        {
+          "type": "row",
+          "spec": "<b>.container-medium</b>60em",
+          "body": "<div class=\"sg-box\" style=\"height:2.5em;width:75%\"></div>"
+        },
+        {
+          "type": "row",
+          "spec": "<b>.container-small</b>44em",
+          "body": "<div class=\"sg-box\" style=\"height:2.5em;width:55%\"></div>"
+        },
+        {
+          "type": "row",
+          "spec": "<b>.padding-global</b>1.25em<br>.is-large 2.5em",
+          "body": "<div class=\"sg-box\" style=\"height:2.5em\"></div>"
+        },
+        {
+          "type": "gap"
+        },
+        {
+          "type": "html",
+          "html": "<div class=\"spacer-medium\"></div><h3 class=\"heading-style-h5\">Max widths</h3><div class=\"spacer-xsmall\"></div>"
+        },
+        {
+          "type": "row",
+          "spec": "<b>.max-width-xxsmall</b>16em",
+          "body": "<div class=\"sg-box max-width-xxsmall\" style=\"height:1.5em\"></div>"
+        },
+        {
+          "type": "row",
+          "spec": "<b>.max-width-small</b>24em",
+          "body": "<div class=\"sg-box max-width-small\" style=\"height:1.5em\"></div>"
+        },
+        {
+          "type": "row",
+          "spec": "<b>.max-width-medium</b>32em",
+          "body": "<div class=\"sg-box max-width-medium\" style=\"height:1.5em\"></div>"
+        },
+        {
+          "type": "row",
+          "spec": "<b>.max-width-large</b>48em",
+          "body": "<div class=\"sg-box max-width-large\" style=\"height:1.5em\"></div>"
+        },
+        {
+          "type": "row",
+          "spec": "<b>.max-width-50ch</b>measure",
+          "body": "<div class=\"text-size-regular text-color-secondary max-width-50ch\">Fifty characters is where a line stops being comfortable to read.</div>"
+        },
+        {
+          "type": "row",
+          "spec": "<b>.max-width-60ch</b>long-form",
+          "body": "<div class=\"text-size-regular text-color-secondary max-width-60ch\">Sixty characters, for body copy that runs longer than a paragraph and still has to stay readable.</div>"
+        },
+        {
+          "type": "gap"
+        },
+        {
+          "type": "html",
+          "html": "<div class=\"spacer-medium\"></div><h3 class=\"heading-style-h5\">Aspect ratios</h3><div class=\"spacer-xsmall\"></div>"
+        },
+        {
+          "type": "row",
+          "spec": "<b>.aspect-ratio-square</b>1 / 1",
+          "body": "<div class=\"sg-box aspect-ratio-square max-width-xxsmall\"></div>"
+        },
+        {
+          "type": "row",
+          "spec": "<b>.aspect-ratio-portrait</b>3 / 4",
+          "body": "<div class=\"sg-box aspect-ratio-portrait max-width-xxsmall\"></div>"
+        },
+        {
+          "type": "row",
+          "spec": "<b>.aspect-ratio-landscape</b>4 / 3",
+          "body": "<div class=\"sg-box aspect-ratio-landscape max-width-small\"></div>"
+        },
+        {
+          "type": "row",
+          "spec": "<b>.aspect-ratio-widescreen</b>16 / 9",
+          "body": "<div class=\"sg-box aspect-ratio-widescreen max-width-medium\"></div>"
+        },
+        {
+          "type": "gap"
+        },
+        {
+          "type": "html",
+          "html": "<div class=\"spacer-medium\"></div><h3 class=\"heading-style-h5\">Utilities</h3><div class=\"spacer-xsmall\"></div>"
+        },
+        {
+          "type": "row",
+          "spec": "<b>.overflow-hidden</b>",
+          "body": "<div class=\"text-size-small text-color-secondary\">Clips anything past the box. On <code>page-wrapper</code> it stops horizontal scroll from motion.</div>"
+        },
+        {
+          "type": "row",
+          "spec": "<b>.z-index-1 / -2</b>",
+          "body": "<div class=\"text-size-small text-color-secondary\">Sets position relative and lifts the element. Two levels only, on purpose.</div>"
+        },
+        {
+          "type": "row",
+          "spec": "<b>.pointer-events-none</b>",
+          "body": "<div class=\"text-size-small text-color-secondary\">For decorative layers that must not eat a click.</div>"
+        },
+        {
+          "type": "row",
+          "spec": "<b>.hide</b>",
+          "body": "<div class=\"text-size-small text-color-secondary\">Display none. Combine with a breakpoint in the Designer rather than making a variant class.</div>"
+        }
+      ]
+    },
+    {
+      "className": "section_components background-color-secondary",
+      "id": "components",
+      "blocks": [
+        {
+          "type": "header",
+          "num": "06",
+          "title": "Components"
+        },
+        {
+          "type": "html",
+          "html": "<p class=\"text-size-regular text-color-secondary max-width-60ch\">Each of these is a Webflow Component, not a class with a combo, so one edit reaches\n    every instance. Component classes use the underscore form. Motion is attached by\n    attribute, never by class.</p>"
+        },
+        {
+          "type": "html",
+          "html": "<div class=\"spacer-medium\"></div>"
+        },
+        {
+          "type": "gap"
+        },
+        {
+          "type": "row",
+          "spec": "<b>Button</b>.button<br>.is-secondary<br>.is-text<br>.is-small · .is-large<br>.button-group",
+          "body": "<div class=\"button-group\"><a href=\"#\" class=\"button is-large\">Start now</a><a href=\"#\" class=\"button\">Start now</a><a href=\"#\" class=\"button is-secondary\">See archetypes</a><a href=\"#\" class=\"button is-text\">Learn more</a><a href=\"#\" class=\"button is-small\">Small</a></div>"
+        },
+        {
+          "type": "gap"
+        },
+        {
+          "type": "row",
+          "spec": "<b>Navigation</b>.nav_component<br>.nav_logo<br>.nav_menu<br>.nav_menu-link",
+          "body": "<div class=\"nav_component background-color-tertiary padding-horizontal padding-small\" style=\"border-radius:var(--radius-small)\"><div class=\"nav_logo\">Olimpo</div><nav class=\"nav_menu\"><a href=\"#\" class=\"nav_menu-link\">Archetypes</a><a href=\"#\" class=\"nav_menu-link\">Pricing</a><a href=\"#\" class=\"nav_menu-link\">Glossary</a></nav></div>"
+        },
+        {
+          "type": "gap"
+        },
+        {
+          "type": "row",
+          "spec": "<b>Big quote</b>.big-quote_component<br>.big-quote_eyebrow<br>.big-quote_text<br>.big-quote_rule<br>.big-quote_attribution",
+          "body": "<div class=\"big-quote_component\"><div class=\"big-quote_eyebrow\">From the beta</div><div class=\"big-quote_text\">I stopped starting over every Monday.</div><div class=\"big-quote_rule\"></div><div class=\"big-quote_attribution\">Beta user · choleric</div></div>"
+        },
+        {
+          "type": "gap"
+        },
+        {
+          "type": "row",
+          "spec": "<b>Footer</b>.footer_component<br>.footer_layout<br>.footer_col-title<br>.footer_col-list<br>.footer_link<br>.footer_legal",
+          "body": "<div class=\"footer_component\"><div class=\"footer_layout\">\n      <div><div class=\"nav_logo\">Olimpo</div><p class=\"text-size-small text-color-tertiary max-width-xsmall margin-top margin-xsmall\">Goals that survive the week you have, not the week you planned.</p></div>\n      <div><div class=\"footer_col-title\">Product</div><div class=\"footer_col-list\"><a href=\"#\" class=\"footer_link\">Archetypes</a><a href=\"#\" class=\"footer_link\">Pricing</a><a href=\"#\" class=\"footer_link\">Changelog</a></div></div>\n      <div><div class=\"footer_col-title\">Learn</div><div class=\"footer_col-list\"><a href=\"#\" class=\"footer_link\">Glossary</a><a href=\"#\" class=\"footer_link\">Community</a></div></div>\n    </div><div class=\"footer_legal\"><span>© 2026 Olimpo</span><a href=\"#\" class=\"footer_link\">Privacy</a><a href=\"#\" class=\"footer_link\">Terms</a><a href=\"#\" class=\"footer_link\">Style guide</a></div></div>"
+        },
+        {
+          "type": "gap"
+        },
+        {
+          "type": "row",
+          "spec": "<b>Motion attributes</b>data-reveal<br>data-reveal-delay<br>data-reveal-duration<br>data-reveal-y",
+          "body": "<div class=\"text-size-small text-color-secondary max-width-60ch\">Behaviour lives on the attribute, styling on the class. Defaults are 0.8s and 24px,\n      each overridable per element from the Settings panel without touching code.</div>"
+        },
+        {
+          "type": "gap"
+        },
+        {
+          "type": "row",
+          "spec": "<b>Motion tokens</b>--ease<br>--duration",
+          "body": "<div class=\"text-size-small text-color-secondary max-width-60ch\">One easing, <code>cubic-bezier(.22, 1, .36, 1)</code>, and one duration, 500ms. Anything\n      driven by scroll scrub is linear instead, because an eased curve fights the scroll position.</div>"
+        }
+      ]
+    }
+  ]
+}

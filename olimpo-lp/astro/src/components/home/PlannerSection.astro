@@ -1,0 +1,27 @@
+---
+// 5 · The planner: the temple of Delphi in the back, the title and the Oracle phone in the center.
+// The tall track pins the scene while the plan builds.
+import Eyebrow from './Eyebrow.astro';
+import LearnMore from './LearnMore.astro';
+import Term from './Term.astro';
+import OracleMock from './OracleMock.astro';
+import { eyebrowOf } from '../../data/sections';
+import { asset } from '../../lib/site';
+---
+<section class="section section_planner" id="planner" aria-labelledby="h-planner">
+  <div class="section-card oracle_card">
+    <div class="oracle_track" data-oracle-section>
+      <div class="oracle_sticky">
+        <div class="oracle_bg" aria-hidden="true"><img src={asset('img/oracle-light.webp')} alt="" width="2688" height="1536" loading="lazy" data-oracle-bg /><div class="oracle_scrim" /></div>
+        <div class="oracle_wrap">
+          <Eyebrow text={eyebrowOf('planner')} variant="center" />
+          <h2 class="oracle_h2" id="h-planner" data-reveal>O Oráculo escreve <span class="gray-font">o caminho <span class="otherfont">inteiro.</span></span></h2>
+          <p class="oracle_sub" data-reveal>Uma frase basta. O <Term entry="B2">Oráculo</Term> devolve o plano.</p>
+          <OracleMock />
+          <a class="button" href="#plans"><span>Começar com o Oráculo</span></a>
+          <LearnMore entries={['B2', 'C2']} />
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

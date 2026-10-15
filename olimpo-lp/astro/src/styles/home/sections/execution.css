@@ -1,0 +1,43 @@
+/* =====================================================================
+   7 · THE EXECUTION
+   ===================================================================== */
+.why_component { display: flex; flex-direction: column; gap: 6rem; }
+.why_heading { display: flex; justify-content: space-between; align-items: flex-start; gap: 4rem; }
+.why_heading-left { display: flex; flex-direction: column; gap: 1.4rem; flex: 0 1 38ch; }
+.why_lead { font-size: 1.12rem; line-height: 1.4; font-weight: 500; }
+.why_heading-right { flex: 0 1 46rem; max-width: 46rem; }
+.why_card { display: flex; gap: 1rem; color: var(--c-cream); }
+.why-card { position: relative; width: 25%; aspect-ratio: 1; display: flex; flex-direction: column; justify-content: flex-end; border-radius: var(--radius-card); background: var(--c-ink); overflow: hidden; }
+.why_card-bg { position: absolute; inset: 0; z-index: 1; }
+.why-card.is-app .why_card-bg { background: #fafaf8; }
+.why-card.is-app .cover { object-position: 50% 0%; }
+.why-card_p-bg { position: relative; z-index: 2; min-height: 55%; display: flex; align-items: flex-end; padding: 2rem 1.5rem 1.4rem; background: linear-gradient(0deg, rgba(27, 23, 19, .9) 40%, rgba(27, 23, 19, 0)); text-wrap: pretty; }
+.why-card_p-bg p { font-size: .98rem; line-height: 1.38; }
+.why_tag { position: absolute; z-index: 3; left: 1.2rem; top: 1.2rem; font-family: var(--f-mono); font-weight: 700; font-size: var(--fs-mono-sm); letter-spacing: .1em; padding: 5px 8px; border-radius: 5px; background: rgba(27, 23, 19, .6); color: var(--c-cream); }
+.why_plus { position: absolute; z-index: 3; right: 1.3rem; top: 1.3rem; width: 14px; height: 14px; color: var(--c-cream); }
+.why_plus::before, .why_plus::after { content: ""; position: absolute; left: 0; top: 50%; width: 100%; height: 1.5px; background: currentColor; }
+.why_plus::after { transform: rotate(90deg); }
+.why-card.is-app .why_plus { color: var(--c-ink); }
+.why-card_large { position: relative; width: 25%; display: flex; flex-direction: column; justify-content: space-between; gap: 1.2rem; padding: 3.6rem 1.4rem 1.4rem; border-radius: var(--radius-card); background: var(--c-ink); }
+.why-card_large .why_tag { background: rgba(243, 236, 225, .1); }
+.why_card-p { font-size: .98rem; line-height: 1.38; color: rgba(243, 236, 225, .85); }
+.focus-screen { display: grid; gap: 10px; padding: 14px; border-radius: var(--radius-small); background: rgba(243, 236, 225, .05); border: 1px solid rgba(243, 236, 225, .1); }
+.focus_crumbs, .focus_task { display: grid; gap: 2px; font-size: .82rem; line-height: 1.25; }
+.focus_crumbs span, .focus_task span { font-family: var(--f-mono); font-weight: 700; font-size: .6rem; letter-spacing: .16em; text-transform: uppercase; color: var(--c-gray-dark); }
+.focus_crumbs strong { font-weight: 500; color: rgba(243, 236, 225, .8); }
+.focus_task strong { font-size: 1.02rem; font-weight: 600; }
+.focus_ring { position: relative; width: 116px; height: 116px; margin: 4px auto; }
+.focus_ring svg { width: 100%; height: 100%; transform: rotate(-90deg); }
+.ring-bg { fill: none; stroke: rgba(243, 236, 225, .12); stroke-width: 4; }
+.ring-fg { fill: none; stroke: var(--c-bronze-dark); stroke-width: 4; stroke-linecap: round; stroke-dasharray: 339.3; stroke-dashoffset: 0; }
+.focus_time { position: absolute; inset: 0; display: grid; place-items: center; font-size: 1.25rem; font-variant-numeric: tabular-nums; }
+@media (max-width: 1199px) { .why-card_p-bg p, .why_card-p { font-size: .9rem; } }
+@media (max-width: 991px) {
+  .why_heading { flex-direction: column; gap: 2rem; }
+  .why_heading-left, .why_heading-right { flex: none; max-width: none; }
+  .why_component { gap: 4rem; }
+  .why_card { display: grid; grid-template-columns: 1fr 1fr; }
+  .why-card, .why-card_large { width: auto; }
+  .why-card_large { min-height: 25rem; }
+}
+@media (max-width: 479px) { .why_card { grid-template-columns: 1fr; } .why-card { aspect-ratio: 4 / 5; } .why-card_p-bg p, .why_card-p { font-size: 1rem; } }

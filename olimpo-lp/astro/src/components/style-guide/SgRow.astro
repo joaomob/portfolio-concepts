@@ -1,0 +1,6 @@
+---
+// One specimen row: the spec column (class name and values) and the live sample next to it.
+interface Props { spec: string; body: string }
+const { spec, body } = Astro.props;
+---
+<div class="sg-row"><div class="sg-spec" set:html={spec} /><Fragment set:html={body} /></div>

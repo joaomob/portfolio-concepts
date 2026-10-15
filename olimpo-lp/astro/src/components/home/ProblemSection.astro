@@ -1,0 +1,31 @@
+---
+// 2 · The problem: every count reset after one slip. The marquee of attempts is cloned and moved by olimpo.js.
+import Eyebrow from './Eyebrow.astro';
+import LearnMore from './LearnMore.astro';
+import AttemptCard from './AttemptCard.astro';
+import { attempts } from '../../data/attempts';
+import { eyebrowOf } from '../../data/sections';
+import { asset } from '../../lib/site';
+---
+<section class="section section_problem" id="problem" aria-labelledby="h-problem">
+  <div class="section-card is-dark">
+    <div class="container problem_content">
+      <Eyebrow text={eyebrowOf('problem')} variant="is-light" />
+      <h2 class="problem_heading" id="h-problem" data-reveal>A contagem inteira <span class="gray-font">zerou num <span class="otherfont">tropeço.</span></span></h2>
+      <div class="problem_row">
+        <figure class="media problem_video" data-reveal>
+          <video class="cover" muted loop playsinline preload="none" poster={asset('video/s2-effort-dark.webp')} data-autoplay aria-hidden="true"><source src={asset('video/s2-effort-dark.mp4')} type="video/mp4" /></video>
+        </figure>
+        <p class="problem_subtitle" data-reveal>Caderno, planilha, mais um aplicativo de hábito. Todos mediam a mesma coisa, dias seguidos, e um dia fora apagava o resto. Vale para a poupança, para o treino, para o livro começado.</p>
+      </div>
+    </div>
+    <div class="logos" data-marquee data-marquee-speed="40" aria-label="Tentativas que pararam">
+      <div class="logos_list" data-marquee-list>
+        {attempts.map((a) => <AttemptCard {...a} />)}
+      </div>
+    </div>
+    <div class="container">
+      <LearnMore entries={['A2', 'A3']} variant="is-light" />
+    </div>
+  </div>
+</section>

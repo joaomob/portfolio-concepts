@@ -1,0 +1,45 @@
+/* Scroll scenes, written after the reduced motion block in the original, so they stay after it here. */
+/* ------------------------------------------------------------------
+   VASE (section 6): scrollytelling. Tall track, vase pinned on screen
+   while the scroll turns the four scenes; the caption of the front scene
+   lights up on the timeline beside it (js/vase.js sets data-scene).
+   ------------------------------------------------------------------ */
+.vase_track { position: relative; height: 320vh; margin-top: clamp(24px, 4vw, 56px); }
+/* "learn more" closes the section after the vase, so reading and links stay one block */
+/* the sticky stage keeps 96px free at the bottom for the dock; once it is released that space is empty, so the links rise into it */
+.followup_learn-more { margin-top: -64px; padding-left: clamp(16px, 5vw, 80px); padding-right: clamp(16px, 5vw, 80px); }
+.vase_sticky { position: sticky; top: 0; height: 100vh; display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(260px, .75fr); align-items: center; gap: clamp(24px, 4vw, 72px); padding: 72px clamp(16px, 5vw, 80px) 96px; box-sizing: border-box; }
+.vase { width: 100%; height: min(78vh, 820px); }
+.vase canvas { display: block; width: 100%; height: 100%; }
+.vase_narration { list-style: none; margin: 0; padding: 0; display: grid; gap: clamp(18px, 3vh, 32px); }
+.vase_narration li { position: relative; padding-left: 22px; border-left: 2px solid rgba(27, 23, 19, .12); font: 600 clamp(20px, 2vw, 30px)/1.12 var(--f-display, "Clash Display"), sans-serif; letter-spacing: -.025em; color: #6f6454; transition: color .35s, border-color .35s; }
+.vase_n { display: block; margin-bottom: 6px; font: 700 12px/1 var(--f-sans, Satoshi), sans-serif; letter-spacing: .16em; color: inherit; }
+.vase_sticky:has(.vase[data-scene="1"]) .vase_narration li:nth-child(1),
+.vase_sticky:has(.vase[data-scene="2"]) .vase_narration li:nth-child(2),
+.vase_sticky:has(.vase[data-scene="3"]) .vase_narration li:nth-child(3),
+.vase_sticky:has(.vase[data-scene="4"]) .vase_narration li:nth-child(4) { color: var(--c-ink, #1b1713); border-left-color: var(--c-orange, #e2560f); }
+.vase_sticky:has(.vase[data-scene="1"]) .vase_narration li:nth-child(1) .vase_n,
+.vase_sticky:has(.vase[data-scene="2"]) .vase_narration li:nth-child(2) .vase_n,
+.vase_sticky:has(.vase[data-scene="3"]) .vase_narration li:nth-child(3) .vase_n,
+.vase_sticky:has(.vase[data-scene="4"]) .vase_narration li:nth-child(4) .vase_n { color: var(--c-orange, #e2560f); }
+@media (max-width: 767px) {
+  .vase_track { height: 260vh; }
+  .vase_sticky { grid-template-columns: 1fr; grid-template-rows: auto auto; align-content: center; padding: 64px 16px 104px; gap: 8px; }
+  .vase { height: 62vh; }
+  .vase_narration { display: block; text-align: center; min-height: 3.2em; }
+  .vase_narration li { display: none; padding: 0; border: 0; color: var(--c-ink, #1b1713); }
+  .vase_narration .vase_n { color: var(--c-orange, #e2560f); }
+  .vase_sticky:has(.vase[data-scene="1"]) .vase_narration li:nth-child(1),
+  .vase_sticky:has(.vase[data-scene="2"]) .vase_narration li:nth-child(2),
+  .vase_sticky:has(.vase[data-scene="3"]) .vase_narration li:nth-child(3),
+  .vase_sticky:has(.vase[data-scene="4"]) .vase_narration li:nth-child(4) { display: block; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .vase_track { height: auto; }
+  .vase_sticky { position: static; height: auto; }
+  .vase_narration li { color: var(--c-ink, #1b1713); }
+}
+
+/* entry icon in the tabs and in the Codex index (same drawing as the doors) */
+.codex_ico { display: block; width: 14px; height: 14px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.codex_link-code .codex_ico { width: 16px; height: 16px; color: var(--c-orange); }

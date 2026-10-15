@@ -1,0 +1,26 @@
+---
+// Olimpo's own goal, drawn like the app's "Goal progress" card (dark theme). The bar fills with the end of the
+// hero video, then the card opens and shows the roadmap, project by project (phones.js).
+import LearnMore from './LearnMore.astro';
+
+const projects = [
+  { name: 'Criar o aplicativo', state: 'completed', tasks: 'Pesquisa · Planejamento · Design · Desenvolvimento · Lançamento' },
+  { name: 'Levar o Olimpo a mais pessoas', state: 'now', tag: 'agora', tasks: 'Comunidade · Conteúdo · Parcerias' },
+  { name: 'Alavancar', state: 'next', tag: 'depois', tasks: 'Quíron contínuo · Novos recursos · Novos mercados' },
+];
+const stateClass: Record<string, string> = { completed: ' is-completed', now: ' is-now', next: '' };
+---
+<div class="hero_meta" data-hero-meta hidden>
+  <p class="hero-goal_label"><span aria-hidden="true">◎</span> A meta do Olimpo</p>
+  <div class="hero-goal_top"><span class="hero-goal_icon" aria-hidden="true">🏛️</span><span class="hero-goal_name">Colocar o Olimpo no mundo</span><span class="hero-goal_num" data-hero-goal-num>0%</span></div>
+  <div class="hero-goal_bar" aria-hidden="true"><i data-hero-goal-fill /></div>
+  <div class="hero-goal_roadmap" data-hero-goal-roadmap>
+    <ol class="hero-goal_list">
+      {projects.map((p) => (
+        <li class={`hero-goal_project${stateClass[p.state]}`}><span class="hero-goal_check" aria-hidden="true" /><span class="hero-goal_text"><span class="hero-goal_project-name">{p.name}{p.state === 'completed' && <span class="sr-only">, concluído</span>}{p.tag && <> <span class="hero-goal_tag">{p.tag}</span></>}</span><span class="hero-goal_tasks">{p.tasks}</span></span></li>
+      ))}
+    </ol>
+  </div>
+  <!-- the goal card leads to its Codex entry (D3): the story behind the goal and the three projects -->
+  <LearnMore entries={['D3']} variant="is-light hero-goal_learn-more" motion="none" />
+</div>

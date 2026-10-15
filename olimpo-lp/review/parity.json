@@ -1,0 +1,95 @@
+{
+  "date": "2026-10-15T18:51:26.222Z",
+  "rows": [
+    {
+      "page": "home",
+      "width": "1440",
+      "build": "astro",
+      "pass": true,
+      "height": "17048/17048",
+      "drift": "0.00%",
+      "links": 36,
+      "images": 46,
+      "svgs": 100,
+      "problems": [],
+      "notes": [
+        "note, the original draws the streak counter with lottie-web from a CDN; the build shows it without that drawing",
+        "note, the original loads from other hosts: cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js, cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js, cdn.jsdelivr.net/npm/gsap@3.13.0/dist/Flip.min.js, cdn.jsdelivr.net/npm/gsap@3.13.0/dist/DrawSVGPlugin.min.js, cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrambleTextPlugin.min.js, cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js, cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/environments/RoomEnvironment.js, cdn.jsdelivr.net/npm/lottie-web@5.13.0/build/player/lottie_light.min.js"
+      ]
+    },
+    {
+      "page": "home",
+      "width": "375",
+      "build": "astro",
+      "pass": true,
+      "height": "15684/15684",
+      "drift": "0.00%",
+      "links": 36,
+      "images": 46,
+      "svgs": 100,
+      "problems": [],
+      "notes": [
+        "note, the original draws the streak counter with lottie-web from a CDN; the build shows it without that drawing",
+        "note, the original loads from other hosts: cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js, cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js, cdn.jsdelivr.net/npm/gsap@3.13.0/dist/Flip.min.js, cdn.jsdelivr.net/npm/gsap@3.13.0/dist/DrawSVGPlugin.min.js, cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrambleTextPlugin.min.js, cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js, cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/environments/RoomEnvironment.js, cdn.jsdelivr.net/npm/lottie-web@5.13.0/build/player/lottie_light.min.js"
+      ]
+    },
+    {
+      "page": "style-guide",
+      "width": "1440",
+      "build": "astro",
+      "pass": true,
+      "height": "20098/20098",
+      "drift": "0.00%",
+      "links": 29,
+      "images": 0,
+      "svgs": 0,
+      "problems": [],
+      "notes": [
+        "note, original console error: Failed to load resource: net::ERR_FAILED",
+        "note, original console error: 404 http://127.0.0.1:4641/favicon.ico",
+        "note, original console error: Failed to load resource: the server responded with a status of 404 (Not Found)"
+      ]
+    },
+    {
+      "page": "style-guide",
+      "width": "375",
+      "build": "astro",
+      "pass": true,
+      "height": "19492/19492",
+      "drift": "0.00%",
+      "links": 29,
+      "images": 0,
+      "svgs": 0,
+      "problems": [],
+      "notes": [
+        "note, original console error: Failed to load resource: net::ERR_FAILED"
+      ]
+    }
+  ],
+  "behaviour": [
+    {
+      "build": "original",
+      "width": "1440",
+      "canvas": 2,
+      "problems": []
+    },
+    {
+      "build": "original",
+      "width": "375",
+      "canvas": 2,
+      "problems": []
+    },
+    {
+      "build": "astro",
+      "width": "1440",
+      "canvas": 2,
+      "problems": []
+    },
+    {
+      "build": "astro",
+      "width": "375",
+      "canvas": 2,
+      "problems": []
+    }
+  ]
+}

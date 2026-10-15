@@ -1,0 +1,8 @@
+{
+  "private": true,
+  "scripts": {
+    "sync-assets": "node ../scripts/sync-assets.mjs",
+    "build": "node ../scripts/sync-assets.mjs && node ../../node_modules/astro/bin/astro.mjs build",
+    "check": "node ../../node_modules/typescript/bin/tsc --noEmit -p ."
+  }
+}

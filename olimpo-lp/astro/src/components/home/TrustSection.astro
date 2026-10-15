@@ -1,0 +1,33 @@
+---
+// 10 · Trust: Cerberus guards what you write, and the three layers of privacy.
+import Eyebrow from './Eyebrow.astro';
+import LearnMore from './LearnMore.astro';
+import { trustLayers, lockIcon } from '../../data/trust';
+import { eyebrowOf } from '../../data/sections';
+import { asset } from '../../lib/site';
+---
+<section class="section section_trust" id="trust" aria-labelledby="h-trust">
+  <div class="section-card">
+    <div class="container faq-grid">
+      <div class="max-w-left">
+        <Eyebrow text={eyebrowOf('trust')} />
+        <div class="divider-s" />
+        <h2 class="h2" id="h-trust" data-reveal>O que se escreve aqui <span class="gray-font"><span class="otherfont">fica</span> com quem escreveu.</span></h2>
+        <div class="divider-s" />
+        <div class="trust_scene" data-reveal>
+          <figure class="media trust_video">
+            <video class="cover" muted loop playsinline preload="none" poster={asset('img/cerberus.webp')} data-autoplay aria-hidden="true"><source src={asset('video/cerberus-light.mp4')} type="video/mp4" /></video>
+          </figure>
+          <span class="trust_seal" aria-hidden="true"><svg viewBox="0 0 24 24" set:html={lockIcon} /></span>
+        </div>
+        <div class="divider-s" />
+        <LearnMore entries={['B5']} />
+      </div>
+      <ol class="layers" data-reveal>
+        {trustLayers.map((layer) => (
+          <li class="layer"><span class="layer_icon" aria-hidden="true"><svg viewBox="0 0 24 24" set:html={layer.icon} /></span><p>{layer.text}</p></li>
+        ))}
+      </ol>
+    </div>
+  </div>
+</section>

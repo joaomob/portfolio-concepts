@@ -1,0 +1,13 @@
+/* =====================================================================
+   REDUCED MOTION: everything shows, nothing moves
+   ===================================================================== */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: .001ms !important; animation-iteration-count: 1 !important; transition-duration: .001ms !important; transition-delay: 0s !important; scroll-behavior: auto !important; }
+  .js [data-reveal], .js [data-hero-in], .js [data-hero-line], .js [data-fade-stagger] > li, .js [data-stagger] > *, .js [data-chat-bubble] { opacity: 1 !important; translate: none !important; }
+  .fade-word { opacity: 1 !important; }
+  .js .statement_image-wrap { width: 3.9em; }
+  .preloader { display: none !important; }
+  .cursor { display: none !important; }
+  .typing span { animation: none; }
+}
+.cta .learn-more_label { color: var(--c-cream); background: rgba(27, 23, 19, .55); padding: 4px 8px; border-radius: 6px; }  /* over the bright clouds the label needs its own backdrop for AA */

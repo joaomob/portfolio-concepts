@@ -1,0 +1,83 @@
+/* =====================================================================
+   THE READER · rises from the dock; the tab strip lives in the dock
+   ===================================================================== */
+.codex_backdrop { position: fixed; inset: 0; z-index: 1990; background: rgba(27, 23, 19, .18); -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px); }
+.codex_backdrop[hidden], .codex_panel[hidden] { display: none; }
+.codex_panel { position: fixed; z-index: 2000; left: 0; right: 0; margin: 0 auto; top: 12px; bottom: calc(var(--dock-h) + 30px); width: min(1180px, calc(100vw - 24px)); display: flex; flex-direction: column; background: var(--c-white); border-radius: var(--radius-section); overflow: hidden; box-shadow: 0 30px 80px -30px rgba(27, 23, 19, .45); transform-origin: 50% 100%; }
+.codex_body { flex: 1; min-height: 0; display: grid; grid-template-columns: 250px 1fr; }
+.codex_index { overflow: auto; overscroll-behavior: contain; padding: 22px 16px 30px 18px; border-right: 1px solid #ece4d6; display: grid; align-content: start; gap: 22px; }
+.codex_fam-title { font-family: var(--f-mono); font-weight: 700; font-size: var(--fs-mono-sm); letter-spacing: .16em; text-transform: uppercase; color: var(--c-gray); margin-bottom: 8px; }
+.codex_fam-list { display: grid; gap: 1px; }
+.codex_link { display: flex; gap: 8px; align-items: baseline; width: 100%; padding: 5px 6px; border-radius: 6px; font-size: .86rem; line-height: 1.25; text-align: left; color: var(--c-ink); }
+.codex_link:hover { background: var(--c-smoke); color: var(--c-orange); }
+.codex_link.is-current { background: var(--c-smoke); box-shadow: inset 2px 0 0 var(--c-orange); }
+.codex_link-code { flex: none; min-width: 30px; font-weight: 700; font-size: .64rem; color: var(--c-gray); }
+.codex_panes { position: relative; min-height: 0; }
+.codex_pane { position: absolute; inset: 0; overflow: auto; overscroll-behavior: contain; }
+.codex_pane[hidden] { display: none; }
+.article { position: relative; max-width: 72ch; margin: 0 auto; padding: 48px 36px 80px; }
+.article_cover { aspect-ratio: 21 / 9; margin: 8px 0 28px; }
+/* deities: MBTI article = grid of the 16 best-known gods and goddesses; archetype = god and goddess portraits side by side */
+.deity { position: relative; overflow: hidden; border-radius: var(--radius-small); background: var(--c-ink); }
+.deity img { width: 100%; height: 100%; object-fit: cover; }
+.deity figcaption { position: absolute; left: 0; right: 0; bottom: 0; padding: 18px 8px 6px; background: linear-gradient(180deg, rgba(27, 23, 19, 0), rgba(27, 23, 19, .85)); color: var(--c-cream); font-family: var(--f-display); font-weight: 600; font-size: .8rem; letter-spacing: -.01em; text-align: center; }
+.deities_grid { display: grid; grid-template-columns: repeat(8, 1fr); grid-template-rows: repeat(2, 1fr); gap: 4px; }
+.deities_duo { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin: 8px 0 28px; }
+.deities_duo .deity { aspect-ratio: 7 / 6; }  /* two cards across the full width, same height as the 21:9 covers */
+.deities_duo .deity figcaption { font-size: 1rem; padding: 28px 10px 10px; }
+@media (max-width: 767px) { .deities_grid { grid-template-columns: repeat(4, 1fr); grid-template-rows: none; aspect-ratio: auto; } .deities_grid .deity { aspect-ratio: 3 / 4; } }
+.article_meta { display: flex; flex-wrap: wrap; gap: 8px 16px; align-items: center; font-family: var(--f-mono); font-weight: 700; font-size: var(--fs-mono-sm); letter-spacing: .16em; text-transform: uppercase; color: var(--c-gray); }
+.article_title { margin: 18px 0 12px; font-family: var(--f-display); font-size: 3.4rem; line-height: 1; letter-spacing: -.03em; font-weight: 600; }
+.article_title:focus { outline: none; }
+.article_type { font-weight: 700; font-size: 1rem; color: var(--c-orange); margin-bottom: 4px; }
+.article_phrase { font-size: 1.35rem; line-height: 1.3; font-weight: 600; letter-spacing: -.5px; color: var(--c-gray); max-width: 34ch; }
+/* article body: the Codex text (CODEX.md, app archetypes, landing legal texts) */
+.article_body { margin-top: 30px; font-size: 1.06rem; line-height: 1.62; color: #2b2520; }
+.article_body > * + * { margin-top: 14px; }
+.article_body h2 { margin-top: 34px; font-family: var(--f-display); font-size: 1.5rem; font-weight: 600; line-height: 1.15; letter-spacing: -.02em; color: var(--c-ink); }
+.article_body h3 { margin-top: 26px; font-family: var(--f-display); font-size: 1.2rem; font-weight: 600; line-height: 1.2; letter-spacing: -.01em; color: var(--c-ink); }
+.article_body [tabindex="-1"]:focus { outline: none; }  /* a section link moves focus to its heading, like the title */
+/* image of a merged section (the old cover of that entry), same 21:9 crop by focal point */
+.article_figure { aspect-ratio: 21 / 9; }
+.article_body > .article_figure { margin-top: 18px; }
+.article_body ul { padding-left: 1.2em; list-style: disc; }  /* the global reset removes markers */
+.article_body li + li { margin-top: 6px; }
+.article_body li::marker { color: var(--c-orange); }
+.article_body strong { font-weight: 700; color: var(--c-ink); }
+.article_body blockquote { padding: 12px 18px; border-left: 3px solid var(--c-orange); background: rgba(226, 86, 15, .05); border-radius: 0 var(--radius-small) var(--radius-small) 0; }
+.article_date { font-family: var(--f-mono); font-size: var(--fs-mono-sm); font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--c-gray); }
+/* a link to another entry inside the text: opens as a new tab in the reader */
+.codex_ext { color: var(--c-ember); font-weight: 600; text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px; }  /* external link (opens in a new tab) */
+.codex_ext:hover { color: var(--c-ink); }
+.codex_ref { display: inline; padding: 0; font: inherit; color: var(--c-ember); font-weight: 600; text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px; cursor: pointer; }
+.codex_ref:hover { color: var(--c-ink); }
+.codex_ref:focus-visible { outline: 2px solid var(--c-orange); outline-offset: 2px; border-radius: 2px; }
+.article_related { margin-top: 48px; padding-top: 22px; border-top: 1px solid #ece4d6; }
+.article_related h3 { font-family: var(--f-mono); font-size: var(--fs-mono-sm); font-weight: 700; letter-spacing: .16em; text-transform: uppercase; color: var(--c-gray); margin-bottom: 12px; }
+.article_related .learn-more { gap: 6px; }
+.article_index-intro { font-size: 1.2rem; font-weight: 600; line-height: 1.35; max-width: 44ch; margin-top: 8px; color: var(--c-gray); }
+/* index page: one accordion card per group. Closed, every card has the same height; the head is warm paper with a faint Greek-key texture */
+.index-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 32px; align-items: start; }
+.fam_card { border-radius: var(--radius-card); background: var(--c-white); border: 1px solid #e6dccb; overflow: hidden; }
+.fam_head { position: relative; isolation: isolate; display: flex; align-items: center; gap: 14px; height: 96px; padding: 0 16px; background: #f3ebdd; color: var(--c-ink); cursor: pointer; list-style: none; }
+.fam_head::-webkit-details-marker { display: none; }
+.fam_head::before { content: ""; position: absolute; inset: 0; z-index: -1; background: var(--c-orange); opacity: .07; -webkit-mask: url("/concepts/olimpo-lp/assets/meander.svg") repeat 0 0 / 150px auto; mask: url("/concepts/olimpo-lp/assets/meander.svg") repeat 0 0 / 150px auto; }
+.fam_head:hover { background: #efe5d4; }
+.fam_head:focus-visible { outline: 2px solid var(--c-orange); outline-offset: -2px; }
+.fam_ico { flex: none; display: grid; place-items: center; width: 48px; height: 48px; border-radius: 50%; background: var(--c-orange); }
+.fam_svg { width: 24px; height: 24px; fill: none; stroke: var(--c-white); stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+.fam_txt { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 2px; }
+.fam_name { font-family: var(--f-display); font-size: 1.25rem; font-weight: 600; line-height: 1.1; letter-spacing: -.02em; }
+.fam_desc { font-size: .82rem; line-height: 1.3; color: var(--c-gray); display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+.fam_count { flex: none; font-family: var(--f-mono); font-size: var(--fs-mono-sm); font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--c-ember); }
+.fam_chev { flex: none; width: 10px; height: 10px; border-right: 2px solid var(--c-gray); border-bottom: 2px solid var(--c-gray); transform: translateY(-3px) rotate(45deg); transition: transform .25s var(--ease); }
+.fam_card[open] .fam_chev { transform: translateY(2px) rotate(225deg); }
+.fam_card > .learn-more { padding: 14px 14px 16px; gap: 6px; border-top: 1px solid #e6dccb; }
+.codex_link-idx { margin-bottom: -8px; font-weight: 700; }
+@media (max-width: 991px) { .codex_body { grid-template-columns: 1fr; } .codex_index { display: none; } .article_title { font-size: 2.8rem; } }
+@media (max-width: 767px) {
+  .codex_panel { left: 0; right: 0; top: 0; width: auto; bottom: calc(var(--dock-h) + 18px); border-radius: 0 0 16px 16px; }
+  .article { padding: 40px 20px 60px; }
+  .article_title { font-size: 2.2rem; }
+  .index-grid { grid-template-columns: 1fr; }
+}

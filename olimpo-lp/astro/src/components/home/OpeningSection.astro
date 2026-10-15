@@ -1,0 +1,31 @@
+---
+// 1 · Opening. The video of the clouds parting over the temple plays once and stops on the last frame.
+// olimpo.js picks the light or dark file from the data-* attributes.
+import Eyebrow from './Eyebrow.astro';
+import LearnMore from './LearnMore.astro';
+import Term from './Term.astro';
+import HeroGoalCard from './HeroGoalCard.astro';
+import { asset } from '../../lib/site';
+---
+<section class="section_opening" id="opening" aria-labelledby="h-opening" data-hero>
+  <div class="hero">
+    <div class="hero_media" aria-hidden="true">
+      <video class="hero_video" muted playsinline autoplay preload="auto" poster={asset('video/cap0-light.webp')} data-hero-video
+        data-light={asset('video/cap0-light.mp4')} data-dark={asset('video/cap0-dark.mp4')}
+        data-poster-light={asset('video/cap0-light.webp')} data-poster-dark={asset('video/cap0-dark.webp')}
+        data-end-light={asset('video/cap0-light-end.webp')} data-end-dark={asset('video/cap0-dark-end.webp')} />
+      <div class="hero_scrim" />
+    </div>
+    <div class="hero_text">
+      <Eyebrow text="Alta performance com propósito" motion="hero" />
+      <h1 class="hero_h1" id="h-opening"><span class="line" data-hero-line>Você sabe aonde</span> <span class="line gray-font" data-hero-line>quer <span class="otherfont">chegar.</span></span></h1>
+      <p class="hero_sub" data-hero-in>O <Term entry="B1">Olimpo</Term> monta o caminho, degrau por degrau. <span class="gray-font">Se a subida travar no meio, ele chama de volta.</span></p>
+      <div class="button-group" data-hero-in>
+        <a class="button" href="#plans"><span>Começar grátis</span></a>
+        <a class="button is-dark" href="#method"><span>Entender o método</span></a>
+      </div>
+      <LearnMore entries={['B1']} motion="hero" />
+    </div>
+    <HeroGoalCard />
+  </div>
+</section>

@@ -1,0 +1,19 @@
+---
+// 12 · Closing: the summit in the back and the last call to start.
+import Eyebrow from './Eyebrow.astro';
+import LearnMore from './LearnMore.astro';
+import { eyebrowOf } from '../../data/sections';
+import { asset } from '../../lib/site';
+---
+<section class="section section_closing" id="closing" aria-labelledby="h-closing">
+  <div class="section-card cta">
+    <img class="cta_bg" src={asset('img/summit-light.webp')} alt="" width="2400" height="1373" loading="lazy" data-cta-bg />
+    <div class="container cta_inner">
+      <Eyebrow text={eyebrowOf('closing')} variant="center is-white" />
+      <h2 class="h2-display is-cta" id="h-closing" data-reveal>O primeiro degrau <span class="is-soft">você dá <span class="otherfont">hoje.</span></span></h2>
+      <p class="cta_p" data-reveal>Grátis, sem cartão, e a primeira meta pode começar ainda hoje.</p>
+      <div class="button-group cnt" data-reveal><a class="button is-bronze" href="#plans"><span>Começar grátis</span></a></div>
+      <LearnMore entries={['B7']} variant="center is-light" />
+    </div>
+  </div>
+</section>

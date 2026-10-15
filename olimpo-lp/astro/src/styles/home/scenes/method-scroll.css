@@ -1,0 +1,7 @@
+/* method: the image lights up with the scroll (the row crossing the middle of the screen), at
+   any width; the hover still works on top */
+.hover-ok .method_row.is-active .method_illustration { transform: scale(1) rotate(-3deg); }
+.hover-ok .method_row.is-active .service-name { color: var(--c-bronze-dark); }
+.hover-ok .method_rows:hover .method_row.is-active:not(:hover) .method_illustration { transform: scale(0) rotate(-3deg); }
+.hover-ok .method_rows:hover .method_row.is-active:not(:hover) .service-name { color: inherit; }
+.focus_panel .focus-mock .focus-body { min-height: 470px; padding-bottom: 82px; } /* the music bar (absolute, at the bottom) does not cover Resume/End */

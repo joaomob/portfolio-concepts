@@ -1,0 +1,58 @@
+---
+// The home: twelve sections in the original order, the Greek key friezes between the acts, the footer, the Codex
+// reader with its dock, and the live region the scripts announce through.
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Preloader from '../components/home/Preloader.astro';
+import SiteNav from '../components/home/SiteNav.astro';
+import Frieze from '../components/home/Frieze.astro';
+import OpeningSection from '../components/home/OpeningSection.astro';
+import ProblemSection from '../components/home/ProblemSection.astro';
+import TurnSection from '../components/home/TurnSection.astro';
+import MethodSection from '../components/home/MethodSection.astro';
+import PlannerSection from '../components/home/PlannerSection.astro';
+import FollowupSection from '../components/home/FollowupSection.astro';
+import ExecutionSection from '../components/home/ExecutionSection.astro';
+import PersonalizationSection from '../components/home/PersonalizationSection.astro';
+import StayingPowerSection from '../components/home/StayingPowerSection.astro';
+import TrustSection from '../components/home/TrustSection.astro';
+import PlansSection from '../components/home/PlansSection.astro';
+import ClosingSection from '../components/home/ClosingSection.astro';
+import SiteFooter from '../components/home/SiteFooter.astro';
+import CodexRoot from '../components/home/CodexRoot.astro';
+import { asset } from '../lib/site';
+import '../styles/home/index.css';
+
+const title = 'Olimpo · Você sabe aonde quer chegar.';
+const description = 'O Olimpo mantém a meta onde ela está e constrói os degraus até ela. Se a subida travar no meio, ele chama de volta.';
+---
+<BaseLayout title={title} description={description} path="" lang="pt-BR" theme="light" ogImage={asset('img/og-image.webp')}>
+  <script slot="head" is:inline>document.documentElement.classList.add('js');try{if(sessionStorage.getItem('olimpo-pre'))document.documentElement.classList.add('pre-seen')}catch(e){}</script>
+  <Preloader />
+  <a class="skip" href="#main-content">Pular para o conteúdo</a>
+  <SiteNav />
+  <main id="main-content" class="page-content">
+    <OpeningSection />
+    <Frieze />
+    <ProblemSection />
+    <TurnSection />
+    <Frieze />
+    <MethodSection />
+    <PlannerSection />
+    <FollowupSection />
+    <ExecutionSection />
+    <PersonalizationSection />
+    <StayingPowerSection />
+    <Frieze />
+    <TrustSection />
+    <PlansSection />
+    <ClosingSection />
+  </main>
+  <Frieze />
+  <SiteFooter />
+  <CodexRoot />
+  <div class="sr-only" aria-live="polite" data-live />
+  <script>
+    import { startHome } from '../scripts/home.js';
+    startHome();
+  </script>
+</BaseLayout>

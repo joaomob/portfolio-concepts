@@ -1,0 +1,39 @@
+/* =====================================================================
+   OLIMPO · Home
+   Applies pesquisa/JULGAMENTO-DESIGN.md (21 Sep 2026).
+   System: numbered index (2.1), Codex dock (2.2), bracket cursor (2.3),
+   meander with four uses (2.4), image (2.5), opening video in scrub
+   (replaces the crepidoma, cancelled), motion (2.7).
+   ===================================================================== */
+
+/* The files are imported in the order of the original stylesheet, so the cascade is the same. */
+@import "./fonts.css";
+@import "./tokens.css";
+@import "./base.css";
+@import "./preloader.css";
+@import "./nav.css";
+@import "./sections/opening.css";
+@import "./section.css";
+@import "./sections/problem.css";
+@import "./sections/turn.css";
+@import "./sections/method.css";
+@import "./sections/planner.css";
+@import "./sections/followup.css";
+@import "./sections/execution.css";
+@import "./sections/personalization.css";
+@import "./sections/staying-power.css";
+@import "./sections/trust.css";
+@import "./sections/plans.css";
+@import "./sections/closing.css";
+@import "./footer.css";
+@import "./codex/dock.css";
+@import "./codex/reader.css";
+@import "./cursor.css";
+@import "./reduced-motion.css";
+@import "./scenes/vase.css";
+@import "./scenes/planner.css";
+@import "./scenes/execution.css";
+@import "./scenes/followup-cutouts.css";
+@import "./scenes/focus-mock.css";
+@import "./scenes/method-scroll.css";
+@import "./scenes/hero-goal.css";

@@ -1,0 +1,34 @@
+---
+// 6 · The follow-up: Chiron calls you back. The red-figure vase (vase.js, three.js) turns with the scroll
+// and settles on each of the four scenes; the narration and Chiron's message follow the scene.
+import Eyebrow from './Eyebrow.astro';
+import LearnMore from './LearnMore.astro';
+import Term from './Term.astro';
+import { vaseScenes, vaseLabel } from '../../data/followup';
+import { eyebrowOf } from '../../data/sections';
+---
+<section class="section section_followup" id="followup" aria-labelledby="h-followup">
+  <div class="section-card is-gray">
+    <div class="container title-grid">
+      <Eyebrow text={eyebrowOf('followup')} />
+      <div class="max-w _01">
+        <h2 class="h2" id="h-followup" data-reveal>O movimento parou. <span class="gray-font">Quíron chama de <span class="otherfont">volta.</span></span></h2>
+        <div class="divider-s" />
+        <p class="p-subhead add-max-w" data-reveal>Quando uma meta para, <Term entry="B4">Quíron</Term> percebe e escreve. <span class="gray-font">Sem cobrança e sem recomeço do zero:</span> ele lembra o destino e oferece o menor passo possível.</p>
+      </div>
+    </div>
+    <div class="vase_track" data-vase-track>
+      <div class="vase_sticky">
+        <div class="vase" data-vase role="img" aria-label={vaseLabel} />
+        <ol class="vase_narration">
+          {vaseScenes.map((scene) => (
+            <li><span class="vase_n">{scene.n}</span><span class="vase_caption">{scene.caption}</span><div class="cutouts" aria-hidden="true"><div class="coach-card"><div class="msg-av">Q</div><div><div class="msg-name">Quíron · coach</div><div class="msg-txt">{scene.message}</div></div></div></div></li>
+          ))}
+        </ol>
+      </div>
+    </div>
+    <div class="container followup_learn-more">
+      <LearnMore entries={['B4', 'C3', 'A8']} />
+    </div>
+  </div>
+</section>

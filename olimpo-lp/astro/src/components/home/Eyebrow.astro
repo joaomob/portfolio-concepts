@@ -1,0 +1,12 @@
+---
+// The small label with the orange dot over each heading ("02 · O problema").
+interface Props {
+  text: string;
+  variant?: string;
+  motion?: 'reveal' | 'hero' | 'none';
+}
+
+const { text, variant = '', motion = 'reveal' } = Astro.props;
+const className = ['dot-wrapper', variant].filter(Boolean).join(' ');
+---
+<div class={className} data-reveal={motion === 'reveal' ? '' : undefined} data-hero-in={motion === 'hero' ? '' : undefined}><span class="small-dot" /><span>{text}</span></div>

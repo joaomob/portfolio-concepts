@@ -1,0 +1,36 @@
+/* =====================================================================
+   4 · THE METHOD · the three rows; the illustration of each level shows on
+   hover (desktop) or on scroll (touch and reduced motion)
+   ===================================================================== */
+.section_method .dot-wrapper { margin-bottom: 24px; }
+.section_method .h2-display { margin-bottom: 80px; }
+.method_stage { margin-bottom: 60px; }
+.method_rows { display: grid; }
+.method_row { position: relative; display: grid; grid-template-columns: 60px 1fr minmax(0, 30ch); grid-template-areas: "i n t"; column-gap: 16px; align-items: center; padding: 28px 0; border-top: 1px solid var(--c-line-dark); color: var(--c-white); }
+.method_row:last-child { border-bottom: 1px solid var(--c-line-dark); }
+.service-index { grid-area: i; font-family: var(--f-mono); font-weight: 700; font-size: var(--fs-mono); color: var(--c-gray-dark); letter-spacing: .1em; }
+.service-name { grid-area: n; justify-self: center; font-family: var(--f-display); font-size: var(--fs-page-title); font-weight: 600; line-height: 1; letter-spacing: -.03em; position: relative; z-index: 2; transition: color var(--t-state) var(--ease); }
+.service-title { grid-area: t; justify-self: end; text-align: right; max-width: 30ch; font-size: 1.05rem; line-height: 1.4; color: rgba(243, 236, 225, .72); }
+/* the level image: 4/5, 16px corners (the .ms-img of the landing) */
+.method_illustration { position: relative; aspect-ratio: 4 / 5; border-radius: 16px; overflow: hidden; background: #241f1a; }
+.method_illustration img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.th-d { display: none !important; }
+[data-theme="dark"] .th-d { display: block !important; }
+[data-theme="dark"] .th-l { display: none !important; }
+/* desktop with a mouse: the image grows on the level hover */
+.hover-ok .method_illustration { position: absolute; left: 7%; top: 50%; z-index: 3; width: 230px; margin-top: -144px; transform: scale(0) rotate(-3deg); transition: transform var(--t-state) var(--ease); pointer-events: none; box-shadow: 0 30px 60px -20px rgba(0, 0, 0, .6); }
+.hover-ok .method_row:hover .method_illustration, .hover-ok .method_row:focus-within .method_illustration { transform: scale(1) rotate(-3deg); }
+.hover-ok .method_row:hover .service-name { color: var(--c-bronze-dark); }
+/* touch and reduced motion: the image stays in the row and shows on scroll */
+html:not(.hover-ok) .method_row { grid-template-columns: 60px minmax(0, 220px) 1fr minmax(0, 30ch); grid-template-areas: "i f n t"; }
+html:not(.hover-ok) .method_illustration { grid-area: f; width: 100%; }
+html.js:not(.hover-ok) .method_illustration { opacity: 0; translate: 0 24px; transition: opacity var(--t-reveal) var(--ease), translate var(--t-reveal) var(--ease); }
+html.js:not(.hover-ok) .method_row.is-in .method_illustration { opacity: 1; translate: 0 0; }
+@media (max-width: 991px) { .service-name { font-size: 3.6rem; } }
+@media (max-width: 767px) {
+  .section_method .h2-display { margin-bottom: 40px; }
+  .method_row, html:not(.hover-ok) .method_row { grid-template-columns: 40px 1fr; grid-template-areas: "f f" "i n" "i t"; row-gap: 8px; }
+  .hover-ok .method_illustration, .method_illustration { position: relative; left: auto; top: auto; margin: 0 0 14px; width: 100%; transform: none; grid-area: f; box-shadow: none; }
+  .service-name { justify-self: start; font-size: 3rem; }
+  .service-title { justify-self: start; text-align: left; }
+}

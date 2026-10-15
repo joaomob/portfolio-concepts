@@ -1,0 +1,52 @@
+---
+// 9 · Staying power: the bento with the curfew dial, the streak and the trophies.
+import Eyebrow from './Eyebrow.astro';
+import LearnMore from './LearnMore.astro';
+import Term from './Term.astro';
+import TapDial from './TapDial.astro';
+import { eyebrowOf } from '../../data/sections';
+import { asset } from '../../lib/site';
+---
+<section class="section section_staying-power" id="staying-power" aria-labelledby="h-staying-power">
+  <div class="section-card is-gray">
+    <div class="container bento_component">
+      <div class="title-grid" data-reveal>
+        <Eyebrow text={eyebrowOf('staying-power')} motion="none" />
+        <div class="max-w _01">
+          <h2 class="h3-display" id="h-staying-power">No ranking <span class="gray-font"><span class="otherfont">sobe</span> quem volta.</span></h2>
+          <div class="divider-s" />
+          <p class="p-subhead add-max-w">O <Term entry="C9">ranking</Term> dá metade dos pontos à regularidade. <span class="gray-font">Horas acumuladas de uma vez pesam pouco.</span></p>
+        </div>
+      </div>
+
+      <div class="bento_grid">
+        <article class="bento_vertical" data-reveal>
+          <img class="bento_bg" src={asset('img/morpheus-portrait-dark.webp')} alt="" width="900" height="1260" loading="lazy" />
+          <div class="bento_vertical-top">
+            <p class="bento_kicker">E existe uma sequência que quebra pelo motivo contrário.</p>
+            <h3 class="bento_huge">Toque de Recolher</h3>
+          </div>
+          <TapDial />
+          <p class="bento_vertical-paragraph">O <strong>Toque de Recolher</strong> conta os dias em que o trabalho parou antes das 23h. Passou do horário, zera. Varou a madrugada, zera, e o dia fica marcado.</p>
+        </article>
+        <article class="bento_top" data-reveal>
+          <div class="bento_media"><video class="cover" muted loop playsinline preload="none" poster={asset('video/glory-flame-dark.webp')} data-autoplay aria-hidden="true"><source src={asset('video/glory-flame-dark.mp4')} type="video/mp4" /></video></div>
+          <div class="bento_top-content">
+            <p class="bento_word">Streak</p>
+            <div class="streak" aria-hidden="true"><div class="streak_anim" data-lottie-streak /><span class="streak_count" data-streak-count>0</span></div>
+            <p class="bent_paragraph">O <Term entry="C7" light>streak</Term> soma os dias em que houve volta. Quebrar a sequência não apaga o que já foi feito.</p>
+          </div>
+        </article>
+        <article class="bento_bottom" data-reveal>
+          <div class="bento_media"><video class="cover" muted loop playsinline preload="none" poster={asset('video/glory-podium-light.webp')} data-autoplay aria-hidden="true"><source src={asset('video/glory-podium-light.mp4')} type="video/mp4" /></video></div>
+          <div class="bento_bottom-content">
+            <p class="bento_word">Troféus</p>
+            <p class="bento_paragraph">Os <Term entry="C8" light>troféus</Term> vêm da mitologia grega e não se perdem. As estatísticas mostram um ano de trabalho numa tela só. A comunidade sobe junto, pela mesma régua.</p>
+          </div>
+        </article>
+      </div>
+
+      <LearnMore entries={['C7', 'C8', 'C9', 'A9', 'A10']} />
+    </div>
+  </div>
+</section>

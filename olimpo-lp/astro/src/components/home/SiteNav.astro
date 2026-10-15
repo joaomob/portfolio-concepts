@@ -1,0 +1,27 @@
+---
+// The header: the logo, the numbered index of the twelve sections with previous and next, the Codex and the CTA.
+import { sections } from '../../data/sections';
+import { asset } from '../../lib/site';
+---
+<header class="nav" data-nav>
+  <a class="nav_logo" href="#opening" aria-label="Olimpo, início">
+    <img class="nav_logo-black" src={asset('logo-black.svg')} alt="" width="128" height="40" />
+    <img class="nav_logo-white" src={asset('logo-white.svg')} alt="" width="128" height="40" />
+  </a>
+  <nav class="nav_index" aria-label="Seções da página">
+    <button class="nav_step" type="button" data-sec-prev aria-label="Seção anterior"><span aria-hidden="true">‹</span></button>
+    <ol class="nav_list" data-nav-list>
+      {sections.map((s) => (
+        <>
+          <li><a href={`#${s.id}`} data-sec={s.id} aria-label={`${s.n}, ${s.name}`}><span class="nav_n">{s.n}</span><span class="nav_nm"><span>{s.name}</span></span></a></li>
+          {s.endsGroup && <li class="nav_sep" aria-hidden="true" />}
+        </>
+      ))}
+    </ol>
+    <button class="nav_step" type="button" data-sec-next aria-label="Próxima seção"><span aria-hidden="true">›</span></button>
+  </nav>
+  <div class="nav_right">
+    <a class="nav_codex" href="#codex/indice" data-codex="IDX">Códex<span class="nav_count" data-nav-count hidden /></a>
+    <a class="nav_cta" href="#plans">Começar grátis</a>
+  </div>
+</header>

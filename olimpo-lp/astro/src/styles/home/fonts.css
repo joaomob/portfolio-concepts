@@ -1,0 +1,9 @@
+/* Self-hosted fonts (Fontshare), the same files the Webflow build uses. */
+/* self-hosted fonts (Fontshare, free for commercial use), the same files uploaded to Webflow.
+   The Fontshare CSS API dropped Zodiak and added families nobody asked for (24/09). */
+@font-face { font-family: "Clash Display"; src: url("/concepts/olimpo-lp/assets/fonts/ClashDisplay-600.woff2") format("woff2"); font-weight: 600; font-style: normal; font-display: swap; }
+@font-face { font-family: "Clash Display"; src: url("/concepts/olimpo-lp/assets/fonts/ClashDisplay-700.woff2") format("woff2"); font-weight: 700; font-style: normal; font-display: swap; }
+@font-face { font-family: "Satoshi"; src: url("/concepts/olimpo-lp/assets/fonts/Satoshi-400.woff2") format("woff2"); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: "Satoshi"; src: url("/concepts/olimpo-lp/assets/fonts/Satoshi-500.woff2") format("woff2"); font-weight: 500; font-style: normal; font-display: swap; }
+@font-face { font-family: "Satoshi"; src: url("/concepts/olimpo-lp/assets/fonts/Satoshi-700.woff2") format("woff2"); font-weight: 700; font-style: normal; font-display: swap; }
+@font-face { font-family: "Zodiak"; src: url("/concepts/olimpo-lp/assets/fonts/Zodiak-400-italic.woff2") format("woff2"); font-weight: 400; font-style: italic; font-display: swap; }

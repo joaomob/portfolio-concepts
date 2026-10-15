@@ -1,0 +1,26 @@
+/* ------------------------------------------------------------------
+   EXECUTION (section 7): Focus Mode. Tall track; the text stays pinned on
+   the left and the active step lights up. On the right, the threshold video
+   in a rounded panel and the Focus Mode phone, which changes state.
+   ------------------------------------------------------------------ */
+.focus_card { padding-top: 0; padding-bottom: 0; }
+.focus_track { position: relative; height: 360vh; }
+.focus_sticky { position: sticky; top: 0; height: 100vh; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(24px, 4vw, 64px); align-items: center; padding: 88px clamp(16px, 4vw, 64px) 40px; box-sizing: border-box; }
+.focus_text { display: grid; gap: 18px; max-width: 560px; }
+.focus_h2 { font-family: var(--f-display); font-size: clamp(2.2rem, 3.6vw, 3.4rem); line-height: 1.02; letter-spacing: -.03em; font-weight: 600; margin: 0; }
+.focus_steps { list-style: none; margin: 6px 0 0; padding: 0; display: grid; gap: 4px; }
+.focus_step { display: grid; grid-template-columns: 34px 1fr; gap: 10px; padding: 12px 14px; border-radius: 14px; border-left: 2px solid rgba(27, 23, 19, .12); color: #7d7263; transition: color .35s, background-color .35s, border-color .35s; }
+.focus_step p { margin: 0; font-size: 1rem; line-height: 1.45; }
+/* only the heading and four short steps: the phone carries the section */
+.focus_step-title { display: block; font-family: var(--f-display); font-size: 1.8rem; font-weight: 600; letter-spacing: -.02em; line-height: 1.15; }
+.focus_n { font: 700 12px/2.9 var(--f-sans); letter-spacing: .14em; color: inherit; }
+.focus_step.is-on { color: var(--c-ink); background: rgba(255, 253, 246, .9); border-left-color: var(--c-orange); }
+.focus_step.is-on .focus_n { color: var(--c-ember); }
+.focus_panel { position: relative; height: min(84vh, 760px); border-radius: var(--radius-card, 24px); overflow: hidden; display: grid; place-items: center; background: var(--c-ink); }
+.focus_panel > video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+@media (max-width: 991px) {
+  .focus_track { height: auto; }
+  .focus_sticky { position: static; height: auto; grid-template-columns: 1fr; padding-top: 72px; padding-bottom: 72px; }
+  .focus_step { color: var(--c-ink); }
+  .focus_panel { height: 680px; }
+}

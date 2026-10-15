@@ -1,0 +1,26 @@
+---
+// 8 · Personalization: a horizontal band of the 16 types pinned to the screen; vertical scrolling moves it.
+import Eyebrow from './Eyebrow.astro';
+import LearnMore from './LearnMore.astro';
+import Term from './Term.astro';
+import ArchetypeCard from './ArchetypeCard.astro';
+import { archetypes } from '../../data/archetypes';
+import { eyebrowOf } from '../../data/sections';
+---
+<section class="section section_personalization" id="personalization" aria-labelledby="h-personalization">
+  <div class="section-card is-dark">
+    <div class="brands_track" data-hscroll><div class="brands_sticky"><div class="container brands_inner">
+      <div class="brands_heading-row">
+        <Eyebrow text={eyebrowOf('personalization')} variant="is-light" />
+        <h2 class="brands_heading" id="h-personalization" data-reveal>Cada arquétipo recebe <span class="gray-font">um plano <span class="otherfont">próprio.</span></span></h2>
+        <p class="brands_sub" data-reveal>Dezesseis tipos, os do <Term entry="A6" light>MBTI</Term>. O plano muda o tamanho do degrau, o tom de Quíron e quanta estrutura chega antes de ser pedida.</p>
+      </div>
+      <div class="brands_viewport"><ul class="brands_grid" data-hscroll-track aria-label="Os 16 arquétipos">
+        {archetypes.map((a) => <ArchetypeCard {...a} />)}
+      </ul></div>
+    </div></div></div>
+    <div class="container brands_inner is-after">
+      <LearnMore entries={['A6', 'A5', 'C10']} variant="is-light" />
+    </div>
+  </div>
+</section>

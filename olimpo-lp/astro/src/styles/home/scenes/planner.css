@@ -1,0 +1,57 @@
+/* ------------------------------------------------------------------
+   PLANNER (section 5): the scene of the original landing. The temple of
+   Delphi full screen, the title and the Oracle phone in the center, one
+   thing in focus. The track pins the scene while the scroll builds the plan.
+   The mockup (.oracle-mock, .om-*) is the landing's, ported without redesign.
+   ------------------------------------------------------------------ */
+.oracle_card { padding: 0; overflow: clip; --app-bg2: #fbf7ee; --app-bg-card: #fffdf6; --app-border: rgba(26, 23, 20, .08); --fg: #1b1713; --muted: #6f6454; --bronze: #e2560f; --ember: #c2410c; }
+.oracle_track { position: relative; height: 280vh; }
+.oracle_sticky { position: sticky; top: 0; height: 100vh; display: grid; place-items: center; isolation: isolate; overflow: hidden; padding: calc(var(--nav-h) + 12px) 16px calc(var(--dock-h) + 20px); }
+.oracle_bg { position: absolute; inset: 0; z-index: -1; }
+.oracle_bg img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 40%; transform: scale(calc(1.06 + var(--p, 0) * .12)); }
+.oracle_scrim { position: absolute; inset: 0; background: radial-gradient(105% 78% at 50% 46%, rgba(244, 238, 227, .35), rgba(244, 238, 227, .92)); }
+.oracle_wrap { display: flex; flex-direction: column; align-items: center; gap: 14px; text-align: center; width: min(420px, 100%); }
+.oracle_h2 { font-family: var(--f-display); font-weight: 600; font-size: clamp(1.8rem, 3.2vw, 2.6rem); line-height: 1.04; letter-spacing: -.025em; color: var(--c-ink); }
+.oracle_h2 .gray-font { color: var(--c-gray); }
+.oracle_sub { font-size: 1rem; color: rgba(27, 23, 19, .82); }
+.oracle_wrap .learn-more { justify-content: center; }
+.oracle_wrap .dot-wrapper.center { color: var(--c-ink); }  /* over the temple image the default gray label washes out */
+.oracle-mock { width: min(330px, 84vw); background: var(--app-bg2); border: 1px solid var(--app-border); border-radius: 30px; padding: .5rem; box-shadow: 0 24px 48px -22px rgba(0, 0, 0, .55); text-align: left; color: var(--fg); font-family: var(--f-sans); letter-spacing: 0; }
+.oracle_card .om-hd { display: flex; align-items: center; gap: .45rem; padding: .5rem .9rem; border-bottom: 1px solid var(--app-border); }
+.oracle_card .om-sig { color: var(--bronze); font-size: 1.05rem; }
+.oracle_card .om-ht { font-family: var(--f-display); font-weight: 600; font-size: 1rem; }
+.oracle_card .om-hs { font-size: .6rem; color: var(--bronze); letter-spacing: .08em; margin-left: auto; }
+.oracle_card .om-body { height: min(300px, 34vh); overflow: hidden; position: relative; padding: .6rem .7rem; }
+.om-feed { display: flex; flex-direction: column; gap: .45rem; will-change: transform; transition: transform .5s ease; }
+.om-msg { max-width: 82%; padding: .45rem .65rem; border-radius: 13px; font-size: .78rem; line-height: 1.35; }
+.om-user { align-self: flex-end; background: var(--bronze); color: #fff; border-bottom-right-radius: 4px; font-weight: 600; }
+.om-ai { align-self: flex-start; background: var(--app-bg-card); border: 1px solid var(--app-border); color: var(--fg); border-bottom-left-radius: 4px; }
+.om-card { border: 1px solid var(--app-border); border-radius: 13px; padding: .55rem; background: var(--app-bg-card); display: flex; flex-direction: column; gap: .32rem; margin-top: .1rem; }
+.om-row { display: flex; align-items: center; gap: .45rem; font-size: .74rem; color: var(--fg); line-height: 1.2; }
+.om-chk { width: 14px; height: 14px; flex: 0 0 auto; border-radius: 50%; background: color-mix(in srgb, var(--bronze) 22%, transparent); color: var(--bronze); display: grid; place-items: center; font-size: .5rem; }
+.om-meta { font-weight: 700; }
+.om-proj { color: var(--ember); font-weight: 700; font-size: .72rem; margin-top: .3rem; }
+.om-task .om-date { margin-left: auto; color: var(--muted); font-size: .62rem; white-space: nowrap; }
+.om-inputbar { display: flex; align-items: center; gap: .4rem; margin: .25rem .5rem .45rem; padding: .55rem .7rem; border: 1px solid var(--app-border); border-radius: 14px; font-size: .78rem; color: var(--fg); min-height: 2.1rem; background: var(--app-bg-card); }
+.om-caret { display: inline-block; width: 1.5px; height: 1em; background: var(--bronze); margin-left: 1px; animation: omblink 1s steps(1) infinite; }
+@keyframes omblink { 50% { opacity: 0; } }
+.om-send { margin-left: auto; width: 22px; height: 22px; flex: 0 0 auto; border-radius: 50%; background: var(--bronze); color: #fff; display: grid; place-items: center; font-weight: 700; font-size: .78rem; }
+.om-itext.ph { color: var(--muted); }
+.om-step { display: none; }
+.om-step.is-hidden { display: none !important; }
+.om-msg.om-step.is-on { display: block; animation: omFadeIn .35s ease both; }
+.om-msg.om-ai.om-step.is-on { display: inline-flex; align-items: center; gap: .3rem; flex-wrap: wrap; }
+.om-card.om-step.is-on { display: flex; flex-direction: column; animation: omFadeIn .35s ease both; }
+.om-loading.om-step.is-on { display: flex; align-items: center; gap: .4rem; color: var(--muted); font-size: .74rem; }
+.om-content.om-step.is-on { display: flex; flex-direction: column; gap: .32rem; }
+.om-row.om-step.is-on { display: flex; animation: omFadeIn .3s ease both; }
+.om-dots.om-step.is-on { display: inline-flex; gap: 3px; align-items: center; }
+.om-aitext.om-step.is-on { display: inline; animation: omFadeIn .3s ease both; }
+@keyframes omFadeIn { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
+.om-dots { gap: 3px; align-items: center; }
+.om-dots span { width: 5px; height: 5px; border-radius: 50%; background: currentColor; opacity: .4; animation: omdot 1.1s infinite; }
+.om-dots span:nth-child(2) { animation-delay: .15s; } .om-dots span:nth-child(3) { animation-delay: .3s; }
+@keyframes omdot { 0%, 70%, 100% { opacity: .3; transform: translateY(0); } 35% { opacity: 1; transform: translateY(-3px); } }
+.om-dots.dim { display: inline-flex; }
+@media (max-height: 760px) { .oracle_sub { display: none; } .oracle_wrap { gap: 10px; } }
+@media (prefers-reduced-motion: reduce) { .oracle_track { height: auto; } .oracle_sticky { position: relative; height: auto; min-height: 100vh; } .om-dots span, .om-caret { animation: none; } }

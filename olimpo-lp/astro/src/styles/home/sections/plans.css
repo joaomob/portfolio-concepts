@@ -1,0 +1,40 @@
+/* =====================================================================
+   11 · PLANS
+   ===================================================================== */
+.section_plans .h2-display { max-width: 11em; }
+.annual-row { display: flex; justify-content: center; align-items: center; gap: 12px; }
+.pricing-text { font-family: var(--f-mono); font-weight: 700; font-size: var(--fs-mono); letter-spacing: .16em; text-transform: uppercase; opacity: .65; cursor: pointer; transition: opacity .3s var(--ease); }
+.pricing-text.is-on { opacity: 1; }
+.switch { position: relative; width: 45px; height: 25px; border-radius: 30px; background: #6f6454; transition: background .3s var(--ease); }
+.switch[aria-checked="true"] { background: var(--c-ink); }
+.switch-circle { position: absolute; left: 4px; top: 4px; width: 17px; height: 17px; border-radius: 100%; background: var(--c-white); transition: transform .3s var(--ease); }
+.switch[aria-checked="true"] .switch-circle { transform: translateX(20px); background: var(--c-orange); }
+.save-badge { font-weight: 700; font-size: var(--fs-mono-sm); background: var(--c-orange); color: var(--c-ink); padding: 4px 8px; border-radius: 5px; }
+.pircing-wrapper { background: var(--c-white); border-radius: var(--radius-card); padding: 20px; }
+.pricing-grid { display: grid; grid-template-columns: 1fr 1.08fr 1fr; gap: 15px; align-items: stretch; }
+.plan-1 { display: flex; flex-direction: column; gap: 20px; padding: 44px 30px 34px; border-radius: var(--radius-card); border: 1px solid #0000000f; }
+.plan-1.white { background: var(--c-ink); color: var(--c-cream); border-color: transparent; }
+.plan-head { display: flex; justify-content: space-between; align-items: center; gap: 10px; }
+.plan-tag { font-family: var(--f-mono); font-weight: 700; font-size: var(--fs-mono-sm); letter-spacing: .12em; text-transform: uppercase; color: var(--c-ink); background: var(--c-orange); padding: 5px 8px; border-radius: 5px; }
+.line-divider-gray { height: 1px; background: var(--c-panel); }
+.plan-1.white .line-divider-gray { opacity: .2; }
+.pricing-title { display: flex; align-items: baseline; gap: 6px; height: 44px; font-family: var(--f-display); font-size: 2.3rem; font-weight: 600; letter-spacing: -.02em; line-height: 44px; white-space: nowrap; font-variant-numeric: tabular-nums; }
+.dollar { font-size: .6em; align-self: flex-start; line-height: 2.2; }
+.month-gray { font-family: var(--f-mono); font-size: .7rem; font-weight: 700; text-transform: uppercase; opacity: .65; letter-spacing: .12em; }
+.plan-feats { display: grid; gap: 10px; }
+.plan-feats li { display: flex; align-items: center; gap: 8px; font-size: 1rem; }
+.plus-icon { position: relative; width: 12px; height: 12px; flex: none; }
+.plus-icon::before, .plus-icon::after { content: ""; position: absolute; left: 0; top: 50%; width: 100%; height: 2px; margin-top: -1px; background: var(--c-orange); }
+.plus-icon::after { transform: rotate(90deg); }
+.plan-1.white .plus-icon::before, .plan-1.white .plus-icon::after { background: var(--c-bronze-dark); }
+/* price and button sit at the top of each card, so the button never scrolls away from its price;
+   the benefits follow inside the same card, the two that justify paying first */
+.plan-1 .button { align-self: flex-start; }
+.plan-feats li.is-key { font-weight: 700; }
+/* not included: same list in every plan (as in the original landing), switched off so plans can be compared */
+.plan-feats li.is-off { opacity: .7; text-decoration: line-through; text-decoration-thickness: 1px; } /* 6.5:1 on the card (measured), AA */
+.minus-icon { position: relative; width: 12px; height: 12px; flex: none; }
+.minus-icon::before, .minus-icon::after { content: ""; position: absolute; left: 0; top: 50%; width: 100%; height: 2px; margin-top: -1px; background: currentColor; transform: rotate(45deg); }
+.minus-icon::after { transform: rotate(-45deg); }
+@media (max-width: 991px) { .pricing-grid { grid-template-columns: 1fr; } .plan-1 .button { align-self: stretch; } }
+@media (max-width: 479px) { .pircing-wrapper { padding: 6px; } .plan-1 { padding: 30px 16px 22px; } .annual-row { flex-wrap: wrap; } }

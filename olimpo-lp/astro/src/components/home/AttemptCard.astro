@@ -1,0 +1,9 @@
+---
+// One attempt that stopped: the X, the goal and how many days it lasted.
+import type { Attempt } from '../../data/attempts';
+
+type Props = Attempt;
+
+const { goal, lasted } = Astro.props;
+---
+<div class="logos_item"><div class="logos_card"><svg class="logos_x" viewBox="0 0 20 20" aria-hidden="true"><path d="M4.5 4.5 15.5 15.5M15.5 4.5 4.5 15.5" /></svg><span class="logos_name">{goal}</span><span class="logos_meta">{lasted}</span></div></div>

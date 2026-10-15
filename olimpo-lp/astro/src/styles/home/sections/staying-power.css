@@ -1,0 +1,55 @@
+/* =====================================================================
+   9 · STAYING POWER
+   ===================================================================== */
+.bento_component { display: flex; flex-direction: column; gap: 5rem; }
+.bento_grid { display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: auto auto; gap: 16px; }
+.bento_vertical, .bento_top, .bento_bottom { position: relative; isolation: isolate; display: flex; flex-direction: column; border-radius: var(--radius-section); overflow: hidden; color: var(--c-cream); background: var(--c-ink); }
+.bento_vertical { grid-row: span 2; min-height: 58rem; }
+.bento_bg, .bento_media { position: absolute; inset: 0; z-index: -2; width: 100%; height: 100%; object-fit: cover; }
+.bento_vertical::before { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(180deg, rgba(27, 23, 19, .7) 0%, rgba(27, 23, 19, .35) 40%, rgba(27, 23, 19, .7) 100%); }
+.bento_top::before, .bento_bottom::before { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(0deg, rgba(27, 23, 19, .72) 40%, rgba(27, 23, 19, 0) 85%); }
+.bento_vertical-top { margin: 3rem 3.5rem 0; display: grid; gap: 14px; }
+.bento_kicker { font-family: var(--f-mono); font-weight: 700; font-size: var(--fs-mono); letter-spacing: .16em; text-transform: uppercase; color: rgba(243, 236, 225, .85); max-width: 30ch; line-height: 1.4; }
+.bento_huge { font-family: var(--f-display); font-size: var(--fs-counter); line-height: .95; letter-spacing: -.03em; font-weight: 600; max-width: 7em; }
+.bento_vertical-paragraph { margin: 0 3.5rem 3rem; padding-left: 1rem; border-left: 1px solid rgba(243, 236, 225, .7); max-width: 38ch; font-size: 1.05rem; line-height: 1.42; }
+.bento_vertical-paragraph strong { font-weight: 600; color: #ffb28a; }
+.bento_top, .bento_bottom { min-height: 27rem; }
+.bento_top-content, .bento_bottom-content { flex: 1; display: flex; flex-direction: column; justify-content: flex-end; gap: 1rem; margin: 0 2.5rem 2.5rem; }
+.bento_word { font-family: var(--f-display); font-size: 5.4rem; line-height: 1; letter-spacing: -.03em; font-weight: 600; }
+.bent_paragraph, .bento_paragraph { max-width: 38ch; padding-left: 1rem; border-left: 1px solid rgba(243, 236, 225, .7); font-size: 1.05rem; line-height: 1.42; color: rgba(243, 236, 225, .92); }
+
+/* the Curfew: Rive, or the same states in SVG */
+.tap { flex: 1; display: grid; place-items: center; padding: 1rem 0; }
+.tap > * { grid-area: 1 / 1; }
+.tap_rive, .tap_svg { width: min(15rem, 60%); height: auto; aspect-ratio: 1; overflow: visible; }
+.tap_track { fill: rgba(27, 23, 19, .35); stroke: rgba(243, 236, 225, .22); stroke-width: 1.5; }
+.tap_ticks line { stroke: rgba(243, 236, 225, .4); stroke-width: 1.5; }
+.tap_ticks line.is-23 { stroke: var(--c-bronze-dark); stroke-width: 3; }
+.tap_arc { fill: none; stroke: var(--c-bronze-dark); stroke-width: 4; stroke-linecap: round; stroke-dasharray: 628.3; stroke-dashoffset: 628.3; }
+.tap_mark { fill: var(--c-bronze-dark); opacity: 0; }
+.tap_hand { stroke: var(--c-cream); stroke-width: 2.5; stroke-linecap: round; transform-origin: 120px 120px; }
+.tap_hub { fill: var(--c-cream); }
+.tap_num { font-family: var(--f-display); font-weight: 600; font-size: 44px; fill: var(--c-cream); letter-spacing: -1px; }
+.tap_h { font-family: var(--f-mono); font-weight: 700; font-size: 12px; letter-spacing: 2px; fill: rgba(243, 236, 225, .7); }
+.tap_check { fill: none; stroke: var(--c-bronze-dark); stroke-width: 3; stroke-linecap: round; stroke-linejoin: round; stroke-dasharray: 48; stroke-dashoffset: 48; }
+.tap_strike { stroke: var(--c-bronze-dark); stroke-width: 3; stroke-linecap: round; stroke-dasharray: 56; stroke-dashoffset: 56; }
+.tap[data-state="celestial"] .tap_svg { filter: drop-shadow(0 0 18px rgba(249, 115, 22, .55)); }
+.tap[data-state="celestial"] .tap_num { fill: var(--c-bronze-dark); }
+.tap.is-rive .tap_svg { display: none; }
+
+/* the streak: Lottie */
+.streak { display: flex; align-items: center; gap: 14px; }
+.streak_anim { width: min(300px, 70%); aspect-ratio: 300 / 56; }
+.streak_anim svg { display: block; }
+.streak_count { font-family: var(--f-display); font-weight: 600; font-size: 2rem; color: var(--c-bronze-dark); font-variant-numeric: tabular-nums; min-width: 1.4em; }
+
+@media (max-width: 1199px) { .bento_word { font-size: 4.4rem; } }
+@media (max-width: 991px) { .bento_grid { grid-template-columns: 1fr; } .bento_vertical { min-height: 46rem; grid-row: auto; } }
+@media (max-width: 767px) { .bento_vertical-top { margin: 2rem 1.5rem 0; } .bento_vertical-paragraph { margin: 0 1.5rem 1.8rem; } .bento_top-content, .bento_bottom-content { margin: 0 1.5rem 1.6rem; } .bento_huge { font-size: 2.8rem; } }
+@media (max-width: 479px) {
+  .bento_component { gap: 3rem; }
+  .bento_vertical { min-height: 40rem; }
+  .bento_top, .bento_bottom { min-height: 23rem; }
+  .bento_word { font-size: 3.2rem; }
+  .streak_count { font-size: 1.6rem; }
+}

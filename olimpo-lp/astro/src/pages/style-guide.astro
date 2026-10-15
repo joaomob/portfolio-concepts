@@ -1,0 +1,18 @@
+---
+// Page zero of the design system: every foundation class at once, as in the original style-guide.html.
+// The original is a fragment without doctype, charset or title; this page adds them (see REPORT.md).
+import BaseLayout from '../layouts/BaseLayout.astro';
+import SgHero from '../components/style-guide/SgHero.astro';
+import SgSection from '../components/style-guide/SgSection.astro';
+import data from '../data/style-guide.json';
+import '../styles/style-guide/index.css';
+---
+<BaseLayout title="Olimpo · Style Guide" path="style-guide" lang="en">
+  <div class="page-wrapper">
+    <main class="main-wrapper">
+      <a href="#content" class="button is-text is-small">Skip to content</a>
+      <SgHero />
+      {data.sections.map((s) => <SgSection {...(s as any)} />)}
+    </main>
+  </div>
+</BaseLayout>

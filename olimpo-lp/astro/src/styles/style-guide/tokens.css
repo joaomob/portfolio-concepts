@@ -1,0 +1,54 @@
+/* Style guide tokens: the palette (raw values) and the semantic layer that points at it. */
+/* ══ ROOT SCALE ═══════════════════════════════════════════════════════
+   One formula, no modes, no media query: 16px at 320 and 22px at 1600,
+   continuous. Everything below is in `em`, so it follows the root instead
+   of jumping at a breakpoint. Verified monotonic in core/escala-raiz.js. */
+html { font-size: clamp(16px, calc(14.5px + .469vw), 22px); }
+
+:root {
+  /* ── PALETTE. The only place a raw value lives. ── */
+  --swatch-ember:       #F97316;   /* brand */
+  --swatch-ember-deep:  #c2410c;
+  --swatch-ember-tint:  #FDEEE1;
+  --swatch-ink:         #1A1A1A;
+  --swatch-slate:       #4A4A4A;
+  --swatch-stone:       #71716D;
+  --swatch-bone:        #FBFBFA;
+  --swatch-ash:         #F3F3F1;
+  --swatch-white:       #FFFFFF;
+  --swatch-line:        #C8C8C4;
+  --swatch-line-soft:   #E2E2DF;
+  --swatch-jade:        #059669;
+  --swatch-rust:        #dc2626;
+  --swatch-amber:       #f59e0b;
+
+  --swatch-melancholic: #1E2545;  --swatch-melancholic-tint: #E8EAF4;
+  --swatch-choleric:    #6B2D0A;  --swatch-choleric-tint:    #F5EBE0;
+  --swatch-sanguine:    #6B1A2A;  --swatch-sanguine-tint:    #F5E0E4;
+  --swatch-phlegmatic:  #14433C;  --swatch-phlegmatic-tint:  #DFF0EE;
+
+  /* ── SEMANTIC. Points at the palette, holds no value. ── */
+  --text-primary: var(--swatch-ink);   --text-secondary: var(--swatch-slate);
+  --text-tertiary: var(--swatch-stone);--text-accent: var(--swatch-ember-deep);
+  --text-inverse: var(--swatch-bone);
+
+  --background-primary: var(--swatch-bone);    --background-secondary: var(--swatch-ash);
+  --background-tertiary: var(--swatch-white);  --background-accent: var(--swatch-ember);
+  --background-inverse: var(--swatch-ink);     --background-alternate: var(--swatch-ember-tint);
+
+  --border-primary: var(--swatch-line);  --border-secondary: var(--swatch-line-soft);
+  --state-success: var(--swatch-jade);   --state-error: var(--swatch-rust);
+  --state-warning: var(--swatch-amber);
+
+  /* ── TYPE ── */
+  --font-display: 'Barlow Condensed', 'DM Sans', sans-serif;
+  --font-body: 'DM Sans', system-ui, sans-serif;
+  --leading-display: 1; --leading-heading: 1.1; --leading-snug: 1.25;
+  --leading-default: 1.4; --leading-body: 1.55;
+  --radius-small: .5em; --radius-medium: .875em; --radius-large: 1.5em; --radius-full: 999px;
+
+  /* ── MOTION. One easing, one duration. Leave them only with a reason. ── */
+  --ease: cubic-bezier(.22, 1, .36, 1);
+  --duration: .5s;
+}
+

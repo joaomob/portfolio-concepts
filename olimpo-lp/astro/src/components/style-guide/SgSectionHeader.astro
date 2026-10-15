@@ -1,0 +1,6 @@
+---
+// The number and the title that open each style guide section.
+interface Props { num: string; title: string }
+const { num, title } = Astro.props;
+---
+<div class="sg-section-header"><span class="sg-num">{num}</span><h2 class="heading-style-h3">{title}</h2></div>

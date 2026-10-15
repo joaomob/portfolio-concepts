@@ -1,0 +1,32 @@
+---
+// 7 · The execution: the text stays pinned and each step lights up with the scroll; the Focus Mode phone
+// changes state with it.
+import Eyebrow from './Eyebrow.astro';
+import LearnMore from './LearnMore.astro';
+import FocusMock from './FocusMock.astro';
+import { focusSteps } from '../../data/execution';
+import { eyebrowOf } from '../../data/sections';
+import { asset } from '../../lib/site';
+---
+<section class="section section_execution" id="execution" aria-labelledby="h-execution">
+  <div class="section-card focus_card">
+    <div class="focus_track" data-focus-track>
+      <div class="focus_sticky">
+        <div class="focus_text">
+          <Eyebrow text={eyebrowOf('execution')} motion="none" />
+          <h2 class="focus_h2" id="h-execution">O foco começa <span class="gray-font"><span class="otherfont">antes</span> da primeira tarefa.</span></h2>
+          <ol class="focus_steps">
+            {focusSteps.map((title, i) => (
+              <li class="focus_step" data-step={String(i + 1)}><span class="focus_n">{String(i + 1).padStart(2, '0')}</span><p><strong class="focus_step-title">{title}</strong></p></li>
+            ))}
+          </ol>
+          <LearnMore entries={['C4', 'B6']} />
+        </div>
+        <div class="focus_panel" aria-hidden="true">
+          <video class="cover" muted loop playsinline preload="none" poster={asset('video/threshold-light.webp')} data-autoplay><source src={asset('video/threshold-light.mp4')} type="video/mp4" /></video>
+          <FocusMock />
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

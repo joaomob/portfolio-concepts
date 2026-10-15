@@ -1,0 +1,19 @@
+/* =====================================================================
+   CURSOR (2.3) · brackets that read. Only with pointer: fine and free motion.
+   ===================================================================== */
+.has-cursor, .has-cursor * { cursor: none !important; }
+.cursor { position: fixed; left: 0; top: 0; z-index: 9990; pointer-events: none; color: var(--c-ink); }
+.cursor_dot { position: fixed; left: 0; top: 0; width: 6px; height: 6px; margin: -3px 0 0 -3px; border-radius: 50%; background: var(--c-orange); transition: opacity .12s linear, transform .12s var(--ease); }
+.cursor_box { position: fixed; left: 0; top: 0; width: 0; height: 0; opacity: 0; transition: opacity .12s linear; }
+.cursor_corner { position: absolute; width: 10px; height: 10px; border: 0 solid var(--cur, currentColor); }
+.cursor_corner.tl { left: 0; top: 0; border-left-width: 1.5px; border-top-width: 1.5px; }
+.cursor_corner.br { right: 0; bottom: 0; border-right-width: 1.5px; border-bottom-width: 1.5px; }
+.cursor_label { position: absolute; right: -4px; top: 100%; margin-top: 6px; transform: translateX(100%); padding: 4px 7px; border-radius: 4px; background: var(--cur, var(--c-ink)); color: var(--cur-text, var(--c-cream)); font-family: var(--f-mono); font-size: 11px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; white-space: nowrap; opacity: 0; transition: opacity .12s linear; }
+.cursor.is-framing .cursor_box { opacity: 1; }
+.cursor.is-framing .cursor_dot { opacity: 1; box-shadow: 0 0 0 2px var(--c-cream), 0 0 0 3px rgba(27, 23, 19, .28); } /* the dot stays visible inside the target: the owner wants to see where the mouse is */
+.cursor.has-label .cursor_label { opacity: 1; }
+.cursor.is-media .cursor_dot { opacity: 0; }
+.cursor.on-dark { color: var(--c-cream); }
+.cursor.on-dark .cursor_label { background: var(--cur, var(--c-cream)); color: var(--cur-text, var(--c-ink)); }
+.cursor.on-dark .cursor_dot { background: var(--c-bronze-dark); }
+.cursor.on-orange .cursor_dot { background: var(--c-ink); }

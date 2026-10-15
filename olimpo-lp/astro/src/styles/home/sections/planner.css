@@ -1,0 +1,32 @@
+/* =====================================================================
+   5 · THE PLANNER
+   ===================================================================== */
+.grid-request { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; align-items: start; }
+.max-left { position: sticky; top: calc(var(--nav-h) + 40px); max-width: 90%; }
+.h2-left { font-family: var(--f-display); font-size: 4rem; line-height: 1; letter-spacing: -.03em; font-weight: 600; }
+.is-soft { color: rgba(243, 236, 225, .74); }
+.on-orange { color: var(--c-cream); }
+.card-wrapper { display: flex; flex-direction: column; row-gap: 20px; width: 100%; max-width: 440px; margin-left: auto; }
+.card-design { position: sticky; top: calc(var(--nav-h) + 40px); min-height: 350px; padding: 25px; border-radius: var(--radius-card); background: var(--c-orange); border: 1px solid rgba(243, 236, 225, .31); color: var(--c-cream); }
+.card-design._02 { top: calc(var(--nav-h) + 60px); }
+.card-design._03 { top: calc(var(--nav-h) + 80px); }
+.card-design._04 { top: calc(var(--nav-h) + 100px); }
+.card-design.is-ink { background: var(--c-ink); border-color: rgba(243, 236, 225, .12); }
+.card-content { display: flex; flex-direction: column; justify-content: space-between; height: 100%; min-height: 298px; gap: 30px; }
+.card-top { display: flex; justify-content: space-between; align-items: flex-start; }
+.card-num { font-family: var(--f-display); font-size: 4rem; font-weight: 600; line-height: .8; letter-spacing: -.03em; }
+.card-phase { font-family: var(--f-mono); font-weight: 700; font-size: var(--fs-mono-sm); letter-spacing: .16em; text-transform: uppercase; padding: 6px 10px; border-radius: 5px; background: rgba(243, 236, 225, .15); }
+.card-max { max-width: 92%; display: grid; gap: 12px; }
+.card-title { font-family: var(--f-display); font-size: var(--fs-h3); font-weight: 600; letter-spacing: -.02em; line-height: 1.1; }
+.card-max p { font-size: 1.08rem; line-height: 1.38; font-weight: 500; }
+.card-lead { font-size: 1.3rem !important; font-weight: 600 !important; letter-spacing: -.4px; }
+.card-close { color: var(--c-bronze-dark); }
+.card-delphi { aspect-ratio: 16 / 9; }
+@media (max-width: 991px) { .h2-left { font-size: 3.2rem; } .max-left { max-width: 95%; } }
+@media (max-width: 767px) {
+  .grid-request { grid-template-columns: 1fr; }
+  .max-left { position: static; max-width: 100%; }
+  .card-wrapper { max-width: none; margin-top: 50px; }
+  .h2-left { font-size: 2.5rem; }
+}
+@media (max-width: 479px) { .card-design { min-height: 260px; } .card-content { min-height: 208px; } .h2-left { font-size: 2.2rem; } .card-num { font-size: 3.2rem; } }

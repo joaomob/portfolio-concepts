@@ -1,0 +1,16 @@
+/* =====================================================================
+   PRELOADER · logo, the meander line, the prelude. Once per session.
+   ===================================================================== */
+.preloader { position: fixed; inset: 0; z-index: 9999; display: none; place-items: center; background: var(--c-ink); color: var(--c-cream); }
+.js .preloader { display: grid; }
+.pre-seen .preloader { display: none !important; }
+.preloader > * { grid-area: 1 / 1; }
+.preloader_mark { display: grid; justify-items: center; gap: 18px; transition: opacity .3s var(--ease); }
+.preloader_mark img { width: min(210px, 44vw); height: auto; animation: splashPulse 1.7s ease-in-out infinite; }  /* size and pulse copied from the live landing (olimpoap.com) */
+@keyframes splashPulse { 0%, 100% { opacity: .45; } 50% { opacity: 1; } }
+@media (prefers-reduced-motion: reduce) { .preloader_mark img { animation: none; } }
+.preloader_phrase { font-family: var(--f-display); font-size: clamp(1.4rem, 3vw, 2.2rem); letter-spacing: -.02em; opacity: 0; padding: 0 24px; text-align: center; }
+.preloader.is-phrase .preloader_mark { opacity: 0; }
+.preloader.is-phrase .preloader_phrase { opacity: 1; transition: opacity .3s var(--ease); }
+.preloader.is-done { transform: translateY(-100%); transition: transform .5s var(--ease-io); }
+.preloader.is-gone { display: none !important; }

@@ -1,0 +1,9 @@
+---
+// One of the 16 types. Opens its Codex article; olimpo.js adds the tint of the temperament and the two portraits.
+import type { Archetype } from '../../data/archetypes';
+
+type Props = Archetype;
+
+const { type, name, phrase, god, goddess } = Astro.props;
+---
+<li><button class="brands_card" type="button" data-codex={type} data-god={god} data-goddess={goddess}><span class="brands_type">{type}</span><span class="brands_name">{name}</span><span class="brands_phrase">{phrase}</span></button></li>

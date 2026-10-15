@@ -1,0 +1,179 @@
+/* The Client First foundation classes, as they are bound to Variables in Webflow. */
+/* ══ PAGE SHELL ═══════════════════════════════════════════════════════ */
+.page-wrapper { overflow: clip; background-color: var(--background-primary); }
+.main-wrapper { display: block; }
+
+/* ══ STRUCTURE ════════════════════════════════════════════════════════ */
+/* A truly fluid gutter: 20px on the phone, 64px on a wide desktop.
+   In `em` it would grow with the root and eat the small screen. */
+.padding-global { padding-left: clamp(20px, 3.44vw, 64px); padding-right: clamp(20px, 3.44vw, 64px); }
+.padding-global.is-large { padding-left: clamp(20px, 5vw, 96px); padding-right: clamp(20px, 5vw, 96px); }
+.container-large  { width: 100%; max-width: 80em; margin-left: auto; margin-right: auto; }
+.container-medium { width: 100%; max-width: 60em; margin-left: auto; margin-right: auto; }
+.container-small  { width: 100%; max-width: 44em; margin-left: auto; margin-right: auto; }
+/* Fluid section padding: shrinks on the phone, opens up on desktop. */
+.padding-section-xsmall { padding-top: clamp(24px, 3vw, 48px);  padding-bottom: clamp(24px, 3vw, 48px) }
+.padding-section-small  { padding-top: clamp(40px, 5vw, 80px);  padding-bottom: clamp(40px, 5vw, 80px) }
+.padding-section-medium { padding-top: clamp(56px, 7vw, 120px); padding-bottom: clamp(56px, 7vw, 120px) }
+.padding-section-large  { padding-top: clamp(80px, 10vw, 176px);padding-bottom: clamp(80px, 10vw, 176px) }
+
+/* ══ SPACING · size class first, direction class LAST ════════════════
+   Order matters. With the same specificity the later one wins, so the
+   direction class HAS to be declared after the size class, otherwise
+   `margin-medium` applies on all four sides and `margin-bottom` resets nothing.
+   That was exactly the bug that misaligned the nav.                        */
+.margin-0{margin:0}.margin-tiny{margin:.125em}.margin-xxsmall{margin:.25em}
+.margin-xsmall{margin:.5em}.margin-small{margin:1em}.margin-medium{margin:2em}
+.margin-large{margin:3em}.margin-xlarge{margin:4em}.margin-xxlarge{margin:5em}
+.margin-huge{margin:6em}.margin-xhuge{margin:8em}
+
+.margin-top{margin-right:0!important;margin-bottom:0!important;margin-left:0!important}
+.margin-bottom{margin-top:0!important;margin-right:0!important;margin-left:0!important}
+.margin-left{margin-top:0!important;margin-right:0!important;margin-bottom:0!important}
+.margin-right{margin-top:0!important;margin-bottom:0!important;margin-left:0!important}
+.margin-vertical{margin-right:0!important;margin-left:0!important}
+.margin-horizontal{margin-top:0!important;margin-bottom:0!important}
+
+.padding-0{padding:0}.padding-tiny{padding:.125em}.padding-xxsmall{padding:.25em}
+.padding-xsmall{padding:.5em}.padding-small{padding:1em}.padding-medium{padding:2em}
+.padding-large{padding:3em}.padding-xlarge{padding:4em}.padding-xxlarge{padding:5em}
+.padding-huge{padding:6em}.padding-xhuge{padding:8em}
+
+.padding-top{padding-right:0!important;padding-bottom:0!important;padding-left:0!important}
+.padding-bottom{padding-top:0!important;padding-right:0!important;padding-left:0!important}
+.padding-vertical{padding-right:0!important;padding-left:0!important}
+.padding-horizontal{padding-top:0!important;padding-bottom:0!important}
+
+/* Spacers: an empty div for vertical rhythm. Not a margin. */
+.spacer-tiny{height:.125em}.spacer-xxsmall{height:.25em}.spacer-xsmall{height:.5em}
+.spacer-small{height:1em}.spacer-medium{height:2em}.spacer-large{height:3em}
+.spacer-xlarge{height:4em}.spacer-xxlarge{height:5em}.spacer-huge{height:6em}
+.spacer-xhuge{height:8em}
+
+/* ══ SIZING ═══════════════════════════════════════════════════════════ */
+.max-width-xxsmall{width:100%;max-width:16em}.max-width-xsmall{width:100%;max-width:20em}
+.max-width-small{width:100%;max-width:24em}.max-width-medium{width:100%;max-width:32em}
+.max-width-large{width:100%;max-width:48em}.max-width-xlarge{width:100%;max-width:64em}
+.max-width-xxlarge{width:100%;max-width:80em}.max-width-full{width:100%;max-width:100%}
+.max-width-50ch{max-width:50ch}.max-width-60ch{max-width:60ch}
+.align-center{margin-left:auto;margin-right:auto}
+
+.aspect-ratio-square{aspect-ratio:1/1}
+.aspect-ratio-portrait{aspect-ratio:3/4}
+.aspect-ratio-landscape{aspect-ratio:4/3}
+.aspect-ratio-widescreen{aspect-ratio:16/9}
+
+.overflow-hidden{overflow:hidden}.overflow-auto{overflow:auto}
+.z-index-1{position:relative;z-index:1}.z-index-2{position:relative;z-index:2}
+.pointer-events-none{pointer-events:none}
+.hide{display:none}
+
+/* ══ TYPOGRAPHY — nine levels, as in Love Ignites Peace ══════════════ */
+.heading-style-h1{font-family:var(--font-display);font-size:4.5em;font-weight:700;line-height:var(--leading-display);letter-spacing:-.01em}
+.heading-style-h2{font-family:var(--font-display);font-size:3.25em;font-weight:700;line-height:var(--leading-heading)}
+.heading-style-h3{font-family:var(--font-display);font-size:2.5em;font-weight:700;line-height:var(--leading-heading)}
+.heading-style-h4{font-family:var(--font-display);font-size:2em;font-weight:600;line-height:var(--leading-snug)}
+.heading-style-h5{font-family:var(--font-body);font-size:1.5em;font-weight:600;line-height:var(--leading-snug)}
+.heading-style-h6{font-family:var(--font-body);font-size:1.25em;font-weight:600;line-height:var(--leading-snug)}
+.heading-style-h7{font-family:var(--font-body);font-size:1.125em;font-weight:600;line-height:var(--leading-default)}
+.heading-style-h8{font-family:var(--font-body);font-size:1em;font-weight:600;line-height:var(--leading-default)}
+.heading-style-h9{font-family:var(--font-body);font-size:.875em;font-weight:600;line-height:var(--leading-default);text-transform:uppercase;letter-spacing:.08em}
+.heading-style-h9-italic{font-family:var(--font-display);font-size:.875em;font-style:italic;font-weight:500;letter-spacing:.04em}
+
+.text-size-tiny{font-size:.75em;line-height:var(--leading-default)}
+.text-size-small{font-size:.875em;line-height:var(--leading-default)}
+.text-size-regular{font-size:1em;line-height:var(--leading-body)}
+.text-size-medium{font-size:1.125em;line-height:var(--leading-body)}
+.text-size-large{font-size:1.25em;line-height:var(--leading-snug)}
+
+.text-weight-light{font-weight:300}.text-weight-normal{font-weight:400}
+.text-weight-medium{font-weight:500}.text-weight-semibold{font-weight:600}
+.text-weight-bold{font-weight:700}.text-weight-xbold{font-weight:800}
+
+/* Project styles: Olimpo's own, on top of Client First. */
+.text-style-eyebrow{font-family:ui-monospace,monospace;font-size:.75em;letter-spacing:.14em;text-transform:uppercase;color:var(--text-tertiary)}
+.text-style-label{font-size:.75em;font-weight:600;letter-spacing:.06em;text-transform:uppercase}
+.text-style-tagline{font-family:var(--font-display);font-size:1.5em;font-weight:500;line-height:var(--leading-snug)}
+.text-style-quote{font-family:var(--font-display);font-size:1.75em;font-weight:500;line-height:var(--leading-snug)}
+.text-style-quote-large{font-family:var(--font-display);font-size:2.5em;font-weight:600;line-height:var(--leading-heading)}
+.text-style-cta{font-size:1em;font-weight:600;letter-spacing:.01em}
+
+.text-style-allcaps{text-transform:uppercase;letter-spacing:.08em}
+.text-style-italic{font-style:italic}
+.text-style-muted{opacity:.6}
+.text-style-nowrap{white-space:nowrap}
+.text-style-strikethrough{text-decoration:line-through}
+.text-style-link{color:var(--text-accent);text-decoration:underline;text-underline-offset:.2em}
+.text-align-left{text-align:left}.text-align-center{text-align:center}.text-align-right{text-align:right}
+
+.text-color-primary{color:var(--text-primary)}.text-color-secondary{color:var(--text-secondary)}
+.text-color-tertiary{color:var(--text-tertiary)}.text-color-accent{color:var(--text-accent)}
+.text-color-inverse{color:var(--text-inverse)}
+
+.background-color-primary{background-color:var(--background-primary)}
+.background-color-secondary{background-color:var(--background-secondary)}
+.background-color-tertiary{background-color:var(--background-tertiary)}
+.background-color-accent{background-color:var(--background-accent)}
+.background-color-inverse{background-color:var(--background-inverse)}
+.background-color-alternate{background-color:var(--background-alternate)}
+.border-primary{border:1px solid var(--border-primary)}
+.border-secondary{border:1px solid var(--border-secondary)}
+
+.archetype-melancholic{color:var(--swatch-melancholic);background-color:var(--swatch-melancholic-tint)}
+.archetype-choleric{color:var(--swatch-choleric);background-color:var(--swatch-choleric-tint)}
+.archetype-sanguine{color:var(--swatch-sanguine);background-color:var(--swatch-sanguine-tint)}
+.archetype-phlegmatic{color:var(--swatch-phlegmatic);background-color:var(--swatch-phlegmatic-tint)}
+
+/* ══ RICH TEXT — every CMS field renders through this ════════════════ */
+.text-rich-text h2{font-family:var(--font-display);font-size:2em;font-weight:700;line-height:var(--leading-heading);margin:1.2em 0 .4em}
+.text-rich-text h3{font-family:var(--font-display);font-size:1.5em;font-weight:600;margin:1.2em 0 .4em}
+.text-rich-text h4{font-family:var(--font-body);font-size:1.25em;font-weight:600;margin:1.2em 0 .4em}
+.text-rich-text p{font-size:1em;line-height:var(--leading-body);color:var(--text-secondary);margin:0 0 1em;max-width:60ch}
+.text-rich-text a{color:var(--text-accent);text-decoration:underline;text-underline-offset:.2em}
+.text-rich-text strong{font-weight:600;color:var(--text-primary)}
+.text-rich-text em{font-style:italic}
+.text-rich-text blockquote{margin:1.5em 0;padding:1em 1.5em;border-left:3px solid var(--background-accent);background-color:var(--background-secondary);font-family:var(--font-display);font-size:1.375em;line-height:var(--leading-snug);color:var(--text-primary)}
+.text-rich-text ul,.text-rich-text ol{margin:0 0 1em;padding-left:1.25em;color:var(--text-secondary);line-height:var(--leading-body)}
+.text-rich-text li{margin-bottom:.35em}
+.text-rich-text code{font-family:ui-monospace,monospace;font-size:.875em;background-color:var(--background-secondary);padding:.15em .4em;border-radius:.25em}
+.text-rich-text figcaption{font-size:.875em;color:var(--text-tertiary);margin-top:.5em}
+.text-rich-text hr{border:0;border-top:1px solid var(--border-secondary);margin:2em 0}
+
+/* ══ BUTTON ══════════════════════════════════════════════════════════ */
+.button{display:inline-flex;align-items:center;gap:.5em;padding:.75em 1.5em;border-radius:var(--radius-full);background-color:var(--background-accent);color:#fff;font-family:var(--font-body);font-size:1em;font-weight:600;text-decoration:none;border:1px solid var(--background-accent);cursor:pointer;transition:background-color var(--duration) var(--ease),border-color var(--duration) var(--ease)}
+.button:hover{background-color:var(--swatch-ember-deep);border-color:var(--swatch-ember-deep)}
+.button.is-secondary{background-color:transparent;color:var(--text-primary);border-color:var(--border-primary)}
+.button.is-secondary:hover{background-color:transparent;border-color:var(--text-primary)}
+.button.is-text{background-color:transparent;color:var(--text-accent);border-color:transparent;padding-left:0;padding-right:0}
+.button.is-small{padding:.5em 1em;font-size:.875em}
+.button.is-large{padding:1em 2em;font-size:1.125em}
+.button-group{display:flex;flex-wrap:wrap;gap:.75em;align-items:center}
+
+.is-success{color:var(--state-success)}.is-error{color:var(--state-error)}.is-warning{color:var(--state-warning)}
+
+/* ══ COMPONENTS — underscore form, as in Love Ignites Peace ══════════ */
+.nav_component{display:flex;align-items:center;justify-content:space-between;gap:clamp(12px,2vw,32px);padding:1em 0;border-bottom:1px solid var(--border-secondary);flex-wrap:wrap}
+.nav_logo{font-family:var(--font-display);font-size:1.5em;font-weight:700;letter-spacing:-.01em}
+.nav_menu{display:flex;gap:clamp(12px,1.6vw,28px);align-items:center;flex-wrap:wrap}
+.nav_menu-link{font-size:.9375em;color:var(--text-secondary);text-decoration:none}
+.nav_menu-link:hover{color:var(--text-accent)}
+
+.page-hero_component{padding-top:2em;padding-bottom:2em}
+.page-hero_eyebrow{font-family:ui-monospace,monospace;font-size:.75em;letter-spacing:.14em;text-transform:uppercase;color:var(--text-tertiary)}
+.page-hero_title{font-family:var(--font-display);font-size:clamp(44px,8vw,104px);font-weight:700;line-height:var(--leading-display);letter-spacing:-.015em;margin:.15em 0 0}
+.page-hero_intro{font-size:1.125em;line-height:var(--leading-body);color:var(--text-secondary);max-width:60ch;margin-top:1em}
+
+.big-quote_component{border-top:1px solid var(--border-secondary);border-bottom:1px solid var(--border-secondary);padding:2.5em 0}
+.big-quote_eyebrow{font-family:ui-monospace,monospace;font-size:.75em;letter-spacing:.14em;text-transform:uppercase;color:var(--text-tertiary)}
+.big-quote_text{font-family:var(--font-display);font-size:2.5em;font-weight:600;line-height:var(--leading-heading);margin:.5em 0;max-width:22ch}
+.big-quote_rule{width:3em;height:2px;background-color:var(--background-accent);margin:1em 0}
+.big-quote_attribution{font-size:.875em;color:var(--text-tertiary)}
+
+.footer_component{border-top:1px solid var(--border-secondary);padding-top:3em;padding-bottom:2em}
+.footer_layout{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:clamp(20px,3vw,48px)}
+.footer_col-title{font-size:.75em;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--text-tertiary);margin-bottom:.75em}
+.footer_col-list{display:flex;flex-direction:column;gap:.5em}
+.footer_link{font-size:.9375em;color:var(--text-secondary);text-decoration:none}
+.footer_link:hover{color:var(--text-accent)}
+.footer_legal{display:flex;gap:1em;flex-wrap:wrap;margin-top:2.5em;padding-top:1.5em;border-top:1px solid var(--border-secondary);font-size:.8125em;color:var(--text-tertiary)}
+

@@ -1,0 +1,18 @@
+---
+// The page hero: the small nav, the title, the intro and the numbered index of the six sections.
+import { heroNav, sectionIndex } from '../../data/style-guide-nav';
+---
+<section class="section_page-hero" id="content"><div class="padding-global is-large"><div class="container-large"><div class="page-hero_component padding-section-medium">
+  <div class="nav_component margin-bottom margin-xlarge">
+    <div class="nav_logo">Olimpo</div>
+    <nav class="nav_menu">{heroNav.map((l) => <a href={l.href} class="nav_menu-link">{l.label}</a>)}</nav>
+  </div>
+  <div class="page-hero_eyebrow">Olimpo · Design System</div>
+  <h1 class="page-hero_title">Style Guide</h1>
+  <p class="page-hero_intro">The foundations behind every screen: type, color, spacing and components.
+    Built on Finsweet Client First, with a fluid root scale and a two-layer color model.</p>
+  <div class="spacer-large" />
+  <nav class="sg-nav">
+    {sectionIndex.map((l) => <a href={l.href}>{l.label}</a>)}
+  </nav>
+</div></div></div></section>

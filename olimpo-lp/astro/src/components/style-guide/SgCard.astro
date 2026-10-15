@@ -1,0 +1,6 @@
+---
+// One color chip with its name and value. The chip is either a raw color or a background-color class.
+interface Props { cardClass: string | null; chipClass: string | null; color: string | null; name: string; meta: string }
+const { cardClass, chipClass, color, name, meta } = Astro.props;
+---
+<div class={cardClass ? `sg-card ${cardClass}` : 'sg-card'}><div class={chipClass ? `sg-chip ${chipClass}` : 'sg-chip'} style={color ? `background:${color}` : undefined} /><div class="sg-meta"><b>{name}</b>{meta}</div></div>
