@@ -1,0 +1,14 @@
+---
+// The four info pages (shipping, terms, privacy, legal notice) share one layout.
+import type { GetStaticPaths } from 'astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import LegalArticle from '../components/info/LegalArticle.astro';
+import { INFO_PAGES, type InfoPage } from '../data/pages';
+
+export const getStaticPaths = (() => INFO_PAGES.map((info) => ({ params: { info: info.slug }, props: { info } }))) satisfies GetStaticPaths;
+
+const { info } = Astro.props as { info: InfoPage };
+---
+<BaseLayout page="info" path={info.slug} meta={info} cartNote>
+  <LegalArticle info={info} />
+</BaseLayout>

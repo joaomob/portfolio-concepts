@@ -1,0 +1,19 @@
+---
+// Home story: the maker's portrait and the text about the collection.
+import { STORY } from '../../data/home';
+import { asset } from '../../lib/site';
+---
+<section class="section_story" id="story"><div class="padding-global padding-section-large"><div class="container-large">
+  <div class="story_layout" data-reveal>
+    <figure class="story_media"><img class="story_image" src={asset(STORY.image)} alt={STORY.alt} loading="lazy"></figure>
+    <div class="story_body">
+      <p class="text-style-eyebrow">Our Story</p>
+      <h2>The person behind it</h2>
+      <div class="story_prose">
+        <p class="story_lead">{STORY.lead}</p>
+        {STORY.paragraphs.map((p) => <p class="story_paragraph">{p}</p>)}
+      </div>
+      <div class="margin-top margin-medium"><a class="button is-dark" href="#collection">Browse the collection</a></div>
+    </div>
+  </div>
+</div></div></section>

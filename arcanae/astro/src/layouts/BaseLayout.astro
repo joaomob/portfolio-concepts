@@ -1,0 +1,84 @@
+---
+// What every page carries: the head (meta, social card, canonical, noindex, fonts, the four CSS layers and the small
+// scripts that must run before the first paint), the menu, the footer, the cart drawer and the browser code
+// (scripts/boot.ts). The success page sets chrome={false}: it has no menu, footer or cart in the original.
+import '../styles/tokens.css';
+import '../styles/base.css';
+import '../styles/components.css';
+import '../styles/states.css';
+import cardLoading from '../scripts/head/card-loading.js?raw';
+import heroStill from '../scripts/head/hero-still.js?raw';
+import introGate from '../scripts/head/intro-gate.js?raw';
+import CartDrawer from '../components/CartDrawer.astro';
+import Footer from '../components/Footer.astro';
+import Intro from '../components/Intro.astro';
+import Nav from '../components/Nav.astro';
+import { DEFAULT_OG_TITLE, OG_DESCRIPTION, type PageMeta } from '../data/pages';
+import { masks } from '../lib/catalog';
+import { ASTRO_BASE, asset, canonical } from '../lib/site';
+import type { PageId } from '../scripts/boot';
+
+interface Props {
+  page: PageId;
+  /** page path under the base, '' for the home */
+  path: string;
+  meta: PageMeta;
+  /** menu, footer and cart drawer */
+  chrome?: boolean;
+  /** the note under the checkout button */
+  cartNote?: boolean;
+  /** the gold dot outline while card photos load */
+  cards?: boolean;
+}
+const { page, path, meta, chrome = true, cartNote = false, cards = false } = Astro.props;
+const onHome = page === 'home';
+const fonts =
+  page === 'success'
+    ? 'https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap'
+    : 'https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Cormorant+Garamond:ital,wght@1,600&family=Inter:wght@300;400;500;600;700&display=swap';
+const maskScript = `window.ARCANAE_MASKS=${JSON.stringify(masks())};`;
+---
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<link rel="canonical" href={canonical(ASTRO_BASE, path)}>
+<link rel="icon" type="image/svg+xml" href={asset('brand/emblem-ink.svg')}>
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Arcanae Craft">
+<meta property="og:title" content={meta.ogTitle ?? DEFAULT_OG_TITLE}>
+<meta property="og:description" content={OG_DESCRIPTION}>
+<meta property="og:image" content={asset('brand/og-image.jpg')}>
+<meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<title>{meta.title}</title>
+{meta.description && <meta name="description" content={meta.description}>}
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href={fonts} rel="stylesheet">
+{onHome && <script is:inline set:html={heroStill} />}
+{onHome && <script is:inline set:html={introGate} />}
+{onHome && <noscript><style is:inline>.intro_component{display:none}</style></noscript>}
+{cards && <script is:inline set:html={maskScript} />}
+{cards && <script is:inline set:html={cardLoading} />}
+</head>
+<body data-page={page} data-intro={onHome ? '' : undefined}>
+{onHome && <Intro />}
+<div class="page-wrapper">
+  {chrome && <Nav base={ASTRO_BASE} onHome={onHome} />}
+  <main class="main-wrapper">
+    <slot />
+  </main>
+  {chrome && <Footer base={ASTRO_BASE} onHome={onHome} />}
+  <slot name="after" />
+  {chrome && <CartDrawer note={cartNote} />}
+</div>
+{page === 'success' && <script is:inline>try{localStorage.removeItem("arcanae_cart_v1")}catch(e){}</script>}
+<script>
+  import { boot, type PageId } from '../scripts/boot';
+  boot((document.body.dataset.page ?? 'info') as PageId);
+</script>
+</body>
+</html>

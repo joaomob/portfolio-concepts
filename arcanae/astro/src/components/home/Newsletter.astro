@@ -1,0 +1,18 @@
+---
+// Home newsletter: the Webflow Form Block shape (form, success and fail messages); scripts/site-chrome.ts plays
+// Webflow's part locally.
+---
+<section class="section_newsletter" id="newsletter"><div class="padding-global padding-section-medium"><div class="container-large">
+  <div class="newsletter_component">
+    <h2 class="newsletter_heading">News from Arcanae Craft</h2>
+    <div class="newsletter_form-block" data-wf-form="block">
+      <form class="newsletter_form" id="newsletter-form" name="newsletter-form" data-name="Newsletter" data-wf-form="form">
+        <label class="visually-hidden" for="newsletter-email" data-wf-form="label">Email for new drops &amp; collections</label>
+        <input class="newsletter_input" id="newsletter-email" type="email" name="email" data-name="Email" maxlength="256" autocomplete="email" required placeholder="Email for new drops & collections" data-wf-form="input">
+        <input class="button is-gold" type="submit" value="Sign up" data-wait="Please wait..." data-wf-form="button">
+      </form>
+      <div class="newsletter_status" data-wf-form="success" role="status"><div>Thanks, you’re on the list.</div></div>
+      <div class="newsletter_status" data-wf-form="fail" role="alert"><div>Oops! Something went wrong while submitting the form.</div></div>
+    </div>
+  </div>
+</div></div></section>

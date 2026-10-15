@@ -1,0 +1,42 @@
+---
+// The site footer: brand column, shop and info links, copyright (the year is filled in by site-chrome.ts) and the
+// scrolling logo band.
+import { asset, page } from '../lib/site';
+
+interface Props {
+  base: string;
+  onHome?: boolean;
+}
+const { base, onHome = false } = Astro.props;
+const info = [
+  { path: 'shipping', label: 'Shipping & Returns' },
+  { path: 'terms', label: 'Terms' },
+  { path: 'privacy', label: 'Privacy' },
+  { path: 'legal-notice', label: 'Legal Notice' },
+];
+const marquee = [1, 2, 3, 4];
+---
+<footer class="footer_component theme-inverse"><div class="padding-global"><div class="container-large">
+  <div class="footer_grid">
+    <div class="footer_column">
+      <img class="footer_logo" src={asset('brand/wordmark-h-marble.svg')} alt="Arcanae Craft">
+      <p class="footer_description">Hand-painted tarot figurines and statues of the 22 Major Arcana. Made in A Coruña, Spain.</p>
+    </div>
+    <div class="footer_column"><div class="footer_heading">Shop</div>
+      <div class="footer_link-list">
+        <a class="footer_link" href={page(base, 'collection')}>The Collection</a>
+        <a class="footer_link" href={onHome ? '#craft' : `${page(base)}#craft`}>The Craft</a>
+      </div>
+    </div>
+    <div class="footer_column"><div class="footer_heading">Info</div>
+      <div class="footer_link-list">
+        {info.map((l) => <a class="footer_link" href={page(base, l.path)}>{l.label}</a>)}
+      </div>
+    </div>
+  </div>
+  <p class="footer_copyright-text">© <span id="yr"></span> Arcanae Craft · Made in Spain</p>
+</div></div>
+<div class="footer_marquee" aria-hidden="true"><div class="footer_marquee-track">{marquee.map(() => (
+  <Fragment><img class="footer_marquee-logo" src={asset('brand/wordmark-h-marble.svg')} alt=""><img class="footer_marquee-emblem" src={asset('brand/emblem-gold.svg')} alt=""></Fragment>
+))}</div></div>
+</footer>

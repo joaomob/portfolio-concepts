@@ -1,0 +1,13 @@
+{
+  "name": "arcanae-concepts",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "vendor": "node scripts/vendor-three.mjs",
+    "assets": "node astro/scripts/sync-assets.mjs",
+    "astro:build": "cd astro && node ../../node_modules/astro/bin/astro.mjs build",
+    "next:build": "cd next && node ../../node_modules/next/dist/bin/next build",
+    "storybook:build": "node ../node_modules/storybook/dist/bin/dispatcher.js build -c storybook/.storybook -o storybook/storybook-static",
+    "parity": "node scripts/parity.mjs"
+  }
+}

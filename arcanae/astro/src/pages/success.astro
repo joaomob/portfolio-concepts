@@ -1,0 +1,9 @@
+---
+// After a paid checkout: no menu, footer or cart; the cart is emptied in the browser.
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Success from '../components/success/Success.astro';
+import { SUCCESS_META } from '../data/pages';
+---
+<BaseLayout page="success" path="success" meta={SUCCESS_META} chrome={false}>
+  <Success />
+</BaseLayout>

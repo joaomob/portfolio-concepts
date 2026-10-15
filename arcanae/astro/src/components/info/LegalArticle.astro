@@ -1,0 +1,18 @@
+---
+// One info page (shipping, terms, privacy, legal notice): eyebrow, heading, date and the rich text.
+import { infoBody, type InfoPage } from '../../data/pages';
+import { ASTRO_BASE } from '../../lib/site';
+
+interface Props {
+  info: InfoPage;
+}
+const { info } = Astro.props;
+---
+<section class="section_legal"><div class="padding-global padding-section-large"><div class="container-large">
+  <article class="legal_component">
+    <p class="legal_eyebrow">Info</p>
+    <h1 class="legal_heading">{info.heading}</h1>
+    <p class="legal_updated">{info.updated}</p>
+    <div class="legal_rich-text" set:html={infoBody(info, ASTRO_BASE)} />
+  </article>
+</div></div></section>

@@ -1,0 +1,10 @@
+---
+// The status tabs above a product grid (All, In stock, Made to order) with their counts; scripts/product-grid.ts
+// switches them. The original filled the counts in the browser; here they are rendered.
+import { STATUS_FILTERS, statusCount } from '../lib/catalog';
+---
+<div class="collection-filter_component" data-status-filter>
+  {STATUS_FILTERS.map((f) => (
+    <button class:list={['collection-filter_button', { 'is-active': f.id === 'all' }]} type="button" data-status={f.id} aria-pressed={String(f.id === 'all')}>{f.label} <span class="collection-filter_count" data-status-count={f.id}>{statusCount(f.id)}</span></button>
+  ))}
+</div>

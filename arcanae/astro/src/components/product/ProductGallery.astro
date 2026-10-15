@@ -1,0 +1,35 @@
+---
+// Product gallery: the main image with the zoom lens, the thumbnails and the correspondences card. The four studio
+// renders show when the card has them, otherwise its one front image. scripts/product-gallery.ts switches the shots.
+import type { Card } from '../../data/catalog';
+import { gallery } from '../../lib/catalog';
+
+interface Props {
+  card: Card;
+}
+const { card } = Astro.props;
+const { shots, renders } = gallery(card);
+const first = shots[0];
+const facts = card.correspondences;
+---
+<div class="pdp_gallery">
+  {first ? (
+    <div class="gallery_main is-loupe" id="gmain" role="button" tabindex="0" data-large={first.large}><img class:list={['gallery_image', { 'is-contain': !renders }]} id="gimg" src={first.src} alt={`${card.name}, a 3D-printed resin statue, hand-painted`}><span class="gallery_badge" id="gbadge" hidden={!renders}>3D render</span><div class="gallery_lens" aria-hidden="true"></div></div>
+  ) : (
+    <div class="gallery_main" id="gmain"><span class="gallery_roman">{card.roman}</span></div>
+  )}
+  {shots.length > 1 && (
+    <div class="gallery_thumbs">{shots.map((s, i) => <button class="gallery_thumb" type="button" aria-label={`Image ${i + 1}`} aria-current={String(i === 0)} data-shot={i} data-src={s.src} data-large={s.large}><img class="gallery_thumb-image" src={s.thumb} alt=""></button>)}</div>
+  )}
+  {first && <p class="gallery_hint">Hover to zoom · click to enlarge</p>}
+  {facts && (
+    <aside class="pdp_facts">
+      <h3 class="pdp_facts-heading">Correspondences</h3>
+      <div class="facts_row"><span class="facts_label">Element</span><span class="facts_value">{facts.element}</span></div>
+      <div class="facts_row"><span class="facts_label">Astrology</span><span class="facts_value">{facts.astrology}</span></div>
+      <div class="facts_row"><span class="facts_label">Energy</span><span class="facts_value">{facts.energy}</span></div>
+      <div class="facts_row"><span class="facts_label">For</span><span class="facts_value">{facts.forWhom}</span></div>
+      <div class="facts_keys">{facts.keywords.map((k) => <span class="facts_key">{k}</span>)}</div>
+    </aside>
+  )}
+</div>

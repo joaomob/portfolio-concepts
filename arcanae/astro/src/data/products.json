@@ -1,0 +1,632 @@
+[
+  {
+    "id": "00",
+    "roman": "0",
+    "slug": "the-fool",
+    "name": "The Fool",
+    "price": 86,
+    "status": "available",
+    "height": 11.9,
+    "weight": 207,
+    "image": "products/renders/the-fool-card.webp?r=2",
+    "hasRenders": true,
+    "footprint": {
+      "width": 9.9,
+      "depth": 6.1
+    },
+    "correspondences": {
+      "element": "Air",
+      "astrology": "Uranus",
+      "energy": "Open, fearless",
+      "forWhom": "New starters & risk-takers",
+      "keywords": [
+        "Beginnings",
+        "Freedom",
+        "Faith",
+        "Innocence"
+      ]
+    },
+    "blurb": "Beginnings, leaps of faith, the open road.",
+    "meaning": "The Fool is the beginning of everything, the first step taken before the path is clear. He carries innocence, spontaneity, and a faith that the ground will rise to meet his foot. To keep the Fool close is to hold onto the courage to start, to say yes to the unknown, and to trust the leap even when you cannot see where it lands. His energy is light and forward looking, a quiet push toward whatever comes next. A piece for anyone at the edge of a new chapter."
+  },
+  {
+    "id": "01",
+    "roman": "I",
+    "slug": "the-magician",
+    "name": "The Magician",
+    "price": 75,
+    "status": "available",
+    "height": 12.1,
+    "weight": 115,
+    "image": "products/renders/the-magician-card.webp?r=2",
+    "hasRenders": true,
+    "footprint": {
+      "width": 8.5,
+      "depth": 5.1
+    },
+    "correspondences": {
+      "element": "Air",
+      "astrology": "Mercury",
+      "energy": "Charged, deliberate",
+      "forWhom": "Makers & founders",
+      "keywords": [
+        "Will",
+        "Skill",
+        "Focus",
+        "Manifestation"
+      ]
+    },
+    "blurb": "Will, focus, turning intent into action.",
+    "meaning": "The Magician is will made visible, the moment intention becomes action. He stands with the tools of creation laid out before him, a reminder that you already hold everything you need to build. His gift is focus and manifestation, the spark that pulls an idea out of the head and into the world. His energy is charged and deliberate, at home wherever real work happens. A piece for the maker, the founder, anyone shaping something into being."
+  },
+  {
+    "id": "02",
+    "roman": "II",
+    "slug": "the-high-priestess",
+    "name": "The High Priestess",
+    "price": 82,
+    "status": "available",
+    "height": 11.7,
+    "weight": 171,
+    "image": "products/renders/the-high-priestess-card.webp?r=2",
+    "hasRenders": true,
+    "footprint": {
+      "width": 8.9,
+      "depth": 6
+    },
+    "correspondences": {
+      "element": "Water",
+      "astrology": "The Moon",
+      "energy": "Still, intuitive",
+      "forWhom": "Seekers & dreamers",
+      "keywords": [
+        "Intuition",
+        "Mystery",
+        "Secrets",
+        "Inner voice"
+      ]
+    },
+    "blurb": "Intuition, mystery, inner knowing.",
+    "meaning": "The High Priestess guards the threshold between the seen and the unseen. She is intuition, patience, and the kind of knowledge that arrives in silence. Her presence brings a still, reflective energy to a room, an invitation to listen inward before you act. Set on an altar or a bedside, she is a quiet reminder to trust what you feel. A piece for those who follow their instinct."
+  },
+  {
+    "id": "03",
+    "roman": "III",
+    "slug": "the-empress",
+    "name": "The Empress",
+    "price": 86,
+    "status": "soon",
+    "height": 10.2,
+    "weight": 207,
+    "image": "products/renders/the-empress-card.webp?r=2",
+    "hasRenders": true,
+    "footprint": {
+      "width": 8.3,
+      "depth": 5.6
+    },
+    "correspondences": {
+      "element": "Earth",
+      "astrology": "Venus",
+      "energy": "Warm, generous",
+      "forWhom": "Creators & nurturers",
+      "keywords": [
+        "Abundance",
+        "Fertility",
+        "Beauty",
+        "Care"
+      ]
+    },
+    "blurb": "Abundance, creativity, nurture.",
+    "meaning": "The Empress is creation in full bloom, the abundance of nature and the warmth of care. She embodies fertility of every kind, of ideas, of art, of love, and the patience to let things grow in their own time. Her energy is generous and nurturing, softening a space and inviting whatever lives there to flourish. A piece for anyone tending to something they want to see thrive, from a garden to a family to a dream."
+  },
+  {
+    "id": "04",
+    "roman": "IV",
+    "slug": "the-emperor",
+    "name": "The Emperor",
+    "price": 89,
+    "status": "soon",
+    "height": 10.7,
+    "weight": 246,
+    "image": "products/renders/the-emperor-card.webp?r=2",
+    "hasRenders": true,
+    "footprint": {
+      "width": 8.7,
+      "depth": 6.7
+    },
+    "correspondences": {
+      "element": "Fire",
+      "astrology": "Aries",
+      "energy": "Grounded, firm",
+      "forWhom": "Leaders & builders",
+      "keywords": [
+        "Structure",
+        "Authority",
+        "Order",
+        "Stability"
+      ]
+    },
+    "blurb": "Structure, authority, stability.",
+    "meaning": "The Emperor is structure and steady authority, the foundation that lets everything else stand. He represents order, discipline, and the protective strength of clear boundaries. His energy grounds a space and sharpens focus, a reassuring weight on a desk or a shelf. He is the calm that comes from knowing where the lines are. A piece for the builder, the leader, anyone holding something together."
+  },
+  {
+    "id": "05",
+    "roman": "V",
+    "slug": "the-hierophant",
+    "name": "The Hierophant",
+    "price": 80,
+    "status": "soon",
+    "height": 10,
+    "weight": 152,
+    "image": "products/renders/the-hierophant-card.webp?r=2",
+    "hasRenders": true,
+    "footprint": {
+      "width": 8.2,
+      "depth": 5
+    },
+    "correspondences": {
+      "element": "Earth",
+      "astrology": "Taurus",
+      "energy": "Rooted, calm",
+      "forWhom": "Students & teachers",
+      "keywords": [
+        "Tradition",
+        "Wisdom",
+        "Belief",
+        "Guidance"
+      ]
+    },
+    "blurb": "Tradition, learning, guidance.",
+    "meaning": "The Hierophant is tradition and shared meaning, the keeper of knowledge passed from hand to hand. He speaks to learning, mentorship, and the comfort of belonging to something older than yourself. His energy is rooted and calming, a quiet anchor among books and study. He values the long path over the shortcut. A piece for the teacher, the student, and the seeker of deeper understanding."
+  },
+  {
+    "id": "06",
+    "roman": "VI",
+    "slug": "the-lovers",
+    "name": "The Lovers",
+    "price": 86,
+    "status": "soon",
+    "height": 11,
+    "weight": 207,
+    "image": "products/renders/the-lovers-card.webp?r=2",
+    "hasRenders": true,
+    "footprint": {
+      "width": 8.1,
+      "depth": 5.6
+    },
+    "correspondences": {
+      "element": "Air",
+      "astrology": "Gemini",
+      "energy": "Warm, connective",
+      "forWhom": "Partners & the in-love",
+      "keywords": [
+        "Union",
+        "Choice",
+        "Values",
+        "Harmony"
+      ]
+    },
+    "blurb": "Union, choice, connection.",
+    "meaning": "The Lovers is union and the weight of choice, the meeting of two into something greater than either. Beyond romance it speaks to alignment, to values, and to the decisions that quietly define who we become. Its energy is warm and connective, at home in a shared space or given between two people. A piece about harmony, about belonging, and about choosing well."
+  },
+  {
+    "id": "07",
+    "roman": "VII",
+    "slug": "the-chariot",
+    "name": "The Chariot",
+    "price": 82,
+    "status": "soon",
+    "height": 10.4,
+    "weight": 184,
+    "image": "products/renders/the-chariot-card.webp?r=2",
+    "hasRenders": true,
+    "footprint": {
+      "width": 9.2,
+      "depth": 5.2
+    },
+    "correspondences": {
+      "element": "Water",
+      "astrology": "Cancer",
+      "energy": "Driven, focused",
+      "forWhom": "The ambitious",
+      "keywords": [
+        "Drive",
+        "Control",
+        "Willpower",
+        "Victory"
+      ]
+    },
+    "blurb": "Drive, willpower, forward motion.",
+    "meaning": "The Chariot is drive held under control, the will to move forward without losing the reins. It represents momentum, determination, and the discipline that turns raw ambition into real progress. Its energy is charged and purposeful, a steady push for anyone chasing a goal. It rewards a firm hand on the reins. A piece for the desk of someone with somewhere to be."
+  },
+  {
+    "id": "08",
+    "roman": "VIII",
+    "slug": "strength",
+    "name": "Strength",
+    "price": 82,
+    "status": "soon",
+    "height": 10.5,
+    "weight": 169,
+    "image": "products/renders/strength-card.webp?r=2",
+    "hasRenders": true,
+    "footprint": {
+      "width": 9.8,
+      "depth": 4.6
+    },
+    "correspondences": {
+      "element": "Fire",
+      "astrology": "Leo",
+      "energy": "Calm, brave",
+      "forWhom": "The quietly strong",
+      "keywords": [
+        "Courage",
+        "Patience",
+        "Compassion",
+        "Control"
+      ]
+    },
+    "blurb": "Courage, patience, quiet power.",
+    "meaning": "Strength is power expressed through gentleness, courage that has no need to shout. It is patience, resilience, and the quiet mastery of one's own fear. Its energy is calm and reassuring, a steady confidence that settles a room without forcing anything. It teaches that softness and strength are not opposites. A piece for anyone learning to lead with a gentle hand."
+  },
+  {
+    "id": "09",
+    "roman": "IX",
+    "slug": "the-hermit",
+    "name": "The Hermit",
+    "price": 82,
+    "status": "soon",
+    "height": 10.4,
+    "weight": 189,
+    "image": "products/renders/the-hermit-card.webp?r=2",
+    "hasRenders": true,
+    "footprint": {
+      "width": 9.5,
+      "depth": 5.1
+    },
+    "correspondences": {
+      "element": "Earth",
+      "astrology": "Virgo",
+      "energy": "Quiet, inward",
+      "forWhom": "The introspective",
+      "keywords": [
+        "Solitude",
+        "Reflection",
+        "Wisdom",
+        "Guidance"
+      ]
+    },
+    "blurb": "Solitude, inner light, reflection.",
+    "meaning": "The Hermit is solitude by choice, the search for meaning carried inward. He holds a lantern in the dark, a light made not to lead others but to see his own path clearly. His energy is contemplative and quiet, suited to a corner meant for thought. He is comfortable in stillness, and makes room for it. A piece for the introspective, the searcher, anyone who values time alone."
+  },
+  {
+    "id": "10",
+    "roman": "X",
+    "slug": "wheel-of-fortune",
+    "name": "Wheel of Fortune",
+    "price": 82,
+    "status": "soon",
+    "height": 11.9,
+    "weight": 161,
+    "image": "products/renders/wheel-of-fortune-card.webp?r=2",
+    "hasRenders": true,
+    "footprint": {
+      "width": 9.7,
+      "depth": 3.5
+    },
+    "correspondences": {
+      "element": "Fire",
+      "astrology": "Jupiter",
+      "energy": "Turning, alive",
+      "forWhom": "Those facing change",
+      "keywords": [
+        "Cycles",
+        "Fate",
+        "Luck",
+        "Change"
+      ]
+    },
+    "blurb": "Cycles, fate, change.",
+    "meaning": "The Wheel of Fortune is change itself, the turning of cycles beyond our control. It speaks to fate, to luck, and to the simple truth that nothing stays fixed for long. Its energy is a reminder to rise gracefully and to fall without fear, and to move with the turn. It brings a certain peace with uncertainty. A piece for anyone standing at the edge of something shifting."
+  },
+  {
+    "id": "11",
+    "roman": "XI",
+    "slug": "justice",
+    "name": "Justice",
+    "price": 86,
+    "status": "soon",
+    "height": 12.1,
+    "weight": null,
+    "image": "products/renders/justice-card.webp?r=2",
+    "hasRenders": true,
+    "footprint": null,
+    "correspondences": {
+      "element": "Air",
+      "astrology": "Libra",
+      "energy": "Clear, level",
+      "forWhom": "The fair-minded",
+      "keywords": [
+        "Balance",
+        "Truth",
+        "Fairness",
+        "Consequence"
+      ]
+    },
+    "blurb": "Balance, truth, fairness.",
+    "meaning": "Justice is truth weighed with a clear eye, the balance of cause and consequence. It represents fairness, accountability, and the clarity that comes from seeing things exactly as they are. Its energy is sharp and steadying, a level head in a space where decisions are made. It asks you to stand behind your word. A piece for anyone who values honesty and fair measure."
+  },
+  {
+    "id": "12",
+    "roman": "XII",
+    "slug": "the-hanged-man",
+    "name": "The Hanged Man",
+    "price": 86,
+    "status": "soon",
+    "height": 12.1,
+    "weight": 191,
+    "image": "products/renders/the-hanged-man-card.webp?r=2",
+    "hasRenders": true,
+    "footprint": {
+      "width": 9,
+      "depth": 8.8
+    },
+    "correspondences": {
+      "element": "Water",
+      "astrology": "Neptune",
+      "energy": "Still, patient",
+      "forWhom": "Those in a pause",
+      "keywords": [
+        "Surrender",
+        "Perspective",
+        "Pause",
+        "Release"
+      ]
+    },
+    "blurb": "Pause, surrender, new perspective.",
+    "meaning": "The Hanged Man is the pause that changes everything, a surrender you choose. Suspended and still, he sees the world from an angle no one rushing could ever reach. His energy is patient and quietly wise, a reminder that stepping back can also be a way forward. He finds the gift inside the waiting. A piece for anyone in a moment of pause, or of letting go."
+  },
+  {
+    "id": "13",
+    "roman": "XIII",
+    "slug": "death",
+    "name": "Death",
+    "price": 82,
+    "status": "soon",
+    "height": null,
+    "weight": null,
+    "image": "products/renders/death-card.webp?r=2",
+    "hasRenders": false,
+    "footprint": null,
+    "correspondences": {
+      "element": "Water",
+      "astrology": "Scorpio",
+      "energy": "Bold, unflinching",
+      "forWhom": "Those transforming",
+      "keywords": [
+        "Endings",
+        "Change",
+        "Release",
+        "Rebirth"
+      ]
+    },
+    "blurb": "Endings, transformation, release.",
+    "meaning": "Death is transformation, the ending that clears the ground for what comes next. It is rarely literal, far more often the release of what no longer serves so something truer can begin. Its energy is bold and unflinching, a striking presence that speaks of renewal through change. It does not fear the close of a chapter. A piece for anyone in the middle of becoming someone new."
+  },
+  {
+    "id": "14",
+    "roman": "XIV",
+    "slug": "temperance",
+    "name": "Temperance",
+    "price": 80,
+    "status": "soon",
+    "height": 11.8,
+    "weight": null,
+    "image": "products/renders/temperance-card.webp?r=2",
+    "hasRenders": true,
+    "footprint": null,
+    "correspondences": {
+      "element": "Fire",
+      "astrology": "Sagittarius",
+      "energy": "Calm, balanced",
+      "forWhom": "Seekers of balance",
+      "keywords": [
+        "Balance",
+        "Patience",
+        "Moderation",
+        "Alchemy"
+      ]
+    },
+    "blurb": "Balance, patience, the measured flow.",
+    "meaning": "Temperance is balance in motion, the patient blending of opposites into something whole. It speaks to moderation, healing, and the slow alchemy of finding the middle way between extremes. Its energy is calm and harmonising, smoothing the edges of a space. It rewards patience over haste. A piece for anyone seeking steadiness, and a gentler pace."
+  },
+  {
+    "id": "15",
+    "roman": "XV",
+    "slug": "the-devil",
+    "name": "The Devil",
+    "price": 86,
+    "status": "soon",
+    "height": 12.1,
+    "weight": null,
+    "image": "products/renders/the-devil-card.webp?r=2",
+    "hasRenders": true,
+    "footprint": null,
+    "correspondences": {
+      "element": "Earth",
+      "astrology": "Capricorn",
+      "energy": "Magnetic, honest",
+      "forWhom": "The self-aware",
+      "keywords": [
+        "Shadow",
+        "Desire",
+        "Attachment",
+        "Temptation"
+      ]
+    },
+    "blurb": "Shadow, desire, the chains we choose.",
+    "meaning": "The Devil is the shadow we would rather not name, desire, attachment, and the chains we forget we chose. It asks for honesty about what holds us, and reminds us that the lock is often ours to open. Its energy is magnetic and unflinching, a piece with real presence and a knowing edge. It does not look away. A piece for anyone unafraid to face their own wanting."
+  },
+  {
+    "id": "16",
+    "roman": "XVI",
+    "slug": "the-tower",
+    "name": "The Tower",
+    "price": 80,
+    "status": "soon",
+    "height": null,
+    "weight": null,
+    "image": "products/renders/the-tower-card.webp?r=2",
+    "hasRenders": false,
+    "footprint": null,
+    "correspondences": {
+      "element": "Fire",
+      "astrology": "Mars",
+      "energy": "Sudden, clearing",
+      "forWhom": "Those mid-upheaval",
+      "keywords": [
+        "Upheaval",
+        "Revelation",
+        "Change",
+        "Release"
+      ]
+    },
+    "blurb": "Upheaval, revelation, sudden change.",
+    "meaning": "The Tower is sudden truth, the flash that brings a false structure down. It is upheaval, revelation, and the strange freedom that follows a collapse. Its energy is dramatic and clearing, a reminder that some things have to break before they can be rebuilt honestly. What it takes, it takes for a reason. A bold piece for a space that is not afraid of change."
+  },
+  {
+    "id": "17",
+    "roman": "XVII",
+    "slug": "the-star",
+    "name": "The Star",
+    "price": 82,
+    "status": "soon",
+    "height": null,
+    "weight": null,
+    "image": "products/renders/the-star-card.webp?r=2",
+    "hasRenders": false,
+    "footprint": null,
+    "correspondences": {
+      "element": "Air",
+      "astrology": "Aquarius",
+      "energy": "Soft, hopeful",
+      "forWhom": "The healing",
+      "keywords": [
+        "Hope",
+        "Renewal",
+        "Faith",
+        "Calm"
+      ]
+    },
+    "blurb": "Hope, renewal, calm after the storm.",
+    "meaning": "The Star is hope after the dark, the quiet calm that follows the storm. It represents renewal, faith, and the gentle light that guides you back toward yourself. Its energy is soft and healing, a soothing presence in any room. It restores what the harder cards have worn down. A piece for anyone finding their way toward better days."
+  },
+  {
+    "id": "18",
+    "roman": "XVIII",
+    "slug": "the-moon",
+    "name": "The Moon",
+    "price": 82,
+    "status": "soon",
+    "height": null,
+    "weight": null,
+    "image": "products/renders/the-moon-card.webp?r=2",
+    "hasRenders": false,
+    "footprint": null,
+    "correspondences": {
+      "element": "Water",
+      "astrology": "Pisces",
+      "energy": "Dreamlike, deep",
+      "forWhom": "The dreamers",
+      "keywords": [
+        "Dreams",
+        "Intuition",
+        "Illusion",
+        "Mystery"
+      ]
+    },
+    "blurb": "Dreams, intuition, the subconscious.",
+    "meaning": "The Moon is the realm of dreams and intuition, the tide that pulls beneath the surface of thought. It speaks to mystery, imagination, and the truths that only reveal themselves in shadow. Its energy is atmospheric and quietly haunting, at home on a night table. It honours what cannot be fully explained. A piece for the dreamer, and for anyone who trusts what they feel in the dark."
+  },
+  {
+    "id": "19",
+    "roman": "XIX",
+    "slug": "the-sun",
+    "name": "The Sun",
+    "price": 82,
+    "status": "soon",
+    "height": null,
+    "weight": null,
+    "image": "products/renders/the-sun-card.webp?r=2",
+    "hasRenders": false,
+    "footprint": null,
+    "correspondences": {
+      "element": "Fire",
+      "astrology": "The Sun",
+      "energy": "Bright, warm",
+      "forWhom": "Everyone",
+      "keywords": [
+        "Joy",
+        "Vitality",
+        "Success",
+        "Clarity"
+      ]
+    },
+    "blurb": "Joy, vitality, clarity.",
+    "meaning": "The Sun is joy without complication, clarity and warmth made simple. It represents success, confidence, and the plain happiness of things finally going right. Its energy is bright and uplifting, an anchor of good feeling in a room. It is the easiest of the Arcana to be around. A piece for anyone who wants a little more light in their day."
+  },
+  {
+    "id": "20",
+    "roman": "XX",
+    "slug": "judgement",
+    "name": "Judgement",
+    "price": 82,
+    "status": "soon",
+    "height": null,
+    "weight": null,
+    "image": "products/renders/judgement-card.webp?r=2",
+    "hasRenders": false,
+    "footprint": null,
+    "correspondences": {
+      "element": "Fire",
+      "astrology": "Pluto",
+      "energy": "Reflective, rising",
+      "forWhom": "Those at a turning point",
+      "keywords": [
+        "Awakening",
+        "Reckoning",
+        "Renewal",
+        "Absolution"
+      ]
+    },
+    "blurb": "Awakening, reckoning, the call to rise.",
+    "meaning": "Judgement is the call to rise, the reckoning that asks you to answer honestly for the path you have walked. It speaks to awakening, reflection, and the clarity that comes from an honest look back. Its energy is contemplative and renewing, a piece about second chances and clear sight. It marks the moment you decide who to become. A piece for anyone at the start of a new self."
+  },
+  {
+    "id": "21",
+    "roman": "XXI",
+    "slug": "the-world",
+    "name": "The World",
+    "price": 82,
+    "status": "soon",
+    "height": null,
+    "weight": null,
+    "image": "products/renders/the-world-card.webp?r=2",
+    "hasRenders": false,
+    "footprint": null,
+    "correspondences": {
+      "element": "Earth",
+      "astrology": "Saturn",
+      "energy": "Calm, complete",
+      "forWhom": "The accomplished",
+      "keywords": [
+        "Completion",
+        "Wholeness",
+        "Fulfilment",
+        "Journey"
+      ]
+    },
+    "blurb": "Completion, wholeness, fulfilment.",
+    "meaning": "The World is completion, the journey come full circle into wholeness. It represents fulfilment, integration, and the deep satisfaction of a thing finally finished. Its energy is calm and quietly triumphant, the natural close of the collection. It carries the peace of arrival. A piece for anyone who has reached the end of a long road, and knows it."
+  }
+]

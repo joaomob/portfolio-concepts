@@ -1,0 +1,1117 @@
+/* Ported from the original prototype, src/site/css/classes.css. Asset addresses are absolute under /concepts/arcanae/. */
+/* Arcanae Craft: every class, in Webflow form (single class, combo .a.is-b, :hover and :focus-visible states,
+   media queries only at max-width 991px, 767px and 479px). 1rem = 16px: the prototype's 10px rem values are x 0.625.
+   Values that were fluid (clamp with vw) are the value measured at 1440, 880, 620 and 390 px, one per breakpoint.
+   Colours point to the Theme variables; the few primitives are colours the Theme has no name for (see the report).
+   Radii that were px in the prototype (14px, 22px, 12px) stay px, because the Sizes variables are rem and would
+   scale with the root font on smaller screens. */
+
+/* ---------------- structure ---------------- */
+.page-wrapper { overflow: clip; }
+.main-wrapper { display: block; }
+.padding-global {
+  padding-left: var(--_layout---spacing--global-padding);
+  padding-right: var(--_layout---spacing--global-padding);
+}
+.container-large { width: 100%; max-width: var(--_sizes---container--large); margin-left: auto; margin-right: auto; }
+.container-small { width: 100%; max-width: var(--_sizes---container--small); margin-left: auto; margin-right: auto; }
+.padding-section-large {
+  padding-top: var(--_layout---section-padding--large);
+  padding-bottom: var(--_layout---section-padding--large);
+}
+.padding-section-medium {
+  padding-top: var(--_layout---section-padding--medium);
+  padding-bottom: var(--_layout---section-padding--medium);
+}
+
+/* ---------------- spacing utilities ---------------- */
+.margin-medium { margin: var(--_layout---spacing--medium); }
+.margin-top { margin-right: 0; margin-bottom: 0; margin-left: 0; }
+
+/* ---------------- typography utilities ---------------- */
+.heading-style-h1 {
+  font-family: var(--font-family--display), 'Times New Roman', Georgia, serif;
+  font-weight: var(--font-weight--semibold);
+  line-height: var(--_typography---line-height--display);
+  letter-spacing: var(--_typography---letter-spacing--wide);
+  font-size: var(--_typography---heading--h1);
+}
+.heading-style-h2 {
+  font-family: var(--font-family--display), 'Times New Roman', Georgia, serif;
+  font-weight: var(--font-weight--semibold);
+  line-height: var(--_typography---line-height--heading);
+  letter-spacing: var(--_typography---letter-spacing--wide);
+  font-size: var(--_typography---heading--h2);
+}
+.heading-style-h3 {
+  font-family: var(--font-family--display), 'Times New Roman', Georgia, serif;
+  font-weight: var(--font-weight--semibold);
+  line-height: var(--_typography---line-height--snug);
+  font-size: var(--_typography---heading--h3);
+}
+.heading-style-h4 {
+  font-family: var(--font-family--display), 'Times New Roman', Georgia, serif;
+  font-weight: var(--font-weight--semibold);
+  line-height: var(--_typography---line-height--default);
+  letter-spacing: var(--_typography---letter-spacing--slight);
+  font-size: var(--_typography---heading--h4);
+}
+.text-size-small { font-size: var(--_typography---text--small); line-height: var(--_typography---line-height--body); }
+.text-style-eyebrow {
+  font-size: var(--_typography---text--tiny);
+  letter-spacing: var(--_typography---letter-spacing--eyebrow);
+  text-transform: uppercase;
+  color: var(--_theme---text-color--text-brand);
+  font-weight: var(--font-weight--semibold);
+}
+.text-weight-bold { font-weight: var(--font-weight--bold); }
+.text-font-secondary { font-family: var(--font-family--display), 'Times New Roman', Georgia, serif; }
+.text-color-secondary { color: var(--_theme---text-color--text-secondary); }
+.text-color-brand { color: var(--_theme---text-color--text-brand); }
+/* primitive on purpose: the brand marble #f2f2f2 has no Theme name */
+.text-color-marble { color: var(--base-color-brand--marble); }
+
+/* text for assistive tech only (the email field label) */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* ---------------- buttons ---------------- */
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: .5em;
+  font-weight: var(--font-weight--normal);
+  font-size: var(--_typography---text--large);
+  letter-spacing: var(--_typography---letter-spacing--wider);
+  line-height: 1;
+  text-align: center;
+  white-space: nowrap;
+  padding: 1.05em 1.7em;
+  border-radius: var(--_sizes---border-radius--round);
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: transform .25s cubic-bezier(.2,.7,.2,1), background-color .25s cubic-bezier(.2,.7,.2,1), color .25s cubic-bezier(.2,.7,.2,1), border-color .25s cubic-bezier(.2,.7,.2,1);
+}
+/* the gold button is the dark gold of the palette with white text at normal weight (5.94:1); white on the brand gold
+   was 4.32:1 and needed bold text (João, 29/09/2026: "não quero (...) negrito (...) Se tiver que mudar as cores, muda");
+   on hover the gold button gets lighter (gold light with dark text, 6.0:1), so it stands out more on the dark hero and
+   on the light pages (João, 03/10/2026: it went black and vanished on the dark hero); the dark button turns gold */
+.button.is-gold { background-color: var(--base-color-brand--gold-dark); color: var(--base-color-neutral--white); }
+.button.is-gold:hover { background-color: var(--base-color-brand--gold-light); color: var(--base-color-neutral--neutral-darkest); }
+.button.is-dark { background-color: var(--base-color-neutral--neutral-darkest); color: var(--base-color-brand--gold-lightest); }
+.button.is-dark:hover { background-color: var(--base-color-brand--gold-dark); color: var(--base-color-neutral--white); }
+.button.is-ghost { background-color: transparent; border-color: var(--_theme---border-color--border-primary); color: currentColor; }
+.button.is-ghost:hover { border-color: var(--_theme---border-color--border-brand); color: var(--_theme---text-color--text-brand); }
+.button.is-gold.is-full { width: 100%; }
+
+/* ---------------- nav ---------------- */
+.nav_component {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  border-bottom: 1px solid var(--_theme---border-color--border-secondary);
+}
+/* The menu's glass (colour and blur) sits on its own layer: a backdrop-filter on .nav_component itself would make it
+   the containing block of every fixed element inside it, and the native Cart drawer, which lives inside the menu on
+   Webflow, came out 72px tall (01/10/2026). */
+.nav_backdrop {
+  position: absolute;
+  top: 0; right: 0; bottom: 0; left: 0;
+  z-index: -1;
+  background-color: color-mix(in srgb, var(--_theme---background-color--background-primary) 88%, transparent);
+  backdrop-filter: blur(10px);
+}
+.nav_inner { display: flex; align-items: center; justify-content: space-between; min-height: 4.5rem; gap: .9375rem; }
+.nav_brand {
+  display: inline-flex;
+  align-items: center;
+  font-family: var(--font-family--display), 'Times New Roman', Georgia, serif;
+  font-weight: var(--font-weight--bold);
+  font-size: var(--_typography---text--large);
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+.nav_logo { height: 1.1875rem; width: auto; display: block; }
+.nav_menu { display: flex; gap: 1.5rem; align-items: center; font-size: var(--_typography---text--tiny); letter-spacing: var(--_typography---letter-spacing--widest); text-transform: uppercase; }
+.nav_link { color: var(--_theme---text-color--text-secondary); }
+.nav_link:hover { color: var(--_theme---text-color--text-primary); }
+.nav_actions { display: flex; align-items: center; gap: .875rem; }
+.nav_cart {
+  display: inline-flex;
+  align-items: center;
+  gap: .34375rem;
+  background-color: transparent;
+  border: 0;
+  color: var(--_theme---text-color--text-primary);
+  cursor: pointer;
+  letter-spacing: var(--_typography---letter-spacing--widest);
+  text-transform: uppercase;
+  font-size: var(--_typography---text--tiny);
+  white-space: nowrap;
+}
+.nav_cart-icon { width: 1.25rem; height: 1.25rem; display: block; }
+.nav_cart-count { min-width: 1.5em; }
+/* The native Webflow Cart (01/10/2026): the classes below go on its parts in the Designer (Cart Button, Icon,
+   Cart Quantity, Cart Wrapper, Cart Container, Cart Header, Close Button, Cart List, Cart Footer) and take out the
+   defaults Webflow gives them (blue button, white badge, shadow, borders), with the values of the prototype's drawer
+   (.cart-drawer_*). The prototype's own drawer stays for the local pages; on the site the native Cart replaces it. */
+.nav_cart.is-native { padding: 0; }
+.nav_cart-count.is-native { background-color: transparent; color: inherit; margin-left: 0; padding: 0; height: auto; line-height: inherit; font-size: inherit; font-weight: inherit; border-radius: 0; }
+.cart_wrapper { background-color: rgba(17,17,17,.4); }
+.cart_container { width: min(26.25rem, 92vw); min-width: 0; max-width: none; background-color: var(--_theme---background-color--background-primary); box-shadow: none; padding: 1.25rem 1.125rem; }
+.cart_header { padding: 0 0 .625rem; border-bottom: 0; }
+.cart_close { color: var(--_theme---text-color--text-primary); }
+.cart_list { padding: 0; }
+.cart_footer { padding: .75rem 0 0; border-top: 1px solid var(--_theme---border-color--border-primary); }
+.nav_toggle {
+  display: none;
+  flex-direction: column;
+  gap: .3125rem;
+  background-color: transparent;
+  border: 0;
+  cursor: pointer;
+  padding: .375rem;
+  color: var(--_theme---text-color--text-primary);
+}
+.nav_toggle-line { display: block; width: 1.5rem; height: 2px; background-color: currentColor; transition: transform .3s, opacity .3s; }
+
+/* ---------------- hero ---------------- */
+.section_hero {
+  position: relative;
+  overflow: hidden;
+  display: grid;
+  align-items: center;
+  min-height: calc(100vh - 72px);
+  background-color: var(--_theme---background-color--background-primary);
+  color: var(--_theme---text-color--text-primary);
+}
+.hero_3d {
+  position: absolute; top: 0; right: 0; bottom: 0; left: 0; z-index: 0;
+  /* the lit wall of the 3D, shot without the statue (webflow/shoot-hero-wall.js): on screen from the first frame, and the
+     live light fades in over it (João, 01/10/2026) */
+  background-image: url("/concepts/arcanae/assets/hero-wall-desktop.webp");
+  background-size: cover;
+  background-position: 50% 50%;
+}
+.hero_3d-canvas { width: 100%; height: 100%; display: block; opacity: 0; transition: opacity 1.6s cubic-bezier(.45,0,.2,1); }
+.hero_3d-hint {
+  position: absolute;
+  right: 1.875rem;
+  bottom: 1.25rem;
+  margin: 0;
+  font-family: var(--font-family--display), 'Times New Roman', Georgia, serif;
+  font-weight: var(--font-weight--medium);
+  color: var(--_theme---text-color--text-brand);
+  letter-spacing: .2em;
+  font-size: var(--_typography---text--tiny);
+  text-transform: uppercase;
+}
+.hero_3d-loading {
+  position: absolute;
+  left: 72%;
+  bottom: 2rem;
+  transform: translateX(-50%);
+  margin: 0;
+  font-family: var(--font-family--display), 'Times New Roman', Georgia, serif;
+  font-weight: var(--font-weight--medium);
+  color: var(--_theme---text-color--text-brand);
+  letter-spacing: .24em;
+  font-size: var(--_typography---text--tiny);
+  text-transform: uppercase;
+  font-variant-numeric: tabular-nums;
+  transition: opacity .6s;
+}
+/* the second line of the hero title: a block, in place of a <br>, which the Webflow paste has no format for */
+.hero_title-line { display: block; }
+.hero_content { padding-top: 6.875rem; padding-bottom: 6.875rem; max-width: 40rem; position: relative; z-index: 1; }
+.hero_lede {
+  color: var(--_theme---text-color--text-secondary);
+  max-width: 46ch;
+  margin: 1.125rem 0 1.625rem;
+  font-size: var(--_typography---text--large);
+  line-height: 1.55;
+}
+
+/* ---------------- section heading ---------------- */
+/* the title block on the left and an action (View all) on the right; the one supporting text sits inside the title
+   block, under the title: beside it, at the eyebrow's height, it competed with the title (João, 01/10/2026;
+   core/webflow-paste/ERROS.md, E63) */
+.section-heading_component {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: .9375rem;
+  margin-bottom: 2rem;
+}
+.section-heading_text {
+  margin: .9375rem 0 0;
+  color: var(--_theme---text-color--text-secondary);
+  max-width: 52ch;
+  font-size: var(--_typography---text--large);
+  line-height: 1.55;
+}
+.section-heading_text.is-small { max-width: 36ch; font-size: var(--_typography---text--regular); line-height: var(--_typography---line-height--body); }
+
+/* ---------------- collection grid and product card ---------------- */
+.section_related { background-color: var(--_theme---background-color--background-secondary); }
+.collection_grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1.5rem; }
+.product-card_component { display: block; }
+.product-card_media {
+  aspect-ratio: 4 / 5;
+  border-radius: 14px;
+  overflow: hidden;
+  position: relative;
+  background-image: linear-gradient(150deg, var(--_theme---background-color--background-secondary), var(--_theme---background-color--background-tertiary));
+  display: grid;
+  align-items: center; justify-items: center;
+  transition: transform .5s cubic-bezier(.2,.7,.2,1);
+}
+.product-card_image { position: absolute; top: 0; right: 0; bottom: 0; left: 0; width: 100%; height: 100%; object-fit: cover; transition: transform 1.2s cubic-bezier(.2,.7,.2,1); }
+.product-card_roman {
+  font-family: var(--font-family--display), 'Times New Roman', Georgia, serif;
+  font-size: var(--_typography---heading--h2);
+  color: var(--_theme---text-color--text-brand);
+  opacity: .5;
+  letter-spacing: .05em;
+}
+.product-card_badge {
+  position: absolute;
+  z-index: 2;
+  top: .625rem;
+  left: .625rem;
+  font-size: var(--_typography---text--tiny);
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  background-color: rgba(17,17,17,.85);
+  color: var(--base-color-brand--gold-lightest);
+  padding: .45em .8em;
+  border-radius: var(--_sizes---border-radius--round);
+}
+.product-card_badge.is-made { background-color: var(--_theme---background-color--background-primary); color: var(--_theme---text-color--text-secondary); border: 1px solid var(--_theme---border-color--border-primary); }
+/* the arcanum number of a card, hidden: the product page code reads it to show the three arcana after the current one
+   (webflow/INTERACTIONS.md, item 21), because a custom attribute on Webflow cannot take a collection field */
+.product-card_number { display: none; }
+.product-card_row { display: flex; justify-content: space-between; align-items: baseline; margin-top: .75rem; gap: .625rem; }
+.product-card_name {
+  margin: 0;
+  font-family: var(--font-family--display), 'Times New Roman', Georgia, serif;
+  font-size: var(--_typography---heading--h4);
+  font-weight: var(--font-weight--semibold);
+  line-height: var(--_typography---line-height--body);
+  letter-spacing: normal;
+}
+.product-card_height { margin: .25rem 0 0; font-size: var(--_typography---text--tiny); color: var(--_theme---text-color--text-secondary); }
+.product-card_price { color: var(--_theme---text-color--text-secondary); white-space: nowrap; }
+
+/* status filter: All, In stock, Made to order, with counts */
+.collection-filter_component { display: flex; flex-wrap: wrap; gap: .5rem; margin-bottom: 1.5rem; }
+.collection-filter_button {
+  display: inline-flex;
+  align-items: center;
+  gap: .5em;
+  padding: .55em 1.1em;
+  border: 1px solid var(--_theme---border-color--border-primary);
+  border-radius: var(--_sizes---border-radius--round);
+  background-color: transparent;
+  color: var(--_theme---text-color--text-secondary);
+  font-size: var(--_typography---text--tiny);
+  letter-spacing: var(--_typography---letter-spacing--widest);
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: color .22s cubic-bezier(.2,.7,.2,1), border-color .22s cubic-bezier(.2,.7,.2,1);
+}
+/* hover: the brand border and darker text, so the tab answers the mouse (João, 03/10/2026: the text change alone was not seen) */
+.collection-filter_button:hover { border-color: var(--_theme---border-color--border-brand); color: var(--_theme---text-color--text-primary); }
+.collection-filter_button.is-active { border-color: var(--_theme---border-color--border-brand); color: var(--_theme---text-color--text-brand); }
+.collection-filter_count { font-variant-numeric: tabular-nums; }
+/* the hidden Collection List inside a status tab of the Category page, counted by the CSS counter of the Global Styles:
+   kept rendered (a hidden element does not count) and out of sight */
+.collection-filter_count-list { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+
+/* the status tabs as Webflow radio buttons for Finsweet List Filter (webflow-parts.html, #home-collection); same look
+   as .collection-filter_button, with Webflow's own form defaults taken off (.w-form margin, .w-radio padding and
+   margin, label bold and block, the custom radio circle) */
+.collection-filter_form-block { margin: 0; }
+.collection-filter_option {
+  display: inline-flex;
+  align-items: center;
+  margin: 0;
+  padding: .55em 1.1em;
+  border: 1px solid var(--_theme---border-color--border-primary);
+  border-radius: var(--_sizes---border-radius--round);
+  background-color: transparent;
+  color: var(--_theme---text-color--text-secondary);
+  font-size: var(--_typography---text--tiny);
+  font-weight: var(--font-weight--normal); /* a label on Webflow, which Webflow sets bold (compare-styles.js, 30/09/2026) */
+  letter-spacing: var(--_typography---letter-spacing--widest);
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: color .22s cubic-bezier(.2,.7,.2,1), border-color .22s cubic-bezier(.2,.7,.2,1);
+}
+.collection-filter_option:hover { color: var(--_theme---text-color--text-primary); }
+.collection-filter_option.is-active { border-color: var(--_theme---border-color--border-brand); color: var(--_theme---text-color--text-brand); }
+.collection-filter_radio { display: none; }
+.collection-filter_label { display: inline-flex; align-items: center; gap: .5em; margin: 0; font-weight: inherit; cursor: pointer; }
+.collection_component { display: block; }
+/* the product Categories the status filter reads (webflow-parts.html); never shown */
+.product-card_status-list { display: none; }
+.product-card_meta { display: flex; gap: .25em; margin: .25rem 0 0; font-size: var(--_typography---text--tiny); color: var(--_theme---text-color--text-secondary); }
+
+/* ---------------- pagination ---------------- */
+.pagination_component { display: flex; justify-content: center; align-items: center; gap: .875rem; flex-wrap: wrap; margin-top: 2.5rem; }
+/* the page numbers and the arrows take the shape of the status filter pills, the small button of the site: one shape
+   for every small control (core/checks/ds-consistency.mjs, 01/10/2026) */
+.pagination_button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 2.75rem;
+  margin: 0;
+  padding: .55em 1.1em;
+  border: 1px solid var(--_theme---border-color--border-primary);
+  border-radius: var(--_sizes---border-radius--round);
+  background-color: transparent;
+  color: var(--_theme---text-color--text-secondary);
+  font-size: var(--_typography---text--tiny);
+  letter-spacing: var(--_typography---letter-spacing--widest);
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: color .22s cubic-bezier(.2,.7,.2,1), border-color .22s cubic-bezier(.2,.7,.2,1);
+}
+/* holds the numbered page buttons between the arrows: Finsweet List Load puts each number in the parent of its
+   page-button template (biblioteca/fontes/finsweet-list-2909.md) */
+.pagination_pages { display: flex; align-items: center; gap: .875rem; }
+.pagination_button.is-current { border-color: var(--_theme---border-color--border-brand); color: var(--_theme---text-color--text-brand); }
+
+/* ---------------- craft ---------------- */
+.section_craft { background-color: var(--_theme---background-color--background-secondary); }
+.craft_grid { display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 1.875rem; margin-top: .625rem; }
+.craft_step {
+  border: 1px solid var(--_theme---border-color--border-secondary);
+  border-radius: 14px;
+  background-color: color-mix(in srgb, var(--_theme---background-color--background-primary) 55%, transparent);
+  overflow: hidden;
+}
+.craft_step-media {
+  position: relative;
+  aspect-ratio: 4 / 5;
+  display: grid;
+  align-items: center; justify-items: center;
+  border-bottom: 1px solid var(--_theme---border-color--border-secondary);
+  background-color: var(--base-color-neutral--neutral-darkest);
+  overflow: hidden;
+}
+.craft_step-image {
+  position: absolute;
+  top: 0; right: 0; bottom: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 1.2s cubic-bezier(.2,.7,.2,1);
+  filter: contrast(1.04) saturate(.88);
+}
+.craft_step-number {
+  position: absolute;
+  top: .625rem;
+  right: .8125rem;
+  z-index: 2;
+  font-family: var(--font-family--display), 'Times New Roman', Georgia, serif;
+  font-size: var(--_typography---heading--h4);
+  font-weight: var(--font-weight--bold);
+  color: var(--_theme---text-color--text-brand);
+  letter-spacing: .12em;
+  background-color: var(--_theme---background-color--background-primary);
+  padding: .25rem .4375rem;
+  border-radius: 14px;
+}
+.craft_step-body { padding: 1.125rem 1.25rem 1.375rem; display: flex; flex-direction: column; row-gap: .375rem; }
+.craft_step-text { margin: 0; color: var(--_theme---text-color--text-secondary); font-size: var(--_typography---text--small); line-height: 1.6; }
+.craft_note { text-align: center; margin-top: 1.875rem; color: var(--_theme---text-color--text-secondary); font-size: var(--_typography---text--small); }
+
+/* ---------------- trust bar ---------------- */
+.section_trust {
+  background-color: var(--_theme---background-color--background-secondary);
+  border-top: 1px solid var(--_theme---border-color--border-secondary);
+  border-bottom: 1px solid var(--_theme---border-color--border-secondary);
+}
+.trust_grid { display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 1.25rem; padding-top: 1.875rem; padding-bottom: 1.875rem; }
+.trust_icon { width: 1.625rem; height: 1.625rem; color: var(--_theme---text-color--text-brand); display: block; margin-bottom: .625rem; }
+.trust_title {
+  margin: 0 0 .1875rem;
+  font-family: var(--font-family--primary), 'Helvetica Neue', Arial, sans-serif;
+  font-size: var(--_typography---text--regular);
+  font-weight: var(--font-weight--semibold);
+  line-height: 1.05;
+  letter-spacing: var(--_typography---letter-spacing--wide);
+}
+.trust_text { margin: 0; font-size: var(--_typography---text--tiny); color: var(--_theme---text-color--text-secondary); }
+
+/* ---------------- detail plate (full bleed) ---------------- */
+.section_plate { position: relative; height: 88vh; overflow: hidden; background-color: var(--_theme---background-color--background-secondary); }
+.plate_badge {
+  position: absolute;
+  top: 1.25rem;
+  left: var(--_layout---spacing--global-padding);
+  z-index: 1;
+  font-size: var(--_typography---text--tiny);
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--_theme---text-color--text-alternate);
+  background-color: rgba(255,255,255,.86);
+  border-radius: var(--_sizes---border-radius--round);
+  padding: .35em .9em;
+  pointer-events: none;
+}
+.plate_image { width: 100%; height: 120%; object-fit: cover; display: block; transform: translateY(-10%) scale(1.1); will-change: transform; }
+
+/* ---------------- story ---------------- */
+.story_layout { display: grid; grid-template-columns: .9fr 1.1fr; gap: 3.125rem; align-items: center; }
+.story_media {
+  margin: 0;
+  position: relative;
+  aspect-ratio: 4 / 5;
+  border-radius: 22px;
+  overflow: hidden;
+  display: grid;
+  align-items: center; justify-items: center;
+}
+.story_image { position: absolute; top: 0; right: 0; bottom: 0; left: 0; width: 100%; height: 100%; object-fit: cover; object-position: top; }
+.story_prose { max-width: 35rem; margin-top: 1.125rem; }
+.story_lead {
+  margin: 0 0 .875rem;
+  color: var(--_theme---text-color--text-primary);
+  font-family: var(--font-family--display), 'Times New Roman', Georgia, serif;
+  font-weight: var(--font-weight--medium);
+  font-size: var(--_typography---text--large);
+  line-height: 1.45;
+}
+.story_paragraph { margin: 0 0 .875rem; color: var(--_theme---text-color--text-secondary); font-size: var(--_typography---text--regular); line-height: 1.7; }
+
+/* ---------------- FAQ ---------------- */
+.faq_layout { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 40rem); gap: 5rem; align-items: start; }
+.faq_list { display: flex; flex-direction: column; }
+.faq_item { border-top: 1px solid var(--_theme---border-color--border-primary); overflow: hidden; }
+.faq_question {
+  list-style: none;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1.25rem;
+  padding: 1.375rem 0;
+  font-family: var(--font-family--display), 'Times New Roman', Georgia, serif;
+  font-weight: var(--font-weight--medium);
+  font-size: var(--_typography---heading--h4);
+  color: var(--_theme---text-color--text-primary);
+}
+.faq_question-text { margin: 0; font: inherit; letter-spacing: inherit; }
+.faq_icon { position: relative; flex: 0 0 1rem; height: 1rem; }
+.faq_answer { margin: 0 0 1.375rem; max-width: 62ch; color: var(--_theme---text-color--text-secondary); line-height: 1.7; }
+
+/* ---------------- render wheel ---------------- */
+.section_wheel {
+  position: relative;
+  height: 220vh;
+  background-color: var(--_theme---background-color--background-primary);
+}
+.wheel_sticky { position: sticky; top: 0; height: 100vh; overflow: visible; display: grid; align-items: center; justify-items: center; }
+.wheel_ring {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  will-change: transform;
+}
+.wheel_item {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: clamp(88px, 9vw, 130px);
+  aspect-ratio: 4 / 5;
+  margin: calc(clamp(88px, 9vw, 130px) * -.625) 0 0 calc(clamp(88px, 9vw, 130px) / -2);
+}
+.wheel_image { width: 100%; height: 100%; object-fit: cover; display: block; }
+.wheel_center {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  max-width: 40rem;
+  padding: 0 1.875rem;
+}
+
+/* ---------------- footer ---------------- */
+.footer_component {
+  background-color: var(--_theme---background-color--background-primary);
+  color: var(--_theme---text-color--text-secondary);
+  padding-top: 3.125rem;
+  padding-bottom: 1.875rem;
+}
+.footer_grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 1.875rem; }
+.footer_logo { width: 15rem; height: auto; margin-bottom: .625rem; }
+.footer_description { max-width: 36ch; margin-top: .75rem; }
+.footer_heading {
+  margin: 0 0 1.0625rem;
+  color: var(--base-color-brand--marble);
+  font-size: var(--_typography---text--tiny);
+  font-weight: var(--font-weight--semibold);
+  letter-spacing: .14em;
+  text-transform: uppercase;
+}
+.footer_link-list { display: grid; justify-items: start; row-gap: 1.0625rem; margin-bottom: 1.0625rem; }
+.footer_link { color: var(--_theme---text-color--text-secondary); }
+.footer_link:hover { color: var(--base-color-brand--marble); }
+.footer_copyright-text { margin-top: 2rem; font-size: var(--_typography---text--tiny); }
+.footer_marquee { overflow: hidden; margin-top: 2.5rem; padding: 1.25rem 0 .625rem; border-top: 1px solid var(--_theme---border-color--border-secondary); }
+.footer_marquee-track { display: flex; align-items: center; gap: 3.6rem; width: max-content; }
+.footer_marquee-logo { height: clamp(3.75rem, 12vw, 10rem); width: auto; opacity: .9; }
+.footer_marquee-emblem { height: clamp(1.875rem, 6vw, 5rem); width: auto; opacity: .9; }
+
+/* ---------------- email band (home, before the footer) ---------------- */
+.section_newsletter { background-color: var(--_theme---background-color--background-secondary); }
+.newsletter_component { text-align: center; max-width: 42rem; margin-left: auto; margin-right: auto; }
+.newsletter_form { display: flex; gap: .375rem; margin-top: 1.5rem; flex-wrap: wrap; justify-content: center; }
+.newsletter_input {
+  flex: 1;
+  min-width: 12.5rem;
+  background-color: var(--_theme---background-color--background-primary);
+  border: 1px solid var(--_theme---border-color--border-input);
+  color: var(--_theme---text-color--text-primary);
+  padding: .8em 1.2em; /* shorter than the button on its own (a field keeps at least the font's normal line height),
+                         so the row stretches it to the button's height at every width */
+  border-radius: var(--_sizes---border-radius--round);
+  /* longhands: on Webflow a font shorthand saved after line-height reset it to the inherited 1.6 (01/10/2026) */
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  font-style: inherit;
+  line-height: 1;
+  height: auto; /* Webflow's .w-input fixes form fields at 38px */
+  margin: 0; /* Webflow gives every form field a 10px bottom margin (.w-input) */
+}
+/* the placeholder: Webflow's default (#999) is 2.67:1 on the field; the secondary text color is 5.43:1 (03/10/2026) */
+.newsletter_input::placeholder { color: var(--_theme---text-color--text-secondary); }
+/* the Form Block keeps the empty status line of the prototype as bottom padding (1.6em line plus .75rem margin); the
+   success and error messages are hidden until Webflow shows one, and drop the grey box of Webflow's .w-form-done */
+.newsletter_form-block { margin-bottom: 0; padding-bottom: calc(1.6em + .75rem); }
+.newsletter_status { display: none; min-height: 1.6em; margin: .75rem 0 0; padding: 0; background-color: transparent; text-align: center; color: var(--_theme---text-color--text-secondary); }
+
+/* ---------------- cart drawer ---------------- */
+.cart-drawer_component { position: fixed; top: 0; right: 0; bottom: 0; left: 0; z-index: 100; visibility: hidden; }
+.cart-drawer_overlay { position: absolute; top: 0; right: 0; bottom: 0; left: 0; background-color: rgba(17,17,17,.4); opacity: 0; transition: opacity .3s; }
+.cart-drawer_panel {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: min(26.25rem, 92vw);
+  background-color: var(--_theme---background-color--background-primary);
+  transform: translateX(100%);
+  transition: transform .35s cubic-bezier(.2,.7,.2,1);
+  display: flex;
+  flex-direction: column;
+  padding: 1.25rem 1.125rem;
+}
+.cart-drawer_header { display: flex; justify-content: space-between; align-items: center; margin-bottom: .625rem; }
+.cart-drawer_close {
+  display: inline-flex;
+  align-items: center;
+  gap: .34375rem;
+  background-color: transparent;
+  border: 0;
+  color: var(--_theme---text-color--text-primary);
+  cursor: pointer;
+  letter-spacing: var(--_typography---letter-spacing--widest);
+  text-transform: uppercase;
+  font-size: var(--_typography---text--tiny);
+  white-space: nowrap;
+}
+.cart-drawer_items { overflow: auto; flex: 1; }
+.cart-drawer_empty { color: var(--_theme---text-color--text-secondary); padding: 1.25rem 0; }
+.cart-drawer_footer { margin-top: auto; padding-top: .75rem; border-top: 1px solid var(--_theme---border-color--border-primary); }
+.cart-drawer_shipping { display: flex; justify-content: space-between; align-items: center; gap: .625rem; margin-bottom: .625rem; }
+.cart-drawer_shipping-label { font-size: var(--_typography---text--tiny); color: var(--_theme---text-color--text-secondary); text-transform: uppercase; letter-spacing: .08em; }
+.cart-drawer_select {
+  flex: 0 1 auto;
+  max-width: 60%;
+  padding: .375rem .5rem;
+  border: 1px solid var(--_theme---border-color--border-primary);
+  border-radius: .375rem;
+  background-color: var(--_theme---background-color--background-primary);
+  color: inherit;
+  font-family: var(--font-family--primary), 'Helvetica Neue', Arial, sans-serif;
+  font-size: 16px; /* a field under 16px makes the phone zoom in when it is tapped */
+  cursor: pointer;
+}
+.cart-drawer_line { display: flex; justify-content: space-between; font-size: var(--_typography---text--small); color: var(--_theme---text-color--text-secondary); margin-bottom: .3125rem; }
+.cart-drawer_total {
+  display: flex;
+  justify-content: space-between;
+  font-family: var(--font-family--display), 'Times New Roman', Georgia, serif;
+  font-size: var(--_typography---text--large);
+  margin: .625rem 0 .75rem;
+}
+.cart-drawer_status { margin: .5rem 0 0; font-size: var(--_typography---text--small); color: var(--_theme---text-color--text-secondary); text-align: center; }
+.cart-drawer_note { color: var(--_theme---text-color--text-secondary); font-size: var(--_typography---text--small); line-height: 1.6; text-align: center; margin: .5rem 0 0; }
+.cart-item_component { display: flex; gap: .75rem; padding: .75rem 0; border-bottom: 1px solid var(--_theme---border-color--border-secondary); }
+.cart-item_thumbnail {
+  width: 3.5rem;
+  height: 4.375rem;
+  border-radius: .5rem;
+  background-color: var(--_theme---background-color--background-secondary);
+  display: grid;
+  align-items: center; justify-items: center;
+  color: var(--_theme---text-color--text-brand);
+  font-family: var(--font-family--display), 'Times New Roman', Georgia, serif;
+}
+.cart-item_content { flex: 1; }
+.cart-item_row { display: flex; justify-content: space-between; gap: .625rem; }
+.cart-item_meta { color: var(--_theme---text-color--text-secondary); font-size: var(--_typography---text--small); line-height: 1.6; }
+.cart-item_remove {
+  display: inline-flex;
+  align-items: center;
+  gap: .34375rem;
+  background-color: transparent;
+  border: 0;
+  color: var(--_theme---text-color--text-secondary);
+  cursor: pointer;
+  margin-top: .1875rem;
+  letter-spacing: 0;
+  text-transform: none;
+  font-size: var(--_typography---text--tiny);
+  white-space: nowrap;
+}
+
+/* ---------------- product page ---------------- */
+.pdp_layout { display: grid; grid-template-columns: 1fr 1.05fr; gap: 3.125rem; align-items: start; }
+.pdp_gallery { position: sticky; top: 5.625rem; align-self: start; }
+.gallery_main {
+  aspect-ratio: 1;
+  border-radius: 22px;
+  overflow: hidden;
+  position: relative;
+  background-image: linear-gradient(150deg, var(--_theme---background-color--background-secondary), var(--_theme---background-color--background-tertiary));
+  display: grid;
+  align-items: center; justify-items: center;
+}
+.gallery_main.is-loupe { cursor: zoom-in; }
+.gallery_image {
+  position: absolute;
+  top: 0; right: 0; bottom: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform .3s cubic-bezier(.2,.7,.2,1);
+  will-change: transform;
+}
+/* the card of a piece with no renders yet (4:5, transparent background) shown whole in the square frame */
+.gallery_image.is-contain { object-fit: contain; }
+.gallery_roman {
+  font-family: var(--font-family--display), 'Times New Roman', Georgia, serif;
+  font-size: var(--_typography---heading--h1);
+  color: var(--_theme---text-color--text-brand);
+  opacity: .5;
+  letter-spacing: .05em;
+}
+.gallery_badge {
+  position: absolute;
+  top: .75rem;
+  left: .75rem;
+  z-index: 4;
+  font-size: var(--_typography---text--tiny);
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--_theme---text-color--text-primary);
+  background-color: rgba(255,255,255,.86);
+  border: 1px solid var(--_theme---border-color--border-primary);
+  border-radius: var(--_sizes---border-radius--round);
+  padding: .35em .9em;
+  pointer-events: none;
+}
+.gallery_lens {
+  position: absolute;
+  border-radius: 50%;
+  border: 2px solid rgba(255,255,255,.85);
+  box-shadow: 0 10px 30px -8px rgba(17,17,17,.5), inset 0 0 0 1px rgba(148,116,77,.4);
+  background-repeat: no-repeat;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity .2s;
+  z-index: 5;
+}
+.gallery_thumbs { display: flex; gap: .5rem; margin-top: .625rem; flex-wrap: wrap; }
+.gallery_thumb {
+  width: 4.625rem;
+  aspect-ratio: 1;
+  border-radius: .625rem;
+  border: 1px solid var(--_theme---border-color--border-primary);
+  background-color: var(--_theme---background-color--background-secondary);
+  cursor: pointer;
+  overflow: hidden;
+  padding: 0;
+  display: grid;
+  align-items: center; justify-items: center;
+  color: var(--_theme---text-color--text-brand);
+}
+.gallery_thumb-image { width: 100%; height: 100%; object-fit: cover; display: block; }
+.gallery_hint {
+  margin-top: .625rem;
+  text-align: center;
+  letter-spacing: var(--_typography---letter-spacing--wider);
+  font-size: var(--_typography---text--tiny);
+  line-height: 1.6;
+  color: var(--_theme---text-color--text-secondary);
+}
+.pdp_facts {
+  border: 1px solid var(--_theme---border-color--border-primary);
+  border-radius: 14px;
+  padding: 1.125rem;
+  margin-top: .875rem;
+  background-color: color-mix(in srgb, var(--_theme---background-color--background-secondary) 60%, transparent);
+}
+.pdp_facts-heading {
+  display: block;
+  margin: 1em 0 .375rem;
+  font-family: var(--font-family--primary), 'Helvetica Neue', Arial, sans-serif;
+  line-height: var(--_typography---line-height--body);
+  font-size: var(--_typography---text--tiny);
+  letter-spacing: var(--_typography---letter-spacing--eyebrow);
+  text-transform: uppercase;
+  color: var(--_theme---text-color--text-brand);
+  font-weight: var(--font-weight--semibold);
+}
+.facts_row {
+  display: flex;
+  justify-content: space-between;
+  gap: .625rem;
+  padding: .53125rem 0;
+  border-bottom: 1px solid var(--_theme---border-color--border-secondary);
+  font-size: var(--_typography---text--small);
+}
+.facts_label { color: var(--_theme---text-color--text-secondary); letter-spacing: var(--_typography---letter-spacing--widest); text-transform: uppercase; font-size: var(--_typography---text--tiny); }
+/* Cinzel at 400: the prototype loads Cinzel from 500 up, so the browser drew these texts at 500; Webflow also loads 400
+   (the Designer keeps its own font list, ERROS F37), so the weight the screen shows is written here and in the four
+   other Cinzel texts that had none (pdp_price, faq_question, hero_3d-hint, hero_3d-loading) */
+.facts_value { font-family: var(--font-family--display), 'Times New Roman', Georgia, serif; font-weight: var(--font-weight--medium); text-align: right; }
+.facts_keys { display: flex; flex-wrap: wrap; gap: .3125rem; margin-top: .875rem; }
+.facts_key {
+  font-size: var(--_typography---text--tiny);
+  letter-spacing: var(--_typography---letter-spacing--wider);
+  border: 1px solid var(--_theme---border-color--border-primary);
+  border-radius: var(--_sizes---border-radius--round);
+  padding: .35em .8em;
+  color: var(--_theme---text-color--text-primary);
+}
+.pdp_price { font-size: var(--_typography---heading--h3); font-family: var(--font-family--display), 'Times New Roman', Georgia, serif; font-weight: var(--font-weight--medium); margin: .5rem 0 0; }
+.pdp_specs { display: flex; flex-wrap: wrap; gap: .375rem; margin-top: .75rem; }
+.pdp_chip {
+  font-size: var(--_typography---text--tiny);
+  letter-spacing: var(--_typography---letter-spacing--widest);
+  color: var(--_theme---text-color--text-secondary);
+  border: 1px solid var(--_theme---border-color--border-primary);
+  border-radius: var(--_sizes---border-radius--round);
+  padding: .4em .9em;
+}
+.pdp_chip.is-stock { border-color: var(--_theme---border-color--border-brand); color: var(--_theme---text-color--text-brand); }
+.pdp_chip.is-made { color: var(--_theme---text-color--text-secondary); }
+.pdp_desc { color: var(--_theme---text-color--text-secondary); margin: .875rem 0; }
+.pdp_includes { list-style: none; padding: 0; margin: 1rem 0; border-top: 1px solid var(--_theme---border-color--border-secondary); }
+.pdp_include-item { padding: .8em 0; border-bottom: 1px solid var(--_theme---border-color--border-secondary); display: flex; gap: .4375rem; font-size: var(--_typography---text--small); }
+.pdp_block-heading {
+  margin: 1em 0;
+  font-family: var(--font-family--primary), 'Helvetica Neue', Arial, sans-serif;
+  font-size: var(--_typography---text--tiny);
+  line-height: var(--_typography---line-height--body);
+  letter-spacing: var(--_typography---letter-spacing--eyebrow);
+  text-transform: uppercase;
+  color: var(--_theme---text-color--text-brand);
+  font-weight: var(--font-weight--semibold);
+}
+.pdp_finish-label { font-size: var(--_typography---text--tiny); letter-spacing: .1em; text-transform: uppercase; color: var(--_theme---text-color--text-secondary); margin: 1rem 0 .5rem; }
+.pdp_finish { display: inline-block; margin: 0; border: 1px solid var(--_theme---border-color--border-primary); border-radius: .75rem; padding: .9em 1.2em; }
+.pdp_finish-note { display: block; color: var(--_theme---text-color--text-secondary); font-size: var(--_typography---text--tiny); letter-spacing: .08em; text-transform: uppercase; }
+.pdp_cta { margin-top: 1.25rem; }
+/* the native Add to Cart form of the Products Template: webflow.css gives it a 15px bottom margin, which would pass the
+   note margin below it; the prototype has no form there */
+.pdp_cta-form { margin-bottom: 0; }
+/* the eyebrow of the Products Template is a div of two parts (numeral field, fixed text), because a Webflow text takes
+   one field or fixed text; the prototype line is a p, which keeps the 1em margins a p has */
+.pdp_parts.is-eyebrow { margin-top: 1em; margin-bottom: 1em; }
+.pdp_note { font-size: var(--_typography---text--tiny); color: var(--_theme---text-color--text-secondary); margin-top: .625rem; }
+.pdp_block { border-top: 1px solid var(--_theme---border-color--border-secondary); padding-top: 1.25rem; margin-top: 1.625rem; }
+.pdp_block.is-first { margin-top: 1.875rem; }
+.pdp_detail-list { margin-top: .625rem; }
+.pdp_meaning { font-size: var(--_typography---text--regular); line-height: 1.5; margin-top: .625rem; }
+/* Webflow product page: a line that mixes fixed text and a field is split in blocks (product-template.html),
+   laid out in a row (pdp_parts) or in the text flow (the *-part classes); the space between two parts is a real space
+   put by the page (webflow/product-template-head.html), because a margin cannot hang at the end of a line and pushed
+   a word to the next one */
+.pdp_parts { display: flex; flex-wrap: wrap; gap: .25em; }
+.pdp_parts.is-end { justify-content: flex-end; }
+.pdp_desc-part { display: inline; }
+.pdp_meaning-part { display: inline; }
+.pdp_meaning-lead {
+  display: inline;
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-style: italic;
+  font-weight: var(--font-weight--semibold);
+  color: var(--_theme---text-color--text-brand);
+  font-size: inherit;
+}
+.pdp_block-text { color: var(--_theme---text-color--text-secondary); margin-top: .625rem; }
+.pdp_not-found { padding: 2.5rem 0; }
+
+/* lightbox */
+.lightbox_component {
+  position: fixed;
+  top: 0; right: 0; bottom: 0; left: 0;
+  z-index: 200;
+  background-color: rgba(17,17,17,.92);
+  display: grid;
+  align-items: center; justify-items: center;
+  padding: 4.5rem;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity .3s cubic-bezier(.2,.7,.2,1);
+  cursor: zoom-out;
+}
+.lightbox_image { max-width: 100%; max-height: 88vh; object-fit: contain; border-radius: 14px; box-shadow: 0 18px 50px -24px rgba(17,17,17,.35); }
+.lightbox_close {
+  position: absolute;
+  top: 1.25rem;
+  right: 1.5rem;
+  background-color: transparent;
+  border: 0;
+  color: var(--base-color-brand--marble);
+  font-size: 2.125rem;
+  line-height: 1;
+  cursor: pointer;
+}
+
+/* ---------------- legal pages ---------------- */
+.legal_component { max-width: 46.25rem; margin: 0 auto; }
+.legal_eyebrow {
+  margin: 0 0 .75rem;
+  line-height: 1.72;
+  font-size: var(--_typography---text--tiny);
+  letter-spacing: var(--_typography---letter-spacing--eyebrow);
+  text-transform: uppercase;
+  color: var(--_theme---text-color--text-brand);
+  font-weight: var(--font-weight--semibold);
+}
+.legal_heading {
+  font-family: var(--font-family--display), 'Times New Roman', Georgia, serif;
+  font-weight: var(--font-weight--semibold);
+  font-size: var(--_typography---heading--h2);
+  letter-spacing: var(--_typography---letter-spacing--wide);
+  line-height: 1.05;
+  margin: .375rem 0 .5rem;
+}
+.legal_updated { display: flex; flex-wrap: wrap; column-gap: .25em; color: var(--_theme---text-color--text-secondary); font-size: var(--_typography---text--tiny); margin: 0 0 .75rem; line-height: 1.72; }
+/* Rich Text child styles (Webflow: select the Rich Text element, then style "All H2 inside", "All Paragraphs inside"...) */
+.legal_rich-text h1 {
+  font-family: var(--font-family--display), 'Times New Roman', Georgia, serif;
+  font-weight: var(--font-weight--semibold);
+  font-size: var(--_typography---heading--h2);
+  letter-spacing: var(--_typography---letter-spacing--wide);
+  line-height: 1.05;
+  margin: .375rem 0 .5rem;
+}
+.legal_rich-text h2 {
+  font-family: var(--font-family--display), 'Times New Roman', Georgia, serif;
+  font-weight: var(--font-weight--semibold);
+  font-size: var(--_typography---heading--h3);
+  letter-spacing: var(--_typography---letter-spacing--slight);
+  line-height: 1.05;
+  margin: 2.25rem 0 .625rem;
+}
+.legal_rich-text h3 { font-weight: var(--font-weight--semibold); font-size: var(--_typography---text--regular); line-height: 1.05; margin: 1.375rem 0 .3125rem; }
+.legal_rich-text p { margin: 0 0 .75rem; line-height: 1.72; }
+.legal_rich-text ul { margin: 0 0 .875rem; padding-left: 1.1875rem; }
+.legal_rich-text li { margin: .21875rem 0; line-height: 1.6; }
+.legal_rich-text a { color: var(--_theme---text-color--text-brand); text-decoration: underline; text-underline-offset: 2px; }
+.legal_rich-text strong { color: var(--_theme---text-color--text-primary); }
+.legal_rich-text dl { margin: 0 0 .875rem; }
+.legal_rich-text dt { font-weight: var(--font-weight--semibold); margin-top: .625rem; }
+.legal_rich-text dd { margin: .125rem 0 0; color: var(--_theme---text-color--text-secondary); }
+
+/* ---------------- order received page ---------------- */
+.section_success {
+  position: relative;
+  overflow: hidden;
+  min-height: 70vh;
+  display: grid;
+  align-items: center; justify-items: center;
+  text-align: center;
+  background-color: var(--_theme---background-color--background-primary);
+  color: var(--_theme---text-color--text-primary);
+}
+.success_glow {
+  position: absolute;
+  right: -8%;
+  bottom: -45%;
+  width: 32.5rem;
+  height: 32.5rem;
+  border-radius: 50%;
+  background-image: radial-gradient(circle, rgba(148,116,77,.5), transparent 62%);
+  filter: blur(20px);
+  pointer-events: none;
+}
+.success_content { position: relative; z-index: 1; }
+.success_text { color: var(--_theme---text-color--text-secondary); margin: .875rem 0 1.5rem; }
+
+/* ---------------- intro and grain (elements built by fx.js) ---------------- */
+.intro_component {
+  position: fixed;
+  top: 0; right: 0; bottom: 0; left: 0;
+  z-index: 10000;
+  background-color: var(--_theme---background-color--background-primary);
+  display: grid;
+  align-items: center; justify-items: center;
+  transition: transform 1s cubic-bezier(.76,0,.24,1);
+  will-change: transform;
+}
+.intro_content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.375rem;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity .9s cubic-bezier(.2,.7,.2,1), transform .9s cubic-bezier(.2,.7,.2,1);
+}
+.intro_logo { width: clamp(7.5rem, 22vw, 11.25rem); height: auto; filter: drop-shadow(0 6px 30px rgba(148,116,77,.25)); }
+.intro_line {
+  width: 0;
+  height: 1px;
+  background-image: linear-gradient(90deg, transparent, var(--base-color-brand--gold), transparent);
+  transition: width 1s cubic-bezier(.2,.7,.2,1) .3s;
+}
+.intro_text {
+  font-family: var(--font-family--display), 'Times New Roman', Georgia, serif;
+  letter-spacing: .42em;
+  text-transform: uppercase;
+  color: var(--_theme---text-color--text-secondary);
+  font-size: var(--_typography---text--tiny);
+  padding-left: .42em;
+}
+.intro_percentage {
+  font-family: var(--font-family--display), 'Times New Roman', Georgia, serif;
+  color: var(--_theme---text-color--text-brand); /* the lighter gold on the dark intro, 6.15:1 (01/10/2026) */
+  letter-spacing: .2em;
+  font-size: var(--_typography---text--small);
+  font-variant-numeric: tabular-nums;
+}
+.grain_overlay {
+  position: fixed;
+  top: 0; right: 0; bottom: 0; left: 0;
+  z-index: 9998;
+  pointer-events: none;
+  opacity: .176;
+  background-image: url("/concepts/arcanae/assets/grain/grain-256-alpha.png");
+  background-size: 256px 256px;
+}
+
+/* ---------------- tablet (991px and below) ---------------- */
+@media screen and (max-width: 991px) {
+  /* the hero stacks from the tablet down: the statue on top, in its own box, and the text under it. Beside the text,
+     as on a computer, the statue ran over the end of the title and of the lede between 768 and 991 px (1.7:1, measured
+     on 03/10/2026; João: "pode corrigir") */
+  .section_hero { display: block; min-height: 0; }
+  .hero_3d { position: relative; top: auto; right: auto; bottom: auto; left: auto; width: 100%; height: 62vh; background-image: url("/concepts/arcanae/assets/hero-wall-mobile.webp"); }
+  .hero_3d-hint { bottom: .625rem; }
+  .hero_3d-loading { left: 50%; }
+  /* the eyebrow sat 9 px under the photo and read as its caption; the small section space keeps it with the title
+     (measured on 04/10/2026; João: "pode corrir") */
+  .hero_content { padding-top: var(--_layout---section-padding--small); }
+  .collection_grid { grid-template-columns: 1fr 1fr; gap: 1.4473684rem; }
+  .pagination_component { margin-top: 2.3157895rem; }
+  /* four steps fit 4, 2 or 1 columns, never 3: in 3 the last step sat alone (design judge of 04/10/2026, João: "pode fazer as cinco") */
+  .craft_grid { grid-template-columns: 1fr 1fr; gap: 1.7368421rem; }
+  /* the hero title loses the 1em paragraph margin under it, so the button fits the first screen (design judge of 04/10/2026, João: "pode fazer as cinco") */
+  .heading-style-h1 { margin-bottom: 0; }
+  /* the three related pieces stay on one row instead of two and one (design judge of 04/10/2026, João: "pode fazer as cinco") */
+  .collection_grid.is-related { grid-template-columns: 1fr 1fr 1fr; }
+  .story_layout { gap: 2.894737rem; }
+  .faq_layout { grid-template-columns: 1fr; gap: 3.4736843rem; }
+  .section_wheel { height: 180vh; }
+  .footer_marquee-track { gap: 2.3157895rem; }
+  .pdp_layout { gap: 2.894737rem; }
+  .lightbox_component { padding: 2.894737rem; }
+}
+
+/* ---------------- mobile landscape (767px and below) ---------------- */
+@media screen and (max-width: 767px) {
+  /* a field under 16px makes the phone zoom in when it is tapped, and the root font size gets smaller from here, so
+     rem would fall under 16px (01/10/2026) */
+  .newsletter_input { font-size: 16px; }
+  .nav_toggle { display: flex; }
+  .nav_menu {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 100%;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0;
+    background-color: var(--_theme---background-color--background-primary);
+    border-bottom: 1px solid var(--_theme---border-color--border-primary);
+    padding: .625rem 1rem 1.25rem;
+    transform: translateY(-8px);
+    opacity: 0;
+    pointer-events: none;
+    visibility: hidden;
+    transition: opacity .25s, transform .25s, visibility .25s;
+    font-size: var(--_typography---text--regular);
+  }
+  .nav_link { padding: .6875rem 0; width: 100%; border-bottom: 1px solid var(--_theme---border-color--border-secondary); }
+  .hero_3d-hint { right: 1.7222222rem; }
+  .collection_grid { gap: 1.0763889rem; }
+  .pagination_component { margin-top: 1.75rem; }
+  .craft_grid { grid-template-columns: 1fr 1fr; gap: 1.2916667rem; }
+  .trust_grid { grid-template-columns: 1fr 1fr; row-gap: 1.5rem; column-gap: 1.25rem; }
+  .story_layout { grid-template-columns: 1fr; gap: 1.5rem; }
+  .faq_layout { gap: 2.5833334rem; }
+  .wheel_item { width: 64px; margin: -40px 0 0 -32px; }
+  .wheel_center { padding: 0 1.7222222rem; }
+  .footer_grid { grid-template-columns: 1fr; gap: 1.5rem; }
+  .footer_marquee-track { gap: 1.7222222rem; }
+  /* on phones the Correspondences box comes after the name, price and Add to Cart: the gallery lets its children
+     into the column, so the box can take the last place (design judge of 04/10/2026, João: "pode fazer as cinco") */
+  .pdp_layout { display: flex; flex-direction: column; align-items: stretch; gap: 0; }
+  .pdp_gallery { position: static; display: contents; }
+  .pdp_info { margin-top: 2.1527778rem; }
+  .pdp_facts { order: 1; margin-top: 2.1527778rem; }
+  .lightbox_component { padding: 2.1527778rem; }
+}
+
+/* ---------------- mobile portrait (479px and below) ---------------- */
+@media screen and (max-width: 479px) {
+  .hero_3d-hint { right: 1.1470588rem; }
+  .collection_grid { grid-template-columns: 1fr; gap: .875rem; }
+  .collection_grid.is-related { grid-template-columns: 1fr; }
+  /* the newsletter field takes the whole row and the button goes under it, so the placeholder is not cut (design judge of 04/10/2026, João: "pode fazer as cinco") */
+  .newsletter_form { flex-direction: column; align-items: stretch; }
+  .craft_grid { grid-template-columns: 1fr; gap: 1rem; }
+  .faq_layout { gap: 1.7205882rem; }
+  .wheel_center { padding: 0 1.1470588rem; }
+  .footer_marquee-track { gap: 1.1470588rem; }
+  .pdp_info { margin-top: 1.5rem; }
+  .pdp_facts { margin-top: 1.5rem; }
+  .lightbox_component { padding: 1.4338235rem; }
+}

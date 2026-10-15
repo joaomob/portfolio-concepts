@@ -1,0 +1,276 @@
+/* Ported from the original prototype, src/site/css/embed.css. Asset addresses are absolute under /concepts/arcanae/. */
+/* Arcanae Craft: the Embed (site-wide custom code). Only what a Webflow class cannot hold; each block says why. */
+
+/* Reset on every element and pseudo-element: a class cannot select * or ::before/::after. */
+*, *::before, *::after { box-sizing: border-box; }
+
+/* Root font steps: Webflow has no html tag style, and the prototype scaled every rem by the breakpoint
+   (62.5%, 59.375%, 56.25%, 53.125% of 16px at 10px per rem is 100%, 95%, 90%, 85% at 16px per rem). */
+html { font-size: 100%; -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+@media screen and (max-width: 991px) { html { font-size: 95%; } }
+@media screen and (max-width: 767px) { html { font-size: 90%; } }
+@media screen and (max-width: 479px) { html { font-size: 85%; } }
+
+/* Lenis smooth scroll: third-party classes set on html by the library. */
+/* The scrollbar keeps its place when the scroll is paused (lightbox open, html.lenis-stopped clips the overflow), so
+   nothing on the page moves sideways when it opens or closes (João, 29/09/2026: "o design não pode mexer"). */
+html { scrollbar-gutter: stable; }
+html.lenis, html.lenis body { height: auto; }
+.lenis.lenis-smooth { scroll-behavior: auto !important; }
+/* with Lenis on, the page has no CSS smooth scroll at all: ScrollTrigger measures by jumping to the top and back, and
+   with scroll-behavior: smooth that jump animated, so a page reloaded halfway down measured the wheel at -1692 px and
+   the wheel stopped turning (01/10/2026, ERROS E66); in-page links scroll through Lenis instead (fx.js) */
+html.lenis { scroll-behavior: auto; }
+.lenis.lenis-smooth [data-lenis-prevent] { overscroll-behavior: contain; }
+.lenis.lenis-stopped { overflow: clip; }
+.lenis.lenis-smooth iframe { pointer-events: none; }
+
+/* Client-First spacing: the direction class wins over the size class it is paired with ("margin-top margin-medium"),
+   whatever order Webflow writes the classes in; on Webflow margin-medium came after margin-top and put 24px on the
+   other three sides (compare-styles.js, 30/09/2026). Same as the Client-First Global Styles embed. */
+.margin-top { margin-right: 0 !important; margin-bottom: 0 !important; margin-left: 0 !important; }
+
+/* Film grain: the tile jumps to a new offset in steps (keyframes); still with reduced motion (see the end). */
+.grain_overlay { animation: grain-shift .9s steps(1) infinite; }
+@keyframes grain-shift {
+  0% { background-position: 0 0; }
+  17% { background-position: -43px 71px; }
+  33% { background-position: 97px -29px; }
+  50% { background-position: -121px -88px; }
+  67% { background-position: 64px 113px; }
+  83% { background-position: -17px -54px; }
+}
+
+/* Hero loading label: hidden once hero-3d.js adds has-statue to the 3D box (a state class the script sets). */
+.hero_3d.has-statue .hero_3d-loading { opacity: 0; }
+/* Hero 3D entrance: the canvas fades in over the still of the wall when hero-3d.js adds is-lit, once the intro has gone (01/10/2026). */
+.hero_3d.is-lit .hero_3d-canvas { opacity: 1; }
+
+/* Intro: states fx.js adds (is-loading, is-ready, is-done) and the child chain they toggle. */
+html.is-loading, body.is-loading { overflow: hidden; height: 100%; }
+.intro_component.is-ready .intro_content { opacity: 1; transform: none; }
+.intro_component.is-ready .intro_line { width: min(13.75rem, 60vw); }
+.intro_component.is-done { transform: translateY(-100%); }
+/* the intro is skipped (seen in this session or reduced motion): the head marks html before the first paint (E62) */
+.intro-skip .intro_component { display: none; }
+/* in the Webflow Designer no script runs, so the fixed intro would cover the Home while it is edited (ERROS F6: the
+   Embed runs in the Designer canvas) */
+.wf-design-mode .intro_component { display: none; }
+
+/* Scroll reveal: attribute selectors under html.fx-ready, a class fx.js adds, so nothing hides if the script fails. */
+html.fx-ready [data-reveal] { opacity: 0; transform: translateY(22px); transition: opacity .9s cubic-bezier(.2,.7,.2,1), transform .9s cubic-bezier(.2,.7,.2,1); }
+html.fx-ready [data-reveal].is-in { opacity: 1; transform: none; }
+html.fx-ready [data-reveal="fade"] { transform: none; }
+html.fx-ready [data-reveal-delay="1"] { transition-delay: .08s; }
+html.fx-ready [data-reveal-delay="2"] { transition-delay: .16s; }
+html.fx-ready [data-reveal-delay="3"] { transition-delay: .24s; }
+
+/* Hero words rise after the intro: attribute selectors toggled by body.intro-done, a class fx.js adds. */
+html.fx-ready .hero_content [data-hero] { opacity: 0; transform: translateY(26px); transition: opacity 1s cubic-bezier(.2,.7,.2,1), transform 1s cubic-bezier(.2,.7,.2,1); }
+html.fx-ready body.intro-done .hero_content [data-hero] { opacity: 1; transform: none; }
+html.fx-ready body.intro-done .hero_content [data-hero="1"] { transition-delay: .05s; }
+html.fx-ready body.intro-done .hero_content [data-hero="2"] { transition-delay: .15s; }
+html.fx-ready body.intro-done .hero_content [data-hero="3"] { transition-delay: .28s; }
+html.fx-ready body.intro-done .hero_content [data-hero="4"] { transition-delay: .4s; }
+
+/* Split headings: split-line is a class SplitText adds at runtime. */
+.split-line { overflow: hidden; display: block; }
+
+/* Disabled buttons: attribute state, no class for it. */
+.button[disabled] { opacity: .45; cursor: not-allowed; transform: none; }
+
+/* Mobile menu: data-open on the nav, set by the toggle script, opens the menu and turns the lines into an X. */
+@media screen and (max-width: 767px) {
+  .nav_component[data-open="true"] .nav_menu { transform: none; opacity: 1; pointer-events: auto; visibility: visible; }
+  .nav_component[data-open="true"] .nav_toggle-line:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  .nav_component[data-open="true"] .nav_toggle-line:nth-child(2) { opacity: 0; }
+  .nav_component[data-open="true"] .nav_toggle-line:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+}
+
+/* Pagination: hover only when the button is enabled, the disabled state and the current page. On Webflow, Finsweet
+   List Load marks the current page with w--current and a disabled arrow with is-list-pagination-disabled (read in its
+   list module, 29/09/2026); the prototype uses [disabled] and is-current. */
+.pagination_button:hover:not([disabled]):not(.is-list-pagination-disabled) { border-color: var(--_theme---border-color--border-brand); color: var(--_theme---text-color--text-brand); }
+.pagination_button[disabled], .pagination_button.is-list-pagination-disabled { opacity: .3; cursor: not-allowed; }
+.pagination_button.is-list-pagination-disabled { pointer-events: none; }
+.pagination_button.w--current { border-color: var(--_theme---border-color--border-brand); color: var(--_theme---text-color--text-brand); }
+
+/* Craft photos and product cards: film grain as a pseudo-element with an SVG data URI, and the parent hover that zooms
+   the photo (João, 29/09/2026: the product cards take the same noise and hover as the craft photos). */
+.craft_step-media::after, .product-card_media::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+  opacity: .42;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .5 0 0 0 0 .5 0 0 0 0 .5 0 0 0 1.6 -.3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+.craft_step:hover .craft_step-image, .product-card_component:hover .product-card_image { transform: scale(1.04); }
+
+/* Card photo loading state (João, 01/10/2026: the broken image icon and the alt text showed in the cards while the
+   collection loaded). js/card-loading.js marks the html with cards-js: the photo stays invisible until it has loaded and
+   fades in, and three gold dots pulse in the middle of the card while it loads (the media gets is-loading). */
+html.cards-js .product-card_image { opacity: 0; transition: opacity .5s ease, transform 1.2s cubic-bezier(.2,.7,.2,1); }
+html.cards-js .product-card_image.is-loaded { opacity: 1; }
+/* the first card photo of a page is its largest paint: never hidden, so it does not wait for the script (03/10/2026) */
+html.cards-js .product-card_image.is-first { opacity: 1; }
+.product-card_media.is-loading::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 8px;
+  height: 8px;
+  margin: -4px 0 0 -4px;
+  border-radius: 50%;
+  animation: card-dots 1.2s ease-in-out infinite;
+}
+@keyframes card-dots {
+  0%, 100% { background-color: color-mix(in srgb, var(--base-color-brand--gold) 30%, transparent); box-shadow: -18px 0 0 var(--base-color-brand--gold), 18px 0 0 color-mix(in srgb, var(--base-color-brand--gold) 30%, transparent); }
+  33% { background-color: var(--base-color-brand--gold); box-shadow: -18px 0 0 color-mix(in srgb, var(--base-color-brand--gold) 30%, transparent), 18px 0 0 color-mix(in srgb, var(--base-color-brand--gold) 30%, transparent); }
+  66% { background-color: color-mix(in srgb, var(--base-color-brand--gold) 30%, transparent); box-shadow: -18px 0 0 color-mix(in srgb, var(--base-color-brand--gold) 30%, transparent), 18px 0 0 var(--base-color-brand--gold); }
+}
+
+/* The statue in gold dots (João, 02/10/2026: "aparece a forma da estátua antes de aparecer a imagem", as the hero
+   statue): js/card-loading.js puts a layer in the card with a grid of gold dots seen through the statue's mask (a 5 KB
+   picture per piece); it pulses while the card is loading and fades out when the photo is in. With it, the three dots
+   are not drawn. */
+.product-card_silhouette {
+  position: absolute; top: 0; right: 0; bottom: 0; left: 0;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity .5s ease;
+  background-image: radial-gradient(circle, var(--base-color-brand--gold) 1.6px, transparent 2px);
+  background-size: 7px 7px;
+  -webkit-mask-size: 100% 100%; mask-size: 100% 100%;
+  -webkit-mask-repeat: no-repeat; mask-repeat: no-repeat;
+}
+.product-card_media.is-loading .product-card_silhouette { opacity: 1; animation: card-silhouette 1.6s ease-in-out infinite; }
+.product-card_media.is-loading:has(.product-card_silhouette)::before { content: none; }
+@keyframes card-silhouette { 0%, 100% { opacity: .6; } 50% { opacity: 1; } }
+
+/* FAQ accordion: native marker, the plus drawn with ::before/::after, the is-open state faq.js sets, the last item border. */
+.faq_question::-webkit-details-marker { display: none; }
+.faq_icon::before, .faq_icon::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  height: 1px;
+  background-color: var(--_theme---border-color--border-brand);
+  transition: transform .4s cubic-bezier(.2,.7,.2,1);
+}
+.faq_icon::after { transform: rotate(90deg); }
+.faq_item.is-open .faq_icon::after { transform: rotate(0deg); }
+.faq_item:last-child { border-bottom: 1px solid var(--_theme---border-color--border-primary); }
+
+/* Render wheel: the ring size is a custom property that the item transforms (set by proto.js) read. The section pads
+   itself by --wheel-spill, how far the ring and its items reach past the sticky screen, so nothing is clipped. */
+.wheel_ring { --ring: min(118vh, 1100px); }
+.section_wheel { --wheel-spill: max(0px, calc(min(118vh, 1100px) / 2 + clamp(80px, 8vw, 118px) * .625 - 50vh)); }
+@media screen and (max-width: 767px) {
+  .wheel_ring { --ring: 128vw; }
+  .section_wheel { --wheel-spill: max(0px, calc(64vw + 40px - 50vh)); }
+}
+
+/* Render wheel on Webflow (webflow-parts.html, the ring part): one Collection List with the 22 arcana, each once
+   (João, 03/10/2026: the ring had 24 places and showed The Fool and The Magician twice). The angle of each statue is
+   its place times a 22nd of the turn; --k is the place of the item in the list. The prototype sets the same
+   transform inline (js/proto.js), so these rules only match the Webflow list. */
+.wheel_list .wheel_item { --i: var(--k, 0); transform: rotate(calc(var(--i) * 360deg / 22)) translateY(calc(var(--ring) / -2)) rotate(calc(var(--i) * -360deg / 22)) rotate(calc(var(--spin, 0deg) * -1)); }
+.wheel_list .wheel_item:nth-child(1) { --k: 0; }
+.wheel_list .wheel_item:nth-child(2) { --k: 1; }
+.wheel_list .wheel_item:nth-child(3) { --k: 2; }
+.wheel_list .wheel_item:nth-child(4) { --k: 3; }
+.wheel_list .wheel_item:nth-child(5) { --k: 4; }
+.wheel_list .wheel_item:nth-child(6) { --k: 5; }
+.wheel_list .wheel_item:nth-child(7) { --k: 6; }
+.wheel_list .wheel_item:nth-child(8) { --k: 7; }
+.wheel_list .wheel_item:nth-child(9) { --k: 8; }
+.wheel_list .wheel_item:nth-child(10) { --k: 9; }
+.wheel_list .wheel_item:nth-child(11) { --k: 10; }
+.wheel_list .wheel_item:nth-child(12) { --k: 11; }
+.wheel_list .wheel_item:nth-child(13) { --k: 12; }
+.wheel_list .wheel_item:nth-child(14) { --k: 13; }
+.wheel_list .wheel_item:nth-child(15) { --k: 14; }
+.wheel_list .wheel_item:nth-child(16) { --k: 15; }
+.wheel_list .wheel_item:nth-child(17) { --k: 16; }
+.wheel_list .wheel_item:nth-child(18) { --k: 17; }
+.wheel_list .wheel_item:nth-child(19) { --k: 18; }
+.wheel_list .wheel_item:nth-child(20) { --k: 19; }
+.wheel_list .wheel_item:nth-child(21) { --k: 20; }
+.wheel_list .wheel_item:nth-child(22) { --k: 21; }
+
+/* Footer marquee: keyframes. */
+.footer_marquee-track { animation: marquee 38s linear infinite; }
+@keyframes marquee { to { transform: translateX(-50%); } }
+
+/* Cart drawer: aria-hidden on the component, set by store.js, opens the overlay and the panel. */
+.cart-drawer_component[aria-hidden="false"] { visibility: visible; }
+.cart-drawer_component[aria-hidden="false"] .cart-drawer_overlay { opacity: 1; }
+.cart-drawer_component[aria-hidden="false"] .cart-drawer_panel { transform: none; }
+
+/* Product gallery: the zoom state class the script toggles, the current thumbnail (aria-current), and the
+   lightbox open state (aria-hidden). */
+.gallery_main.is-zooming .gallery_lens { opacity: 1; }
+.gallery_thumb[aria-current="true"] { border-color: var(--_theme---border-color--border-brand); }
+.lightbox_component[aria-hidden="false"] { visibility: visible; opacity: 1; }
+
+/* Product includes: the diamond bullet as a pseudo-element. */
+.pdp_include-item::before { content: "\25C6"; color: var(--_theme---text-color--text-brand); }
+
+/* Reduced motion: a media feature, not a breakpoint. */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .intro_component { display: none; }
+  .grain_overlay { animation: none; }
+  [data-reveal], .hero_content [data-hero] { opacity: 1 !important; transform: none !important; transition: none; }
+  html.is-loading, body.is-loading { overflow: auto; }
+  .footer_marquee-track { animation: none; }
+  .product-card_media.is-loading::before { animation: none; background-color: var(--base-color-brand--gold); box-shadow: -18px 0 0 var(--base-color-brand--gold), 18px 0 0 var(--base-color-brand--gold); opacity: .5; }
+  html.cards-js .product-card_image { transition: none; }
+  .product-card_media.is-loading .product-card_silhouette { animation: none; opacity: .7; }
+  /* the wheel stays still and is not pinned, but keeps the one screen its ring is measured against (--wheel-spill), so
+     the statues keep the same distance from the FAQ and the newsletter (01/10/2026) */
+  .section_wheel { height: auto; }
+  .wheel_sticky { position: relative; }
+}
+
+/* Moved from classes.css and tags.css on 29/09/2026 for the Webflow paste: states with no paste format (:focus-visible,
+   :empty), the wheel sizes that read the local custom properties set above, and the tag styles Webflow does not take in a
+   paste (img, button, b, strong). Same rules, same order at the end of the cascade, so the page does not change. */
+/* Category page (category-template.html): the tab of the page open, which Webflow marks w--current, looks like the
+   active tab; each count is the number of items of a hidden list at the start of the tab bar, written by a CSS counter
+   (one counter per tab, matched by data-count), because Webflow shows no item count, a class cannot hold ::after or
+   counters, and a Collection List cannot sit inside a link (the Designer drops it, 30/09/2026). */
+.collection-filter_button.w--current { border-color: var(--_theme---border-color--border-brand); color: var(--_theme---text-color--text-brand); }
+.collection-filter_component { counter-reset: count-all count-in-stock count-made-to-order; }
+.collection-filter_count-list[data-count="all"] [role="listitem"] { counter-increment: count-all; }
+.collection-filter_count-list[data-count="in-stock"] [role="listitem"] { counter-increment: count-in-stock; }
+.collection-filter_count-list[data-count="made-to-order"] [role="listitem"] { counter-increment: count-made-to-order; }
+.collection-filter_count[data-count="all"]::after { content: counter(count-all); }
+.collection-filter_count[data-count="in-stock"]::after { content: counter(count-in-stock); }
+.collection-filter_count[data-count="made-to-order"]::after { content: counter(count-made-to-order); }
+.collection-filter_button:focus-visible { outline: 2px solid var(--_theme---border-color--border-brand); outline-offset: 2px; }
+.faq_question:focus-visible { outline: 2px solid var(--_theme---border-color--border-brand); outline-offset: 4px; }
+.newsletter_input:focus-visible { outline: 2px solid var(--_theme---border-color--border-brand); outline-offset: 2px; }
+.cart-drawer_select:focus-visible { outline: 2px solid var(--_theme---border-color--border-brand); outline-offset: 1px; }
+.cart-drawer_status:empty { display: none; }
+.gallery_thumb:focus-visible { outline: 2px solid var(--_theme---border-color--border-brand); outline-offset: 2px; }
+/* the spill only keeps the ring from being clipped; the section padding on top of it keeps the statues off the FAQ and
+   the newsletter, like every other section (João, 01/10/2026: "a estátua do Papa tá colada com a section da newsletter") */
+.section_wheel { padding-top: calc(var(--wheel-spill) + var(--_layout---section-padding--medium)); padding-bottom: calc(var(--wheel-spill) + var(--_layout---section-padding--medium)); }
+.wheel_ring { width: var(--ring); height: var(--ring); margin: calc(var(--ring) / -2) 0 0 calc(var(--ring) / -2); }
+img { max-width: 100%; height: auto; display: block; }
+button, input { font: inherit; }
+/* strong text keeps the 600 face João approved (the prototype loaded Inter up to 600); Inter 700 was loaded for the
+   bold button label, which the buttons no longer use (29/09/2026: dark gold with normal text), so only
+   .text-weight-bold would still take it */
+b, strong { font-weight: var(--font-weight--semibold); }
+
+/* Port addition: the product grids are rendered on the server and the status tabs and pagination hide cards with the
+   hidden attribute (the original rebuilt the grid instead), so a hidden card must win over its display: block. */
+.product-card_component[hidden] { display: none; }

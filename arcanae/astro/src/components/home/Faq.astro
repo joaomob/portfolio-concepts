@@ -1,0 +1,14 @@
+---
+// Home FAQ: the first question starts open; scripts/faq.ts keeps one open at a time with an animated height.
+import { FAQ } from '../../data/home';
+---
+<section class="section_faq" id="faq"><div class="padding-global padding-section-large"><div class="container-large">
+  <div class="faq_layout">
+    <div class="faq_head" data-reveal><p class="text-style-eyebrow">FAQ</p><h2>Before your order</h2></div>
+    <div class="faq_list" data-reveal>
+      {FAQ.map((item, i) => (
+        <details class="faq_item" open={i === 0}><summary class="faq_question"><h3 class="faq_question-text">{item.question}</h3><span class="faq_icon" aria-hidden="true"></span></summary><p class="faq_answer">{item.answer}</p></details>
+      ))}
+    </div>
+  </div>
+</div></div></section>

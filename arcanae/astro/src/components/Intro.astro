@@ -1,0 +1,6 @@
+---
+// The intro shown on the first visit of a session. It is the first child of the body, so it covers the page from the
+// first frame; scripts/effects.ts plays it out, and head/intro-gate.js marks the page to skip it once seen.
+import { asset } from '../lib/site';
+---
+<div class="intro_component theme-inverse" aria-hidden="true"><div class="intro_content"><img class="intro_logo" src={asset('brand/lockup-marble.svg')} alt=""><div class="intro_line"></div><div class="intro_text">Hand-painted tarot figurines</div><div class="intro_percentage">0%</div></div></div>

@@ -1,0 +1,42 @@
+---
+// Product information column: name, price, specs, what is included, the finish, Add to Cart and the content blocks.
+import { ARTWORK, FINISH, INCLUDES, USES, type Card } from '../../data/catalog';
+import { detailRows, dispatchNote, inStock, meaningParts, money, specChips, stockLabel } from '../../lib/catalog';
+
+interface Props {
+  card: Card;
+}
+const { card } = Astro.props;
+const stock = inStock(card);
+const meaning = meaningParts(card);
+---
+<div class="pdp_info">
+  <p class="text-style-eyebrow">{card.roman} · <span>The Major Arcana</span></p>
+  <h1 class="heading-style-h2">{card.name} Tarot Statue</h1>
+  <p class="pdp_price">{money(card.price)}</p>
+  <div class="pdp_specs"><span class:list={['pdp_chip', stock ? 'is-stock' : 'is-made']}>{stockLabel(card)}</span>{specChips(card).map((s) => <span class="pdp_chip">{s}</span>)}</div>
+  <p class="pdp_desc"><span>A 3D-printed resin statue, hand-painted in a white marble finish and sealed with matte varnish.</span> <span>{card.blurb}</span></p>
+  <ul class="pdp_includes">{INCLUDES.map((i) => <li class="pdp_include-item">{i}</li>)}</ul>
+  <p class="pdp_finish-label">Finish</p>
+  <p class="pdp_finish">{FINISH.label}<span class="pdp_finish-note">{FINISH.note}</span></p>
+  <div class="pdp_cta">
+    <button class="button is-gold is-full" id="add-to-cart" data-card={card.id} data-finish={FINISH.id}>Add to Cart <span>· {money(card.price)}</span></button>
+  </div>
+  <p class="pdp_note"><strong>{stockLabel(card)}</strong> · <span>{dispatchNote(card)}</span> <span>Ships from Spain. Taxes &amp; shipping calculated at checkout.</span></p>
+  <div class="pdp_block is-first">
+    <h2 class="pdp_block-heading">Details</h2>
+    <div class="pdp_detail-list">{detailRows(card).map(([label, value]) => <div class="facts_row"><span class="facts_label">{label}</span><span class="facts_value">{value}</span></div>)}</div>
+  </div>
+  <div class="pdp_block">
+    <h2 class="pdp_block-heading">What it means</h2>
+    <p class="pdp_meaning">{meaning.lead && <span class="pdp_meaning-lead">{meaning.lead}</span>}{meaning.rest}</p>
+  </div>
+  <div class="pdp_block">
+    <h2 class="pdp_block-heading">Ways to keep it</h2>
+    <p class="pdp_block-text">{USES}</p>
+  </div>
+  <div class="pdp_block">
+    <h2 class="pdp_block-heading">The artwork</h2>
+    <p class="pdp_block-text">{ARTWORK}</p>
+  </div>
+</div>

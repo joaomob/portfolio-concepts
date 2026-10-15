@@ -1,0 +1,34 @@
+/* Ported from the original prototype, src/site/css/tags.css. Asset addresses are absolute under /concepts/arcanae/. */
+/* Arcanae Craft: global tag styles (Webflow: Body (All Pages), All H1 to H6, All Paragraphs, All Links, All Images,
+   form elements). 1rem = 16px; the root font steps per breakpoint live in embed.css. */
+
+body {
+  margin: 0;
+  font-family: var(--font-family--primary), 'Helvetica Neue', Arial, sans-serif;
+  font-size: var(--_typography---body--font-size);
+  line-height: var(--_typography---line-height--body);
+  color: var(--_theme---text-color--text-primary);
+  background-color: var(--_theme---background-color--background-primary);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin-top: 0;
+  margin-bottom: 0;
+  font-family: var(--font-family--display), 'Times New Roman', Georgia, serif;
+  font-weight: var(--font-weight--semibold);
+  letter-spacing: var(--_typography---letter-spacing--wide);
+  line-height: 1.05;
+}
+h1 { font-size: var(--_typography---heading--h1); }
+h2 { font-size: var(--_typography---heading--h2); line-height: var(--_typography---line-height--heading); }
+h3 { font-size: var(--_typography---heading--h3); line-height: var(--_typography---line-height--snug); }
+h4 { font-size: var(--_typography---heading--h4); line-height: var(--_typography---line-height--default); letter-spacing: var(--_typography---letter-spacing--slight); }
+h5 { font-size: var(--_typography---heading--h5); }
+h6 { font-size: var(--_typography---heading--h6); }
+
+p { margin-top: 1em; margin-bottom: 1em; }
+
+a { color: inherit; text-decoration: none; }
+

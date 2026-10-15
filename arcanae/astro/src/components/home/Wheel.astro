@@ -1,0 +1,24 @@
+---
+// Home wheel: every arcana with a render once around a circle, turned on scroll by scripts/motion.ts. The original
+// built the items in the browser (proto.js); here they are rendered. The last rotate cancels the ring's own turn
+// (--spin), so every statue stays upright.
+import { CARDS } from '../../data/catalog';
+import { cardImage } from '../../lib/catalog';
+import { ASTRO_BASE, page } from '../../lib/site';
+
+const items = CARDS.filter((c) => c.image).map((card, i, list) => {
+  const angle = (i / list.length) * 360;
+  return {
+    image: cardImage(card)!,
+    transform: `rotate(${angle}deg) translateY(calc(var(--ring) / -2)) rotate(${-angle}deg) rotate(calc(var(--spin, 0deg) * -1))`,
+  };
+});
+---
+<section class="section_wheel" id="wheel"><div class="wheel_sticky">
+  <div class="wheel_ring" id="wheel-ring" aria-hidden="true">{items.map((item) => <div class="wheel_item" style={`transform: ${item.transform}`}><img class="wheel_image" src={item.image} alt="" loading="lazy"></div>)}</div>
+  <div class="wheel_center">
+    <p class="text-style-eyebrow">The Collection</p>
+    <h2 data-split>The 22 Major Arcana</h2>
+    <a class="button is-gold" href={page(ASTRO_BASE, 'collection')}>Explore the Collection →</a>
+  </div>
+</div></section>

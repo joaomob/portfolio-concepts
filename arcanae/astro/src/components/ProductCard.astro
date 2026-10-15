@@ -1,0 +1,18 @@
+---
+// One product card (productCard in the original store.js). The heading level follows the page outline: h3 under a
+// section heading, h2 under the page H1. data-card lets the grid scripts show and hide the card.
+import type { Card } from '../data/catalog';
+import { cardImage, inStock, money, stockLabel } from '../lib/catalog';
+import { ASTRO_BASE, page } from '../lib/site';
+
+interface Props {
+  card: Card;
+  level?: 'h2' | 'h3';
+  alt?: string;
+  hidden?: boolean;
+}
+const { card, level = 'h3', alt = card.name, hidden = false } = Astro.props;
+const Heading = level;
+const image = cardImage(card);
+---
+<a class="product-card_component" href={page(ASTRO_BASE, `product/${card.slug}`)} data-card={card.id} hidden={hidden}><div class="product-card_media">{image ? <img class="product-card_image" src={image} alt={alt} loading="lazy"> : <span class="product-card_roman">{card.roman || '·'}</span>}<span class:list={['product-card_badge', { 'is-made': !inStock(card) }]}>{stockLabel(card)}</span></div><div class="product-card_row"><Heading class="product-card_name">{card.name}</Heading><span class="product-card_price">{money(card.price)}</span></div>{card.height ? <p class="product-card_height">{card.height} cm tall</p> : null}</a>

@@ -1,0 +1,17 @@
+---
+// "You may also like": the next three arcana by number, preferring the ones that have an image.
+import type { Card } from '../../data/catalog';
+import { related } from '../../lib/catalog';
+import { ASTRO_BASE, page } from '../../lib/site';
+import ProductCard from '../ProductCard.astro';
+
+interface Props {
+  card: Card;
+}
+const { card } = Astro.props;
+---
+<section class="section_related"><div class="padding-global padding-section-large"><div class="container-large">
+  <div class="section-heading_component"><div class="section-heading_content"><p class="text-style-eyebrow">More Arcana</p><h2>You may also like</h2></div>
+    <a class="button is-ghost" href={page(ASTRO_BASE, 'collection')}>View all</a></div>
+  <div class="collection_grid is-related" id="also-grid">{related(card).map((c) => <ProductCard card={c} level="h3" />)}</div>
+</div></div></section>

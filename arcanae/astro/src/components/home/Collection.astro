@@ -1,0 +1,23 @@
+---
+// Home collection: status tabs, six cards per page and the numbered pagination. All 22 cards are rendered; the ones
+// after the first page start hidden and scripts/product-grid.ts pages through them.
+import { CARDS } from '../../data/catalog';
+import { ASTRO_BASE, page } from '../../lib/site';
+import ProductCard from '../ProductCard.astro';
+import StatusFilter from '../StatusFilter.astro';
+
+const PER_PAGE = 6;
+const pages = Math.max(1, Math.ceil(CARDS.length / PER_PAGE));
+const numbers = Array.from({ length: pages }, (_, i) => i + 1);
+---
+<section class="section_collection" id="collection"><div class="padding-global padding-section-large"><div class="container-large">
+  <div class="section-heading_component">
+    <div class="section-heading_content"><p class="text-style-eyebrow">The Collection</p><h2>The 22 Major Arcana</h2></div>
+    <a class="button is-ghost" href={page(ASTRO_BASE, 'collection')}>View all</a>
+  </div>
+  <StatusFilter />
+  <div class="collection_grid" id="home-grid" data-grid>
+    {CARDS.map((card, i) => <ProductCard card={card} level="h3" alt={`${card.name}, a hand-painted tarot figurine`} hidden={i >= PER_PAGE} />)}
+  </div>
+  <nav class="pagination_component" id="pagination" aria-label="Collection pages" data-pagination><button class="pagination_button is-arrow" data-page="0" disabled aria-label="Previous">&larr;</button>{numbers.map((n) => <button class:list={['pagination_button', { 'is-current': n === 1 }]} data-page={n} aria-current={String(n === 1)}>{n}</button>)}<button class="pagination_button is-arrow" data-page="2" disabled={pages === 1} aria-label="Next">&rarr;</button></nav>
+</div></div></section>

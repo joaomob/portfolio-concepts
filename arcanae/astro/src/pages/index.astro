@@ -1,0 +1,25 @@
+---
+// Home: hero, collection, craft, reassurance, detail band, story, FAQ, wheel and newsletter.
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Collection from '../components/home/Collection.astro';
+import Craft from '../components/home/Craft.astro';
+import Faq from '../components/home/Faq.astro';
+import Hero from '../components/home/Hero.astro';
+import Newsletter from '../components/home/Newsletter.astro';
+import Plate from '../components/home/Plate.astro';
+import Story from '../components/home/Story.astro';
+import TrustBand from '../components/home/TrustBand.astro';
+import Wheel from '../components/home/Wheel.astro';
+import { HOME_META } from '../data/pages';
+---
+<BaseLayout page="home" path="" meta={HOME_META} cartNote cards>
+  <Hero />
+  <Collection />
+  <Craft />
+  <TrustBand />
+  <Plate />
+  <Story />
+  <Faq />
+  <Wheel />
+  <Newsletter />
+</BaseLayout>

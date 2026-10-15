@@ -1,0 +1,16 @@
+---
+// Home hero: the 3D figure of The Fool (scripts/hero-3d.ts; the still in the head covers the load and machines
+// without WebGL) and the H1 block.
+import { asset } from '../../lib/site';
+---
+<section class="section_hero theme-inverse">
+  <div class="hero_3d" id="hero-3d" aria-hidden="true" data-model={asset('the-fool-wash.glb')} data-points={asset('the-fool-wash.points.bin')}><canvas class="hero_3d-canvas"></canvas><p class="hero_3d-hint">0 · The Fool</p><p class="hero_3d-loading" data-loading>Loading The Fool <span data-loading-pct>0%</span></p></div>
+  <div class="padding-global"><div class="container-large">
+    <div class="hero_content">
+      <h1 class="text-style-eyebrow" data-hero="1">Hand-painted tarot statues</h1>
+      <p class="heading-style-h1 text-color-marble" data-hero="2" data-split>The Arcana,<em class="hero_title-line text-color-brand">made to keep.</em></p>
+      <p class="hero_lede" data-hero="3">Resin statues of the 22 Major Arcana, painted by hand.</p>
+      <a class="button is-gold" href="#collection" data-hero="4">Explore the Collection →</a>
+    </div>
+  </div></div>
+</section>

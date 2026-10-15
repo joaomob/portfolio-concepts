@@ -1,0 +1,21 @@
+---
+// One page per arcana (product.html?card=<slug> in the original becomes /product/<slug>).
+import type { GetStaticPaths } from 'astro';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Lightbox from '../../components/product/Lightbox.astro';
+import Product from '../../components/product/Product.astro';
+import ProductTrust from '../../components/product/ProductTrust.astro';
+import Related from '../../components/product/Related.astro';
+import { CARDS, type Card } from '../../data/catalog';
+
+export const getStaticPaths = (() => CARDS.map((card) => ({ params: { slug: card.slug }, props: { card } }))) satisfies GetStaticPaths;
+
+const { card } = Astro.props as { card: Card };
+const meta = { title: `${card.name} Tarot Statue, Hand-painted | Arcanae Craft` };
+---
+<BaseLayout page="product" path={`product/${card.slug}`} meta={meta} cards>
+  <Product card={card} />
+  <ProductTrust />
+  <Related card={card} />
+  <Lightbox slot="after" />
+</BaseLayout>

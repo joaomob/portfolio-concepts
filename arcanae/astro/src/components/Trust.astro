@@ -1,0 +1,14 @@
+---
+// The four reassurance items (the band under the craft steps on the home, the row under the product details).
+import type { TrustItem } from '../data/home';
+
+interface Props {
+  items: TrustItem[];
+}
+const { items } = Astro.props;
+---
+<div class="trust_grid">
+  {items.map((item) => (
+    <div class="trust_item"><svg class="trust_icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap={item.icon.linecap ? 'round' : undefined} stroke-linejoin="round" aria-hidden="true">{item.icon.shapes.map((s) => ('path' in s ? <path d={s.path} /> : 'rect' in s ? <rect {...s.rect} /> : <circle {...s.circle} />))}</svg><p class="trust_title">{item.title}</p><p class="trust_text">{item.text}</p></div>
+  ))}
+</div>

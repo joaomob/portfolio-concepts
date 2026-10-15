@@ -1,0 +1,21 @@
+---
+// The whole collection: status tabs and every card. ?status=in-stock or made-to-order switches to a category view in
+// the browser (scripts/product-grid.ts), as in the original.
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ProductCard from '../components/ProductCard.astro';
+import StatusFilter from '../components/StatusFilter.astro';
+import { CARDS } from '../data/catalog';
+import { COLLECTION_META } from '../data/pages';
+---
+<BaseLayout page="collection" path="collection" meta={COLLECTION_META} cards>
+  <section class="section_collection" data-collection><div class="padding-global padding-section-large"><div class="container-large">
+    <div class="section-heading_component">
+      <div class="section-heading_content"><p class="text-style-eyebrow">Collectible tarot figures</p><h1 class="heading-style-h2" id="collection-title">The Collection</h1>
+        <p class="section-heading_text is-small" id="collection-lead" hidden></p></div>
+    </div>
+    <StatusFilter />
+    <div class="collection_grid" id="all-grid" data-grid>
+      {CARDS.map((card) => <ProductCard card={card} level="h2" alt={`${card.name}, a 3D-printed resin statue`} />)}
+    </div>
+  </div></div></section>
+</BaseLayout>

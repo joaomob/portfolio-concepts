@@ -1,0 +1,32 @@
+---
+// The site header: logo, the four section links (in-page on the home, back to the home elsewhere), the cart button
+// and the mobile menu toggle. The cart count and the open state are driven by scripts/cart.ts and site-chrome.ts.
+import { asset, page } from '../lib/site';
+
+interface Props {
+  base: string;
+  /** true on the home, where the section links stay on the page */
+  onHome?: boolean;
+}
+const { base, onHome = false } = Astro.props;
+const home = page(base);
+const section = (id: string) => (onHome ? `#${id}` : `${home}#${id}`);
+const links = [
+  { id: 'collection', label: 'The Collection' },
+  { id: 'craft', label: 'The Craft' },
+  { id: 'story', label: 'Our Story' },
+  { id: 'faq', label: 'FAQ' },
+];
+---
+<header class="nav_component" id="nav"><div class="nav_backdrop" aria-hidden="true"></div><div class="padding-global"><div class="container-large">
+  <div class="nav_inner">
+    <a class="nav_brand" href={home} aria-label="Arcanae Craft"><img class="nav_logo" src={asset('brand/wordmark-h-ink.svg')} alt="Arcanae Craft"></a>
+    <nav class="nav_menu" id="nav-menu">
+      {links.map((l) => <a class="nav_link" href={section(l.id)}>{l.label}</a>)}
+    </nav>
+    <div class="nav_actions">
+      <button class="nav_cart" aria-label="Cart"><svg class="nav_cart-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6.5 8h11l-1 11.4a1.5 1.5 0 0 1-1.5 1.35H9a1.5 1.5 0 0 1-1.5-1.35L6.5 8Z"/><path d="M9 8.5V6.2a3 3 0 0 1 6 0v2.3"/></svg><span class="nav_cart-count" data-cart-count>0</span></button>
+      <button class="nav_toggle" aria-label="Menu" aria-expanded="false" aria-controls="nav-menu"><span class="nav_toggle-line"></span><span class="nav_toggle-line"></span><span class="nav_toggle-line"></span></button>
+    </div>
+  </div>
+</div></div></header>

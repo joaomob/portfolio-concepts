@@ -1,0 +1,17 @@
+---
+// The product section: gallery on the left, information on the right.
+import type { Card } from '../../data/catalog';
+import ProductGallery from './ProductGallery.astro';
+import ProductInfo from './ProductInfo.astro';
+
+interface Props {
+  card: Card;
+}
+const { card } = Astro.props;
+---
+<section class="section_product"><div class="padding-global padding-section-medium"><div class="container-large"><div id="pdp" data-name={card.name}>
+  <div class="pdp_layout">
+    <ProductGallery card={card} />
+    <ProductInfo card={card} />
+  </div>
+</div></div></div></section>

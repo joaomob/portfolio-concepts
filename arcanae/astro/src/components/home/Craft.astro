@@ -1,0 +1,18 @@
+---
+// Home craft section: the four making steps with their photos.
+import { CRAFT_INTRO, CRAFT_NOTE, CRAFT_STEPS } from '../../data/home';
+import { asset } from '../../lib/site';
+---
+<section class="section_craft" id="craft"><div class="padding-global padding-section-large"><div class="container-large">
+  <div class="section-heading_component" data-reveal>
+    <div class="section-heading_content"><p class="text-style-eyebrow">The Craft</p><h2>How each piece is made</h2><p class="section-heading_text">{CRAFT_INTRO}</p></div>
+  </div>
+  <div class="craft_grid" data-reveal>
+    {CRAFT_STEPS.map((step) => (
+      <div class="craft_step">
+        <div class="craft_step-media"><img class="craft_step-image" src={asset(step.image)} alt={step.alt} loading="lazy"><span class="craft_step-number">{step.number}</span></div>
+        <div class="craft_step-body"><h3 class="heading-style-h4">{step.title}</h3><p class="craft_step-text">{step.text}</p></div></div>
+    ))}
+  </div>
+  <p class="craft_note" data-reveal>{CRAFT_NOTE}</p>
+</div></div></section>
