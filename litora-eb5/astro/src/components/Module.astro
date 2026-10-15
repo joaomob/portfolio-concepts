@@ -1,0 +1,35 @@
+---
+// Renders one module of a content file with its section component. The module names are the ones of the content
+// files (and of the HubSpot modules of the live theme), so adding a section is one line here and one component.
+import AudienceCards from './sections/AudienceCards.astro';
+import ConfirmationHero from './sections/ConfirmationHero.astro';
+import CtaBand from './sections/CtaBand.astro';
+import FaqAccordion from './sections/FaqAccordion.astro';
+import FormCard from './sections/FormCard.astro';
+import HeroEvent from './sections/HeroEvent.astro';
+import LegalText from './sections/LegalText.astro';
+import ProjectReveal from './sections/ProjectReveal.astro';
+import ProjectStack from './sections/ProjectStack.astro';
+import Speakers from './sections/Speakers.astro';
+import StatementReveal from './sections/StatementReveal.astro';
+import StatRow from './sections/StatRow.astro';
+import StepsList from './sections/StepsList.astro';
+import TopicGrid from './sections/TopicGrid.astro';
+import type { ModuleView, SharedView } from '../lib/content';
+interface Props { mod: ModuleView; shared: SharedView }
+const { mod, shared } = Astro.props;
+---
+{mod.module === 'hero-event' && <HeroEvent view={mod.view} shared={shared} />}
+{mod.module === 'confirmation-hero' && <ConfirmationHero view={mod.view} shared={shared} />}
+{mod.module === 'form-card' && <FormCard view={mod.view} />}
+{mod.module === 'statement-reveal' && <StatementReveal view={mod.view} />}
+{mod.module === 'project-reveal' && <ProjectReveal view={mod.view} />}
+{mod.module === 'topic-grid' && <TopicGrid view={mod.view} />}
+{mod.module === 'audience-cards' && <AudienceCards view={mod.view} />}
+{mod.module === 'speakers' && <Speakers view={mod.view} />}
+{mod.module === 'stat-row' && <StatRow view={mod.view} />}
+{mod.module === 'project-stack' && <ProjectStack view={mod.view} />}
+{mod.module === 'faq-accordion' && <FaqAccordion view={mod.view} />}
+{mod.module === 'cta-band' && <CtaBand view={mod.view} />}
+{mod.module === 'steps-list' && <StepsList view={mod.view} />}
+{mod.module === 'legal-text' && <LegalText view={mod.view} />}

@@ -1,0 +1,15 @@
+---
+// A photo with two crops: the tall one under a breakpoint, the wide one above it (hero, project, stack, final call).
+import type { ImageSet } from '../lib/types';
+interface Props {
+  wide: ImageSet; tall: ImageSet; alt: string; class: string; sizes: string;
+  tallMedia?: string; lazy?: boolean; priority?: boolean; data?: Record<string, string>;
+}
+const { wide, tall, alt, sizes, tallMedia = '(max-width: 767px)', lazy = false, priority = false, data = {} } = Astro.props;
+const className = Astro.props.class;
+---
+<picture>
+  <source media={tallMedia} srcset={tall.srcset} sizes="100vw" width={tall.width} height={tall.height} />
+  <img class={className} src={wide.src} srcset={wide.srcset} sizes={sizes} width={wide.width} height={wide.height} alt={alt}
+    loading={lazy ? 'lazy' : undefined} decoding={lazy ? 'async' : undefined} fetchpriority={priority ? 'high' : undefined} {...data} />
+</picture>

@@ -1,0 +1,25 @@
+---
+// Full screen photos that stack over each other; the covered one grows a little (motion.ts, 9).
+import Picture from '../Picture.astro';
+import type { ViewOf } from '../../lib/content';
+interface Props { view: ViewOf<'project-stack'> }
+const { view } = Astro.props;
+---
+<section class="section_project-stack" aria-label={view.label} id="inside" data-nav-theme="inverse">
+  {view.items.map((item) => (
+    <figure class="project-stack_panel" id={item.id} data-stack-panel>
+      <Picture class="project-stack_image" wide={item.wide} tall={item.tall} alt={item.imageAlt} sizes="100vw" lazy data={{ 'data-stack-image': '' }} />
+      <div class="project-stack_veil" aria-hidden="true"></div>
+      <div class="project-stack_index" aria-hidden="true">
+        {item.marks.map((mark) => (
+          <Fragment>{mark.line && <span class="project-stack_index-line"></span>}<span class:list={['project-stack_index-mark', { 'is-current': mark.current }]}></span></Fragment>
+        ))}
+      </div>
+      <figcaption class="project-stack_caption">
+        <span class="text-style-eyebrow">{item.label}</span>
+        <span class="heading-style-h2">{item.name}</span>
+        <span class="text-style-eyebrow">{item.caption}</span>
+      </figcaption>
+    </figure>
+  ))}
+</section>

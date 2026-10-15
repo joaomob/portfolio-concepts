@@ -1,0 +1,6 @@
+---
+// The label of every button: the text and a clone under it that slides in on hover (the clone is hidden from readers).
+interface Props { label: string }
+const { label } = Astro.props;
+---
+<span class="button_text-wrap"><span class="button_text">{label}</span><span class="button_text is-clone" aria-hidden="true">{label}</span></span>

@@ -1,0 +1,28 @@
+---
+import Logo from '../Logo.astro';
+import type { SharedView, ViewOf } from '../../lib/content';
+interface Props { view: ViewOf<'site-footer'>; shared: SharedView }
+const { view, shared } = Astro.props;
+const { footer } = shared.global;
+---
+<footer class={`site-footer_component ${view.bgClass}`}>
+  <div class="padding-global">
+    <div class="container-large">
+      <div class="site-footer_top">
+        <div class="site-footer_brand" data-reveal>
+          <Logo shared={shared} />
+          <p class="text-size-large">{footer.about}</p>
+          <p class="text-size-small text-color-secondary">{view.fictionalNotice}</p>
+        </div>
+        <span class="site-footer_divider" aria-hidden="true"></span>
+        <ul class="site-footer_links" role="list" data-reveal>
+          <li><a class="site-footer_link" href={shared.privacyHref}>{footer.privacyLabel}</a></li>
+          <li><a class="site-footer_link" href={shared.languages.href} hreflang={shared.languages.lang} lang={shared.languages.lang}>{footer.languageLinkLabel}</a></li>
+        </ul>
+      </div>
+      <div class="site-footer_bottom">
+        <p class="text-size-small text-color-secondary"><strong>{footer.legalNoticeTitle}</strong> {footer.legalNotice}</p>
+      </div>
+    </div>
+  </div>
+</footer>

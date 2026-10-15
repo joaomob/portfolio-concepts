@@ -1,0 +1,9 @@
+---
+import type { SharedView } from '../lib/content';
+interface Props { shared: SharedView }
+const { languages } = Astro.props.shared;
+---
+<ul class="language-switch_list" role="list">
+  <li><span class="language-switch_link is-current" aria-current="true">{languages.current}</span></li>
+  <li><a class="language-switch_link" href={languages.href} hreflang={languages.lang}><span aria-hidden="true">{languages.other}</span><span class="visually-hidden">{languages.otherLabel}</span></a></li>
+</ul>

@@ -1,0 +1,67 @@
+{
+  "brand": "Litora",
+  "baseUrl": "",
+  "defaultLang": "pt-BR",
+  "pages": {
+    "webinar": {
+      "pt-BR": {
+        "file": "webinar-visto-eb5.html",
+        "path": "/webinar-visto-eb5",
+        "content": "webinar.pt-BR.json"
+      },
+      "en-US": {
+        "file": "en/eb5-visa-webinar.html",
+        "path": "/en/eb5-visa-webinar",
+        "content": "webinar.en-US.json"
+      }
+    },
+    "webinar-thank-you": {
+      "pt-BR": {
+        "file": "webinar-visto-eb5/obrigado.html",
+        "path": "/webinar-visto-eb5/obrigado",
+        "content": "thank-you.pt-BR.json"
+      },
+      "en-US": {
+        "file": "en/eb5-visa-webinar/thank-you.html",
+        "path": "/en/eb5-visa-webinar/thank-you",
+        "content": "thank-you.en-US.json"
+      }
+    },
+    "event": {
+      "pt-BR": {
+        "file": "evento-visto-eb5-sao-paulo.html",
+        "path": "/evento-visto-eb5-sao-paulo",
+        "content": "event.pt-BR.json"
+      },
+      "en-US": {
+        "file": "en/eb5-event-sao-paulo.html",
+        "path": "/en/eb5-event-sao-paulo",
+        "content": "event.en-US.json"
+      }
+    },
+    "event-thank-you": {
+      "pt-BR": {
+        "file": "evento-visto-eb5-sao-paulo/obrigado.html",
+        "path": "/evento-visto-eb5-sao-paulo/obrigado",
+        "content": "event-thank-you.pt-BR.json"
+      },
+      "en-US": {
+        "file": "en/eb5-event-sao-paulo/thank-you.html",
+        "path": "/en/eb5-event-sao-paulo/thank-you",
+        "content": "event-thank-you.en-US.json"
+      }
+    },
+    "privacy": {
+      "pt-BR": {
+        "file": "privacidade.html",
+        "path": "/privacidade",
+        "content": "privacy.pt-BR.json"
+      },
+      "en-US": {
+        "file": "en/privacy.html",
+        "path": "/en/privacy",
+        "content": "privacy.en-US.json"
+      }
+    }
+  }
+}

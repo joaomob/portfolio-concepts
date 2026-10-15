@@ -1,0 +1,14 @@
+---
+// The date and the hours of the event, shared by the event hero and the confirmation hero.
+import type { TimeBlock as TimeBlockData } from '../lib/types';
+interface Props { block: TimeBlockData }
+const { block } = Astro.props;
+---
+<div class="hero_time-block">
+  <time class="hero_time-day" datetime={block.date}><span class="text-style-display-medium text-weight-medium">{block.day}</span><span class="text-style-eyebrow">{block.month}</span></time>
+  <ul class="hero_time-list" role="list">
+    {block.rows.map((row) => (
+      <li class="hero_time-row text-size-large">{row.datetime ? <time class="hero_time-hour" datetime={row.datetime}>{row.time}</time> : <span class="hero_time-hour">{row.time}</span>}<span>{row.place}</span></li>
+    ))}
+  </ul>
+</div>

@@ -1,0 +1,74 @@
+{
+  "page": {
+    "id": "event-thank-you",
+    "lang": "pt-BR",
+    "title": "Pedido de horário recebido · {brand}",
+    "metaDescription": "Seu pedido de horário no evento sobre o visto EB-5 em São Paulo foi recebido. Veja a data e o que preparar.",
+    "noindex": true,
+    "shareImageAlt": "Prédio residencial branco, com varandas de vidro em todos os andares, visto da água no fim da tarde, com palmeiras na orla e duas lanchas no píer"
+  },
+  "modules": [
+    {
+      "module": "site-header",
+      "fields": {
+        "ctaLabel": "",
+        "ctaTarget": ""
+      }
+    },
+    {
+      "module": "confirmation-hero",
+      "fields": {
+        "heading": "Seu pedido de horário foi recebido",
+        "details": [],
+        "body": "A equipe da {brand} confirma por e-mail o horário exato e o endereço completo. Se faltar algum dado, ela fala com você pelo WhatsApp que você informou. O evento é no sábado, 21 de novembro de 2026, das 9h às 17h, em São Paulo.",
+        "timeBlock": {
+          "date": "2026-11-21",
+          "day": "21",
+          "month": "nov",
+          "rows": [
+            {
+              "time": "9h às 17h",
+              "place": "São Paulo"
+            }
+          ]
+        },
+        "calendar": null,
+        "image": "hero",
+        "imageAlt": "Prédio residencial branco, com varandas de vidro em todos os andares, visto da água no fim da tarde, com palmeiras na orla e duas lanchas no píer"
+      }
+    },
+    {
+      "module": "steps-list",
+      "style": {
+        "background": "primary"
+      },
+      "fields": {
+        "heading": "Prepare suas perguntas",
+        "intro": "Vale levar estas quatro para a reunião.",
+        "items": [
+          {
+            "text": "Que documentos provam a origem do meu dinheiro?"
+          },
+          {
+            "text": "Em que parte do projeto o meu investimento entra, e o que acontece se a obra atrasar?"
+          },
+          {
+            "text": "Quando e em que condições o capital volta?"
+          },
+          {
+            "text": "Quanto vou pagar além do valor investido, entre taxas do USCIS e honorários?"
+          }
+        ]
+      }
+    },
+    {
+      "module": "site-footer",
+      "style": {
+        "background": "secondary"
+      },
+      "fields": {
+        "fictionalNotice": "{brand} é uma marca fictícia, criada para um portfólio de design. Esta página não é oferta de venda de valores mobiliários. O empreendimento Tavessa, Rafael Moura e o endereço também são fictícios."
+      }
+    }
+  ]
+}

@@ -1,0 +1,44 @@
+---
+// The numbers of the program on a ruler that draws itself (motion.ts, 15), then the cost table.
+import Keep from '../Keep.astro';
+import type { ViewOf } from '../../lib/content';
+interface Props { view: ViewOf<'stat-row'> }
+const { view } = Astro.props;
+---
+<section class={`section_stat-row ${view.bgClass}`} id="numbers" data-nav-theme="inverse">
+  <div class="padding-global padding-section-medium">
+    <div class="container-large">
+      <div class="section-header_component" data-reveal>
+        <h2><Keep text={view.heading} /></h2>
+      </div>
+      <div class="stat-ruler_component" data-ruler>
+        <span class="stat-ruler_line" aria-hidden="true" data-ruler-line></span>
+        <span class="stat-ruler_ticks" aria-hidden="true" data-ruler-ticks></span>
+        <ul class="stat-ruler_list" role="list">
+          {view.items.map((item) => (
+            <li class="stat-ruler_item">
+              <span class="stat-ruler_mark" aria-hidden="true"></span>
+              <p class="stat-ruler_value text-style-display-medium" data-reveal>{item.value}</p>
+              <p class="stat-ruler_caption text-color-secondary" data-reveal>{item.caption}</p>
+            </li>
+          ))}
+        </ul>
+      </div>
+      <p class="stat-row_source text-size-small text-color-secondary">{view.source}</p>
+      <div class="stat-row_cost" data-reveal>
+        <h3><Keep text={view.cost.heading} /></h3>
+        <dl class="cost-list_component">
+          {view.cost.rows.map((row) => (
+            <div class="cost-list_row">
+              <dt class="cost-list_label">{row.label}</dt>
+              {row.values.map((value) => (
+                <dd class="cost-list_value"><span class="text-weight-semibold">{value.amount}</span>{value.when && <span class="text-color-secondary">{value.when}</span>}</dd>
+              ))}
+            </div>
+          ))}
+        </dl>
+        <p class="text-size-small text-color-secondary">{view.cost.note}</p>
+      </div>
+    </div>
+  </div>
+</section>

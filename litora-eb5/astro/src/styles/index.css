@@ -1,0 +1,20 @@
+/* The stylesheet of every page, in the order of the original prototype: the design tokens (CSS custom properties)
+   first, then the design system (base, Client-First structure, shared components), then one file per section, sorted
+   by name. One ordered entry keeps the cascade of the original, where some sections share classes (hero_, photo-card_). */
+@import "./tokens.css";
+@import "./system.css";
+@import "./sections/audience-cards.css";
+@import "./sections/cta-band.css";
+@import "./sections/faq-accordion.css";
+@import "./sections/form-card.css";
+@import "./sections/hero-event.css";
+@import "./sections/legal-text.css";
+@import "./sections/project-reveal.css";
+@import "./sections/project-stack.css";
+@import "./sections/site-footer.css";
+@import "./sections/site-header.css";
+@import "./sections/speakers.css";
+@import "./sections/stat-row.css";
+@import "./sections/statement-reveal.css";
+@import "./sections/steps-list.css";
+@import "./sections/topic-grid.css";

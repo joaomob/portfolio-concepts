@@ -1,0 +1,12 @@
+---
+// The logo and the language switch at the top of the hero panel (the fixed header shows the same two, later).
+import LanguageSwitch from './LanguageSwitch.astro';
+import Logo from './Logo.astro';
+import type { SharedView } from '../lib/content';
+interface Props { shared: SharedView }
+const { shared } = Astro.props;
+---
+<div class="hero_top-banner">
+  <Logo shared={shared} />
+  <LanguageSwitch shared={shared} />
+</div>

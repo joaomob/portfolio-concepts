@@ -1,0 +1,50 @@
+---
+// The registration form inside the hero panel. Every message is in the markup (data-error-*), in the page language;
+// src/scripts/form.ts checks the fields and takes the visitor to the thank you page (it never posts, see that file).
+import ButtonLabel from '../ButtonLabel.astro';
+import Keep from '../Keep.astro';
+import type { FormView } from '../../lib/content';
+interface Props { view: FormView }
+const { view } = Astro.props;
+---
+<div class="form-card_component" id={view.anchorId}>
+  <h2 class="heading-style-h3"><Keep text={view.heading} /></h2>
+  <form class="form-card_form" method="post" action={view.redirect} data-hubspot-form data-redirect={view.redirect} data-page-name={view.pageName}>
+    <div class="form_component">
+      {view.fields.map((field) => {
+        if (field.kind === 'text') return (
+          <div class:list={['form_field', { 'is-full': !field.half }]}>
+            <label class="form_label" for={field.id}>{field.label}</label>
+            <input class="form_input" id={field.id} name={field.name} type={field.type} autocomplete={field.autocomplete} required aria-describedby={field.describedBy} data-form-text data-error-required={field.errors.required} data-error-invalid={field.errors.invalid} />
+            {field.help && <p class="form_help" id={field.helpId}>{field.help}</p>}
+            <p class="form_error" id={field.errorId} data-form-error></p>
+          </div>
+        );
+        if (field.kind === 'radio') return (
+          <fieldset class="form_field is-full" aria-describedby={field.errorId} data-form-group data-error-required={field.errors.required}>
+            <legend class="form_label">{field.label}</legend>
+            <div class="form_options">
+              {field.options?.map((option) => (
+                <label class="form_check"><input class="form_check-input is-radio" type="radio" name={field.name} value={option.value} required /><span>{option.label}</span></label>
+              ))}
+            </div>
+            <p class="form_error" id={field.errorId} data-form-error></p>
+          </fieldset>
+        );
+        return (
+          <div class="form_field is-full">
+            <label class="form_check"><input class="form_check-input" type="checkbox" id={field.id} name={field.name} value="true" required aria-describedby={field.errorId} data-form-check data-error-required={field.errors.required} data-consent-text={field.isConsent ? field.label : undefined} /><span>{field.label}</span></label>
+            {field.linkLabel && <p class="form_help"><a href={field.linkHref}>{field.linkLabel}</a></p>}
+            <p class="form_error" id={field.errorId} data-form-error></p>
+          </div>
+        );
+      })}
+      <div class="form_field is-full">
+        <button class="button" type="submit"><ButtonLabel label={view.submitLabel} /></button>
+        <p class="form_help">{view.submitNote}</p>
+        <p class="form_error" role="alert" data-form-status data-submit-error={view.submitError}></p>
+      </div>
+    </div>
+  </form>
+  <p class="form-card_notice text-size-small text-color-secondary">{view.notice}</p>
+</div>

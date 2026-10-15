@@ -1,0 +1,17 @@
+---
+// Every page of the site from one route: five page types (webinar, event, their thank you pages, privacy) in two
+// languages. The slugs and the content file of each page come from src/data/site.json.
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Module from '../components/Module.astro';
+import { ASTRO_BASE, pageView, routes, type Route } from '../lib/content';
+
+export function getStaticPaths() {
+  return routes.map((route) => ({ params: { slug: route.slug }, props: { route } }));
+}
+
+interface Props { route: Route }
+const page = pageView(Astro.props.route, ASTRO_BASE);
+---
+<BaseLayout page={page}>
+  {page.main.map((mod) => <Module mod={mod} shared={page.shared} />)}
+</BaseLayout>

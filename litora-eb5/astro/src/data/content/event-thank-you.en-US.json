@@ -1,0 +1,74 @@
+{
+  "page": {
+    "id": "event-thank-you",
+    "lang": "en-US",
+    "title": "Request received · {brand}",
+    "metaDescription": "Your request for a meeting at the EB-5 event in São Paulo is in. See the date and what to prepare.",
+    "noindex": true,
+    "shareImageAlt": "A white residential building with glass balconies on every floor, seen from the water in the late afternoon, with palm trees on the waterfront and two boats at the dock"
+  },
+  "modules": [
+    {
+      "module": "site-header",
+      "fields": {
+        "ctaLabel": "",
+        "ctaTarget": ""
+      }
+    },
+    {
+      "module": "confirmation-hero",
+      "fields": {
+        "heading": "We received your meeting request",
+        "details": [],
+        "body": "{brand}'s team confirms the exact time and the full address by email. If any detail is missing, the team contacts you on the WhatsApp number you entered. The event is on Saturday, November 21, 2026, from 9 a.m. to 5 p.m., in São Paulo. Meetings are held in Portuguese.",
+        "timeBlock": {
+          "date": "2026-11-21",
+          "day": "21",
+          "month": "Nov",
+          "rows": [
+            {
+              "time": "9 a.m. to 5 p.m.",
+              "place": "São Paulo"
+            }
+          ]
+        },
+        "calendar": null,
+        "image": "hero",
+        "imageAlt": "A white residential building with glass balconies on every floor, seen from the water in the late afternoon, with palm trees on the waterfront and two boats at the dock"
+      }
+    },
+    {
+      "module": "steps-list",
+      "style": {
+        "background": "primary"
+      },
+      "fields": {
+        "heading": "Prepare your questions",
+        "intro": "These four are worth bringing to the meeting.",
+        "items": [
+          {
+            "text": "Which documents prove the source of my funds?"
+          },
+          {
+            "text": "Where does my money sit in the project, and what happens if construction runs late?"
+          },
+          {
+            "text": "When and under what conditions does my capital come back?"
+          },
+          {
+            "text": "How much will I pay beyond the amount I invest, in USCIS fees and attorney fees?"
+          }
+        ]
+      }
+    },
+    {
+      "module": "site-footer",
+      "style": {
+        "background": "secondary"
+      },
+      "fields": {
+        "fictionalNotice": "{brand} is a fictional brand created for a design portfolio. This page is not an offer to sell securities. The Tavessa project, Rafael Moura and the address are fictional too."
+      }
+    }
+  ]
+}

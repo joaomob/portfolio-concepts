@@ -1,0 +1,20 @@
+---
+// The fixed header: hidden while the hero is on screen (motion.ts, interaction 1), dark over dark sections (14).
+import ButtonLabel from '../ButtonLabel.astro';
+import LanguageSwitch from '../LanguageSwitch.astro';
+import Logo from '../Logo.astro';
+import type { SharedView, ViewOf } from '../../lib/content';
+interface Props { view: ViewOf<'site-header'>; shared: SharedView }
+const { view, shared } = Astro.props;
+---
+<header class:list={['site-header_component', { 'is-hidden': view.hasHero }]} data-site-header>
+  <div class="padding-global">
+    <div class="container-large">
+      <div class="site-header_layout">
+        <div class="site-header_languages"><LanguageSwitch shared={shared} /></div>
+        <Logo shared={shared} />
+        <div class="site-header_action">{view.ctaLabel && <a class="button" href={view.ctaTarget}><ButtonLabel label={view.ctaLabel} /></a>}</div>
+      </div>
+    </div>
+  </div>
+</header>

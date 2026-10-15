@@ -1,0 +1,115 @@
+{
+  "page": {
+    "id": "webinar-thank-you",
+    "lang": "en-US",
+    "title": "You're registered · {brand}",
+    "metaDescription": "Your spot in the EB-5 visa webinar is confirmed. See the date, how to join and what to prepare.",
+    "noindex": true,
+    "shareImageAlt": "A white residential building with glass balconies on every floor, seen from the water in the late afternoon, with palm trees on the waterfront and two boats at the dock"
+  },
+  "modules": [
+    {
+      "module": "site-header",
+      "fields": {
+        "ctaLabel": "",
+        "ctaTarget": ""
+      }
+    },
+    {
+      "module": "confirmation-hero",
+      "fields": {
+        "heading": "You're registered for the EB-5 visa webinar",
+        "details": [
+          {
+            "text": "Thursday, November 12, 2026, at 6 p.m. in New York, on Zoom. The webinar is in Portuguese."
+          }
+        ],
+        "body": "",
+        "timeBlock": {
+          "date": "2026-11-12",
+          "day": "12",
+          "month": "Nov",
+          "rows": [
+            {
+              "time": "8 p.m.",
+              "datetime": "2026-11-12T20:00-03:00",
+              "place": "São Paulo"
+            },
+            {
+              "time": "6 p.m.",
+              "datetime": "2026-11-12T18:00-05:00",
+              "place": "New York"
+            }
+          ]
+        },
+        "calendar": {
+          "buttonLabel": "Add to calendar",
+          "fileName": "{brandSlug}-eb5-webinar.ics",
+          "title": "EB-5 Visa Webinar · {brand}",
+          "description": "The Zoom link arrives by email 24 hours before.",
+          "startUtc": "20261112T230000Z",
+          "endUtc": "20261113T001500Z"
+        },
+        "image": "hero",
+        "imageAlt": "A white residential building with glass balconies on every floor, seen from the water in the late afternoon, with palm trees on the waterfront and two boats at the dock"
+      }
+    },
+    {
+      "module": "steps-list",
+      "style": {
+        "background": "primary"
+      },
+      "fields": {
+        "heading": "What happens next",
+        "intro": "",
+        "items": [
+          {
+            "text": "A confirmation email is on its way to the address you entered. If it doesn't show up in a few minutes, check your spam folder."
+          },
+          {
+            "text": "On November 11, at 6 p.m. New York time, we send the Zoom link."
+          },
+          {
+            "text": "On November 12, the room opens at 6 p.m. New York time. The last minutes are for questions."
+          },
+          {
+            "text": "After the webinar, the {brand} team contacts you on the WhatsApp number you entered."
+          }
+        ]
+      }
+    },
+    {
+      "module": "steps-list",
+      "style": {
+        "background": "secondary"
+      },
+      "fields": {
+        "heading": "Prepare your questions",
+        "intro": "These four are worth bringing.",
+        "items": [
+          {
+            "text": "Which documents prove the source of my funds?"
+          },
+          {
+            "text": "Where does my money sit in the project, and what happens if construction runs late?"
+          },
+          {
+            "text": "When and under what conditions does my capital come back?"
+          },
+          {
+            "text": "How much will I pay beyond the amount I invest, in USCIS fees and attorney fees?"
+          }
+        ]
+      }
+    },
+    {
+      "module": "site-footer",
+      "style": {
+        "background": "primary"
+      },
+      "fields": {
+        "fictionalNotice": "{brand} is a fictional brand created for a design portfolio. This page is not an offer to sell securities. The Tavessa project and the speakers are fictional too."
+      }
+    }
+  ]
+}

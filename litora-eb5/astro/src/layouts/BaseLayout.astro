@@ -1,0 +1,45 @@
+---
+// What every page carries: the head (noindex, canonical, hreflang, share card, hero preloads), the inline script that
+// runs before the first paint, the skip link, the header, the footer and the page scripts.
+import '../styles/index.css';
+import SiteFooter from '../components/sections/SiteFooter.astro';
+import SiteHeader from '../components/sections/SiteHeader.astro';
+import { ASSETS, type PageView } from '../lib/content';
+import { INLINE_SCRIPT } from '../lib/head';
+interface Props { page: PageView }
+const { page } = Astro.props;
+---
+<!doctype html>
+<html lang={page.route.lang}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{page.meta.title}</title>
+    <meta name="description" content={page.meta.metaDescription} />
+    <meta name="robots" content="noindex" />
+    <link rel="canonical" href={page.canonical} />
+    {page.alternates.map((alt) => <link rel="alternate" hreflang={alt.lang} href={alt.href} />)}
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={page.meta.title} />
+    <meta property="og:description" content={page.meta.metaDescription} />
+    <meta property="og:image" content={page.share.src} />
+    <meta property="og:image:width" content={String(page.share.width)} />
+    <meta property="og:image:height" content={String(page.share.height)} />
+    <meta property="og:image:alt" content={page.meta.shareImageAlt} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="icon" href={`${ASSETS}images/favicon.svg`} type="image/svg+xml" />
+    {page.preloads.map((p) => <link rel="preload" as="image" href={p.src} imagesrcset={p.srcset} imagesizes={p.sizes} media={p.media} fetchpriority="high" />)}
+    <script is:inline set:html={INLINE_SCRIPT} />
+  </head>
+  <body>
+    <div class="page-wrapper">
+      <a class="skip-link_component" href="#main">{page.shared.global.skipLink}</a>
+      <SiteHeader view={page.header} shared={page.shared} />
+      <main class="main-wrapper" id="main">
+        <slot />
+      </main>
+      <SiteFooter view={page.footer} shared={page.shared} />
+    </div>
+    <script src="../scripts/page.ts"></script>
+  </body>
+</html>

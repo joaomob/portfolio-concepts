@@ -1,0 +1,46 @@
+---
+// The questions (one open at a time, height animated: motion.ts, 24 and 25) next to the timeline of the process.
+import Icon from '../Icon.astro';
+import Keep from '../Keep.astro';
+import type { ViewOf } from '../../lib/content';
+interface Props { view: ViewOf<'faq-accordion'> }
+const { view } = Astro.props;
+---
+<section class={`section_faq-accordion ${view.bgClass}`} id="faq">
+  <div class="padding-global padding-section-medium">
+    <div class="container-large">
+      <span class="faq-accordion_line" aria-hidden="true" data-line></span>
+      <div class="faq-accordion_layout">
+        <div class="faq-accordion_header" data-reveal>
+          <h2><Keep text={view.heading} /></h2>
+          {view.intro && <p class="faq-accordion_intro">{view.intro}</p>}
+          <div class="faq_timeline">
+            <ol class="faq_timeline-list" role="list" data-timeline>
+              {view.timeline.items.map((item) => (
+                <li class="faq_timeline-item">
+                  <span class:list={['faq_timeline-trace', { 'is-dashed': item.dashed, 'is-open': item.open }]} aria-hidden="true" data-timeline-trace={item.dashed ? 'dashed' : 'solid'}></span>
+                  {!item.open && <span class="faq_timeline-point" aria-hidden="true"></span>}
+                  <span class="heading-style-h3">{item.title}</span>
+                  <p>{item.text}{item.trace && <Fragment> <span class="visually-hidden">({item.trace})</span></Fragment>}</p>
+                </li>
+              ))}
+            </ol>
+            <p class="text-size-small text-color-secondary">{view.timeline.legend}</p>
+          </div>
+        </div>
+        <div class="faq-accordion_list">
+          {view.items.map((item, i) => (
+            <details class="faq_item" name="faq" open={i === 0} data-reveal>
+              <summary class="faq_question"><h3><Keep text={item.question} /></h3><Icon name="chevron" /></summary>
+              <div class="faq_answer">
+                {item.answer.map((block) => (block.list
+                  ? <ul class="faq_answer-list">{block.list.map((line) => <li>{line}</li>)}</ul>
+                  : <p>{block.text}</p>))}
+              </div>
+            </details>
+          ))}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

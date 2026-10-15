@@ -1,0 +1,115 @@
+{
+  "page": {
+    "id": "webinar-thank-you",
+    "lang": "pt-BR",
+    "title": "Inscrição confirmada · {brand}",
+    "metaDescription": "Sua inscrição no webinar sobre o visto EB-5 está confirmada. Veja a data, como entrar e o que preparar.",
+    "noindex": true,
+    "shareImageAlt": "Prédio residencial branco, com varandas de vidro em todos os andares, visto da água no fim da tarde, com palmeiras na orla e duas lanchas no píer"
+  },
+  "modules": [
+    {
+      "module": "site-header",
+      "fields": {
+        "ctaLabel": "",
+        "ctaTarget": ""
+      }
+    },
+    {
+      "module": "confirmation-hero",
+      "fields": {
+        "heading": "Sua inscrição no webinar está confirmada",
+        "details": [
+          {
+            "text": "Quinta-feira, 12 de novembro de 2026, às 20h de Brasília, no Zoom."
+          }
+        ],
+        "body": "",
+        "timeBlock": {
+          "date": "2026-11-12",
+          "day": "12",
+          "month": "nov",
+          "rows": [
+            {
+              "time": "20h",
+              "datetime": "2026-11-12T20:00-03:00",
+              "place": "São Paulo"
+            },
+            {
+              "time": "18h",
+              "datetime": "2026-11-12T18:00-05:00",
+              "place": "Nova York"
+            }
+          ]
+        },
+        "calendar": {
+          "buttonLabel": "Adicionar ao calendário",
+          "fileName": "{brandSlug}-eb5-webinar.ics",
+          "title": "Webinar sobre o visto EB-5 · {brand}",
+          "description": "O link da sala chega por e-mail 24 horas antes.",
+          "startUtc": "20261112T230000Z",
+          "endUtc": "20261113T001500Z"
+        },
+        "image": "hero",
+        "imageAlt": "Prédio residencial branco, com varandas de vidro em todos os andares, visto da água no fim da tarde, com palmeiras na orla e duas lanchas no píer"
+      }
+    },
+    {
+      "module": "steps-list",
+      "style": {
+        "background": "primary"
+      },
+      "fields": {
+        "heading": "O que acontece agora",
+        "intro": "",
+        "items": [
+          {
+            "text": "Um e-mail de confirmação chega agora no endereço que você informou. Se ele não aparecer em alguns minutos, procure na pasta de spam."
+          },
+          {
+            "text": "No dia 11 de novembro, às 20h de Brasília, mandamos o link da sala no Zoom."
+          },
+          {
+            "text": "No dia 12, a sala abre às 20h. Os últimos minutos ficam para as perguntas."
+          },
+          {
+            "text": "Depois do webinar, a equipe da {brand} fala com você pelo WhatsApp que você informou."
+          }
+        ]
+      }
+    },
+    {
+      "module": "steps-list",
+      "style": {
+        "background": "secondary"
+      },
+      "fields": {
+        "heading": "Prepare suas perguntas",
+        "intro": "Vale levar estas quatro para a sala.",
+        "items": [
+          {
+            "text": "Que documentos provam a origem do meu dinheiro?"
+          },
+          {
+            "text": "Em que parte do projeto o meu investimento entra, e o que acontece se a obra atrasar?"
+          },
+          {
+            "text": "Quando e em que condições o capital volta?"
+          },
+          {
+            "text": "Quanto vou pagar além do valor investido, entre taxas do USCIS e honorários?"
+          }
+        ]
+      }
+    },
+    {
+      "module": "site-footer",
+      "style": {
+        "background": "primary"
+      },
+      "fields": {
+        "fictionalNotice": "{brand} é uma marca fictícia, criada para um portfólio de design. Esta página não é oferta de venda de valores mobiliários. O empreendimento Tavessa e os palestrantes também são fictícios."
+      }
+    }
+  ]
+}

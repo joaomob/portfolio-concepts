@@ -1,0 +1,449 @@
+{
+  "hero": {
+    "wide": [
+      {
+        "file": "hero-wide-960.webp",
+        "width": 960,
+        "height": 600,
+        "bytes": 73916,
+        "quality": 76
+      },
+      {
+        "file": "hero-wide-1440.webp",
+        "width": 1440,
+        "height": 900,
+        "bytes": 147458,
+        "quality": 76
+      },
+      {
+        "file": "hero-wide-1920.webp",
+        "width": 1920,
+        "height": 1200,
+        "bytes": 213772,
+        "quality": 68
+      }
+    ],
+    "tall": [
+      {
+        "file": "hero-tall-750.webp",
+        "width": 750,
+        "height": 600,
+        "bytes": 41606,
+        "quality": 44
+      },
+      {
+        "file": "hero-tall-1534.webp",
+        "width": 1534,
+        "height": 1227,
+        "bytes": 210974,
+        "quality": 76
+      }
+    ]
+  },
+  "aerial": {
+    "wide": [
+      {
+        "file": "aerial-wide-960.webp",
+        "width": 960,
+        "height": 540,
+        "bytes": 82518,
+        "quality": 76
+      },
+      {
+        "file": "aerial-wide-1280.webp",
+        "width": 1280,
+        "height": 720,
+        "bytes": 138176,
+        "quality": 76
+      },
+      {
+        "file": "aerial-wide-1920.webp",
+        "width": 1920,
+        "height": 1080,
+        "bytes": 254472,
+        "quality": 68
+      }
+    ],
+    "tall": [
+      {
+        "file": "aerial-tall-480.webp",
+        "width": 480,
+        "height": 800,
+        "bytes": 53288,
+        "quality": 76
+      },
+      {
+        "file": "aerial-tall-864.webp",
+        "width": 864,
+        "height": 1440,
+        "bytes": 151070,
+        "quality": 76
+      }
+    ]
+  },
+  "stack-facade": {
+    "wide": [
+      {
+        "file": "stack-facade-wide-1440.webp",
+        "width": 1440,
+        "height": 810,
+        "bytes": 154370,
+        "quality": 76
+      },
+      {
+        "file": "stack-facade-wide-1920.webp",
+        "width": 1920,
+        "height": 1080,
+        "bytes": 253864,
+        "quality": 76
+      },
+      {
+        "file": "stack-facade-wide-2560.webp",
+        "width": 2560,
+        "height": 1440,
+        "bytes": 253250,
+        "quality": 40
+      }
+    ],
+    "tall": [
+      {
+        "file": "stack-facade-tall-480.webp",
+        "width": 480,
+        "height": 1040,
+        "bytes": 38326,
+        "quality": 76
+      },
+      {
+        "file": "stack-facade-tall-709.webp",
+        "width": 709,
+        "height": 1536,
+        "bytes": 68424,
+        "quality": 76
+      }
+    ]
+  },
+  "stack-pool": {
+    "wide": [
+      {
+        "file": "stack-pool-wide-1440.webp",
+        "width": 1440,
+        "height": 810,
+        "bytes": 101280,
+        "quality": 76
+      },
+      {
+        "file": "stack-pool-wide-1920.webp",
+        "width": 1920,
+        "height": 1080,
+        "bytes": 166896,
+        "quality": 76
+      },
+      {
+        "file": "stack-pool-wide-2560.webp",
+        "width": 2560,
+        "height": 1440,
+        "bytes": 246812,
+        "quality": 72
+      }
+    ],
+    "tall": [
+      {
+        "file": "stack-pool-tall-480.webp",
+        "width": 480,
+        "height": 1040,
+        "bytes": 53088,
+        "quality": 76
+      },
+      {
+        "file": "stack-pool-tall-709.webp",
+        "width": 709,
+        "height": 1536,
+        "bytes": 104522,
+        "quality": 76
+      }
+    ]
+  },
+  "stack-lobby": {
+    "wide": [
+      {
+        "file": "stack-lobby-wide-1440.webp",
+        "width": 1440,
+        "height": 810,
+        "bytes": 66964,
+        "quality": 76
+      },
+      {
+        "file": "stack-lobby-wide-1920.webp",
+        "width": 1920,
+        "height": 1080,
+        "bytes": 111358,
+        "quality": 76
+      },
+      {
+        "file": "stack-lobby-wide-2560.webp",
+        "width": 2560,
+        "height": 1440,
+        "bytes": 180068,
+        "quality": 76
+      }
+    ],
+    "tall": [
+      {
+        "file": "stack-lobby-tall-480.webp",
+        "width": 480,
+        "height": 1040,
+        "bytes": 35498,
+        "quality": 76
+      },
+      {
+        "file": "stack-lobby-tall-709.webp",
+        "width": 709,
+        "height": 1536,
+        "bytes": 71280,
+        "quality": 76
+      }
+    ]
+  },
+  "stack-living": {
+    "wide": [
+      {
+        "file": "stack-living-wide-1440.webp",
+        "width": 1440,
+        "height": 810,
+        "bytes": 87462,
+        "quality": 76
+      },
+      {
+        "file": "stack-living-wide-1920.webp",
+        "width": 1920,
+        "height": 1080,
+        "bytes": 139626,
+        "quality": 76
+      },
+      {
+        "file": "stack-living-wide-2560.webp",
+        "width": 2560,
+        "height": 1440,
+        "bytes": 221018,
+        "quality": 76
+      }
+    ],
+    "tall": [
+      {
+        "file": "stack-living-tall-480.webp",
+        "width": 480,
+        "height": 1040,
+        "bytes": 33204,
+        "quality": 76
+      },
+      {
+        "file": "stack-living-tall-709.webp",
+        "width": 709,
+        "height": 1536,
+        "bytes": 66634,
+        "quality": 76
+      }
+    ]
+  },
+  "audience-family": {
+    "square": [
+      {
+        "file": "audience-family-square-420.webp",
+        "width": 420,
+        "height": 420,
+        "bytes": 13646,
+        "quality": 76
+      },
+      {
+        "file": "audience-family-square-840.webp",
+        "width": 840,
+        "height": 840,
+        "bytes": 39902,
+        "quality": 76
+      }
+    ]
+  },
+  "audience-entrepreneur": {
+    "square": [
+      {
+        "file": "audience-entrepreneur-square-420.webp",
+        "width": 420,
+        "height": 420,
+        "bytes": 19274,
+        "quality": 76
+      },
+      {
+        "file": "audience-entrepreneur-square-840.webp",
+        "width": 840,
+        "height": 840,
+        "bytes": 52722,
+        "quality": 76
+      }
+    ]
+  },
+  "audience-resident": {
+    "square": [
+      {
+        "file": "audience-resident-square-420.webp",
+        "width": 420,
+        "height": 420,
+        "bytes": 27914,
+        "quality": 76
+      },
+      {
+        "file": "audience-resident-square-840.webp",
+        "width": 840,
+        "height": 840,
+        "bytes": 68012,
+        "quality": 76
+      }
+    ]
+  },
+  "speaker-helena": {
+    "square": [
+      {
+        "file": "speaker-helena-square-420.webp",
+        "width": 420,
+        "height": 420,
+        "bytes": 13264,
+        "quality": 76
+      },
+      {
+        "file": "speaker-helena-square-840.webp",
+        "width": 840,
+        "height": 840,
+        "bytes": 36354,
+        "quality": 76
+      }
+    ]
+  },
+  "speaker-rafael": {
+    "square": [
+      {
+        "file": "speaker-rafael-square-420.webp",
+        "width": 420,
+        "height": 420,
+        "bytes": 11440,
+        "quality": 76
+      },
+      {
+        "file": "speaker-rafael-square-840.webp",
+        "width": 840,
+        "height": 840,
+        "bytes": 30568,
+        "quality": 76
+      }
+    ]
+  },
+  "topic-construction": {
+    "thumb": [
+      {
+        "file": "topic-construction.webp",
+        "width": 280,
+        "height": 240,
+        "bytes": 12480,
+        "quality": 76
+      }
+    ]
+  },
+  "topic-scale-model": {
+    "thumb": [
+      {
+        "file": "topic-scale-model.webp",
+        "width": 280,
+        "height": 240,
+        "bytes": 8604,
+        "quality": 76
+      }
+    ]
+  },
+  "topic-site-plan": {
+    "thumb": [
+      {
+        "file": "topic-site-plan.webp",
+        "width": 280,
+        "height": 240,
+        "bytes": 4980,
+        "quality": 76
+      }
+    ]
+  },
+  "topic-documents": {
+    "thumb": [
+      {
+        "file": "topic-documents.webp",
+        "width": 280,
+        "height": 240,
+        "bytes": 6358,
+        "quality": 76
+      }
+    ]
+  },
+  "topic-concrete-frame": {
+    "thumb": [
+      {
+        "file": "topic-concrete-frame.webp",
+        "width": 280,
+        "height": 240,
+        "bytes": 10382,
+        "quality": 76
+      }
+    ]
+  },
+  "topic-kitchen": {
+    "thumb": [
+      {
+        "file": "topic-kitchen.webp",
+        "width": 280,
+        "height": 240,
+        "bytes": 5624,
+        "quality": 76
+      }
+    ]
+  },
+  "cta": {
+    "wide": [
+      {
+        "file": "cta-wide-1280.webp",
+        "width": 1280,
+        "height": 720,
+        "bytes": 70176,
+        "quality": 76
+      },
+      {
+        "file": "cta-wide-1920.webp",
+        "width": 1920,
+        "height": 1080,
+        "bytes": 131528,
+        "quality": 76
+      }
+    ],
+    "tall": [
+      {
+        "file": "cta-tall-488.webp",
+        "width": 488,
+        "height": 910,
+        "bytes": 46432,
+        "quality": 76
+      },
+      {
+        "file": "cta-tall-824.webp",
+        "width": 824,
+        "height": 1536,
+        "bytes": 99282,
+        "quality": 76
+      }
+    ]
+  },
+  "share": {
+    "wide": [
+      {
+        "file": "og-webinar.jpg",
+        "width": 1200,
+        "height": 630,
+        "bytes": 117965,
+        "quality": 72
+      }
+    ]
+  }
+}

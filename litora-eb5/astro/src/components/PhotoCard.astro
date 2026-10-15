@@ -1,0 +1,12 @@
+---
+// A square photo with its title on a veil and a text under it (audience cards and speakers).
+import Keep from './Keep.astro';
+import type { ImageSet } from '../lib/types';
+interface Props { img: ImageSet; alt: string; sizes: string; focusClass?: string; heading: string; role?: string; text: string }
+const { img, alt, sizes, focusClass, heading, role, text } = Astro.props;
+---
+<div class="photo-card_component">
+  <img class:list={['photo-card_media', focusClass]} src={img.src} srcset={img.srcset} sizes={sizes} width={img.width} height={img.height} alt={alt} loading="lazy" decoding="async" />
+  <div class="photo-card_veil"><h3><Keep text={heading} /></h3>{role && <p class="text-style-eyebrow">{role}</p>}</div>
+</div>
+<p class="photo-card_text">{text}</p>

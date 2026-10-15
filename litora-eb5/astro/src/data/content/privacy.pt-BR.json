@@ -1,0 +1,58 @@
+{
+  "page": {
+    "id": "privacy",
+    "lang": "pt-BR",
+    "title": "Política de privacidade · {brand}",
+    "metaDescription": "Como a {brand}, marca fictícia de um portfólio de design, trataria os dados enviados pelos formulários.",
+    "noindex": true,
+    "shareImageAlt": "Prédio residencial branco, com varandas de vidro em todos os andares, visto da água no fim da tarde, com palmeiras na orla e duas lanchas no píer"
+  },
+  "modules": [
+    {
+      "module": "site-header",
+      "fields": {
+        "ctaLabel": "",
+        "ctaTarget": ""
+      }
+    },
+    {
+      "module": "legal-text",
+      "style": {
+        "background": "primary"
+      },
+      "fields": {
+        "heading": "Política de privacidade",
+        "updated": "Atualizada em 2 de outubro de 2026.",
+        "paragraphs": [
+          {
+            "text": "{brand} é uma marca fictícia, criada para um portfólio de design. Esta política descreve como a {brand} trataria os dados enviados pelos formulários do webinar e do evento."
+          },
+          {
+            "text": "Os dados são os que você informa no formulário: nome, sobrenome, e-mail, WhatsApp, cidade, país onde mora e, no evento, o período preferido. Junto vão a confirmação de que você sabe do investimento mínimo, a sua autorização e o endereço da página."
+          },
+          {
+            "text": "A {brand} usaria esses dados para enviar o link e os avisos do webinar, confirmar o horário do evento e falar com você sobre o EB-5. A base é o seu consentimento, conforme a Lei Geral de Proteção de Dados Pessoais (LGPD, Lei 13.709/2018)."
+          },
+          {
+            "text": "Os dados ficariam no CRM da HubSpot, a ferramenta que recebe os formulários. A HubSpot trataria os dados como operadora, em nome da {brand} e só para os fins acima. Os servidores da HubSpot ficam fora do Brasil."
+          },
+          {
+            "text": "Você pode pedir a confirmação, o acesso, a correção ou a exclusão dos seus dados e retirar o consentimento quando quiser."
+          },
+          {
+            "text": "Como a {brand} é fictícia, não existe um canal para esses pedidos."
+          }
+        ]
+      }
+    },
+    {
+      "module": "site-footer",
+      "style": {
+        "background": "secondary"
+      },
+      "fields": {
+        "fictionalNotice": "{brand} é uma marca fictícia, criada para um portfólio de design. Esta página não é oferta de venda de valores mobiliários. O empreendimento Tavessa e os palestrantes também são fictícios."
+      }
+    }
+  ]
+}

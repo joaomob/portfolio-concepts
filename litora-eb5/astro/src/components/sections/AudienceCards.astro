@@ -1,0 +1,24 @@
+---
+// Who the program is for: three photo cards.
+import Keep from '../Keep.astro';
+import PhotoCard from '../PhotoCard.astro';
+import type { ViewOf } from '../../lib/content';
+interface Props { view: ViewOf<'audience-cards'> }
+const { view } = Astro.props;
+---
+<section class={`section_audience-cards ${view.bgClass}`} id="audience">
+  <div class="padding-global padding-section-medium">
+    <div class="container-large">
+      <div class="section-header_component" data-reveal>
+        <h2><Keep text={view.heading} /></h2>
+      </div>
+      <ul class="audience-cards_list" role="list">
+        {view.items.map((item) => (
+          <li class="audience-cards_item" data-reveal>
+            <PhotoCard img={item.img} alt={item.imageAlt} focusClass={item.focusClass} sizes="(min-width: 992px) 26rem, (min-width: 768px) 33vw, 100vw" heading={item.heading} text={item.text} />
+          </li>
+        ))}
+      </ul>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,7 @@
+---
+import Icon from './Icon.astro';
+import type { SharedView } from '../lib/content';
+interface Props { shared: SharedView }
+const { logo } = Astro.props.shared;
+---
+<a class="logo_component" href={logo.href}><Icon name="logo" /><span class="logo_text">{logo.text}</span></a>

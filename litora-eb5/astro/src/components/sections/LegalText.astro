@@ -1,0 +1,18 @@
+---
+// The privacy page: a heading, the date and plain paragraphs.
+import Keep from '../Keep.astro';
+import type { ViewOf } from '../../lib/content';
+interface Props { view: ViewOf<'legal-text'> }
+const { view } = Astro.props;
+---
+<section class={`section_legal-text ${view.bgClass}`}>
+  <div class="padding-global padding-section-small">
+    <div class="container-small">
+      <div class="legal-text_content">
+        <h1><Keep text={view.heading} /></h1>
+        <p class="text-size-small text-color-secondary">{view.updated}</p>
+        {view.paragraphs.map((paragraph) => <p class="legal-text_paragraph">{paragraph.text}</p>)}
+      </div>
+    </div>
+  </div>
+</section>

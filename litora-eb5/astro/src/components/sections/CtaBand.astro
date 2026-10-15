@@ -1,0 +1,26 @@
+---
+// The final call over a photo that moves with the scroll (motion.ts, 11); the header hides its own button over it (23).
+import ButtonLabel from '../ButtonLabel.astro';
+import Keep from '../Keep.astro';
+import Picture from '../Picture.astro';
+import type { ViewOf } from '../../lib/content';
+interface Props { view: ViewOf<'cta-band'> }
+const { view } = Astro.props;
+---
+<section class="section_cta-band" id="cta" data-cta data-nav-theme="inverse">
+  <div class="cta-band_background">
+    <Picture class="cta-band_image" wide={view.wide} tall={view.tall} alt={view.imageAlt} sizes="100vw" lazy data={{ 'data-cta-image': '' }} />
+    <div class="cta-band_veil" aria-hidden="true"></div>
+  </div>
+  <div class="padding-global padding-section-small">
+    <div class="container-large">
+      <div class="cta-band_layout">
+        <div class="cta-band_top">
+          <p class="cta-band_text text-size-large" data-reveal>{view.text}</p>
+          <div class="cta-band_action" data-reveal><a class="button" href={view.buttonTarget}><ButtonLabel label={view.buttonLabel} /></a></div>
+        </div>
+        <h2 class="cta-band_heading" data-reveal><Keep text={view.heading} /></h2>
+      </div>
+    </div>
+  </div>
+</section>

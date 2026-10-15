@@ -1,0 +1,26 @@
+---
+// Numbered next steps of the thank you pages (the topic row without its photo).
+import Keep from '../Keep.astro';
+import type { ViewOf } from '../../lib/content';
+interface Props { view: ViewOf<'steps-list'> }
+const { view } = Astro.props;
+---
+<section class={`section_steps-list ${view.bgClass}`}>
+  <div class="padding-global padding-section-small">
+    <div class="container-large">
+      <div class="section-header_component" data-reveal>
+        <h2><Keep text={view.heading} /></h2>
+        {view.intro && <p class="text-size-large text-color-secondary">{view.intro}</p>}
+      </div>
+      <ol class="steps-list_list" role="list">
+        {view.items.map((item) => (
+          <li class="topic-row_component is-no-media">
+            <span class="topic-row_line" aria-hidden="true" data-line></span>
+            <span class="heading-style-h3" aria-hidden="true" data-reveal>{item.number}</span>
+            <p class="steps-list_text text-size-large" data-reveal>{item.text}</p>
+          </li>
+        ))}
+      </ol>
+    </div>
+  </div>
+</section>

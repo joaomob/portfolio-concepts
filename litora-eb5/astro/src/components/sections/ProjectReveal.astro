@@ -1,0 +1,35 @@
+---
+// The project photo that opens through a circle and the giant word that slides in over it (motion.ts, 4 and 5).
+import ButtonLabel from '../ButtonLabel.astro';
+import Keep from '../Keep.astro';
+import Picture from '../Picture.astro';
+import type { ViewOf } from '../../lib/content';
+interface Props { view: ViewOf<'project-reveal'> }
+const { view } = Astro.props;
+---
+<section class={`section_project-reveal ${view.bgClass}`}>
+  <div class="padding-global padding-section-large">
+    <div class="container-large">
+      <div class="project-reveal_header">
+        <div class="project-reveal_intro" data-reveal>
+          <p class="text-style-eyebrow text-color-secondary">{view.label}</p>
+          <p class="text-size-large">{view.text}</p>
+        </div>
+        <div class="project-reveal_action" data-reveal><a class="button is-secondary" href={view.buttonTarget}><ButtonLabel label={view.buttonLabel} /></a></div>
+      </div>
+      <div class="project-reveal_track" id="project" data-project-track>
+        <figure class="project-reveal_figure" data-project-figure>
+          <div class="project-reveal_frame">
+            <div class="project-reveal_ring" aria-hidden="true" data-project-ring></div>
+            <div class="project-reveal_media" data-project-media>
+              <Picture class="project-reveal_image" wide={view.wide} tall={view.tall} alt={view.imageAlt} tallMedia="(max-width: 479px)" sizes="(min-width: 1440px) 80rem, 100vw" lazy />
+              <div class="project-reveal_veil" aria-hidden="true"></div>
+            </div>
+            <h2 class="project-reveal_title"><span class="visually-hidden"><Keep text={view.name} /></span><span class="project-reveal_word text-style-display-large" aria-hidden="true" data-project-word>{view.word}</span></h2>
+          </div>
+          <figcaption class="project-reveal_caption text-size-small text-color-secondary">{view.caption}</figcaption>
+        </figure>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,33 @@
+---
+// The first screen of the webinar and the event pages: the photo, the panel with the date, and the form in the panel.
+// From 992 px the photo opens from the right half to the whole width while the runway passes (motion.ts, 2).
+import FormCard from './FormCard.astro';
+import HeroTopBanner from '../HeroTopBanner.astro';
+import Keep from '../Keep.astro';
+import Picture from '../Picture.astro';
+import TimeBlock from '../TimeBlock.astro';
+import type { SharedView, ViewOf } from '../../lib/content';
+interface Props { view: ViewOf<'hero-event'>; shared: SharedView }
+const { view, shared } = Astro.props;
+---
+<section class="section_hero-event theme-inverse" data-hero>
+  <div class="hero_layout">
+    <div class="hero_media">
+      <Picture class="hero_image" wide={view.wide} tall={view.tall} alt={view.imageAlt} sizes="100vw" priority data={{ 'data-hero-image': '' }} />
+    </div>
+    <div class="hero_panel">
+      <HeroTopBanner shared={shared} />
+      <div class="hero_content">
+        <p class="text-style-eyebrow text-color-secondary">{view.eyebrow}</p>
+        <h1><Keep text={view.heading} /></h1>
+        <div class="hero_details">
+          {view.details.map((detail) => <p class="text-size-large">{detail.text}</p>)}
+        </div>
+        <TimeBlock block={view.timeBlock} />
+        <p class="text-size-large text-color-secondary">{view.body}</p>
+      </div>
+      {view.form && <FormCard view={view.form} />}
+    </div>
+    <div class="hero_runway" aria-hidden="true" data-hero-runway></div>
+  </div>
+</section>

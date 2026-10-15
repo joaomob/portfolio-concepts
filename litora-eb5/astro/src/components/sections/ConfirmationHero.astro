@@ -1,0 +1,34 @@
+---
+// The first screen of the thank you pages: the same panel as the event hero, still, with the calendar file to save.
+import ButtonLabel from '../ButtonLabel.astro';
+import HeroTopBanner from '../HeroTopBanner.astro';
+import Keep from '../Keep.astro';
+import Picture from '../Picture.astro';
+import TimeBlock from '../TimeBlock.astro';
+import type { SharedView, ViewOf } from '../../lib/content';
+interface Props { view: ViewOf<'confirmation-hero'>; shared: SharedView }
+const { view, shared } = Astro.props;
+---
+<section class="section_confirmation-hero theme-inverse" data-hero>
+  <div class="hero_layout is-static">
+    <div class="hero_media">
+      <Picture class="hero_image" wide={view.wide} tall={view.tall} alt={view.imageAlt} sizes="100vw" priority />
+    </div>
+    <div class="hero_panel">
+      <HeroTopBanner shared={shared} />
+      <div class="hero_content">
+        <h1><Keep text={view.heading} /></h1>
+        {view.details.length > 0 && (
+          <div class="hero_details">
+            {view.details.map((detail) => <p class="text-size-large">{detail.text}</p>)}
+          </div>
+        )}
+        <TimeBlock block={view.timeBlock} />
+        {view.body && <p class="text-size-large text-color-secondary">{view.body}</p>}
+        {view.calendar && view.calendarHref && (
+          <div class="hero_actions"><a class="button" href={view.calendarHref} download={view.calendar.fileName}><ButtonLabel label={view.calendar.buttonLabel} /></a></div>
+        )}
+      </div>
+    </div>
+  </div>
+</section>

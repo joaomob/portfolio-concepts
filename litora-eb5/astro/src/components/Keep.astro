@@ -1,0 +1,7 @@
+---
+// A heading text with "EB-5" kept on one line (see keepTerms in src/lib/content.ts).
+import { keepTerms } from '../lib/content';
+interface Props { text: string }
+const parts = keepTerms(Astro.props.text);
+---
+{parts.map((part) => (part.keep ? <span class="text-style-nowrap">{part.text}</span> : part.text))}
