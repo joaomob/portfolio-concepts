@@ -1,0 +1,53 @@
+// "My stay", shown once a member signs in: tables at Aljub, requests, what they saved, the members' rate and their
+// preferences. The saved list is filled by the site script from the names and addresses written here.
+import { page } from '@/lib/paths';
+import { rooms } from '@astro/data/rooms';
+import { experiences } from '@astro/data/experiences';
+import MemberPreferences from './MemberPreferences';
+
+export default function MemberStay() {
+  const REQUESTS: [contact: string, label: string][] = [
+    ['Spa treatment', 'Book a treatment'],
+    ['Rooftop table', 'Book a rooftop table'],
+    ['Experience', 'Request an experience'],
+  ];
+  const savedNames = JSON.stringify(Object.fromEntries([
+    ...rooms.map((room) => [`room:${room.slug}`, [room.name, page(`room-${room.slug}`)]]),
+    ...experiences.map((exp) => [`experience:${exp.slug}`, [exp.name, page(`experience-${exp.slug}`)]]),
+  ]));
+  return (
+    <>
+<section className="member_in_wrap u-theme-light u-background-2" aria-labelledby="stay-title" data-member-in="" data-visible="false">
+  <div className="member_in_contain u-container">
+    <div className="member_in_head">
+      <p className="eyebrow_text">My stay</p>
+      <h1 className="member_in_title u-text-style-h1" id="stay-title">Welcome back, <span data-member-name="">guest</span></h1>
+      <button type="button" className="member_link_button" data-member-signout="">Sign out</button>
+    </div>
+    <div className="member_grid_layout">
+      <section className="member_card_wrap" aria-labelledby="tables-title">
+        <h2 className="member_card_title u-text-style-h3" id="tables-title">Your tables at Aljub</h2>
+        <p className="member_card_text">No tables booked. <button type="button" className="member_link_button" data-modal-open="table-modal">Book a table.</button></p>
+      </section>
+      <section className="member_card_wrap is-wide is-row" aria-labelledby="requests-title">
+        <h2 className="member_card_title u-text-style-h3" id="requests-title">Requests</h2>
+        <p className="member_card_text">Ask for a treatment, a table on the roof or an experience. We confirm within the day.</p>
+        <ul className="member_link_list">{REQUESTS.map(([contact, label]) => <li><button type="button" className="member_link_button" data-modal-open="contact-modal" data-contact={contact}>{label}</button></li>)}</ul>
+      </section>
+      <section className="member_card_wrap" aria-labelledby="saved-title">
+        <h2 className="member_card_title u-text-style-h3" id="saved-title">Saved</h2>
+        <p className="member_card_text" data-saved-empty="">Nothing saved yet. Tap Save on a room or experience to keep it here.</p>
+        <ul className="member_link_list" data-saved-list="" data-names={savedNames}></ul>
+      </section>
+      <section className="member_card_wrap" aria-labelledby="rate-title">
+        <h2 className="member_card_title u-text-style-h3" id="rate-title">Your members' rate</h2>
+        <p className="member_card_text">Members save 10% on every room, all year.</p>
+        <ul className="member_link_list"><li><a className="member_link_button" href={page('offer-members-rate')}>See what's included</a></li></ul>
+      </section>
+      <MemberPreferences />
+    </div>
+  </div>
+</section>
+    </>
+  );
+}

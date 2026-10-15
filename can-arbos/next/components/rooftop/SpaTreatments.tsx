@@ -1,0 +1,29 @@
+// The spa in the old cellar and its four treatments, each with its own booking button.
+import Button from '@/components/ui/Button';
+import { img } from '@/lib/paths';
+import { TREATMENTS } from '@astro/data/rooftop';
+
+export default function SpaTreatments() {
+  return (
+    <>
+<section className="spa_page_wrap u-section u-theme-light u-background-2" aria-labelledby="spa-title">
+  <div className="spa_page_contain u-container">
+    <div className="spa_page_layout">
+      <img {...img("rooftop/spa-steam-room.webp", 900)} className="spa_page_image is-arch" alt="A small steam room with stone benches under a vaulted ceiling, lit from a niche" width="900" height="1117" loading="lazy" />
+      <div className="spa_page_content">
+        <h2 className="spa_page_title u-text-style-h2" id="spa-title">A small hotel spa in the old cellar</h2>
+        <p className="spa_page_text">Two treatment rooms and a steam room sit under the house, where it stays cool all year. Each treatment comes with 30 minutes in the steam room, kept for you alone.</p>
+        <ul className="fact_line_list"><li>10:00 to 20:00, every day</li></ul>
+        <ul className="treatment_list_wrap">
+          {TREATMENTS.map((treatment) => (
+            <li className="treatment_list_item"><h3 className="treatment_list_name u-text-style-h4">{treatment.name}</h3><p className="treatment_list_length">{treatment.length}</p><p className="treatment_list_price u-text-style-h4">{treatment.price}</p><Button label="Book" variant="secondary" modal="contact-modal" data-contact="Spa treatment" data-contact-detail={treatment.name} aria-label={`Book: ${treatment.name}`} /></li>
+          ))}
+        </ul>
+        <p className="spa_page_note">Book at reception or from My stay. Tell us about injuries or pregnancy when you book.</p>
+      </div>
+    </div>
+  </div>
+</section>
+    </>
+  );
+}

@@ -4,7 +4,7 @@
 export const SITE = 'https://joaomob.com';
 export const ASSETS = '/concepts/can-arbos/assets/';
 
-/** The responsive attributes of a photo, as the prototype's build gave them (scripts/build-pages.py, responsive()). */
+/** The responsive attributes of a photo, as the prototype's build gave them. */
 export interface ImageAttrs {
   src: string;
   srcset?: string;

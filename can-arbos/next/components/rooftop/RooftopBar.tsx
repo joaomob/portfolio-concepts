@@ -1,0 +1,22 @@
+// The rooftop bar, open until 23:00.
+import Button from '@/components/ui/Button';
+import { img } from '@/lib/paths';
+
+export default function RooftopBar() {
+  return (
+    <>
+<section className="bar_page_wrap u-section u-theme-dark" aria-labelledby="bar-title">
+  <div className="bar_page_contain u-container">
+    <div className="split_block_layout is-reverse">
+      <img {...img("rooftop/bar-sunset.webp", 900)} className="split_block_image" alt="Two glasses of rosé and a plate of olives on a wooden bar under a pergola, with tiled roofs and church towers at sunset" width="900" height="1117" loading="lazy" />
+      <div className="split_block_content">
+        <h2 className="split_block_title u-text-style-h2" id="bar-title">The rooftop bar, open until 23:00</h2>
+        <p className="split_block_text">The bar serves Mallorcan wine by the glass, vermouth, and small plates from Aljub's kitchen until 22:30, Tuesday to Saturday. On Sunday and Monday it serves drinks only. At sunset the roofs of La Calatrava turn orange. That's when the bar fills up, so book a table before you come up. Hotel guests and members can book one from My stay.</p>
+        <div className="u-button-wrapper"><Button label="Book a rooftop table" modal="contact-modal" data-contact="Rooftop table" /></div>
+      </div>
+    </div>
+  </div>
+</section>
+    </>
+  );
+}
