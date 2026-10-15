@@ -1,0 +1,22 @@
+---
+// What the line is, in a few sentences whose words light up with the scroll.
+import type { Line } from '../../lib/types';
+import { tie } from '../../lib/text';
+
+interface Props {
+  line: Line;
+}
+const { line } = Astro.props;
+---
+<section class="section_collection-intro">
+  <div class="padding-global">
+    <div class="container-large">
+      <div class="padding-section-large">
+        <div class="collection-intro_layout">
+          <p class="text-style-label">The collection</p>
+          <h2 class="collection-intro_text heading-style-h2" data-words>{tie(line.intro)}</h2>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

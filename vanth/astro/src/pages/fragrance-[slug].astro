@@ -1,0 +1,13 @@
+---
+// The fragrances of the other seven lines, one page each (fragrance-riot, fragrance-lacquer...).
+import type { GetStaticPaths } from 'astro';
+import FragrancePage from '../components/templates/FragrancePage.astro';
+import { lines } from '../lib/catalog';
+import { fragranceView, type FragranceView } from '../lib/fragrance';
+
+export const getStaticPaths = (() =>
+  lines.filter((line) => line.slug !== 'iron-court').map((line) => ({ params: { slug: line.slug }, props: { view: fragranceView(line) } }))) satisfies GetStaticPaths;
+
+const { view } = Astro.props as { view: FragranceView };
+---
+<FragrancePage view={view} />

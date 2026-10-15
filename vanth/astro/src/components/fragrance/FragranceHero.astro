@@ -1,0 +1,28 @@
+---
+// The opening screen of a fragrance: the photograph of it in use, its name, one line about it, the price and the buy
+// block, with a link down to the notes.
+import Photo from '../shared/Photo.astro';
+import BuyBlock from '../shared/BuyBlock.astro';
+import type { FragranceView } from '../../lib/fragrance';
+import { tie } from '../../lib/text';
+
+interface Props {
+  view: FragranceView;
+}
+const { view } = Astro.props;
+---
+<section class="section_fragrance-hero" data-fragrance-hero>
+  <div class:list={['fragrance-hero_photo', { 'is-portrait': view.hero.portrait }]}><Photo name={view.hero.image} frame="hero" fetchpriority="high" alt={view.hero.alt} /></div>
+  <div class="fragrance-hero_content padding-global">
+    <span class="hero_tag text-style-label">{view.hero.tag}</span>
+    <h1 class="fragrance-hero_title">{view.name}</h1>
+    <div class="fragrance-hero_row">
+      <p class="fragrance-hero_lead">{tie(view.lead)}</p>
+      <div class="fragrance-hero_buy">
+        <span class="fragrance-hero_price">{view.price}</span>
+        <BuyBlock id={`fragrance-${view.line.slug}`} name={`${view.name}, eau de parfum`} price={view.price} image={view.bottle.image} page={view.page} />
+        <a href="#notes" class="fragrance-hero_more text-style-label">See the notes</a>
+      </div>
+    </div>
+  </div>
+</section>

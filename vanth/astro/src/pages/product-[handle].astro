@@ -1,0 +1,13 @@
+---
+// One page per piece that can be bought: product-riot-pinned-tartan and the others.
+import type { GetStaticPaths } from 'astro';
+import ProductPage from '../components/templates/ProductPage.astro';
+import { allProducts } from '../lib/catalog';
+import type { Line, Product } from '../lib/types';
+
+export const getStaticPaths = (() =>
+  allProducts().map(({ line, product, others }) => ({ params: { handle: `${line.slug}-${product.id}` }, props: { line, product, others } }))) satisfies GetStaticPaths;
+
+const { line, product, others } = Astro.props as { line: Line; product: Product; others: Product[] };
+---
+<ProductPage line={line} product={product} others={others} />

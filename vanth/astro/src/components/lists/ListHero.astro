@@ -1,0 +1,20 @@
+---
+// The opening of a list page: a small label, the title and one line on what the list holds.
+import { tie } from '../../lib/text';
+
+interface Props {
+  label: string;
+  heading: string;
+  lead: string;
+}
+const { label, heading, lead } = Astro.props;
+---
+<section class="section_list-hero">
+  <div class="padding-global">
+    <div class="container-large">
+      <p class="text-style-label">{label}</p>
+      <h1 class="list-hero_title">{heading}</h1>
+      <p class="list-hero_lead">{tie(lead)}</p>
+    </div>
+  </div>
+</section>

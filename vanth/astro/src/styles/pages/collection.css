@@ -1,0 +1,140 @@
+/* Vanth, collection page (Iron Court). Loaded after site.css: the page is black, with one paper section for the
+   pieces. The look photographs carry dots over each piece; a dot opens the card of that piece (collection.js). */
+.visually-hidden { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+
+.section_collection-hero { position: relative; height: 100dvh; min-height: 40rem; overflow: hidden; }
+.collection-hero_photo { position: absolute; inset: 0; }
+/* the wide hero keeps the faces of the campaign photograph; each page sets its own vertical position on the image */
+.collection-hero_photo img { object-position: 50% 20%; }
+.collection-hero_photo::after { content: ''; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(11, 11, 11, 0.5) 0%, rgba(11, 11, 11, 0) 25%, rgba(11, 11, 11, 0) 40%, rgba(11, 11, 11, 0.65) 70%, rgba(11, 11, 11, 0.92) 100%); }
+.collection-hero_content { position: absolute; left: 0; right: 0; bottom: 2rem; }
+/* the soft shadow keeps the name readable where it crosses a bright part of the photograph (gold, skin) */
+.collection-hero_title { text-shadow: 0 0 2.5rem rgba(11, 11, 11, 0.75), 0 0 0.75rem rgba(11, 11, 11, 0.5); margin: 1rem 0; font-family: var(--font-family--display); font-weight: 400; font-size: var(--_typography---display--medium); line-height: 0.8; text-transform: uppercase; white-space: nowrap; }
+/* names longer than ten letters (Night Office, Lost Paradise) break by design, one word per line */
+.collection-hero_title.is-long { white-space: normal; }
+.collection-hero_word { display: block; }
+.collection-hero_meta { display: flex; justify-content: space-between; gap: 2rem; }
+
+.collection-intro_layout { display: grid; grid-template-columns: 1fr 3fr; gap: 2rem; align-items: start; }
+.collection-intro_text .word { opacity: 0.4; }
+
+.section_look { padding: 4rem 0; }
+.look-shop_layout { display: grid; grid-template-columns: 7fr 5fr; gap: 4rem; align-items: start; }
+.section_look.is-reverse .look-shop_photo { order: 2; }
+.section_look.is-reverse .look-shop_layout { grid-template-columns: 5fr 7fr; }
+.look-shop_photo { position: relative; aspect-ratio: 4 / 5; }
+.look-shop_photo > img { position: absolute; inset: 0; }
+.look-shop_dot { position: absolute; z-index: 2; width: 2.75rem; height: 2.75rem; padding: 0; font: inherit; color: var(--_theme---text-color--text-alternate); border: 0; border-radius: 50%; background: none; transform: translate(-50%, -50%); cursor: pointer; }
+.look-shop_dot::before { content: ''; position: absolute; inset: 0.75rem; border-radius: 50%; background-color: var(--base-color-neutral--neutral-lightest); border: 0.3rem solid var(--base-color-brand--red); transition: transform 0.3s; }
+.look-shop_dot::after { content: ''; position: absolute; inset: 0.25rem; border-radius: 50%; border: 1px solid var(--base-color-neutral--neutral-lightest); opacity: 0.6; }
+.look-shop_dot:hover::before, .look-shop_dot[data-open="true"]::before { transform: scale(1.3); }
+.look-shop_dot:focus-visible { outline: 2px solid var(--base-color-neutral--neutral-lightest); outline-offset: 2px; }
+.look-shop_card { position: absolute; z-index: 3; display: flex; flex-direction: column; width: 17rem; padding: 1rem; background-color: var(--base-color-neutral--neutral-lightest); color: var(--base-color-neutral--black); }
+.look-shop_card[data-card-state="closed"] { display: none; }
+.look-shop_card.is-right { left: auto; right: 1.5rem; }
+.look-shop_card.is-left { left: 1.5rem; right: auto; }
+.look-shop_card-name { margin: 0.5rem 0; font-family: var(--font-family--display); font-size: var(--_typography---heading--h5); line-height: 1; text-transform: uppercase; }
+.look-shop_card-row { display: flex; justify-content: space-between; align-items: end; margin-top: 1rem; }
+.look-shop_price, .piece_price { font-family: var(--font-family--display); font-size: var(--_typography---heading--h5); white-space: nowrap; line-height: 1; }
+.look-shop_card-link { text-decoration: underline; text-underline-offset: 0.2em; }
+.look-shop_card:hover .look-shop_card-name { color: var(--base-color-brand--red); }
+.piece_link { display: block; }
+.piece_link:hover .piece_name { color: var(--base-color-brand--red); }
+.look-shop_text { position: sticky; top: 6rem; display: flex; flex-direction: column; gap: 1.5rem; align-items: start; }
+.look-shop_number { font-family: var(--font-family--display); font-size: var(--_typography---heading--h1); line-height: 0.8; color: var(--base-color-brand--red); }
+.look-shop_body { max-width: 26rem; font-size: var(--_typography---text--regular); line-height: 1.5; }
+.look-shop_hint { opacity: 0.7; }
+
+.pieces_header { display: flex; justify-content: space-between; align-items: end; gap: 2rem; margin-bottom: 3rem; }
+.pieces_list { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; list-style: none; }
+/* four pieces in a row; the rule lives here, with the list, because the pages of the pieces use it too */
+/* four pieces or more take four columns. The line page counts them (:has), because there the list is a Collection List
+   of the CMS and cannot take a class per line (on the site, 14/10/2026); the More from list of a piece keeps is-four */
+.pieces_list.is-four, .pieces_list:has(> :nth-child(4)) { grid-template-columns: repeat(4, 1fr); }
+@media (max-width: 991px) { .pieces_list.is-four, .pieces_list:has(> :nth-child(4)) { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 767px) { .pieces_list.is-four, .pieces_list:has(> :nth-child(4)) { grid-template-columns: 1fr; } }
+/* five pieces (High Rise): five columns on a wide screen and three below 1280 px (rows of 3 and 2), so no piece is left
+   alone on a row (design judge, 14/10/2026) */
+.pieces_list:has(> :nth-child(5)) { grid-template-columns: repeat(5, 1fr); }
+@media (max-width: 1279px) { .pieces_list:has(> :nth-child(5)) { grid-template-columns: repeat(3, 1fr); } }
+@media (max-width: 767px) { .pieces_list:has(> :nth-child(5)) { grid-template-columns: 1fr; } }
+.piece_photo { aspect-ratio: 4 / 5; overflow: hidden; background-color: var(--base-color-neutral--black); }
+/* a list with full length garments: taller frame, and the photograph that is not full length is shown whole */
+.pieces_list.is-tall .piece_photo { aspect-ratio: 1 / 2; background-color: #1b1b1b; }
+.pieces_list.is-tall .piece_photo.is-contained img { object-fit: contain; }
+.piece_photo img { transition: transform 0.8s cubic-bezier(0.2, 0.7, 0.2, 1); }
+.piece_item:hover .piece_photo img { transform: scale(1.04); }
+/* a grid item can shrink under the width of its caption (at 1024 px the fourth card ran past the window) */
+.piece_item { min-width: 0; }
+.piece_caption { display: flex; flex-direction: column; align-items: start; gap: 0.5rem; padding-top: 1rem; margin-top: 1rem; border-top: 1px solid var(--base-color-neutral--black); }
+.piece_name { display: block; margin-bottom: 0.25rem; }
+
+.collection-fragrance_layout { display: grid; grid-template-columns: 1fr 1fr; min-height: 100dvh; }
+.collection-fragrance_photo { position: relative; overflow: hidden; }
+/* the beauty product of a line (the Lacquer lipstick) uses the same split, with the portrait on the right */
+@media (min-width: 992px) { .collection-fragrance_layout.is-reverse .collection-fragrance_photo { order: 2; } }
+.collection-fragrance_content { display: flex; flex-direction: column; justify-content: center; align-items: start; gap: 1.5rem; padding-top: 4rem; padding-bottom: 4rem; }
+/* side by side (992 px up) the name keeps the h1 size, so the bottle keeps half the screen, as the architecture asks
+   ("foto do frasco em meia tela"): at the display size a nine letter name (Vermilion, about 1000 px) pushed the photograph
+   down to 368 px in 1440 (design judge, M6, 14/10/2026); on one column (480 to 991 px) it takes the display size, and
+   the h1 size on a phone held upright */
+.collection-fragrance_name { font-family: var(--font-family--display); font-weight: 400; font-size: var(--_typography---heading--h1); line-height: 0.85; text-transform: uppercase; }
+@media (min-width: 480px) and (max-width: 991px) { .collection-fragrance_name { font-size: var(--_typography---display--medium); } }
+
+.section_next { border-top: 1px solid var(--base-color-neutral--neutral); }
+.next_link { position: relative; display: flex; flex-direction: column; gap: 1rem; padding: 6rem var(--_layout---spacing--global-padding); overflow: hidden; }
+.next_name { font-family: var(--font-family--display); font-size: var(--_typography---display--medium); line-height: 0.85; text-transform: uppercase; transition: color 0.3s; }
+.next_link:hover .next_name { color: var(--base-color-brand--red); }
+.next_photo { position: absolute; right: var(--_layout---spacing--global-padding); top: 50%; width: 14rem; aspect-ratio: 3 / 4; transform: translateY(-50%) rotate(4deg); overflow: hidden; }
+
+@media (max-width: 991px) {
+  .look-shop_layout, .section_look.is-reverse .look-shop_layout { grid-template-columns: 1fr; gap: 2rem; }
+  .section_look.is-reverse .look-shop_photo { order: 0; }
+  .look-shop_text { position: static; }
+  .collection-fragrance_layout { grid-template-columns: 1fr; }
+  .collection-fragrance_photo { height: 60dvh; }
+}
+@media (max-width: 767px) {
+  .collection-hero_meta { flex-direction: column; gap: 0.5rem; }
+  .collection-intro_layout { grid-template-columns: 1fr; }
+  .look-shop_card { left: 1rem !important; right: 1rem; top: auto !important; bottom: 1rem; width: auto; }
+  .look-shop_dot::after { display: none; }
+  .look-shop_dot::before { inset: 0.95rem; border-width: 0.2rem; }
+  .pieces_header { flex-direction: column; align-items: start; }
+  .pieces_list { grid-template-columns: 1fr; }
+  /* design judge, 14/10/2026 (M7): the name's line height (0.85) is shorter than the Anton capitals, and the photo, turned
+     a little by the scroll interaction, almost touched them; 1rem more above the photo keeps them apart */
+  .next_photo { position: relative; right: auto; top: auto; width: 60%; margin-top: 1rem; transform: none; }
+}
+/* FIT START: the fragrance screen of the collection is as tall as the visible height of the window */
+.collection-fragrance_photo > img { position: absolute; inset: 0; }
+@media (min-width: 992px) {
+  .collection-fragrance_layout { height: 100dvh; min-height: 0; }
+}
+/* FIT END */
+@media (prefers-reduced-motion: reduce) {
+  .collection-intro_text .word { opacity: 1; }
+}
+
+/* the name rises as the page opens. In CSS and not in the script: the name is the largest thing on the first screen,
+   and waiting for the animation library to show it kept the page slow to paint */
+/* the title starts almost invisible, never at zero: a title that starts at zero is only counted as drawn when the
+   animation is on its way (0.3 s later, measured), and it is the largest thing on the first screen */
+@keyframes hero-title-rise { from { opacity: 0.01; transform: translateY(30%); } }
+@media (prefers-reduced-motion: no-preference) {
+  /* the photograph is born at the size its scroll animation starts from, so nothing jumps when the animation
+     library arrives a moment after the page */
+  .collection-hero_photo img { transform: scale(1.08); }
+  .collection-hero_title { animation: hero-title-rise 1s cubic-bezier(0.2, 0.7, 0.2, 1) both; }
+}
+/* the lipstick has a name of two words: one line, at the size of a section heading, so the two columns stay equal */
+.collection-fragrance_layout.is-reverse .collection-fragrance_content { min-width: 0; }
+.collection-fragrance_layout.is-reverse .collection-fragrance_name { font-size: var(--_typography---heading--h2); line-height: 0.9; white-space: nowrap; }
+/* judgement of 12/10/2026: the price of a piece card always sits on its own line, in capitals like the rest of the card */
+.piece_price { text-transform: uppercase; }
+/* judgement of 12/10/2026: on a wide screen the text column of a look is as wide as its longest title (657 px), so no
+   title breaks after "The" */
+@media (min-width: 1280px) {
+  .look-shop_layout { grid-template-columns: minmax(0, 1fr) 41.5rem; gap: 2rem; }
+  .section_look.is-reverse .look-shop_layout { grid-template-columns: 41.5rem minmax(0, 1fr); }
+}

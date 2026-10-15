@@ -1,0 +1,41 @@
+---
+// The page of one fragrance: the opening photograph with the buy block, the three notes, the ritual, the facts of the
+// bottle and the way back to its line.
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import '../../styles/pages/collection.css';
+import '../../styles/pages/spots.css';
+import '../../styles/pages/fragrance.css';
+import FragranceHero from '../fragrance/FragranceHero.astro';
+import FragranceNotes from '../fragrance/FragranceNotes.astro';
+import Ritual from '../fragrance/Ritual.astro';
+import Facts from '../shared/Facts.astro';
+import NextLink from '../shared/NextLink.astro';
+import type { FragranceView } from '../../lib/fragrance';
+import { href } from '../../config';
+
+interface Props {
+  view: FragranceView;
+}
+const { view } = Astro.props;
+---
+<BaseLayout title={view.title} description={view.description} page={view.page} current="fragrances" motion>
+  <FragranceHero view={view} />
+  <FragranceNotes view={view} />
+  <Ritual view={view} />
+  <section class="section_facts background-color-paper">
+    <div class="padding-global">
+      <div class="container-large">
+        <div class="padding-section-large">
+          <Facts facts={[['Bottle', view.material], ['Concentration', 'Eau de parfum'], ['Size', '50 ml']]} />
+        </div>
+      </div>
+    </div>
+  </section>
+  <NextLink href={href(view.next.page)} label={view.next.label} name={view.next.name} image={view.next.image} alt={view.next.alt} />
+  <Fragment slot="scripts">
+    <script>
+      import { initFragrance } from '../../scripts/fragrance';
+      initFragrance();
+    </script>
+  </Fragment>
+</BaseLayout>

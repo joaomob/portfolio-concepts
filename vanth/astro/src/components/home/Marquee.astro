@@ -1,0 +1,10 @@
+---
+// Two rows of giant type with the names of the lines, running in opposite directions at the speed of the scroll.
+import { marquee } from '../../data/home';
+
+const row = (names: string[]) => names.map((name) => `${name} &nbsp;`).join(' ');
+---
+<section class="section_marquee" data-marquee>
+  <div class="marquee_row" aria-hidden="true" data-marquee-row="-1" set:html={row(marquee.first)} />
+  <div class="marquee_row is-outline" aria-hidden="true" data-marquee-row="1" set:html={row(marquee.second)} />
+</section>

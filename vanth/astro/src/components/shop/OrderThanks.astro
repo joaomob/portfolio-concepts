@@ -1,0 +1,10 @@
+---
+// The dialog that confirms the test order, with its number and total (src/scripts/bag.ts fills both in).
+---
+<dialog class="size-guide order-thanks" aria-labelledby="order-thanks-title" data-order-thanks>
+  <p class="text-style-label">Order <span data-order-number></span></p>
+  <h2 class="heading-style-h2" id="order-thanks-title">Thank you.</h2>
+  <p class="size-guide_note">Your test order is confirmed. Nothing was charged and nothing will be sent.</p>
+  <p class="size-guide_note">Total <span data-order-total></span></p>
+  <form method="dialog" data-wf-custom><button type="submit" class="button">Back to the house</button></form>
+</dialog>

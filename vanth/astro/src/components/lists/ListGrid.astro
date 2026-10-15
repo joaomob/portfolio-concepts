@@ -1,0 +1,31 @@
+---
+// The cards of a list page, one per line of the season. The first card is the largest thing on a phone screen, so it
+// loads first; the others load as they come near.
+import Photo from '../shared/Photo.astro';
+import { tie } from '../../lib/text';
+
+export interface ListCard {
+  href: string;
+  image: string;
+  alt: string;
+  number: string;
+  name: string;
+  tag: string;
+  meta: string;
+}
+interface Props {
+  cards: ListCard[];
+}
+const { cards } = Astro.props;
+---
+<section class="section_list">
+  <div class="padding-global">
+    <div class="container-large">
+      <ul class="list_grid" role="list">
+        {cards.map((card, i) => (
+          <li class="list_item"><a href={card.href} class="list_link"><div class="list_photo" data-list-photo><Photo name={card.image} frame="list" fetchpriority={i === 0 ? 'high' : undefined} loading={i === 0 ? undefined : 'lazy'} alt={card.alt} /></div><div class="list_caption"><span class="list_number" aria-hidden="true">{card.number}</span><span class="list_text"><span class="list_name heading-style-h2">{card.name}</span><span class="text-style-label">{tie(card.tag)}</span><span class="text-style-label list_meta">{tie(card.meta)}</span></span></div></a></li>
+        ))}
+      </ul>
+    </div>
+  </div>
+</section>

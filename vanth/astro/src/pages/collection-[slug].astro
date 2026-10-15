@@ -1,0 +1,13 @@
+---
+// The other seven lines of the season, one page each (collection-riot, collection-lacquer...).
+import type { GetStaticPaths } from 'astro';
+import CollectionPage from '../components/templates/CollectionPage.astro';
+import { lines } from '../lib/catalog';
+import type { Line } from '../lib/types';
+
+export const getStaticPaths = (() =>
+  lines.filter((line) => line.slug !== 'iron-court').map((line) => ({ params: { slug: line.slug }, props: { line } }))) satisfies GetStaticPaths;
+
+const { line } = Astro.props as { line: Line };
+---
+<CollectionPage line={line} />

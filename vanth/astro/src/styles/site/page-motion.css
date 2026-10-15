@@ -1,0 +1,25 @@
+/* smooth scroll by Lenis (the script in every page): the classes it sets on the html */
+html.lenis, html.lenis body { height: auto; }
+.lenis.lenis-smooth { scroll-behavior: auto !important; }
+.lenis.lenis-smooth [data-lenis-prevent] { overscroll-behavior: contain; }
+.lenis.lenis-stopped { overflow: clip; }
+.lenis.lenis-smooth iframe { pointer-events: none; }
+/* page to page: the browser cross-fades the two pages instead of a blank frame between them; a photo that is still
+   loading leaves its frame breathing in the dark of the page, and a photo below the first screen fades in when it
+   arrives (João, 15/10/2026: the flicker of the large photos from one page to the other and in the cards); the frame
+   classes come from the img-wait script in every page */
+@media (prefers-reduced-motion: no-preference) {
+  @view-transition { navigation: auto; }
+  /* only a frame on the screen or near it breathes; one further down holds the first colour of the breath, so the
+     page is not repainted on every frame for photos nobody sees (15/10/2026, João: "A gente não vai mudar o design.
+     A gente vai otimizar código"; scroll of the Home, 375: style 285 to 26 ms, paints 676 to 184) */
+  .is-img-wait { background-color: color-mix(in srgb, var(--base-color-neutral--black), white 5%); }
+  .is-img-wait.is-img-pulse { animation: img-wait 1.4s ease-in-out infinite; }
+  img.is-img-fade { opacity: 0; }
+  img.is-img-in { transition: opacity 0.5s ease; }
+}
+@keyframes img-wait {
+  0%, 100% { background-color: color-mix(in srgb, var(--base-color-neutral--black), white 5%); }
+  50% { background-color: color-mix(in srgb, var(--base-color-neutral--black), white 11%); }
+}
+@media (prefers-reduced-motion: reduce) { .is-img-wait { background-color: color-mix(in srgb, var(--base-color-neutral--black), white 7%); } }

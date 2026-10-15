@@ -1,0 +1,36 @@
+---
+// The Home: the season in one scroll, from the campaign to the departments.
+import BaseLayout from '../layouts/BaseLayout.astro';
+import '../styles/pages/collection.css';
+import '../styles/pages/home.css';
+import HomeHero from '../components/home/HomeHero.astro';
+import Manifesto from '../components/home/Manifesto.astro';
+import LinesTrack from '../components/home/LinesTrack.astro';
+import Marquee from '../components/home/Marquee.astro';
+import SelectedPieces from '../components/home/SelectedPieces.astro';
+import FragranceTeaser from '../components/home/FragranceTeaser.astro';
+import Lookbook from '../components/home/Lookbook.astro';
+import Departments from '../components/home/Departments.astro';
+---
+<BaseLayout
+  title="Vanth | Couture, accessories and fragrance"
+  description="Vanth is a concept couture house from Berlin, for the ones who dress after dark. Eight lines of clothing, shoes, accessories and fragrance for Autumn Winter 2026."
+  page=""
+  current="home"
+  motion
+>
+  <HomeHero />
+  <Manifesto />
+  <LinesTrack />
+  <Marquee />
+  <SelectedPieces />
+  <FragranceTeaser />
+  <Lookbook />
+  <Departments />
+  <Fragment slot="scripts">
+    <script>
+      import { initHome } from '../scripts/home';
+      initHome();
+    </script>
+  </Fragment>
+</BaseLayout>

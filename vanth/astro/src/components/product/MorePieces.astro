@@ -1,0 +1,37 @@
+---
+// Four more pieces of the same line. A piece with no photograph of its own shows its look, drawn closer around its dot.
+import Photo from '../shared/Photo.astro';
+import type { Line, Product } from '../../lib/types';
+import { collectionPage, productPage } from '../../lib/catalog';
+import { tie } from '../../lib/text';
+import { href } from '../../config';
+
+interface Props {
+  line: Line;
+  others: Product[];
+}
+const { line, others } = Astro.props;
+const cards = others.slice(0, 4).map((other) => {
+  const own = other.photo ?? other.piece;
+  return own
+    ? { other, own: true, image: own.image, alt: own.alt, origin: undefined }
+    : { other, own: false, image: other.look!.image, alt: other.look!.alt, origin: `${other.dot!.left} ${other.dot!.top}` };
+});
+---
+<section class="section_pieces background-color-paper">
+  <div class="padding-global">
+    <div class="container-large">
+      <div class="padding-section-large">
+        <div class="pieces_header">
+          <h2 class="heading-style-h2">More from {line.name}</h2>
+          <a href={href(collectionPage(line))} class="button">See the collection</a>
+        </div>
+        <ul class="pieces_list is-four" role="list">
+          {cards.map((card) => (
+            <li class="piece_item"><a href={href(productPage(line, card.other.id))} class="piece_link"><div class:list={['piece_photo', { 'is-look': !card.own }]}><Photo name={card.image} frame="piece" data-origin={card.origin} loading="lazy" alt={card.alt} /></div><div class="piece_caption"><span><span class="piece_name heading-style-h5">{card.other.name}</span><span class="text-style-label">{tie(card.other.material)}</span></span><span class="piece_price">{card.other.price}</span></div></a></li>
+          ))}
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>

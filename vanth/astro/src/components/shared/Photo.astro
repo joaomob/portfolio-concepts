@@ -1,0 +1,15 @@
+---
+// One photograph: the full file with its width and height, and the smaller copies with the sizes of the frame it sits
+// in, so a phone loads the small one. Any other attribute (loading, fetchpriority, data-focus) passes through.
+import type { HTMLAttributes } from 'astro/types';
+import { source, type Frame } from '../../lib/photos';
+
+interface Props extends Omit<HTMLAttributes<'img'>, 'src'> {
+  name: string;
+  alt: string;
+  frame?: Frame;
+}
+const { name, alt, frame = 'half', ...rest } = Astro.props;
+const photo = source(name, frame);
+---
+<img src={photo.src} srcset={photo.srcset} sizes={photo.sizes} width={photo.width} height={photo.height} {...rest} alt={alt} />

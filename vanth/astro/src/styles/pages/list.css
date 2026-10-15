@@ -1,0 +1,32 @@
+/* Vanth, the two list pages of the menu: all the collections and all the fragrances. Loaded after site.css. */
+.section_list-hero { padding-top: 10rem; padding-bottom: 4rem; overflow: hidden; }
+.list-hero_title { margin: 1rem 0 2rem; font-family: var(--font-family--display); font-weight: 400; font-size: var(--_typography---display--medium); line-height: 0.85; text-transform: uppercase; }
+.list-hero_lead { max-width: 30rem; text-wrap: pretty; }
+
+.section_list { padding-bottom: var(--_layout---section-padding--large); }
+.list_grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 6rem 1.5rem; list-style: none; }
+/* the second column starts lower, so the two columns do not read as a table */
+.list_item:nth-child(even) { margin-top: 8rem; }
+.list_link { display: flex; flex-direction: column; gap: 1.5rem; }
+.list_photo { position: relative; aspect-ratio: 4 / 5; overflow: hidden; background-color: var(--base-color-neutral--neutral); }
+.list_photo img { object-position: 50% 20%; transition: transform 0.8s cubic-bezier(0.2, 0.7, 0.2, 1); }
+.list_link:hover .list_photo img { transform: scale(1.04); }
+.list_caption { display: grid; grid-template-columns: auto 1fr; gap: 1.5rem; align-items: start; padding-top: 1.5rem; border-top: 1px solid var(--base-color-neutral--neutral); }
+.list_number { font-family: var(--font-family--display); font-size: var(--_typography---heading--h2); line-height: 0.95; color: var(--base-color-brand--red); }
+.list_text { display: flex; flex-direction: column; gap: 0.5rem; }
+.list_name { transition: color 0.3s; }
+.list_link:hover .list_name { color: var(--base-color-brand--red); }
+.list_meta { color: var(--base-color-neutral--neutral-lightest); opacity: 0.8; }
+
+@media (prefers-reduced-motion: no-preference) {
+  .list-hero_title { animation: list-title-rise 1s cubic-bezier(0.2, 0.7, 0.2, 1) both; }
+}
+@keyframes list-title-rise { from { opacity: 0; transform: translateY(30%); } }
+
+@media (max-width: 767px) {
+  .section_list-hero { padding-top: 7rem; padding-bottom: 3rem; }
+  .list_grid { grid-template-columns: 1fr; gap: 4rem; }
+  .list_item:nth-child(even) { margin-top: 0; }
+}
+/* judgement of 12/10/2026: on a phone the title of a list uses the page title size, with the side margin kept */
+@media (max-width: 479px) { .list-hero_title { font-size: var(--_typography---heading--h1); } }

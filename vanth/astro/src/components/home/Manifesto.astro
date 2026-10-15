@@ -1,0 +1,14 @@
+---
+// What the house is, in one sentence whose words light up with the scroll.
+import { manifesto } from '../../data/home';
+---
+<section class="section_manifesto">
+  <div class="padding-global">
+    <div class="container-large">
+      <div class="padding-section-large">
+        <p class="text-style-label manifesto_label">{manifesto.label}</p>
+        <h2 class="manifesto_text heading-style-h1" data-manifesto>{manifesto.before}<span class="text-color-brand">{manifesto.accent}</span>{manifesto.after}</h2>
+      </div>
+    </div>
+  </div>
+</section>

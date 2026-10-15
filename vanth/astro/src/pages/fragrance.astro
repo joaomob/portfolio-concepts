@@ -1,0 +1,7 @@
+---
+// Slate, the fragrance of Iron Court (line 01), keeps the first address of the fragrance pages.
+import FragrancePage from '../components/templates/FragrancePage.astro';
+import { lineBySlug } from '../lib/catalog';
+import { fragranceView } from '../lib/fragrance';
+---
+<FragrancePage view={fragranceView(lineBySlug('iron-court'))} />

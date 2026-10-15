@@ -1,0 +1,17 @@
+---
+// Shop by department: four big links, each to where that kind of piece is.
+import { departments } from '../../data/home';
+import { href } from '../../config';
+---
+<section id="departments" class="section_departments">
+  <div class="padding-global">
+    <div class="container-large">
+      <div class="padding-section-large">
+        <p class="text-style-label">Shop by&nbsp;department</p>
+        <ul class="departments_list" role="list">
+          {departments.map((d) => <li class="departments_item"><a href={href(d.page, d.hash)} class="departments_link"><span class="departments_name">{d.name}</span><span class="text-style-label">{d.text}</span></a></li>)}
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>

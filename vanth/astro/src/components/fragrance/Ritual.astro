@@ -1,0 +1,31 @@
+---
+// Two photographs of the fragrance worn, each drifting at its own speed as the page scrolls.
+import Photo from '../shared/Photo.astro';
+import type { FragranceView } from '../../lib/fragrance';
+import { tie } from '../../lib/text';
+
+interface Props {
+  view: FragranceView;
+}
+const { ritual } = Astro.props.view;
+---
+<section class="section_ritual">
+  <div class="padding-global">
+    <div class="container-large">
+      <div class="padding-section-large">
+        <div class="ritual_header">
+          <p class="text-style-label">{ritual.label}</p>
+          <h2 class="ritual_title heading-style-h2" data-words>{ritual.title}</h2>
+        </div>
+        <div class="ritual_layout">
+          {ritual.items.map((item, i) => (
+            <figure class={`ritual_item is-${i + 1}`} data-speed={i === 0 ? '-10' : '10'}>
+              <div class="ritual_photo"><Photo name={item.image} loading="lazy" alt={item.alt} /></div>
+              <div class="ritual_caption"><span class="ritual_number" aria-hidden="true">{String(i + 1).padStart(2, '0')}</span><span><span class="heading-style-h5">{item.title}</span><span class="ritual_text">{tie(item.body)}</span></span></div>
+            </figure>
+          ))}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,20 @@
+/* Vanth, Home on black (approved by João on 10/10/2026 with paper kept for the breathing sections). Loaded after
+   site.css and collection.css; it only holds what the Home changes or adds. */
+.look_caption { border-top-color: currentColor; }
+.look_photo { aspect-ratio: 3 / 4; }
+.marquee_row.is-outline { -webkit-text-stroke-color: var(--base-color-neutral--neutral-lightest); }
+
+.piece_link { display: block; }
+
+.fragrance_note { border-top-color: var(--base-color-neutral--neutral); }
+
+/* departments: four giant names, the line under each grows on hover */
+.departments_list { list-style: none; margin-top: 2rem; }
+.departments_link { position: relative; display: flex; justify-content: space-between; align-items: baseline; gap: 2rem; padding: 1rem 0; border-top: 1px solid var(--base-color-neutral--neutral); transition: color 0.3s, padding-left 0.4s; }
+.departments_item:last-child .departments_link { border-bottom: 1px solid var(--base-color-neutral--neutral); }
+.departments_name { font-family: var(--font-family--display); font-size: var(--_typography---heading--h1); line-height: 0.95; text-transform: uppercase; }
+.departments_link:hover { color: var(--base-color-brand--red); padding-left: 1.5rem; }
+
+@media (max-width: 767px) {
+  .departments_link { flex-direction: column; gap: 0.5rem; }
+}

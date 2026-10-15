@@ -1,0 +1,24 @@
+---
+// The fragrance of a line: its bottle, its notes in one sentence and a link to its page.
+import Photo from '../shared/Photo.astro';
+import type { Line } from '../../lib/types';
+import { fragrancePage } from '../../lib/catalog';
+import { tie } from '../../lib/text';
+import { href } from '../../config';
+
+interface Props {
+  line: Line;
+}
+const { line } = Astro.props;
+---
+<section class="section_collection-fragrance">
+  <div class="collection-fragrance_layout">
+    <div class="collection-fragrance_photo"><Photo name={line.scent.image} loading="lazy" alt={line.scent.alt} /></div>
+    <div class="collection-fragrance_content padding-global">
+      <p class="text-style-label">The fragrance of {line.name}</p>
+      <h2 class="collection-fragrance_name">{line.fragrance}</h2>
+      <p class="look-shop_body">{tie(line.scent.notes)}</p>
+      <a href={href(fragrancePage(line))} class="button is-alternate">See the fragrance</a>
+    </div>
+  </div>
+</section>

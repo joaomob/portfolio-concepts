@@ -1,0 +1,75 @@
+/* Vanth, the page of one piece: the photograph on one half, the name, the price and the button to buy on the other.
+   Loaded after site.css and collection.css. */
+.section_product { overflow: hidden; }
+.product_layout { display: grid; grid-template-columns: 1fr 1fr; min-height: 100dvh; }
+.product_photo { position: relative; min-height: 100dvh; overflow: hidden; background-color: #1b1b1b; }
+.product_photo > img { position: absolute; inset: 0; }
+/* a garment photographed full length shows whole, on the dark of its own studio backdrop */
+.product_photo.is-tall > img { object-fit: contain; padding: 6rem 2rem 2rem; }
+/* a piece without a photograph of its own: the look photograph, drawn closer on the piece */
+.product_photo.is-look > img, .piece_photo.is-look img { transform: scale(1.9); }
+.product_content { display: flex; flex-direction: column; justify-content: center; align-items: start; gap: 1.5rem; padding-top: 8rem; padding-bottom: 4rem; }
+.product_back { text-decoration: underline; text-underline-offset: 0.3em; }
+.product_back:hover { color: var(--base-color-brand--red); }
+/* the price in the text colour: the identity keeps one red accent per screen, and the red of this screen is the buy button
+   (design judge, M9, 14/10/2026; IDENTIDADE.md) */
+.product_price { font-family: var(--font-family--display); font-size: var(--_typography---heading--h3); line-height: 1; }
+.product_lead { max-width: 28rem; text-wrap: pretty; }
+
+.product_sizes { border: 0; padding: 0; margin: 0; }
+.product_sizes legend { margin-bottom: 0.75rem; padding: 0; }
+.product_sizes-row { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+.product_size { position: relative; display: block; cursor: pointer; }
+.product_size input { position: absolute; inset: 0; opacity: 0; cursor: pointer; }
+.product_size span { display: flex; align-items: center; justify-content: center; min-width: 3rem; height: 3rem; padding: 0 0.75rem; border: 1px solid var(--base-color-neutral--neutral); font-family: var(--font-family--mono); font-size: var(--_typography---text--tiny); letter-spacing: 0.08em; transition: background-color 0.2s, color 0.2s, border-color 0.2s; }
+.product_size input:checked + span { background-color: var(--base-color-neutral--neutral-lightest); color: var(--base-color-neutral--black); border-color: var(--base-color-neutral--neutral-lightest); }
+.product_size input:focus-visible + span { outline: 2px solid var(--base-color-brand--red); outline-offset: 2px; }
+/* the country of the size: the same sizes, written in the system the visitor picks */
+.product_systems { display: flex; flex-wrap: wrap; gap: 0.25rem 1rem; margin-bottom: 0.75rem; }
+.product_system { position: relative; display: block; cursor: pointer; }
+.product_system input { position: absolute; inset: 0; opacity: 0; cursor: pointer; }
+.product_system span { display: block; padding: 0.875rem 0; border-bottom: 1px solid transparent; font-family: var(--font-family--mono); font-size: var(--_typography---text--tiny); letter-spacing: 0.08em; opacity: 0.7; }
+/* the chosen country is marked in paper: the red of the screen is the buy button (design judge, M9, 14/10/2026) */
+.product_system input:checked + span { border-bottom-color: var(--base-color-neutral--neutral-lightest); opacity: 1; }
+.product_system input:focus-visible + span { outline: 2px solid var(--base-color-brand--red); outline-offset: 2px; }
+.product_guide-open { margin-top: 1rem; padding: 0.5rem 0; border: 0; background: none; color: inherit; text-decoration: underline; text-underline-offset: 0.3em; cursor: pointer; }
+.product_guide-open:hover { color: var(--base-color-brand--red); }
+
+/* the size guide: a native dialog over the page, with every country and the body measurements of each size */
+.size-guide { width: min(46rem, calc(100vw - 2rem)); max-height: calc(100dvh - 2rem); padding: 2rem; border: 0; background-color: var(--base-color-neutral--neutral-lightest); color: var(--base-color-neutral--black); overflow: auto; }
+.size-guide::backdrop { background-color: rgb(0 0 0 / 0.7); }
+.size-guide_header { display: flex; justify-content: space-between; align-items: center; gap: 1rem; margin-bottom: 1.5rem; }
+.size-guide_close, .size-guide_unit { padding: 0.75rem 1rem; border: 1px solid var(--base-color-neutral--black); background: none; color: inherit; cursor: pointer; }
+.size-guide_units { display: flex; gap: 0.5rem; margin-bottom: 1.5rem; }
+.size-guide_unit[aria-pressed="true"] { background-color: var(--base-color-neutral--black); color: var(--base-color-neutral--neutral-lightest); }
+.size-guide_scroll { overflow-x: auto; }
+/* a table made of blocks (role table, row and cell in the markup): a Webflow paste has no table element */
+.size-guide_table { display: table; width: 100%; border-collapse: collapse; font-family: var(--font-family--mono); font-size: var(--_typography---text--regular); text-align: left; white-space: nowrap; }
+.size-guide_head { display: table-header-group; }
+.size-guide_body { display: table-row-group; }
+.size-guide_row { display: table-row; }
+.size-guide_cell { display: table-cell; padding: 0.75rem 1rem 0.75rem 0; border-bottom: 1px solid rgb(0 0 0 / 0.2); font-weight: 400; }
+.size-guide_cell.is-head { font-size: var(--_typography---text--tiny); letter-spacing: 0.08em; text-transform: uppercase; }
+.size-guide_note { margin-top: 1.5rem; max-width: 34rem; text-wrap: pretty; }
+@media (max-width: 479px) { .size-guide { padding: 1.5rem 1rem; } }
+
+.product_buy { display: flex; flex-direction: column; align-items: start; gap: 0.75rem; }
+.product_status { min-height: 1.4em; }
+
+.section_product-look { padding-top: var(--_layout---section-padding--large); padding-bottom: var(--_layout---section-padding--large); }
+.product-look_layout { display: grid; grid-template-columns: 5fr 7fr; gap: 4rem; align-items: center; }
+.product-look_photo { position: relative; display: block; aspect-ratio: 4 / 5; overflow: hidden; }
+.product-look_text { display: flex; flex-direction: column; align-items: start; gap: 1.5rem; }
+.product-look_body { max-width: 28rem; text-wrap: pretty; }
+
+@media (max-width: 991px) {
+  .product_layout { grid-template-columns: 1fr; min-height: 0; }
+  .product_photo { min-height: 0; height: 70dvh; }
+  .product_content { padding-top: 3rem; }
+  .product-look_layout { grid-template-columns: 1fr; gap: 2rem; }
+}
+/* judgement of 12/10/2026: the name of a piece gets the whole column, so it stays in one line */
+@media (min-width: 992px) { .product_content { padding-right: 1rem; } }
+/* second judgement of 12/10/2026: the bar reads by difference blending, which fades over a light or grey patch at the
+   top of a photograph (the lamp of the studio); a dark band under the bar keeps the menu readable on every piece */
+.product_photo::after { content: ''; position: absolute; z-index: 1; top: 0; left: 0; right: 0; height: 6rem; background: linear-gradient(180deg, rgba(11, 11, 11, 0.85) 0%, rgba(11, 11, 11, 0.6) 55%, rgba(11, 11, 11, 0) 100%); pointer-events: none; }

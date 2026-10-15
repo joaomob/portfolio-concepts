@@ -1,0 +1,26 @@
+---
+// The menu of every page: the house, the three links (a panel behind the Menu button on a phone) and the bag count.
+import { homeAnchor } from '../../lib/links';
+import { BASE, href } from '../../config';
+
+export type Current = 'home' | 'collections' | 'fragrances' | null;
+interface Props {
+  current: Current;
+}
+const { current } = Astro.props;
+const onHome = current === 'home';
+const mark = (name: Current) => (current === name ? 'page' : undefined);
+---
+<header class="nav_component">
+  <a href={href('')} class="nav_brand text-style-label" aria-current={mark('home')}>Vanth</a>
+  <nav class="nav_menu" id="nav-menu" aria-label="Main">
+    <a href={href('collections')} class="nav_link text-style-label" aria-current={mark('collections')}>Collections</a>
+    <a href={href('fragrances')} class="nav_link text-style-label" aria-current={mark('fragrances')}>Fragrances</a>
+    <a href={homeAnchor(BASE, onHome, 'lookbook')} class="nav_link text-style-label">Lookbook</a>
+  </nav>
+  <div class="nav_side">
+    <button type="button" class="nav_toggle text-style-label" aria-expanded="false" aria-controls="nav-menu" data-menu-toggle>Menu</button>
+    <a href={homeAnchor(BASE, onHome, 'departments')} class="nav_link text-style-label">Shop</a>
+    <a href={href('bag')} class="nav_link nav_bag text-style-label">Bag <span data-bag-count>0</span></a>
+  </div>
+</header>

@@ -1,0 +1,40 @@
+---
+// The page of one line of the season: the campaign, the story, each look with its shoppable dots, the pieces, the
+// beauty product when there is one, the fragrance, and the next line.
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import '../../styles/pages/collection.css';
+import '../../styles/pages/spots.css';
+import '../../styles/pages/home.css';
+import CollectionHero from '../collection/CollectionHero.astro';
+import CollectionIntro from '../collection/CollectionIntro.astro';
+import LookSection from '../collection/LookSection.astro';
+import CollectionPieces from '../collection/CollectionPieces.astro';
+import CollectionBeauty from '../collection/CollectionBeauty.astro';
+import CollectionFragrance from '../collection/CollectionFragrance.astro';
+import NextLink from '../shared/NextLink.astro';
+import type { Line } from '../../lib/types';
+import { collectionPage, nextLine } from '../../lib/catalog';
+import { href } from '../../config';
+
+interface Props {
+  line: Line;
+}
+const { line } = Astro.props;
+const following = nextLine(line);
+const description = line.description ?? `${line.name} is line ${line.number} of eight in the Vanth Autumn Winter 2026 season. ${line.intro.split('. ')[0].replace(/\.+$/, '')}.`;
+---
+<BaseLayout title={`${line.name}, Autumn Winter 2026 collection | Vanth`} description={description} page={collectionPage(line)} current="collections" motion>
+  <CollectionHero line={line} />
+  <CollectionIntro line={line} />
+  {line.looks.map((look, index) => <LookSection line={line} look={look} index={index} />)}
+  <CollectionPieces line={line} />
+  {line.beauty && <CollectionBeauty line={line} beauty={line.beauty} />}
+  <CollectionFragrance line={line} />
+  <NextLink href={href(collectionPage(following))} label={`Next line, ${following.number} of 08`} name={following.name} byWord image={following.campaign.image} alt={following.campaign.alt} />
+  <Fragment slot="scripts">
+    <script>
+      import { initCollection } from '../../scripts/collection';
+      initCollection();
+    </script>
+  </Fragment>
+</BaseLayout>

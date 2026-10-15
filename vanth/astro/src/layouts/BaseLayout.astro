@@ -1,0 +1,49 @@
+---
+// The frame of every page: the head, the menu, the main area, the footer and the scripts every page runs (the film
+// grain, the smooth scroll, the photograph placeholders and the bag). The page sheets are imported by each template,
+// after the site sheet imported here, so the cascade keeps the order of the original pages.
+import '../styles/site/index.css';
+import Head from '../components/chrome/Head.astro';
+import Nav, { type Current } from '../components/chrome/Nav.astro';
+import Footer from '../components/chrome/Footer.astro';
+
+interface Props {
+  title: string;
+  description: string;
+  /** the page, without the base path ("" for the Home) */
+  page: string;
+  /** the menu link marked as the current page */
+  current: Current;
+  /** the page runs the animation library (the footer wordmark rises with it) */
+  motion?: boolean;
+  /** the main area fills the screen (bag and checkout) */
+  fill?: boolean;
+}
+const { title, description, page, current, motion = false, fill = false } = Astro.props;
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <Head title={title} description={description} page={page} />
+  </head>
+  <body>
+    <div class="page-wrapper background-color-black">
+      <Nav current={current} />
+      <main class:list={['main-wrapper', { 'is-fill': fill }]}>
+        <slot />
+      </main>
+      <Footer onHome={current === 'home'} motion={motion} />
+      <slot name="after" />
+    </div>
+    <script is:inline>addEventListener('load', function () { setTimeout(function () { document.documentElement.classList.add('grain-on'); }, 1800); });</script>
+    <script>
+      import { initSmooth } from '../scripts/smooth';
+      import { initBag } from '../scripts/bag';
+      import { BASE } from '../config';
+      initSmooth();
+      initBag({ base: BASE, media: `${BASE}/assets` });
+    </script>
+    <slot name="scripts" />
+    <script is:inline>/* photograph placeholders: a frame pulses until its photograph arrives, then a lazy one fades in */(function(){var r=matchMedia('(prefers-reduced-motion: reduce)').matches;var io='IntersectionObserver'in window&&new IntersectionObserver(function(es){es.forEach(function(e){e.target.classList.toggle('is-img-pulse',e.isIntersecting)})},{rootMargin:'200px'});document.querySelectorAll('img').forEach(function(i){if(i.complete&&i.naturalWidth)return;var f=i.parentElement;if(!f)return;f.classList.add('is-img-wait');if(io)io.observe(f);else f.classList.add('is-img-pulse');var fade=!r&&i.loading==='lazy';if(fade)i.classList.add('is-img-fade');function done(){if(io)io.unobserve(f);f.classList.remove('is-img-wait','is-img-pulse');if(fade){i.classList.add('is-img-in');requestAnimationFrame(function(){i.classList.remove('is-img-fade')})}}i.addEventListener('load',done,{once:true});i.addEventListener('error',done,{once:true})})})();</script>
+  </body>
+</html>

@@ -1,0 +1,19 @@
+---
+// The eight lines of the season, one card each.
+import ListPage from '../components/templates/ListPage.astro';
+import { lines, collectionPage } from '../lib/catalog';
+import { TAGS } from '../data/tags';
+import { href } from '../config';
+
+const cards = lines.map((line) => ({
+  href: href(collectionPage(line)), image: line.campaign.image, alt: line.campaign.alt,
+  number: line.number, name: line.name, tag: TAGS[line.slug], meta: line.meta,
+}));
+---
+<ListPage
+  title="Collections, Autumn Winter 2026 | Vanth"
+  description="The eight lines of the Vanth Autumn Winter 2026 season: Iron Court, Night Office, High Rise, Machine, Lost Paradise, Lacquer, Riot and Old Blood."
+  page="collections" current="collections"
+  label="Autumn Winter 2026" heading="Collections" lead="Open a line to see its looks and its pieces."
+  cards={cards}
+/>

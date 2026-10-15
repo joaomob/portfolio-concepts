@@ -1,0 +1,1499 @@
+{
+  "_note": "Content of the collection pages of the eight lines, read by scripts/build_collections.py, which also writes one page per piece. The fragrance page of line 1 (Slate) is fragrance.html, written by hand. Names, prices and copy are the concept of a fictional house. Dot positions are percentages of the look photograph.",
+  "collections": [
+    {
+      "slug": "iron-court",
+      "number": "01",
+      "name": "Iron Court",
+      "fragrance": "Slate",
+      "campaign": {
+        "image": "iron-court-campaign",
+        "alt": "Three models in a concrete hall under one spotlight: a floor-length coat of silver paillettes, a silver chest plate under a camel wool cape, and a sculpted black satin gown with a train",
+        "focus": 40
+      },
+      "meta": "Three looks, one fragrance",
+      "description": "Iron Court is line 01 of eight in the Vanth Autumn Winter 2026 season. Armour cut as eveningwear, in silver, black satin and camel wool.",
+      "intro": "Armour, cut as eveningwear. Silver, black satin and camel wool, built for a hall of raw concrete.",
+      "looks": [
+        {
+          "image": "iron-court-look-01-court-gown",
+          "alt": "A woman with a short black fringe climbs a concrete staircase in a black satin gown with a draped skirt and a train lined in dark gold, looking back over her shoulder",
+          "title": "The Court Gown",
+          "body": "A halter bodice in black duchesse satin and a skirt draped by hand at the hips. The train carries a dark gold lining that only shows when she moves. Black satin gloves reach above the elbow.",
+          "dots": [
+            {
+              "id": "court-gown",
+              "label": "gown",
+              "name": "The Court Gown",
+              "material": "Black duchesse satin, gold lining",
+              "price": "EUR 8,900",
+              "left": 47,
+              "top": 46,
+              "href": "#piece-01"
+            },
+            {
+              "id": "opera-glove",
+              "label": "glove",
+              "name": "The Opera Glove",
+              "material": "Black satin, above the elbow",
+              "price": "EUR 640",
+              "left": 52,
+              "top": 41,
+              "href": "#pieces",
+              "photo": {
+                "image": "product-iron-court-opera-glove",
+                "alt": "The Opera Glove: a pair of long black satin gloves laid side by side on a slab of black stone"
+              }
+            }
+          ]
+        },
+        {
+          "image": "iron-court-look-02-scale-coat",
+          "alt": "A model with slicked blond hair stands in a tall concrete doorway in a floor-length coat of silver paillettes, one hand on the door frame, light coming from behind",
+          "title": "The Scale Coat",
+          "body": "Thousands of silver paillettes sewn one over the other, from a funnel collar to the floor. The coat catches the light like the skin of a fish.",
+          "dots": [
+            {
+              "id": "scale-coat",
+              "label": "coat",
+              "name": "The Scale Coat",
+              "material": "Silver metal paillettes, funnel collar",
+              "price": "EUR 12,400",
+              "left": 54,
+              "top": 60,
+              "href": "#piece-02"
+            }
+          ]
+        },
+        {
+          "image": "iron-court-look-03-plate-and-cape",
+          "alt": "A bearded man sits on a concrete block in a black suit with a polished silver chest plate and a camel wool cape pooling on the floor",
+          "title": "Plate and Cape",
+          "body": "A chest plate in polished silver over black tailoring, under a cape of double-faced camel wool that reaches the floor.",
+          "dots": [
+            {
+              "id": "chest-plate",
+              "label": "armour",
+              "name": "The Chest Plate",
+              "material": "Polished silver, hand raised",
+              "price": "EUR 15,000",
+              "left": 50,
+              "top": 42,
+              "href": "#piece-03",
+              "photo": {
+                "image": "product-iron-court-chest-plate",
+                "alt": "The Chest Plate on a black dress form: a breastplate of polished silver shaped to the torso"
+              }
+            },
+            {
+              "id": "camel-cape",
+              "label": "cape",
+              "name": "The Camel Cape",
+              "material": "Double-faced wool, to the floor",
+              "price": "EUR 6,200",
+              "left": 22,
+              "top": 62,
+              "href": "#piece-03",
+              "photo": {
+                "image": "product-iron-court-camel-cape",
+                "alt": "The Camel Cape on a black dress form: a camel wool cape with a wide collar that falls to the floor"
+              }
+            }
+          ]
+        }
+      ],
+      "pieces": [
+        {
+          "image": "iron-court-piece-court-gown",
+          "alt": "The Court Gown on a black dress form: black satin with a halter neck, a draped skirt and a train lined in dark gold",
+          "name": "The Court Gown",
+          "material": "Duchesse satin",
+          "price": "EUR 8,900"
+        },
+        {
+          "image": "iron-court-piece-scale-coat",
+          "alt": "The Scale Coat on a black dress form: a floor-length coat covered in silver paillettes with a funnel collar",
+          "name": "The Scale Coat",
+          "material": "Metal paillettes",
+          "price": "EUR 12,400"
+        },
+        {
+          "image": "iron-court-piece-plate-and-cape",
+          "alt": "The Chest Plate and the Camel Cape on a black dress form: polished silver armour under a camel wool cape that falls to the floor",
+          "name": "Plate and Cape",
+          "material": "Silver, camel wool",
+          "price": "From EUR 6,200"
+        },
+        {
+          "image": "iron-court-piece-box-bag",
+          "alt": "The Box Bag on a concrete block: a structured top handle bag in black leather with steel hardware",
+          "name": "The Box Bag",
+          "material": "Leather, steel hardware",
+          "price": "EUR 3,400",
+          "product": {
+            "id": "box-bag",
+            "label": "bag"
+          }
+        }
+      ],
+      "scent": {
+        "image": "slate-bottle",
+        "alt": "The Slate bottle, smoked black glass with a brushed steel cap, on a concrete block beside a fold of black satin and a few silver paillettes",
+        "notes": "Black pepper, cold steel and smoked leather, in smoked glass with a steel cap.",
+        "number": "01",
+        "price": "EUR 240",
+        "lead": "Eau de parfum for the hour before you leave."
+      }
+    },
+    {
+      "slug": "night-office",
+      "number": "02",
+      "name": "Night Office",
+      "fragrance": "Amethyst",
+      "campaign": {
+        "image": "night-office-campaign",
+        "width": 1152,
+        "height": 1536,
+        "alt": "Four models in a theatre box in violet taffeta, bottle green velvet, a beaded coat with a magenta sash and black sequins",
+        "focus": 8
+      },
+      "meta": "Three looks, one fragrance",
+      "intro": "Evening clothes for the hours after work. A violet gown for the opera, a velvet suit for the gallery and a beaded coat for the long dinner.",
+      "looks": [
+        {
+          "image": "night-office-look-01-violet-gown",
+          "alt": "A woman with a short black fringe climbs the red carpet of an opera staircase in a strapless violet taffeta gown with a huge bow at the back and long black gloves",
+          "title": "The Bow Gown",
+          "body": "Violet silk taffeta, strapless, with a bow the size of the bodice tied at the back. The skirt opens into a train on the stairs. The gloves are black satin.",
+          "dots": [
+            {
+              "id": "bow-gown",
+              "label": "gown",
+              "name": "The Bow Gown",
+              "material": "Violet silk taffeta",
+              "price": "EUR 9,800",
+              "left": 42,
+              "top": 62,
+              "href": "#piece-01"
+            },
+            {
+              "id": "long-glove",
+              "label": "glove",
+              "name": "The Opera Glove",
+              "material": "Black satin, above the elbow",
+              "price": "EUR 640",
+              "left": 68,
+              "top": 44,
+              "href": "#pieces",
+              "photo": {
+                "image": "product-iron-court-opera-glove",
+                "alt": "The Opera Glove: a pair of long black satin gloves laid side by side on a slab of black stone"
+              }
+            }
+          ]
+        },
+        {
+          "image": "night-office-look-02-velvet-suit",
+          "alt": "A model with cropped bleached hair stands in a white gallery beside a large black painting, in a bottle green velvet suit with a bow at the waist, a tulle cape and a layered silver necklace",
+          "title": "The Velvet Suit",
+          "body": "Bottle green velvet, a peaked lapel and a bow tied at the waist. Worn under a tulle cape, with a necklace of silver and crystal in three tiers.",
+          "dots": [
+            {
+              "id": "velvet-suit",
+              "label": "suit",
+              "name": "The Velvet Suit",
+              "material": "Bottle green silk velvet",
+              "price": "EUR 7,400",
+              "left": 53,
+              "top": 52,
+              "href": "#piece-02"
+            },
+            {
+              "id": "silver-necklace",
+              "label": "necklace",
+              "name": "The Tiered Necklace",
+              "material": "Silver and crystal, three tiers",
+              "price": "EUR 4,200",
+              "left": 51,
+              "top": 33,
+              "href": "#piece-04"
+            }
+          ]
+        },
+        {
+          "image": "night-office-look-03-beaded-coat",
+          "alt": "A man with long straight black hair sits sideways at a dinner table under a chandelier, in a long black beaded coat with a magenta silk sash, a glass of red wine in his hand",
+          "title": "The Beaded Coat",
+          "body": "A long evening coat in black beads and sequins, worn open and held at the waist by a sash of magenta silk.",
+          "dots": [
+            {
+              "id": "beaded-coat",
+              "label": "coat",
+              "name": "The Beaded Coat",
+              "material": "Black glass beads on wool",
+              "price": "EUR 14,600",
+              "left": 36,
+              "top": 52,
+              "href": "#piece-03"
+            },
+            {
+              "id": "magenta-sash",
+              "label": "sash",
+              "name": "The Silk Sash",
+              "material": "Magenta silk satin",
+              "price": "EUR 780",
+              "left": 40,
+              "top": 76,
+              "href": "#piece-03",
+              "photo": {
+                "image": "product-night-office-magenta-sash",
+                "alt": "The Silk Sash tied at the waist of a black dress form: magenta silk satin with long ends that fall to the knee"
+              }
+            }
+          ]
+        }
+      ],
+      "pieces": [
+        {
+          "image": "night-office-piece-violet-gown",
+          "width": 1000,
+          "height": 1241,
+          "alt": "The Bow Gown on a black dress form: a strapless violet taffeta gown with a large bow",
+          "name": "The Bow Gown",
+          "material": "Silk taffeta",
+          "price": "EUR 9,800"
+        },
+        {
+          "image": "night-office-piece-velvet-suit",
+          "width": 1000,
+          "height": 1241,
+          "alt": "The Velvet Suit on a black dress form: a bottle green velvet jacket with a bow at the waist and wide trousers",
+          "name": "The Velvet Suit",
+          "material": "Silk velvet",
+          "price": "EUR 7,400"
+        },
+        {
+          "image": "night-office-piece-beaded-coat",
+          "width": 1000,
+          "height": 1241,
+          "alt": "The Beaded Coat on a black dress form: a long coat covered in black glass beads from collar to hem",
+          "name": "The Beaded Coat",
+          "material": "Glass beads on wool",
+          "price": "EUR 14,600"
+        },
+        {
+          "image": "night-office-piece-silver-necklace",
+          "width": 1000,
+          "height": 1241,
+          "alt": "The Tiered Necklace on a black velvet bust: three tiers of silver and crystal with drop pendants",
+          "name": "The Tiered Necklace",
+          "material": "Silver, crystal",
+          "price": "EUR 4,200"
+        }
+      ],
+      "scent": {
+        "image": "night-office-fragrance-bottle",
+        "alt": "A faceted glass bottle of violet perfume with a silver cap shaped like a bow, on black marble",
+        "notes": "Violet leaf, iris and black amber, in cut glass with a silver bow.",
+        "number": "02",
+        "price": "EUR 260",
+        "lead": "For the opera, and the dinner that follows it.",
+        "bottle": "Cut glass, silver bow",
+        "top": {
+          "name": "Violet leaf",
+          "text": "Green and cold, like a cut stem."
+        },
+        "heart": {
+          "name": "Iris",
+          "text": "Powdery, like the velvet of a theatre box."
+        },
+        "base": {
+          "name": "Black amber",
+          "text": "Dark and resinous. It stays on the gloves."
+        },
+        "use": "night-office-fragrance-use",
+        "use_alt": "A woman with a short black fringe stands at the open door of a black car in front of an opera house at night, in a violet taffeta gown, spraying perfume on her neck",
+        "ritual": [
+          0,
+          2
+        ]
+      }
+    },
+    {
+      "slug": "high-rise",
+      "number": "03",
+      "name": "High Rise",
+      "fragrance": "Asphalt",
+      "campaign": {
+        "image": "high-rise-campaign",
+        "width": 1152,
+        "height": 1536,
+        "alt": "Four models on a concrete rooftop above a city at night, in a black taffeta cape, a midnight blue satin gown with a hood, a black taffeta dress with a wide collar and a quilted coat with blue lapels",
+        "focus": 3
+      },
+      "meta": "Four looks, one fragrance",
+      "intro": "The street, at couture scale. Black taffeta and midnight blue satin, in volumes too wide for a metro door.",
+      "looks": [
+        {
+          "image": "high-rise-look-01-taffeta-cape",
+          "alt": "A tall man with a crest of black feathers in his hair crosses a wet zebra crossing at night in an enormous black taffeta cape over a black suit, with long silver chains and a cross",
+          "title": "The Night Cape",
+          "body": "Crinkled black taffeta cut in a full circle, with a collar that stands above the shoulders. Worn over a black suit, with three silver chains and a cross.",
+          "dots": [
+            {
+              "id": "night-cape",
+              "label": "cape",
+              "name": "The Night Cape",
+              "material": "Crinkled silk taffeta",
+              "price": "EUR 11,200",
+              "left": 30,
+              "top": 60,
+              "href": "#piece-01"
+            },
+            {
+              "id": "cross-chains",
+              "label": "chains",
+              "name": "The Cross Chains",
+              "material": "Silver, three lengths",
+              "price": "EUR 2,900",
+              "left": 52,
+              "top": 38,
+              "href": "#piece-05"
+            }
+          ]
+        },
+        {
+          "image": "high-rise-look-02-blue-gown",
+          "alt": "A woman in a black draped hood stands by the glass wall of a top floor boardroom in a midnight blue satin gown with a corset bodice and a gathered peplum, the city behind her",
+          "title": "The Midnight Gown",
+          "body": "Midnight blue duchesse satin, a corset bodice and a peplum gathered at the hips. The hood is black silk jersey.",
+          "dots": [
+            {
+              "id": "midnight-gown",
+              "label": "gown",
+              "name": "The Midnight Gown",
+              "material": "Midnight blue duchesse satin",
+              "price": "EUR 8,600",
+              "left": 50,
+              "top": 52,
+              "href": "#piece-02"
+            },
+            {
+              "id": "draped-hood",
+              "label": "hood",
+              "name": "The Draped Hood",
+              "material": "Black silk jersey",
+              "price": "EUR 920",
+              "left": 50,
+              "top": 27,
+              "href": "#pieces",
+              "photo": {
+                "image": "product-high-rise-draped-hood",
+                "alt": "The Draped Hood on a black mannequin head: black silk jersey wrapped over the head and crossed over the shoulders"
+              }
+            }
+          ]
+        },
+        {
+          "image": "high-rise-look-03-quilted-coat",
+          "alt": "A man with a shaved head and tattoos on his neck and hands sits at a cafe table on a cobbled square in a long black quilted coat with blue satin lapels and a train",
+          "title": "The Quilted Coat",
+          "body": "Black silk quilted in a pattern of scales, with lapels of midnight satin and a train of black satin that follows on the pavement.",
+          "dots": [
+            {
+              "id": "quilt-coat",
+              "label": "coat",
+              "name": "The Quilted Coat",
+              "material": "Quilted silk, satin lapels",
+              "price": "EUR 13,400",
+              "left": 48,
+              "top": 45,
+              "href": "#piece-03"
+            }
+          ]
+        },
+        {
+          "image": "high-rise-look-04-collar-dress",
+          "alt": "A woman with a tight black ponytail walks down the aisle of a crowded metro carriage in a black taffeta dress with a huge off the shoulder collar and tall black leather boots",
+          "title": "The Collar Dress",
+          "body": "A collar the width of the shoulders, folded from one piece of black taffeta, over a skirt gathered and lifted at one side. The boots are black calf leather, over the knee.",
+          "dots": [
+            {
+              "id": "collar-dress",
+              "label": "dress",
+              "name": "The Collar Dress",
+              "material": "Black silk taffeta",
+              "price": "EUR 7,900",
+              "left": 50,
+              "top": 46,
+              "href": "#piece-04"
+            },
+            {
+              "id": "tall-boot",
+              "label": "boot",
+              "name": "The Tall Boot",
+              "material": "Black calf leather, over the knee",
+              "price": "EUR 1,850",
+              "left": 50,
+              "top": 82,
+              "href": "#pieces",
+              "photo": {
+                "image": "product-high-rise-tall-boot",
+                "alt": "The Tall Boot: a pair of black calf leather boots that reach over the knee, with a pointed toe and a thin heel, standing on black stone"
+              }
+            }
+          ]
+        }
+      ],
+      "pieces": [
+        {
+          "image": "high-rise-piece-taffeta-cape",
+          "width": 1000,
+          "height": 1241,
+          "alt": "The Night Cape on a black dress form: a floor-length black taffeta cape with a high collar",
+          "name": "The Night Cape",
+          "material": "Silk taffeta",
+          "price": "EUR 11,200"
+        },
+        {
+          "image": "high-rise-piece-blue-gown",
+          "width": 1000,
+          "height": 1241,
+          "alt": "The Midnight Gown on a black dress form: a strapless midnight blue satin gown with a gathered peplum",
+          "name": "The Midnight Gown",
+          "material": "Duchesse satin",
+          "price": "EUR 8,600"
+        },
+        {
+          "image": "high-rise-piece-quilted-coat",
+          "width": 1000,
+          "height": 1241,
+          "alt": "The Quilted Coat on a black dress form: a long black quilted coat with blue satin lapels and a train",
+          "name": "The Quilted Coat",
+          "material": "Quilted silk",
+          "price": "EUR 13,400"
+        },
+        {
+          "image": "high-rise-piece-collar-dress",
+          "width": 1000,
+          "height": 1241,
+          "alt": "The Collar Dress on a black dress form: a black taffeta dress with a wide folded collar and a gathered skirt",
+          "name": "The Collar Dress",
+          "material": "Silk taffeta",
+          "price": "EUR 7,900"
+        },
+        {
+          "image": "high-rise-piece-cross-chains",
+          "width": 1000,
+          "height": 1241,
+          "alt": "The Cross Chains on a black velvet bust: three silver chains and an engraved silver cross",
+          "name": "The Cross Chains",
+          "material": "Silver",
+          "price": "EUR 2,900"
+        }
+      ],
+      "scent": {
+        "image": "high-rise-fragrance-bottle",
+        "alt": "A tall bottle of smoked glass with midnight blue perfume and a blackened silver cap shaped like a high collar, on wet concrete",
+        "notes": "Wet asphalt, juniper and black suede, in smoked glass with a silver collar.",
+        "number": "03",
+        "price": "EUR 240",
+        "lead": "The city, just after rain.",
+        "bottle": "Smoked glass, silver collar",
+        "top": {
+          "name": "Wet asphalt",
+          "text": "Mineral and cold, from the first spray."
+        },
+        "heart": {
+          "name": "Juniper",
+          "text": "The bite of gin."
+        },
+        "base": {
+          "name": "Black suede",
+          "text": "Soft, and darker as the night goes on."
+        },
+        "use": "high-rise-fragrance-use",
+        "use_alt": "A man with a shaved head and tattooed hands stands on a rooftop above a city at night in a quilted black coat with blue lapels, spraying perfume on his neck",
+        "ritual": [
+          0,
+          3
+        ]
+      }
+    },
+    {
+      "slug": "machine",
+      "number": "04",
+      "name": "Machine",
+      "fragrance": "Halide",
+      "campaign": {
+        "image": "machine-campaign",
+        "width": 1152,
+        "height": 1536,
+        "alt": "Three models on a floor of light lines in a dark corridor: a woman in a gown covered in silver studs under a cape, a man in a studded black coat over a sheer top, and a woman in an iridescent teal strapless dress with a studded belt and long black gloves",
+        "focus": 2
+      },
+      "meta": "Three looks, one fragrance",
+      "intro": "Rows of studs and crystals laid by hand, over silk that turns from petrol blue to gold when it moves.",
+      "looks": [
+        {
+          "image": "machine-look-01-studded-gown",
+          "alt": "The woman with long pale blonde hair stands between glass server cabinets in a white control room, in the studded gown and the sheer cape with an iridescent lining, a crystal veil over her eyes",
+          "title": "The Circuit Gown",
+          "body": "A column gown covered in rows of silver studs and crystals, under a cape of black organza lined in iridescent silk. A veil of silver chain and crystal covers the eyes.",
+          "dots": [
+            {
+              "id": "circuit-gown",
+              "label": "gown",
+              "name": "The Circuit Gown",
+              "material": "Silver studs and crystal on silk",
+              "price": "EUR 16,800",
+              "left": 48,
+              "top": 62,
+              "href": "#piece-01"
+            },
+            {
+              "id": "crystal-veil",
+              "label": "veil",
+              "name": "The Crystal Veil",
+              "material": "Silver chain and crystal",
+              "price": "EUR 3,600",
+              "left": 48,
+              "top": 23,
+              "href": "#piece-04"
+            }
+          ]
+        },
+        {
+          "image": "machine-look-02-studded-coat",
+          "alt": "A man with slicked back black hair walks along a steel footbridge in a power station at night, in a long black coat with studded lapels and cuffs, an iridescent lining and a crystal mesh top",
+          "title": "The Relay Coat",
+          "body": "Black wool cut close to the body, with studded lapels and cuffs, over a high neck top of crystal mesh. The lining is iridescent silk.",
+          "dots": [
+            {
+              "id": "relay-coat",
+              "label": "coat",
+              "name": "The Relay Coat",
+              "material": "Wool, studded lapels, silk lining",
+              "price": "EUR 12,900",
+              "left": 50,
+              "top": 45,
+              "href": "#piece-02"
+            },
+            {
+              "id": "mesh-top",
+              "label": "top",
+              "name": "The Mesh Top",
+              "material": "Crystal mesh, high neck",
+              "price": "EUR 2,400",
+              "left": 50,
+              "top": 27,
+              "href": "#pieces",
+              "photo": {
+                "image": "product-machine-mesh-top",
+                "alt": "The Mesh Top on a black dress form: a long sleeved top of crystal mesh with a high neck"
+              }
+            }
+          ]
+        },
+        {
+          "image": "machine-look-03-iridescent-dress",
+          "alt": "A woman with a shaved head and a crystal veil leans on the black marble counter of a cocktail bar in a strapless iridescent silk dress with a studded belt, long black gloves and a train",
+          "title": "The Prism Dress",
+          "body": "The iridescent silk, used alone. A strapless bodice, a short draped skirt at the front and a train at the back, held by a belt of studs.",
+          "dots": [
+            {
+              "id": "prism-dress",
+              "label": "dress",
+              "name": "The Prism Dress",
+              "material": "Iridescent silk, studded belt",
+              "price": "EUR 9,300",
+              "left": 55,
+              "top": 55,
+              "href": "#piece-03"
+            },
+            {
+              "id": "crystal-veil-2",
+              "label": "veil",
+              "name": "The Crystal Veil",
+              "material": "Silver chain and crystal",
+              "price": "EUR 3,600",
+              "left": 52,
+              "top": 17,
+              "href": "#piece-04"
+            }
+          ]
+        }
+      ],
+      "pieces": [
+        {
+          "image": "machine-piece-studded-gown",
+          "width": 1000,
+          "height": 1241,
+          "alt": "The Circuit Gown on a black dress form: a studded column gown under a sheer black cape lined in iridescent silk",
+          "name": "The Circuit Gown",
+          "material": "Studs, crystal, organza cape",
+          "price": "EUR 16,800",
+          "worn": {
+            "image": "machine-walk",
+            "alt": "The Circuit Gown worn: a woman with long pale blonde hair walks down a dark corridor with a floor of light lines, the studded gown under the sheer cape with an iridescent lining, a crystal veil over her eyes"
+          }
+        },
+        {
+          "image": "machine-piece-studded-coat",
+          "width": 1000,
+          "height": 1241,
+          "alt": "The Relay Coat on a black dress form: a long black wool coat with studded lapels and cuffs",
+          "name": "The Relay Coat",
+          "material": "Wool, studs, silk lining",
+          "price": "EUR 12,900"
+        },
+        {
+          "image": "machine-piece-iridescent-dress",
+          "alt": "The Prism Dress on a black dress form: a strapless dress in silk that shifts between teal and bronze, with a pleated bodice, a belt of silver studs, a short draped skirt and a long train",
+          "name": "The Prism Dress",
+          "material": "Iridescent silk, studded belt",
+          "price": "EUR 9,300"
+        },
+        {
+          "image": "machine-piece-crystal-veil",
+          "width": 1000,
+          "height": 1241,
+          "alt": "The Crystal Veil on a black velvet head form: a net of silver chain and crystals over the forehead and eyes",
+          "name": "The Crystal Veil",
+          "material": "Silver chain, crystal",
+          "price": "EUR 3,600"
+        }
+      ],
+      "scent": {
+        "image": "machine-fragrance-bottle",
+        "alt": "A block of clear glass with perfume that shifts from petrol blue to gold and a steel cap covered in studs, on black glass crossed by lines of light",
+        "notes": "Ozone, chrome and white musk, in a block of glass with a studded steel cap.",
+        "number": "04",
+        "price": "EUR 280",
+        "lead": "The cold of a clean room, worn on the skin.",
+        "bottle": "Block of glass, studded steel cap",
+        "top": {
+          "name": "Ozone",
+          "text": "The air after a spark."
+        },
+        "heart": {
+          "name": "Chrome",
+          "text": "Bright and hard, like light on glass."
+        },
+        "base": {
+          "name": "White musk",
+          "text": "Clean skin, hours later."
+        },
+        "use": "machine-fragrance-use",
+        "use_alt": "A man with slicked back black hair stands in a glass elevator above a city at night, in a black coat with studded lapels, holding a clear glass bottle with a studded cap and spraying perfume on his neck",
+        "ritual": [
+          1,
+          2
+        ]
+      }
+    },
+    {
+      "slug": "lost-paradise",
+      "number": "05",
+      "name": "Lost Paradise",
+      "fragrance": "Gilt",
+      "campaign": {
+        "image": "lost-paradise-campaign",
+        "width": 1600,
+        "height": 2143,
+        "alt": "Three models in front of a ruined stone gate overgrown by rainforest, in a black satin gown with a wide hammered gold collar, a black belted coat with a gold sun disc medallion and an emerald silk gown with a gold ear disc",
+        "focus": 30
+      },
+      "meta": "Three looks, one fragrance",
+      "intro": "Black satin and emerald silk under hammered gold, cut like expedition clothes for the evening. The setting is a mansion in ruins at the edge of the river.",
+      "looks": [
+        {
+          "image": "lost-paradise-look-01-collar-gown",
+          "alt": "A woman with long straight black hair stands in the dark hall of a museum of ancient gold, in a black satin gown with a train and a wide collar of hammered gold",
+          "title": "The Sun Collar",
+          "body": "A column of black duchesse satin with a train, under a collar of hammered gold that covers the shoulders like a rising sun.",
+          "dots": [
+            {
+              "id": "satin-column",
+              "label": "gown",
+              "name": "The Satin Column",
+              "material": "Black duchesse satin, train",
+              "price": "EUR 8,200",
+              "left": 50,
+              "top": 58,
+              "href": "#piece-01"
+            },
+            {
+              "id": "sun-collar",
+              "label": "collar",
+              "name": "The Sun Collar",
+              "material": "Hammered gold, rigid",
+              "price": "EUR 18,500",
+              "left": 50,
+              "top": 31,
+              "href": "#piece-04",
+              "photo": {
+                "image": "product-lost-paradise-sun-collar",
+                "alt": "The Sun Collar on a black bust: a rigid collar of hammered gold plates that spread like rays"
+              }
+            }
+          ]
+        },
+        {
+          "image": "lost-paradise-look-02-expedition-coat",
+          "alt": "A man stands at the bow of an old wooden boat on a dark river at dusk, in a long black belted coat, tall leather boots and a large gold sun disc medallion on a thick chain",
+          "title": "The River Coat",
+          "body": "An expedition coat in black waxed silk, belted, with flap pockets and wide shoulders. The medallion is a disc of gold with rays.",
+          "dots": [
+            {
+              "id": "river-coat",
+              "label": "coat",
+              "name": "The River Coat",
+              "material": "Black waxed silk, belted",
+              "price": "EUR 9,600",
+              "left": 50,
+              "top": 48,
+              "href": "#piece-02"
+            },
+            {
+              "id": "sun-disc",
+              "label": "medallion",
+              "name": "The Sun Disc",
+              "material": "Gold disc on a gold chain",
+              "price": "EUR 12,000",
+              "left": 50,
+              "top": 37,
+              "href": "#piece-04",
+              "photo": {
+                "image": "product-lost-paradise-sun-disc",
+                "alt": "The Sun Disc on a black bust: a round gold medallion with rays on a heavy gold chain"
+              }
+            }
+          ]
+        },
+        {
+          "image": "lost-paradise-look-03-emerald-gown",
+          "alt": "A woman with slicked back dark hair walks down the candlelit staircase of an abandoned opera house overgrown with vines, in an emerald silk gown with a high slit, black gloves and a large gold ear disc",
+          "title": "The Emerald Slip",
+          "body": "Emerald silk cut on the bias, knotted at the hip and open to the thigh. Worn with one ear disc of hammered gold.",
+          "dots": [
+            {
+              "id": "emerald-slip",
+              "label": "gown",
+              "name": "The Emerald Slip",
+              "material": "Emerald silk, bias cut",
+              "price": "EUR 7,300",
+              "left": 50,
+              "top": 52,
+              "href": "#piece-03"
+            },
+            {
+              "id": "ear-disc",
+              "label": "earring",
+              "name": "The Ear Disc",
+              "material": "Hammered gold, single",
+              "price": "EUR 5,400",
+              "left": 53,
+              "top": 31,
+              "href": "#piece-04",
+              "photo": {
+                "image": "product-lost-paradise-ear-disc",
+                "alt": "The Ear Disc hanging from a black stand: a single round earring of hammered gold"
+              }
+            }
+          ]
+        }
+      ],
+      "pieces": [
+        {
+          "image": "lost-paradise-piece-collar-gown",
+          "width": 814,
+          "height": 1792,
+          "alt": "The Satin Column on a black dress form: a black satin gown with cap shoulders and a train",
+          "name": "The Satin Column",
+          "material": "Duchesse satin",
+          "price": "EUR 8,200",
+          "photo": {
+            "image": "product-lost-paradise-collar-gown",
+            "alt": "The Satin Column on a black dress form: a black satin gown with cap shoulders and a train"
+          }
+        },
+        {
+          "image": "lost-paradise-piece-expedition-coat",
+          "width": 814,
+          "height": 1792,
+          "alt": "The River Coat on a black dress form: a long black belted coat with flap pockets",
+          "name": "The River Coat",
+          "material": "Waxed silk",
+          "price": "EUR 9,600",
+          "photo": {
+            "image": "product-lost-paradise-expedition-coat",
+            "alt": "The River Coat on a black dress form: a long black belted coat with flap pockets"
+          }
+        },
+        {
+          "image": "lost-paradise-piece-emerald-gown",
+          "width": 814,
+          "height": 1792,
+          "alt": "The Emerald Slip on a black dress form: an emerald silk gown with thin straps and a knot at the hip",
+          "name": "The Emerald Slip",
+          "material": "Silk",
+          "price": "EUR 7,300",
+          "photo": {
+            "image": "product-lost-paradise-emerald-gown",
+            "alt": "The Emerald Slip on a black dress form: an emerald silk gown with thin straps and a knot at the hip"
+          }
+        },
+        {
+          "image": "lost-paradise-piece-gold-jewellery",
+          "alt": "The three gold pieces: a wide hammered gold collar on a black bust, a sun disc medallion on a thick chain and a round ear disc, on dark green stone",
+          "name": "The Gold",
+          "material": "Collar, sun disc, ear disc",
+          "price": "From EUR 5,400"
+        }
+      ],
+      "scent": {
+        "image": "lost-paradise-fragrance-bottle",
+        "alt": "A bottle of dark emerald glass with a cap of hammered gold shaped like a sun disc, on wet green stone with a dark leaf",
+        "notes": "Green fig, wet stone and warm resin, in emerald glass with a cap of hammered gold.",
+        "number": "05",
+        "price": "EUR 290",
+        "lead": "A garden that took the house back.",
+        "bottle": "Emerald glass, gold cap",
+        "top": {
+          "name": "Green fig",
+          "text": "Milky, with the green of the leaf."
+        },
+        "heart": {
+          "name": "Wet stone",
+          "text": "A wall in the shade."
+        },
+        "base": {
+          "name": "Warm resin",
+          "text": "Golden and slow. It deepens with the heat of the skin."
+        },
+        "use": "lost-paradise-fragrance-use",
+        "use_alt": "A woman with long straight black hair stands on the dark veranda of a river mansion at night, in a black satin gown with a wide gold collar, holding an emerald glass bottle with a gold cap and spraying perfume on her neck",
+        "ritual": [
+          0,
+          2
+        ]
+      }
+    },
+    {
+      "slug": "lacquer",
+      "number": "06",
+      "name": "Lacquer",
+      "fragrance": "Vermilion",
+      "campaign": {
+        "image": "lacquer-campaign",
+        "alt": "Three models in a room of red lacquer: a black satin gown with a leather corset belt, a black leather blazer with a velvet bow and a long red satin coat under a leather harness.",
+        "focus": 18
+      },
+      "meta": "Three looks, one fragrance, one lipstick",
+      "intro": "Black leather over red and black satin. A corset belt, a harness and a blazer cut in leather, with patent vinyl kept for the bag and the shoe.",
+      "looks": [
+        {
+          "image": "lacquer-look-01-leather-gown",
+          "alt": "A woman with glossy black hair and a sharp fringe stands in a room of red lacquer, one hand on a black lacquer chair, in a strapless black satin gown with a wide black leather corset belt and long black leather gloves",
+          "title": "The Lacquer Gown",
+          "body": "A strapless column in black duchesse satin, held at the waist by a wide corset belt in black leather. Leather gloves reach above the elbow.",
+          "dots": [
+            {
+              "id": "lacquer-gown",
+              "label": "gown",
+              "name": "The Lacquer Gown",
+              "material": "Black duchesse satin, short train",
+              "price": "EUR 8,700",
+              "left": 53,
+              "top": 60,
+              "href": "#piece-01"
+            },
+            {
+              "id": "corset-belt",
+              "label": "belt",
+              "name": "The Corset Belt",
+              "material": "Black leather, boned",
+              "price": "EUR 1,900",
+              "left": 52,
+              "top": 36,
+              "href": "#piece-01",
+              "photo": {
+                "image": "product-lacquer-corset-belt",
+                "alt": "The Corset Belt on a black dress form: a wide boned belt of black leather closed at the front"
+              }
+            },
+            {
+              "id": "leather-glove",
+              "label": "glove",
+              "name": "The Leather Glove",
+              "material": "Black nappa, above the elbow",
+              "price": "EUR 720",
+              "left": 36,
+              "top": 41,
+              "href": "#piece-04",
+              "photo": {
+                "image": "product-lacquer-leather-glove",
+                "alt": "The Leather Glove: a pair of long black nappa leather gloves crossed on a slab of black stone"
+              }
+            }
+          ]
+        },
+        {
+          "image": "lacquer-look-02-leather-blazer",
+          "alt": "A tall man with a shaved head walks down a backstage corridor of red velvet curtains under a row of bare bulbs, in a black leather double breasted blazer with a large black velvet bow and black satin trousers",
+          "title": "The Stage Suit",
+          "body": "A double breasted blazer in matte black leather with satin lapels, over trousers in black satin. A velvet bow closes the collar.",
+          "dots": [
+            {
+              "id": "stage-suit",
+              "label": "suit",
+              "name": "The Stage Suit",
+              "material": "Black leather blazer, satin trousers",
+              "price": "EUR 9,200",
+              "left": 50,
+              "top": 44,
+              "href": "#piece-02"
+            },
+            {
+              "id": "velvet-bow",
+              "label": "bow",
+              "name": "The Velvet Bow",
+              "material": "Black silk velvet",
+              "price": "EUR 380",
+              "left": 50,
+              "top": 25,
+              "href": "#piece-02",
+              "photo": {
+                "image": "product-lacquer-velvet-bow",
+                "alt": "The Velvet Bow tied at the neck of a black bust: a large bow of black silk velvet with long ends"
+              }
+            }
+          ]
+        },
+        {
+          "image": "lacquer-look-03-red-coat",
+          "alt": "A woman with slicked back dark hair stands beside a black grand piano in a red lacquer salon, in a long deep red satin coat with strong shoulders under a black leather harness, holding a black patent bag",
+          "title": "The Red Coat",
+          "body": "A long coat in deep red duchesse satin with strong shoulders, strapped by a harness in black leather. The bag and the pumps are black patent vinyl.",
+          "dots": [
+            {
+              "id": "red-coat",
+              "label": "coat",
+              "name": "The Red Coat",
+              "material": "Deep red duchesse satin",
+              "price": "EUR 9,900",
+              "left": 53,
+              "top": 50,
+              "href": "#piece-03"
+            },
+            {
+              "id": "harness",
+              "label": "harness",
+              "name": "The Harness",
+              "material": "Black leather, silver buckles",
+              "price": "EUR 1,400",
+              "left": 53,
+              "top": 33,
+              "href": "#piece-03",
+              "photo": {
+                "image": "product-lacquer-harness",
+                "alt": "The Harness on a black dress form: black leather straps with silver buckles crossed over the chest"
+              }
+            },
+            {
+              "id": "patent-bag",
+              "label": "bag",
+              "name": "The Patent Bag",
+              "material": "Black patent vinyl, silver clasp",
+              "price": "EUR 2,600",
+              "left": 66,
+              "top": 58,
+              "href": "#piece-04",
+              "photo": {
+                "image": "product-lacquer-patent-bag",
+                "alt": "The Patent Bag on black stone: a structured handbag of black patent vinyl with one handle and a silver clasp"
+              }
+            },
+            {
+              "id": "patent-pump",
+              "label": "shoe",
+              "name": "The Patent Pump",
+              "material": "Black patent vinyl, pointed",
+              "price": "EUR 890",
+              "left": 51,
+              "top": 94,
+              "href": "#piece-04",
+              "photo": {
+                "image": "product-lacquer-patent-pump",
+                "alt": "The Patent Pump: a pair of pointed black patent pumps with a high thin heel on black stone"
+              }
+            }
+          ]
+        }
+      ],
+      "pieces": [
+        {
+          "image": "lacquer-piece-leather-gown",
+          "alt": "The Lacquer Gown on a black dress form: a strapless column of black duchesse satin with a fitted bodice, a drape at the hip and a short train",
+          "name": "The Lacquer Gown",
+          "material": "Duchesse satin, short train",
+          "price": "EUR 8,700",
+          "photo": {
+            "image": "product-lacquer-leather-gown",
+            "alt": "The Lacquer Gown on a black dress form: a strapless column of black duchesse satin with a fitted bodice, a drape at the hip and a short train"
+          }
+        },
+        {
+          "image": "lacquer-piece-leather-suit",
+          "alt": "The Stage Suit on a black dress form: a black leather double breasted blazer with peak lapels and black satin trousers",
+          "name": "The Stage Suit",
+          "material": "Leather blazer, satin trousers",
+          "price": "EUR 9,200",
+          "photo": {
+            "image": "product-lacquer-leather-suit",
+            "alt": "The Stage Suit on a black dress form: a black leather double breasted blazer with peak lapels and black satin trousers"
+          }
+        },
+        {
+          "image": "lacquer-piece-red-coat",
+          "alt": "The Red Coat on a black dress form: a long deep red satin coat with strong shoulders, peak lapels and a buttoned front",
+          "name": "The Red Coat",
+          "material": "Duchesse satin, peak lapels",
+          "price": "EUR 9,900",
+          "photo": {
+            "image": "product-lacquer-red-coat",
+            "alt": "The Red Coat on a black dress form: a long deep red satin coat with strong shoulders, peak lapels and a buttoned front"
+          }
+        },
+        {
+          "image": "lacquer-piece-accessories",
+          "alt": "The accessories on red lacquer: a black patent bag, a pair of long black leather gloves, a pair of pointed black patent pumps and drop earrings of red stones and pearls on a black stand",
+          "name": "The Accessories",
+          "material": "Patent vinyl, nappa leather, red stones",
+          "price": "From EUR 720"
+        }
+      ],
+      "scent": {
+        "image": "lacquer-fragrance-bottle",
+        "alt": "A bottle like a block of deep red lacquer with a black cap shaped like a bow, on black lacquer beside a black leather glove",
+        "notes": "Red cherry, clove and lacquered wood, in a block of red lacquer.",
+        "number": "06",
+        "price": "EUR 250",
+        "lead": "A red room with the door closed.",
+        "bottle": "Red lacquer, black bow cap",
+        "top": {
+          "name": "Red cherry",
+          "text": "Bright and sour for a moment."
+        },
+        "heart": {
+          "name": "Clove",
+          "text": "Hot at the pulse."
+        },
+        "base": {
+          "name": "Lacquered wood",
+          "text": "Polished, with a trace of smoke."
+        },
+        "use": "lacquer-fragrance-use",
+        "use_alt": "A woman with glossy black hair and a sharp fringe sits at a black lacquer dressing table beside a mirror with warm bulbs and sprays perfume on her neck, in a strapless black satin gown with a leather corset belt and long black leather gloves",
+        "ritual": [
+          0,
+          2
+        ]
+      },
+      "beauty": {
+        "id": "lipstick",
+        "label": "lipstick",
+        "name": "Lacquer Red",
+        "kind": "The lipstick",
+        "image": "lacquer-lipstick",
+        "alt": "Close portrait of a woman with glossy black hair and a sharp fringe against a red wall, with smoky grey eye make-up and deep red glossy lipstick, a black velvet bow at her neck, a black leather glove at her jaw and drop earrings of red stones and pearls",
+        "body": "One shade of deep red with a wet shine, in a refillable case of black lacquer.",
+        "material": "Deep red, high shine",
+        "price": "EUR 60",
+        "facts": [
+          [
+            "Finish",
+            "High shine"
+          ],
+          [
+            "Size",
+            "3.5 g"
+          ],
+          [
+            "Made in",
+            "Berlin"
+          ]
+        ],
+        "product_image": "product-lacquer-lipstick",
+        "product_alt": "The Lacquer Red lipstick open and upright on red lacquer: a square case of glossy black lacquer with VANTH engraved in silver, a deep red bullet with a wet shine and the black cap standing behind it",
+        "worn": "Deep red on the lips, with smoky grey on the eyes and red stones at the ear."
+      }
+    },
+    {
+      "slug": "riot",
+      "number": "07",
+      "name": "Riot",
+      "fragrance": "Feedback",
+      "campaign": {
+        "image": "riot-campaign",
+        "width": 1152,
+        "height": 1536,
+        "alt": "Three models in an old theatre: a dark tartan blazer pierced with silver safety pins over a black tulle skirt with a feather mohawk, a studded black leather jacket over a skirt of gold discs and a yellow tartan jacket with sculpted shoulders"
+      },
+      "meta": "Three looks, one fragrance",
+      "intro": "Punk in couture tailoring. Tartan pierced with silver pins, leather under rows of studs and skirts of metal discs that ring as they move.",
+      "looks": [
+        {
+          "image": "riot-look-01-pinned-tartan",
+          "alt": "A woman with a tall headpiece of black feathers comes down the concrete stairs of an underground club in a dark tartan blazer pierced with silver safety pins over a huge black tulle skirt",
+          "title": "The Pinned Tartan",
+          "body": "A long blazer in dark green and burgundy tartan, pierced all over with silver safety pins, over a skirt of crushed black tulle.",
+          "dots": [
+            {
+              "id": "pinned-tartan",
+              "label": "blazer",
+              "name": "The Pinned Tartan",
+              "material": "Wool tartan, silver pins",
+              "price": "EUR 7,600",
+              "left": 50,
+              "top": 42,
+              "href": "#piece-01"
+            },
+            {
+              "id": "tulle-skirt",
+              "label": "skirt",
+              "name": "The Tulle Skirt",
+              "material": "Crushed black tulle, layered",
+              "price": "EUR 5,200",
+              "left": 50,
+              "top": 72,
+              "href": "#pieces",
+              "photo": {
+                "image": "product-riot-tulle-skirt",
+                "alt": "The Tulle Skirt on a black dress form: a full skirt of layered crushed black tulle"
+              }
+            }
+          ]
+        },
+        {
+          "image": "riot-look-02-studded-leather",
+          "alt": "A man with hair shaved at the sides stands on an empty theatre stage in front of a red curtain, holding a microphone stand, in a black leather jacket covered in silver studs over a skirt of gold discs",
+          "title": "The Studded Leather",
+          "body": "Black leather tailored like a dinner jacket, under rows of silver domes, over a skirt of gold and silver discs.",
+          "dots": [
+            {
+              "id": "studded-leather",
+              "label": "jacket",
+              "name": "The Studded Leather",
+              "material": "Black leather, silver dome studs",
+              "price": "EUR 8,900",
+              "left": 50,
+              "top": 46,
+              "href": "#piece-02"
+            },
+            {
+              "id": "disc-skirt",
+              "label": "skirt",
+              "name": "The Disc Skirt",
+              "material": "Gold and silver metal discs",
+              "price": "EUR 6,400",
+              "left": 50,
+              "top": 70,
+              "href": "#pieces",
+              "photo": {
+                "image": "product-riot-disc-skirt",
+                "alt": "The Disc Skirt on a black dress form: a knee length skirt covered in gold and silver metal discs"
+              }
+            }
+          ]
+        },
+        {
+          "image": "riot-look-03-yellow-tartan",
+          "alt": "A woman with slicked back black hair leans on the counter of a crowded dark bar in a mustard yellow tartan jacket with huge pointed shoulders over a skirt of hanging metal discs",
+          "title": "The Yellow Tartan",
+          "body": "Mustard tartan with shoulders built into two points and a waist pulled in hard. The skirt hangs in strands of gold, silver and red discs.",
+          "dots": [
+            {
+              "id": "yellow-tartan",
+              "label": "jacket",
+              "name": "The Yellow Tartan",
+              "material": "Wool tartan, sculpted shoulders",
+              "price": "EUR 8,100",
+              "left": 51,
+              "top": 43,
+              "href": "#piece-03"
+            },
+            {
+              "id": "strand-skirt",
+              "label": "skirt",
+              "name": "The Strand Skirt",
+              "material": "Strands of metal discs",
+              "price": "EUR 5,900",
+              "left": 53,
+              "top": 68,
+              "href": "#pieces",
+              "photo": {
+                "image": "product-riot-strand-skirt",
+                "alt": "The Strand Skirt on a black dress form: a skirt of metal discs that ends in long hanging strands"
+              }
+            }
+          ]
+        }
+      ],
+      "pieces": [
+        {
+          "image": "riot-piece-pinned-tartan",
+          "width": 864,
+          "height": 1792,
+          "alt": "The Pinned Tartan on a black dress form: a dark green and burgundy tartan blazer pierced with silver safety pins",
+          "name": "The Pinned Tartan",
+          "material": "Wool tartan, silver pins",
+          "price": "EUR 7,600",
+          "photo": {
+            "image": "product-riot-pinned-tartan",
+            "alt": "The Pinned Tartan on a black dress form: a dark green and burgundy tartan blazer pierced with silver safety pins"
+          }
+        },
+        {
+          "image": "riot-piece-studded-leather",
+          "width": 816,
+          "height": 1792,
+          "alt": "The Studded Leather on a black dress form: a black leather jacket covered in silver dome studs over a burgundy shirt",
+          "name": "The Studded Leather",
+          "material": "Leather, silver studs",
+          "price": "EUR 8,900",
+          "photo": {
+            "image": "product-riot-studded-leather",
+            "alt": "The Studded Leather on a black dress form: a black leather jacket covered in silver dome studs over a burgundy shirt"
+          }
+        },
+        {
+          "image": "riot-piece-yellow-tartan",
+          "alt": "The Yellow Tartan on a black dress form: a mustard yellow tartan jacket with huge pointed shoulders, a fitted waist and fabric covered buttons",
+          "name": "The Yellow Tartan",
+          "material": "Wool tartan",
+          "price": "EUR 8,100",
+          "photo": {
+            "image": "product-riot-yellow-tartan",
+            "alt": "The Yellow Tartan on a black dress form: a mustard yellow tartan jacket with huge pointed shoulders, a fitted waist and fabric covered buttons"
+          }
+        }
+      ],
+      "scent": {
+        "image": "riot-fragrance-bottle",
+        "alt": "A square bottle of smoked black glass wrapped in a band of tartan held by a silver safety pin, with a studded cap, on worn stage boards",
+        "notes": "Burnt sugar, leather and amplifier dust, in black glass wrapped in tartan.",
+        "number": "07",
+        "price": "EUR 230",
+        "lead": "A backstage room, five minutes to the show.",
+        "bottle": "Black glass, tartan band, silver pin",
+        "top": {
+          "name": "Burnt sugar",
+          "text": "Sweet, then scorched."
+        },
+        "heart": {
+          "name": "Leather",
+          "text": "A worn jacket, still warm."
+        },
+        "base": {
+          "name": "Amplifier dust",
+          "text": "A valve heating up."
+        },
+        "use": "riot-fragrance-use",
+        "use_alt": "A man with hair shaved at the sides stands in a backstage dressing room at night in a studded black leather jacket, holding a black glass bottle wrapped in tartan and spraying perfume on his neck",
+        "ritual": [
+          0,
+          2
+        ]
+      }
+    },
+    {
+      "slug": "old-blood",
+      "number": "08",
+      "name": "Old Blood",
+      "fragrance": "Sanguine",
+      "campaign": {
+        "image": "old-blood-campaign",
+        "width": 1152,
+        "height": 1536,
+        "alt": "Three models on a palace staircase: a man in a teal brocade cape over a black velvet tuxedo, a woman in a blood red satin gown and a woman in a black lace gown with a feathered headpiece"
+      },
+      "meta": "Three looks, one fragrance",
+      "intro": "Blood red satin and black lace for rooms lit by candles, and one cape in teal brocade. It is the oldest line of the house.",
+      "looks": [
+        {
+          "image": "old-blood-look-01-red-gown",
+          "alt": "A woman with a shaved head sits at the head of a long dark dining table under candelabra, in a blood red satin gown with a sculpted fold at the shoulder, black gloves and a train on the marble floor",
+          "title": "The Matriarch Gown",
+          "body": "Blood red duchesse satin, cut close to the knee and released into a train. One fold of satin rises from the shoulder. The gloves are black kid leather.",
+          "dots": [
+            {
+              "id": "red-gown",
+              "label": "gown",
+              "name": "The Matriarch Gown",
+              "material": "Blood red duchesse satin",
+              "price": "EUR 10,400",
+              "left": 62,
+              "top": 62,
+              "href": "#piece-02"
+            },
+            {
+              "id": "dinner-glove",
+              "label": "glove",
+              "name": "The Dinner Glove",
+              "material": "Black kid leather, long",
+              "price": "EUR 720",
+              "left": 57,
+              "top": 54,
+              "href": "#piece-04",
+              "photo": {
+                "image": "product-old-blood-dinner-glove",
+                "alt": "The Dinner Glove: a pair of long black kid leather gloves on a cushion of dark red velvet"
+              }
+            }
+          ]
+        },
+        {
+          "image": "old-blood-look-02-brocade-cape",
+          "alt": "A man with slicked back hair and a short beard stands in a palace library by a fireplace, in a black velvet tuxedo with white gloves under a teal cape with large gold brocade flowers",
+          "title": "The Heir Cape",
+          "body": "A cape of dark teal silk woven with gold flowers and lined in gold, over a tuxedo of black velvet with a jewelled pin at the tie.",
+          "dots": [
+            {
+              "id": "heir-cape",
+              "label": "cape",
+              "name": "The Heir Cape",
+              "material": "Teal silk brocade, gold lining",
+              "price": "EUR 19,800",
+              "left": 38,
+              "top": 70,
+              "href": "#piece-01"
+            },
+            {
+              "id": "velvet-tuxedo",
+              "label": "tuxedo",
+              "name": "The Velvet Tuxedo",
+              "material": "Black silk velvet, three piece",
+              "price": "EUR 6,900",
+              "left": 52,
+              "top": 40,
+              "href": "#piece-01",
+              "photo": {
+                "image": "product-old-blood-velvet-tuxedo",
+                "alt": "The Velvet Tuxedo on a black dress form: a three piece suit of black silk velvet with satin lapels"
+              }
+            }
+          ]
+        },
+        {
+          "image": "old-blood-look-03-lace-gown",
+          "alt": "A woman with dark lips and a tall headpiece of black feathers walks down a candlelit gallery of mirrors in a gown of black beaded lace over an ivory corset bodice, with long lace gloves",
+          "title": "The Widow Lace",
+          "body": "Black lace flowers beaded by hand over a boned bodice of ivory silk, with an ivory train. The headpiece is black coque feathers and a jet stone.",
+          "dots": [
+            {
+              "id": "widow-lace",
+              "label": "gown",
+              "name": "The Widow Lace",
+              "material": "Beaded lace on ivory silk",
+              "price": "EUR 22,000",
+              "left": 50,
+              "top": 58,
+              "href": "#piece-03"
+            },
+            {
+              "id": "feather-crown",
+              "label": "headpiece",
+              "name": "The Feather Crown",
+              "material": "Black feathers, jet stone",
+              "price": "EUR 3,100",
+              "left": 50,
+              "top": 15,
+              "href": "#piece-04",
+              "photo": {
+                "image": "product-old-blood-feather-crown",
+                "alt": "The Feather Crown on a black mannequin head: a crown of black feathers with a jet stone at the front"
+              }
+            }
+          ]
+        }
+      ],
+      "pieces": [
+        {
+          "image": "old-blood-piece-brocade-cape",
+          "width": 864,
+          "height": 1792,
+          "alt": "The Heir Cape on a black dress form: a teal cape with gold brocade flowers over a black velvet tuxedo jacket",
+          "name": "The Heir Cape",
+          "material": "Silk brocade, velvet",
+          "price": "EUR 19,800",
+          "photo": {
+            "image": "product-old-blood-brocade-cape",
+            "alt": "The Heir Cape on a black dress form: a teal cape with gold brocade flowers over a black velvet tuxedo jacket"
+          }
+        },
+        {
+          "image": "old-blood-piece-red-gown",
+          "width": 814,
+          "height": 1792,
+          "alt": "The Matriarch Gown on a black dress form: a blood red satin mermaid gown with a sculpted shoulder fold",
+          "name": "The Matriarch Gown",
+          "material": "Duchesse satin",
+          "price": "EUR 10,400",
+          "photo": {
+            "image": "product-old-blood-red-gown",
+            "alt": "The Matriarch Gown on a black dress form: a blood red satin mermaid gown with a sculpted shoulder fold"
+          }
+        },
+        {
+          "image": "old-blood-piece-lace-gown",
+          "width": 814,
+          "height": 1792,
+          "alt": "The Widow Lace on a black dress form: a gown of black beaded lace over an ivory corset bodice with an ivory train",
+          "name": "The Widow Lace",
+          "material": "Beaded lace, ivory silk",
+          "price": "EUR 22,000",
+          "photo": {
+            "image": "product-old-blood-lace-gown",
+            "alt": "The Widow Lace on a black dress form: a gown of black beaded lace over an ivory corset bodice with an ivory train"
+          }
+        },
+        {
+          "image": "old-blood-piece-accessories",
+          "alt": "The accessories on a mahogany table in front of a red velvet curtain: a tall headpiece of black feathers with a jet stone on a black head form, a pair of long black leather gloves and a jet brooch with a garnet drop on a velvet cushion",
+          "name": "The Accessories",
+          "material": "Black feathers and jet, kid leather, jet and garnet",
+          "price": "From EUR 720"
+        }
+      ],
+      "scent": {
+        "image": "old-blood-fragrance-bottle",
+        "alt": "A cut crystal decanter of blood red perfume with a faceted stopper, on black and white marble with a fold of teal and gold brocade",
+        "notes": "Dark rose, red wine and old wood, in a decanter of cut crystal.",
+        "number": "08",
+        "price": "EUR 320",
+        "lead": "Rose and red wine, by candlelight.",
+        "bottle": "Cut crystal decanter",
+        "top": {
+          "name": "Dark rose",
+          "text": "Deep and velvety, almost black."
+        },
+        "heart": {
+          "name": "Red wine",
+          "text": "Tannic, like the last glass at dinner."
+        },
+        "base": {
+          "name": "Old wood",
+          "text": "A panelled room, long after the fire."
+        },
+        "use": "old-blood-fragrance-use",
+        "use_alt": "A man with slicked back hair and a short beard stands at the top of a palace staircase at night, in a black velvet tuxedo and a teal brocade cape, holding a crystal bottle of red perfume and touching the stopper to his neck",
+        "ritual": [
+          0,
+          2
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,57 @@
+---
+// The top of a product page: the photograph of the piece, its line, name and price, the size picker (garments and
+// footwear), the buy block and the facts.
+import Photo from '../shared/Photo.astro';
+import BuyBlock from '../shared/BuyBlock.astro';
+import Facts from '../shared/Facts.astro';
+import SizePicker from './SizePicker.astro';
+import type { Line, Product } from '../../lib/types';
+import { collectionPage, productPage } from '../../lib/catalog';
+import { isTall } from '../../lib/photos';
+import type { Chart } from '../../lib/sizes';
+import { tie } from '../../lib/text';
+import { href } from '../../config';
+
+interface Props {
+  line: Line;
+  item: Product;
+  chart: Chart | null;
+}
+const { line, item, chart } = Astro.props;
+const { beauty, piece, look, dot } = item;
+
+const facts: [string, string][] = beauty ? beauty.facts : [['Material', item.material], ['Made in', 'Berlin, to order'], ['Ready in', 'Eight weeks']];
+
+// the photograph: the lipstick, the piece alone, its card, or the look drawn closer around the dot of the piece
+let photo: { image: string; alt: string };
+let frame = 'product_photo';
+let origin: string | undefined;
+if (beauty && piece) photo = piece;
+else if (item.photo) photo = item.photo;
+else if (piece) {
+  photo = piece;
+  if (isTall(piece.image)) frame = 'product_photo is-tall';
+} else {
+  photo = look!;
+  origin = `${dot!.left} ${dot!.top}`;
+  frame = 'product_photo is-look';
+}
+const mainImage = (item.photo ?? piece ?? look)!.image;
+---
+<section class="section_product">
+  <div class="product_layout">
+    <div class={frame}><Photo name={photo.image} data-origin={origin} fetchpriority="high" alt={photo.alt} /></div>
+    <div class="product_content padding-global">
+      <a href={href(collectionPage(line))} class="product_back text-style-label">Line {line.number}, {line.name}</a>
+      <h1 class="product_name heading-style-h2">{tie(item.name)}</h1>
+      <p class="product_price">{item.price}</p>
+      {beauty && <p class="product_lead">{tie(beauty.body)}</p>}
+      {chart && <SizePicker chart={chart} />}
+      <div class="product_buy">
+        <BuyBlock id={`${line.slug}-${item.id}`} name={item.name} price={item.price} image={mainImage} page={productPage(line, item.id)} />
+        <p class="text-style-label product_status" data-bag-status aria-live="polite"></p>
+      </div>
+      <Facts facts={facts} />
+    </div>
+  </div>
+</section>

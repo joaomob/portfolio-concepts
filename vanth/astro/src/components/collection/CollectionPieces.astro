@@ -1,0 +1,34 @@
+---
+// The pieces of a line, each a card that leads to its product page. A garment photographed full length (twice as tall
+// as wide) sets the list to tall frames, and a shorter photograph in a tall list is contained in its frame.
+import Photo from '../shared/Photo.astro';
+import type { Line } from '../../lib/types';
+import { piecePage } from '../../lib/catalog';
+import { isTall } from '../../lib/photos';
+import { tie } from '../../lib/text';
+import { href } from '../../config';
+
+interface Props {
+  line: Line;
+}
+const { line } = Astro.props;
+// four pieces or more: the rule .pieces_list:has(> :nth-child(4)) counts them, so there is no class per line
+const tall = line.pieces.some((piece) => isTall(piece.image));
+---
+<section id="pieces" class="section_pieces background-color-paper">
+  <div class="padding-global">
+    <div class="container-large">
+      <div class="padding-section-large">
+        <div class="pieces_header">
+          <h2 class="heading-style-h1">The pieces</h2>
+          <p class="text-style-label">Made to order in Berlin, eight weeks</p>
+        </div>
+        <ul class:list={['pieces_list', { 'is-tall': tall }]} role="list">
+          {line.pieces.map((piece, i) => (
+            <li class="piece_item" id={`piece-${String(i + 1).padStart(2, '0')}`}><a href={href(piecePage(line, i))} class="piece_link"><div class:list={['piece_photo', { 'is-contained': !isTall(piece.image) }]}><Photo name={piece.image} frame="piece" loading="lazy" alt={piece.alt} /></div><div class="piece_caption"><span><span class="piece_name heading-style-h5">{piece.name}</span><span class="text-style-label">{tie(piece.material)}</span></span><span class="piece_price">{piece.price}</span></div></a></li>
+          ))}
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>

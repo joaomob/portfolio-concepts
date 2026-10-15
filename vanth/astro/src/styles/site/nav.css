@@ -1,0 +1,18 @@
+/* nav: reads on paper and on photo through difference blending of a white label */
+.nav_component { position: fixed; z-index: 50; top: 0; left: 0; right: 0; display: flex; justify-content: space-between; align-items: center; padding: 1.5rem var(--_layout---spacing--global-padding); color: var(--base-color-neutral--white); mix-blend-mode: difference; }
+.nav_menu { display: flex; gap: 2rem; }
+.nav_side { display: flex; align-items: center; gap: 2rem; }
+.nav_link { position: relative; }
+.nav_link::after { content: ''; position: absolute; left: 0; right: 0; bottom: -0.25rem; height: 1px; background-color: currentColor; transform: scaleX(0); transform-origin: left; transition: transform 0.3s; }
+.nav_link:hover::after { transform: scaleX(1); }
+
+/* judgement of 12/10/2026: on a phone the three links of the menu open from a Menu button, as a black panel over
+   the page (js/bag.js sets data-menu on the html element) */
+.nav_toggle { display: none; padding: 0.5rem 0; border: 0; background: none; color: inherit; cursor: pointer; }
+@media (max-width: 767px) {
+  .nav_toggle { display: block; }
+  html[data-menu] { overflow: hidden; }
+  html[data-menu] .nav_component { mix-blend-mode: normal; }
+  html[data-menu] .nav_menu { position: fixed; z-index: -1; inset: 0; display: flex; flex-direction: column; justify-content: center; gap: 1rem; padding: 6rem var(--_layout---spacing--global-padding) 2rem; background-color: var(--base-color-neutral--black); }
+  html[data-menu] .nav_menu .nav_link { font-family: var(--font-family--display); font-size: var(--_typography---heading--h1); line-height: 1; letter-spacing: 0; }
+}

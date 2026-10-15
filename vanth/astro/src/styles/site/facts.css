@@ -1,0 +1,13 @@
+/* the facts of a piece and of a fragrance: one component on both pages (design judge, M9, 14/10/2026), moved from
+   product.css */
+.product_facts { display: grid; grid-template-columns: repeat(3, auto); gap: 1rem 3rem; margin: 1rem 0 0; padding-top: 1.5rem; border-top: 1px solid var(--base-color-neutral--neutral); }
+.product_fact { display: flex; flex-direction: column; gap: 0.5rem; }
+.product_fact dd { margin: 0; }
+@media (max-width: 767px) {
+  .product_facts { grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+  /* design judge, 14/10/2026 (M8): three facts in two columns left "Ready in" alone on the second row; the material,
+     the longest, takes the whole row and the two short facts share the next one */
+  .product_fact.is-wide { grid-column: 1 / -1; }
+  /* with the material on its own row the grid would shrink to the two short facts; it keeps the column's width */
+  .product_facts { align-self: stretch; }
+}

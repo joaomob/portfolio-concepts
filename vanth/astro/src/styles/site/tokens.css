@@ -1,0 +1,66 @@
+/* Design tokens: the display face, the stand-in faces and the Variables of the house (colors, theme, type scale,
+   spacing), named as the Webflow Variables of every João Marcos site. Inter Tight and JetBrains Mono are declared in
+   src/components/Head.astro, where they load after the page (see the late-fonts block there). */
+/* The three families are served from the project (latin subset, WOFF2, from Google Fonts on 11/10/2026). Anton, Inter
+   Tight and JetBrains Mono are under the SIL Open Font License 1.1. Inter Tight and JetBrains Mono are variable files. */
+@font-face { font-family: 'Anton'; font-style: normal; font-weight: 400; font-display: swap; src: url('/concepts/vanth/assets/fonts/anton-latin.woff2') format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+/* Stand-ins with the same width as each family, from fonts that are on the device, so the text keeps its lines when
+   the real font arrives (measured from the font files on 11/10/2026). */
+@font-face { font-family: 'Anton Fallback'; src: local('Impact'); size-adjust: 100%; ascent-override: 117.6%; descent-override: 32.9%; line-gap-override: 0%; }
+@font-face { font-family: 'Inter Tight Fallback'; src: local('Arial'); size-adjust: 96.8%; ascent-override: 100%; descent-override: 25%; line-gap-override: 0%; }
+@font-face { font-family: 'JetBrains Mono Fallback'; src: local('Courier New'); size-adjust: 100%; ascent-override: 102%; descent-override: 30%; line-gap-override: 0%; }
+:root {
+  --base-color-neutral--white: #ffffff;
+  --base-color-neutral--black: #0b0b0b;
+  --base-color-neutral--neutral-lightest: #eceae4;
+  --base-color-neutral--neutral: #8c8a84;
+  --base-color-brand--red: #e5261f;
+  --_theme---background-color--background-primary: var(--base-color-neutral--neutral-lightest);
+  --_theme---background-color--background-alternate: var(--base-color-neutral--black);
+  --_theme---background-color--background-brand: var(--base-color-brand--red);
+  --_theme---text-color--text-primary: var(--base-color-neutral--black);
+  --_theme---text-color--text-alternate: var(--base-color-neutral--neutral-lightest);
+  --_theme---text-color--text-brand: var(--base-color-brand--red);
+  --_theme---border-color--border-primary: var(--base-color-neutral--black);
+  --font-family--display: 'Anton', 'Anton Fallback', 'Arial Narrow', sans-serif;
+  --font-family--primary: 'Inter Tight', 'Inter Tight Fallback', Arial, sans-serif;
+  --font-family--mono: 'JetBrains Mono', 'JetBrains Mono Fallback', monospace;
+  --_typography---display--large: 37rem;
+  --_typography---display--medium: 16rem;
+  --_typography---heading--h1: 8.5rem;
+  --_typography---heading--h2: 5rem;
+  --_typography---heading--h3: 3rem;
+  --_typography---heading--h5: 1.5rem;
+  --_typography---text--regular: 1.125rem;
+  --_typography---text--tiny: 0.75rem;
+  --_layout---section-padding--large: 8rem;
+  --_layout---spacing--global-padding: 2rem;
+  --_sizes---container--large: 90rem;
+}
+@media (max-width: 991px) {
+  :root {
+    --_typography---display--large: 23rem;
+    --_typography---display--medium: 10rem;
+    --_typography---heading--h1: 5.5rem;
+    --_typography---heading--h2: 3.5rem;
+    --_layout---section-padding--large: 6rem;
+  }
+}
+@media (max-width: 767px) {
+  :root {
+    --_typography---display--large: 11.5rem;
+    --_typography---display--medium: 5.5rem;
+    --_typography---heading--h1: 3.25rem;
+    --_typography---heading--h2: 2.5rem;
+    --_typography---heading--h3: 2rem;
+    --_layout---section-padding--large: 4rem;
+    --_layout---spacing--global-padding: 1.25rem;
+  }
+}
+/* phone portrait: the five letters of the wordmark fit a 360 px screen */
+@media (max-width: 479px) {
+  :root {
+    --_typography---display--large: 8.5rem;
+    --_typography---display--medium: 4.75rem;
+  }
+}

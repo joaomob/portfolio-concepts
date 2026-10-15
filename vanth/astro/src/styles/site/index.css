@@ -1,0 +1,10 @@
+/* The style sheet every page carries (site.css of the original prototype), split by part. The order is the order of
+   the original file: rules that were moved next to their kind do not compete with what they jumped over. */
+@import './tokens.css';
+@import './base.css';
+@import './nav.css';
+@import './home-sections.css';
+@import './footer.css';
+@import './not-found.css';
+@import './facts.css';
+@import './page-motion.css';

@@ -1,0 +1,26 @@
+---
+// A page of the shop (the bag, the checkout): the menu and the footer of the house around a page that fills the screen,
+// without the animation library.
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import '../../styles/pages/collection.css';
+import '../../styles/pages/spots.css';
+import '../../styles/pages/product.css';
+import '../../styles/pages/shop.css';
+
+interface Props {
+  title: string;
+  description: string;
+  page: string;
+}
+const { title, description, page } = Astro.props;
+---
+<BaseLayout title={`${title} | Vanth`} description={description} page={page} current={null} fill>
+  <section class="section_shop">
+    <div class="padding-global">
+      <div class="container-large">
+        <slot />
+      </div>
+    </div>
+  </section>
+  <slot name="after" slot="after" />
+</BaseLayout>

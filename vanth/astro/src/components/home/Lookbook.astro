@@ -1,0 +1,21 @@
+---
+// Six photographs of line 01; each drifts inside its frame at its own speed as the page scrolls.
+import Photo from '../shared/Photo.astro';
+import { lookbook } from '../../data/home';
+import { href } from '../../config';
+---
+<section id="lookbook" class="section_lookbook">
+  <div class="padding-global">
+    <div class="container-large">
+      <div class="padding-section-large">
+        <div class="lookbook_header">
+          <h2 class="heading-style-h1">Lookbook</h2>
+          <a href={href('collection')} class="button is-alternate">See Iron Court</a>
+        </div>
+        <div class="lookbook_grid">
+          {lookbook.map((item, i) => <figure class={`lookbook_item is-${i + 1}`} data-speed={String(item.speed)}><Photo name={item.image} loading="lazy" alt={item.alt} /></figure>)}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

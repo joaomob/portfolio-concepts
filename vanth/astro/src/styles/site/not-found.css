@@ -1,0 +1,10 @@
+/* 404: the number in outline behind the message, and the eight lines as a way out */
+.section_not-found { position: relative; padding-top: 10rem; padding-bottom: var(--_layout---section-padding--large); overflow: hidden; }
+.not-found_number { font-family: var(--font-family--display); font-size: var(--_typography---display--large); line-height: 0.8; color: transparent; -webkit-text-stroke: 1px var(--_theme---text-color--text-alternate); }
+.not-found_content { display: flex; flex-direction: column; align-items: flex-start; gap: 1.5rem; max-width: 36rem; margin-top: 3rem; }
+.not-found_text { max-width: 28rem; text-wrap: pretty; }
+.not-found_list { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0 1.5rem; margin-top: 6rem; list-style: none; }
+.not-found_link { display: flex; flex-direction: column; gap: 0.5rem; padding: 1.5rem 0; border-top: 1px solid var(--base-color-neutral--neutral); transition: color 0.3s; }
+.not-found_link:hover { color: var(--base-color-brand--red); }
+@media (max-width: 991px) { .not-found_list { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 479px) { .section_not-found { padding-top: 7rem; } .not-found_list { grid-template-columns: 1fr; margin-top: 4rem; } }

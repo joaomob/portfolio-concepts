@@ -1,0 +1,6 @@
+---
+// Iron Court, line 01, keeps the first address of the collection pages.
+import CollectionPage from '../components/templates/CollectionPage.astro';
+import { lineBySlug } from '../lib/catalog';
+---
+<CollectionPage line={lineBySlug('iron-court')} />

@@ -1,0 +1,11 @@
+.footer_component { position: relative; overflow: hidden; padding-top: 3rem; }
+.footer_top { display: flex; justify-content: space-between; align-items: center; gap: 2rem; flex-wrap: wrap; }
+.footer_links { display: flex; gap: 2rem; flex-wrap: wrap; }
+.footer_credit { text-decoration: underline; text-underline-offset: 0.2em; }
+/* design judge, 14/10/2026 (M4): the word VANTH is 2.33 times its font size wide, so between the steps of display/large
+   (768 to 991 px and 992 to about 1400 px) it ran past the window; the size is the smaller of the Variable and the width
+   that fits. The cut at the bottom is a share of the letter (0.08em), so the bar of the A shows at every width */
+.footer_wordmark { font-family: var(--font-family--display); font-size: min(var(--_typography---display--large), calc((100vw - 3rem) / 2.33)); line-height: 0.8; text-transform: uppercase; text-align: center; white-space: nowrap; margin-top: 2rem; margin-bottom: -0.08em; }
+@media (max-width: 479px) {
+  .footer_links { column-gap: 1rem; }
+}

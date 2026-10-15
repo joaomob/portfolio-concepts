@@ -1,0 +1,29 @@
+---
+// The three notes of a fragrance beside its bottle; the photograph is pinned and the notes come in one by one.
+import Photo from '../shared/Photo.astro';
+import BuyBlock from '../shared/BuyBlock.astro';
+import type { FragranceView } from '../../lib/fragrance';
+import { tie } from '../../lib/text';
+
+interface Props {
+  view: FragranceView;
+}
+const { view } = Astro.props;
+const steps = [['Top', view.notes.top], ['Heart', view.notes.heart], ['Base', view.notes.base]] as const;
+---
+<section id="notes" class="section_fragrance-notes" data-notes>
+  <div class="fragrance-notes_pin">
+    <div class="fragrance-notes_photo"><Photo name={view.bottle.image} loading="lazy" alt={view.bottle.alt} /></div>
+    <div class="fragrance-notes_content padding-global">
+      <p class="text-style-label">Eau de parfum, 50&nbsp;ml</p>
+      <h2 class="heading-style-h1">Three notes</h2>
+      <ul class="fragrance-notes_list" role="list">
+        {steps.map(([step, note]) => <li class="fragrance-notes_item" data-note><span class="fragrance-notes_step text-style-label">{step}</span><span class="heading-style-h2">{note.name}</span><span class="fragrance-notes_text">{tie(note.text)}</span></li>)}
+      </ul>
+      <div class="fragrance-notes_buy">
+        <span class="fragrance-hero_price">{view.price}</span>
+        <BuyBlock id={`fragrance-${view.line.slug}`} name={`${view.name}, eau de parfum`} price={view.price} image={view.bottle.image} page={view.page} />
+      </div>
+    </div>
+  </div>
+</section>

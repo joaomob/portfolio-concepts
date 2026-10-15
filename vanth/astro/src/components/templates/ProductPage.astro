@@ -1,0 +1,40 @@
+---
+// The page of one piece: its photograph and buy block, the look it is worn in, and more pieces of its line. Garments
+// and footwear add the size picker and the size guide.
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import '../../styles/pages/collection.css';
+import '../../styles/pages/spots.css';
+import '../../styles/pages/product.css';
+import ProductMain from '../product/ProductMain.astro';
+import WornIn from '../product/WornIn.astro';
+import MorePieces from '../product/MorePieces.astro';
+import SizeGuide from '../product/SizeGuide.astro';
+import type { Line, Product } from '../../lib/types';
+import { productPage } from '../../lib/catalog';
+import { chartFor } from '../../lib/sizes';
+
+interface Props {
+  line: Line;
+  product: Product;
+  others: Product[];
+}
+const { line, product, others } = Astro.props;
+const chart = chartFor(product.label);
+const summary = product.beauty ? `${product.beauty.body} ${product.price}.` : `${product.material}. ${product.price}, made to order in Berlin.`;
+const title = `${product.name}, ${product.beauty ? 'lipstick of ' : ''}${line.name} | Vanth`;
+const description = `${product.name}, from ${line.name}, line ${line.number} of the Vanth Autumn Winter 2026 season. ${summary}`;
+---
+<BaseLayout title={title} description={description} page={productPage(line, product.id)} current="collections" motion>
+  <ProductMain line={line} item={product} chart={chart} />
+  <WornIn line={line} item={product} />
+  <MorePieces line={line} others={others} />
+  {chart && <SizeGuide slot="after" chart={chart} />}
+  <Fragment slot="scripts">
+    <script>
+      import { initList } from '../../scripts/list';
+      import { initSizes } from '../../scripts/sizes';
+      initList();
+      if (document.querySelector('[data-guide]')) initSizes();
+    </script>
+  </Fragment>
+</BaseLayout>

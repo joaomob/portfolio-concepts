@@ -1,0 +1,59 @@
+* { box-sizing: border-box; }
+/* no orphan word (rules/web-development.md): titles, labels, leads and captions balance their lines, paragraphs keep the
+   last word in company; the last two words of each text are also joined by a no-break space in the markup */
+h1, h2, h3, h4, h5, h6, [class*="heading-style-"], .text-style-label, .ritual_caption { text-wrap: balance; }
+p, li { text-wrap: pretty; }
+/* black behind every page, so pulling the page past its top or bottom shows black */
+html { font-size: 16px; background-color: var(--base-color-neutral--black); }
+body { margin: 0; background-color: var(--_theme---background-color--background-primary); color: var(--_theme---text-color--text-primary); font-family: var(--font-family--primary); font-size: var(--_typography---text--regular); line-height: 1.5; -webkit-font-smoothing: antialiased; }
+h1, h2, h3, p, ul, figure { margin: 0; padding: 0; }
+img { display: block; width: 100%; height: 100%; object-fit: cover; }
+a { color: inherit; text-decoration: none; }
+a:focus-visible { outline: 2px solid var(--_theme---text-color--text-brand); outline-offset: 4px; }
+
+.page-wrapper { display: flex; flex-direction: column; min-height: 100dvh; overflow: clip; }
+.main-wrapper { flex: 1 0 auto; }
+.main-wrapper.is-fill { display: flex; flex-direction: column; }
+.padding-global { padding-left: var(--_layout---spacing--global-padding); padding-right: var(--_layout---spacing--global-padding); }
+.container-large { width: 100%; max-width: var(--_sizes---container--large); margin-left: auto; margin-right: auto; }
+.padding-section-large { padding-top: var(--_layout---section-padding--large); padding-bottom: var(--_layout---section-padding--large); }
+.background-color-black { background-color: var(--_theme---background-color--background-alternate); color: var(--_theme---text-color--text-alternate); }
+.background-color-paper { background-color: var(--base-color-neutral--neutral-lightest); color: var(--base-color-neutral--black); }
+.text-color-brand { color: var(--_theme---text-color--text-brand); }
+
+.heading-style-h1, .heading-style-h2, .heading-style-h3, .heading-style-h5 { font-family: var(--font-family--display); font-weight: 400; text-transform: uppercase; text-wrap: balance; }
+.heading-style-h1 { font-size: var(--_typography---heading--h1); line-height: 0.92; }
+.heading-style-h2 { font-size: var(--_typography---heading--h2); line-height: 0.95; }
+.heading-style-h3 { font-size: var(--_typography---heading--h3); line-height: 1; }
+.heading-style-h5 { font-size: var(--_typography---heading--h5); line-height: 1.1; }
+.text-style-label { font-family: var(--font-family--mono); font-size: var(--_typography---text--tiny); line-height: 1.4; letter-spacing: 0.08em; text-transform: uppercase; }
+
+.button { display: inline-block; padding: 0.875rem 1.25rem; border: 1px solid var(--_theme---border-color--border-primary); background-color: var(--_theme---background-color--background-alternate); color: var(--_theme---text-color--text-alternate); font-family: var(--font-family--mono); font-size: var(--_typography---text--tiny); letter-spacing: 0.08em; text-transform: uppercase; transition: background-color 0.3s, color 0.3s; }
+.button:hover { background-color: var(--_theme---background-color--background-brand); color: var(--base-color-neutral--white); border-color: var(--_theme---background-color--background-brand); }
+.button.is-alternate { background-color: var(--_theme---background-color--background-primary); color: var(--_theme---text-color--text-primary); border-color: var(--_theme---background-color--background-primary); }
+.button.is-alternate:hover { background-color: var(--_theme---background-color--background-brand); color: var(--base-color-neutral--white); border-color: var(--_theme---background-color--background-brand); }
+/* the button that buys: red, with pure black text (4.6 to 1 on the red of the house; the black of the house gives 4.34) */
+.button.is-brand { background-color: var(--_theme---background-color--background-brand); color: #000; border-color: var(--_theme---background-color--background-brand); font-weight: 700; }
+.button.is-brand:hover { background-color: var(--base-color-neutral--neutral-lightest); color: var(--base-color-neutral--black); border-color: var(--base-color-neutral--neutral-lightest); }
+/* switched off by js/bag.js (an own attribute, so the rule travels with the page) */
+[data-off] { display: none !important; }
+/* the buy block: the button, and the quantity with one more and one less once the piece is in the bag */
+.bag-buy { display: flex; flex-wrap: wrap; align-items: center; gap: 0.75rem 1rem; }
+.bag-stepper { display: flex; align-items: center; gap: 0.5rem; }
+.bag-stepper_button { display: flex; align-items: center; justify-content: center; width: 3rem; height: 3rem; padding: 0; border: 1px solid currentColor; background: none; color: inherit; font-family: var(--font-family--mono); font-size: var(--_typography---text--regular); cursor: pointer; }
+.bag-stepper_button:hover { background-color: var(--_theme---background-color--background-brand); border-color: var(--_theme---background-color--background-brand); color: var(--base-color-neutral--black); }
+.bag-stepper_count { min-width: 2.5rem; font-family: var(--font-family--mono); font-size: var(--_typography---text--regular); text-align: center; }
+.bag-buy_link { margin-left: 0.5rem; padding: 0.5rem 0; color: inherit; text-decoration: underline; text-underline-offset: 0.3em; }
+.bag-buy_link:hover { color: var(--base-color-brand--red); }
+
+/* film grain over the whole page (João, 11/10/2026: the clean black needed noise): one small tile of light and dark
+   specks, fixed over everything under the menu, so it shows on the black sections, on the paper ones and on the
+   photographs alike; it takes no clicks */
+.page-wrapper::after { content: ''; position: fixed; z-index: 45; inset: 0; pointer-events: none; background-size: 8rem 8rem; opacity: 0.16; }
+/* the tile is asked for after the page has loaded (one line of script at the end of each page sets the class), so it
+   stays out of the way of the first paint */
+.grain-on .page-wrapper::after { background-image: url('/concepts/vanth/assets/images/grain.png'); }
+
+
+/* second judgement of 12/10/2026: a button element and a link with the button class have the same height */
+button.button { min-height: 3rem; }

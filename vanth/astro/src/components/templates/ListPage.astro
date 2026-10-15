@@ -1,0 +1,30 @@
+---
+// A list page of the menu (all the collections, all the fragrances): the opening and one card per line.
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import '../../styles/pages/list.css';
+import ListHero from '../lists/ListHero.astro';
+import ListGrid, { type ListCard } from '../lists/ListGrid.astro';
+import type { Current } from '../chrome/Nav.astro';
+
+interface Props {
+  title: string;
+  description: string;
+  page: string;
+  current: Current;
+  label: string;
+  heading: string;
+  lead: string;
+  cards: ListCard[];
+}
+const { title, description, page, current, label, heading, lead, cards } = Astro.props;
+---
+<BaseLayout title={title} description={description} page={page} current={current} motion>
+  <ListHero label={label} heading={heading} lead={lead} />
+  <ListGrid cards={cards} />
+  <Fragment slot="scripts">
+    <script>
+      import { initList } from '../../scripts/list';
+      initList();
+    </script>
+  </Fragment>
+</BaseLayout>

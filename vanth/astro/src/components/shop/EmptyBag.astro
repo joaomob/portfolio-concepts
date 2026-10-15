@@ -1,0 +1,8 @@
+---
+// What the bag and the checkout show when nothing is in the bag (src/scripts/bag.ts switches it on).
+import { href } from '../../config';
+---
+<div class="shop_empty" data-bag-empty data-off>
+  <p class="shop_lead">Your bag is empty.</p>
+  <a href={href('collections')} class="button is-alternate">See the collections</a>
+</div>

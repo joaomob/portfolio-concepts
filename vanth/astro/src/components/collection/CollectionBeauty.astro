@@ -1,0 +1,25 @@
+---
+// The beauty product of a line (only Lacquer has one, its lipstick), worn in a portrait.
+import Photo from '../shared/Photo.astro';
+import type { Line, Beauty } from '../../lib/types';
+import { productPage } from '../../lib/catalog';
+import { tie } from '../../lib/text';
+import { href } from '../../config';
+
+interface Props {
+  line: Line;
+  beauty: Beauty;
+}
+const { line, beauty } = Astro.props;
+---
+<section class="section_collection-beauty">
+  <div class="collection-fragrance_layout is-reverse">
+    <div class="collection-fragrance_photo"><Photo name={beauty.image} data-focus="50 25" loading="lazy" alt={beauty.alt} /></div>
+    <div class="collection-fragrance_content padding-global">
+      <p class="text-style-label">{beauty.kind} of {line.name}</p>
+      <h2 class="collection-fragrance_name">{beauty.name}</h2>
+      <p class="look-shop_body">{tie(beauty.body)}</p>
+      <a href={href(productPage(line, beauty.id))} class="button is-alternate">See the lipstick</a>
+    </div>
+  </div>
+</section>

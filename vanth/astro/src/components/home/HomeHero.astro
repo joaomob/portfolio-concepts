@@ -1,0 +1,24 @@
+---
+// The opening screen: the wordmark behind a campaign photograph that grows to the whole screen as the page scrolls,
+// and the paper wordmark that comes in over it at the end.
+import Photo from '../shared/Photo.astro';
+import { hero } from '../../data/home';
+---
+<section class="section_hero" data-hero>
+  <div class="hero_stage">
+    <h1 class="hero_wordmark" aria-label="Vanth, concept couture house"><span aria-hidden="true">Vanth</span></h1>
+    <div class="hero_photo" data-hero-photo>
+      <Photo class="hero_image" name={hero.image} frame="homeHero" fetchpriority="high" alt={hero.alt} />
+    </div>
+    <p class="hero_wordmark is-over" aria-hidden="true" data-hero-over>Vanth</p>
+    <div class="hero_meta" data-hero-meta>
+      <span class="hero_tag text-style-label">{hero.tag}</span>
+      <p class="hero_collection heading-style-h3">{hero.title}</p>
+      <p class="text-style-label">{hero.departments}</p>
+    </div>
+    <div class="hero_index" data-hero-meta>
+      <span class="hero_number">{hero.count}</span>
+      <span class="text-style-label">{hero.countLabel}</span>
+    </div>
+  </div>
+</section>

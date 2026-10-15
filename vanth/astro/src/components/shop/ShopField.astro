@@ -1,0 +1,12 @@
+---
+// One field of the test checkout, filled in and read only: nothing typed here leaves the page.
+interface Props {
+  label: string;
+  name: string;
+  value: string;
+  type?: string;
+  wide?: boolean;
+}
+const { label, name, value, type = 'text', wide = false } = Astro.props;
+---
+<label class:list={['shop_field', { 'is-wide': wide }]}><span class="text-style-label">{label}</span><input type={type} name={name} value={value} autocomplete="off" readonly /></label>

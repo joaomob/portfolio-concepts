@@ -1,0 +1,53 @@
+/* Vanth, the bag and the checkout. Loaded after site.css, collection.css and product.css. */
+.section_shop { flex: 1 0 auto; padding-top: 10rem; padding-bottom: var(--_layout---section-padding--large); }
+.shop_layout { display: grid; grid-template-columns: 7fr 4fr; gap: 4rem; align-items: start; margin-top: 3rem; }
+.shop_empty { display: flex; flex-direction: column; align-items: start; gap: 1.5rem; margin-top: 3rem; }
+.shop_lead { font-size: var(--_typography---text--regular); }
+
+.bag_list { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--base-color-neutral--neutral); }
+.bag_item { display: grid; grid-template-columns: 6rem 1fr auto 8rem; gap: 1.5rem; align-items: center; padding: 1.5rem 0; border-bottom: 1px solid var(--base-color-neutral--neutral); }
+.bag_photo { display: block; aspect-ratio: 4 / 5; overflow: hidden; background-color: #1b1b1b; }
+.bag_photo img { width: 100%; height: 100%; object-fit: cover; }
+.bag_info { display: flex; flex-direction: column; align-items: start; gap: 0.5rem; min-width: 0; }
+.bag_name { color: inherit; text-decoration: none; }
+.bag_name:hover { color: var(--base-color-brand--red); }
+.bag_remove { padding: 0.5rem 0; border: 0; background: none; color: inherit; text-decoration: underline; text-underline-offset: 0.3em; cursor: pointer; }
+.bag_remove:hover { color: var(--base-color-brand--red); }
+.bag_price { font-family: var(--font-family--mono); font-size: var(--_typography---text--regular); text-align: right; white-space: nowrap; }
+.bag_list.is-compact .bag_item { grid-template-columns: 4rem 1fr auto; gap: 1rem; padding: 1rem 0; }
+
+.shop_summary { position: sticky; top: 6rem; display: flex; flex-direction: column; align-items: start; gap: 1.5rem; padding: 2rem; border: 1px solid var(--base-color-neutral--neutral); }
+.shop_summary .bag_list, .shop_totals { width: 100%; }
+.shop_totals { display: flex; flex-direction: column; gap: 1rem; margin: 0; }
+.shop_total-row { display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; }
+.shop_total-row dd { margin: 0; }
+.shop_total-row.is-total { padding-top: 1rem; border-top: 1px solid var(--base-color-neutral--neutral); }
+.shop_total { font-family: var(--font-family--display); font-size: var(--_typography---heading--h3); line-height: 1; color: var(--base-color-brand--red); }
+.shop_summary .bag-buy_link { margin-left: 0; }
+
+.shop_form { display: flex; flex-direction: column; align-items: start; gap: 2.5rem; }
+.shop_notice { max-width: 34rem; padding: 1rem 1.25rem; border-left: 2px solid var(--base-color-brand--red); text-wrap: pretty; }
+.shop_group { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; width: 100%; margin: 0; padding: 0; border: 0; }
+.shop_group legend { margin-bottom: 1rem; padding: 0; }
+.shop_field { display: flex; flex-direction: column; gap: 0.5rem; }
+.shop_field.is-wide { grid-column: 1 / -1; }
+.shop_field input { width: 100%; height: 3rem; padding: 0 1rem; border: 1px solid var(--base-color-neutral--neutral); border-radius: 0; background: none; color: inherit; font-family: var(--font-family--primary); font-size: 1rem; }
+.shop_field input:focus-visible { outline: 2px solid var(--base-color-brand--red); outline-offset: 2px; }
+
+.order-thanks { width: min(34rem, calc(100vw - 2rem)); }
+.order-thanks[open] { display: flex; flex-direction: column; align-items: start; gap: 1.5rem; }
+.order-thanks .size-guide_note { margin-top: 0; }
+
+@media (max-width: 991px) {
+  .section_shop { padding-top: 7rem; }
+  .shop_layout { grid-template-columns: 1fr; gap: 2.5rem; }
+  .shop_summary { position: static; width: 100%; }
+}
+@media (max-width: 479px) {
+  .bag_item { grid-template-columns: 5rem 1fr; gap: 1rem; }
+  .bag_item > .bag-stepper { grid-column: 2; }
+  .bag_item > .bag_price { grid-column: 2; text-align: left; }
+  .bag_list.is-compact .bag_item { grid-template-columns: 4rem 1fr; }
+  .shop_group { grid-template-columns: 1fr; }
+  .shop_summary { padding: 1.5rem 1rem; }
+}

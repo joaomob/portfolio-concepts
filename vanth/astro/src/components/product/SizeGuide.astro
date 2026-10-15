@@ -1,0 +1,32 @@
+---
+// The size guide that the picker opens: every size in the six systems and the body measurements, in centimetres or
+// inches. It is a native dialog placed after the footer.
+import { SYSTEMS, bySystem, type Chart } from '../../lib/sizes';
+
+interface Props {
+  chart: Chart;
+}
+const { chart } = Astro.props;
+---
+<dialog class="size-guide" aria-labelledby="size-guide-title" data-guide>
+  <div class="size-guide_header">
+    <h2 class="heading-style-h3" id="size-guide-title">Size guide</h2>
+    <button type="button" class="size-guide_close text-style-label" data-guide-close>Close</button>
+  </div>
+  <div class="size-guide_units" role="group" aria-label="Unit of the measurements">
+    <button type="button" class="size-guide_unit text-style-label" aria-pressed="true" data-guide-unit="cm">Centimetres</button>
+    <button type="button" class="size-guide_unit text-style-label" aria-pressed="false" data-guide-unit="in">Inches</button>
+  </div>
+  <div class="size-guide_scroll" tabindex="0" role="region" aria-labelledby="size-guide-title">
+    <div class="size-guide_table" role="table" aria-labelledby="size-guide-title">
+      <div class="size-guide_head" role="rowgroup"><div class="size-guide_row" role="row">{SYSTEMS.map(([, label]) => <div class="size-guide_cell is-head" role="columnheader">{label}</div>)}{chart.measures.map(([name]) => <div class="size-guide_cell is-head" role="columnheader">{name}</div>)}</div></div>
+      <div class="size-guide_body" role="rowgroup">
+        {chart.sizes.map((_, i) => {
+          const cells = bySystem(chart, i);
+          return <div class="size-guide_row" role="row"><div class="size-guide_cell" role="rowheader">{cells.eu}</div>{SYSTEMS.slice(1).map(([key]) => <div class="size-guide_cell" role="cell">{cells[key]}</div>)}{chart.measures.map(([, values]) => <div class="size-guide_cell" role="cell" data-cm={String(values[i])}>{values[i]}</div>)}</div>;
+        })}
+      </div>
+    </div>
+  </div>
+  <p class="size-guide_note">{chart.note}</p>
+</dialog>

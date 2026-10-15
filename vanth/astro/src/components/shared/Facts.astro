@@ -1,0 +1,11 @@
+---
+// A short list of facts (material, where it is made, size). The first, the longest, takes the whole row on a phone, so
+// no fact is left alone on its row.
+interface Props {
+  facts: [string, string][];
+}
+const { facts } = Astro.props;
+---
+<dl class="product_facts">
+  {facts.map(([term, value], i) => <div class:list={['product_fact', { 'is-wide': i === 0 }]}><dt class="text-style-label">{term}</dt><dd>{value}</dd></div>)}
+</dl>

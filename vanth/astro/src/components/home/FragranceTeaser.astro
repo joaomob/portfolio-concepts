@@ -1,0 +1,19 @@
+---
+// Slate, the fragrance of line 01: the photograph is pinned and its three notes come in one by one.
+import Photo from '../shared/Photo.astro';
+import { fragrance } from '../../data/home';
+import { href } from '../../config';
+---
+<section id="fragrance" class="section_fragrance" data-fragrance>
+  <div class="fragrance_pin">
+    <div class="fragrance_photo"><Photo name={fragrance.image} loading="lazy" alt={fragrance.alt} /></div>
+    <div class="fragrance_content padding-global">
+      <p class="text-style-label">{fragrance.label}</p>
+      <h2 class="fragrance_name">{fragrance.name}</h2>
+      <ul class="fragrance_notes" role="list">
+        {fragrance.notes.map(([when, note]) => <li class="fragrance_note" data-note><span class="text-style-label">{when}</span><span class="heading-style-h2">{note}</span></li>)}
+      </ul>
+      <a href={href('fragrance')} class="button is-alternate">See the fragrance</a>
+    </div>
+  </div>
+</section>

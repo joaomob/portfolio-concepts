@@ -1,0 +1,20 @@
+---
+// The bag: the pieces the visitor added, kept in the browser, with the quantity of each one and the total.
+import ShopPage from '../components/templates/ShopPage.astro';
+import EmptyBag from '../components/shop/EmptyBag.astro';
+import BagLine from '../components/shop/BagLine.astro';
+import ShopTotals from '../components/shop/ShopTotals.astro';
+import { href } from '../config';
+---
+<ShopPage title="Your bag" description="The pieces in your bag at Vanth, with the quantity of each one and the total of the order." page="bag">
+  <h1 class="heading-style-h1">Your bag</h1>
+  <EmptyBag />
+  <div class="shop_layout" data-bag-filled data-off>
+    <ul class="bag_list" role="list" data-bag-list="edit" aria-live="polite"><BagLine editable /></ul>
+    <aside class="shop_summary" aria-label="Order summary">
+      <ShopTotals />
+      <a href={href('checkout')} class="button is-brand">Go to checkout</a>
+      <a href={href('collections')} class="bag-buy_link text-style-label">See the collections</a>
+    </aside>
+  </div>
+</ShopPage>

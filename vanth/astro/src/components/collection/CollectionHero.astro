@@ -1,0 +1,25 @@
+---
+// The campaign photograph of a line under its giant name; a name longer than ten letters sets each word on its own line.
+import Photo from '../shared/Photo.astro';
+import type { Line } from '../../lib/types';
+import { tie, words } from '../../lib/text';
+
+interface Props {
+  line: Line;
+}
+const { line } = Astro.props;
+const long = line.name.length > 10;
+// the part of the wide photograph the hero keeps: the faces (focus_x matters on a phone, cut at the sides)
+const focus = `${line.campaign.focus_x ?? 50} ${line.campaign.focus ?? 20}`;
+---
+<section class="section_collection-hero" data-collection-hero>
+  <div class="collection-hero_photo"><Photo name={line.campaign.image} frame="hero" data-focus={focus} fetchpriority="high" alt={line.campaign.alt} /></div>
+  <div class="collection-hero_content padding-global">
+    <span class="hero_tag text-style-label">Autumn Winter 2026</span>
+    <h1 class:list={['collection-hero_title', { 'is-long': long }]}>{long ? <Fragment set:html={words(line.name).map((w) => `<span class="collection-hero_word">${w}</span>`).join(' ')} /> : line.name}</h1>
+    <div class="collection-hero_meta">
+      <p class="text-style-label">Line {line.number} of&nbsp;08</p>
+      <p class="text-style-label">{tie(line.meta)}</p>
+    </div>
+  </div>
+</section>

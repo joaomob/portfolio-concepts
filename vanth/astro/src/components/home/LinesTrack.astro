@@ -1,0 +1,25 @@
+---
+// The eight lines of the season: the section is pinned on a desktop and the campaign photographs pass sideways.
+import Photo from '../shared/Photo.astro';
+import { lines, collectionPage } from '../../lib/catalog';
+import { tie } from '../../lib/text';
+import { TAGS } from '../../data/tags';
+import { trackAlts, hero } from '../../data/home';
+import { href } from '../../config';
+---
+<section id="collection" class="section_collection" data-collection>
+  <div class="collection_pin">
+    <div class="collection_header padding-global">
+      <div>
+        <p class="text-style-label">{hero.tag}</p>
+        <h2 class="heading-style-h2">The eight lines</h2>
+      </div>
+      <a href={href('collections')} class="button is-alternate">See all collections</a>
+    </div>
+    <ul class="collection_track" role="list" data-collection-track>
+      {lines.map((line) => (
+        <li class="look_item"><a href={href(collectionPage(line))} class="look_link"><div class="look_photo"><Photo name={line.campaign.image} frame="look" loading="lazy" alt={trackAlts[line.slug]} /></div><div class="look_caption"><span class="look_number">{line.number}</span><span><span class="look_name heading-style-h5">{line.name}</span><span class="text-style-label">{tie(TAGS[line.slug])}</span></span></div></a></li>
+      ))}
+    </ul>
+  </div>
+</section>

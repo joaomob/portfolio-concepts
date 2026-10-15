@@ -1,0 +1,19 @@
+---
+// The size picker of a piece: the country of the size, the four sizes (38 picked) shown in that country's system, and
+// the button that opens the size guide. src/scripts/sizes.ts switches the labels.
+import { SYSTEMS, bySystem, type Chart } from '../../lib/sizes';
+
+interface Props {
+  chart: Chart;
+}
+const { chart } = Astro.props;
+const dataOf = (i: number) => Object.fromEntries(Object.entries(bySystem(chart, i)).map(([k, v]) => [`data-${k}`, v]));
+---
+<form class="product_form" data-wf-custom>
+  <fieldset class="product_sizes">
+    <legend class="text-style-label">Size</legend>
+    <div class="product_systems" role="radiogroup" aria-label="Country of the size">{SYSTEMS.map(([key, label]) => <label class="product_system"><input type="radio" name="size-system" value={key} checked={key === 'eu'} /><span>{label}</span></label>)}</div>
+    <div class="product_sizes-row">{chart.sizes.map((value, i) => <label class="product_size"><input type="radio" name="size" value={value} checked={i === 1} /><span data-size {...dataOf(i)}>{value}</span></label>)}</div>
+    <button type="button" class="product_guide-open text-style-label" data-guide-open>Size guide</button>
+  </fieldset>
+</form>

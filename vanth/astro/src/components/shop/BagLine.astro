@@ -1,0 +1,30 @@
+---
+// The row of one piece in the bag, switched off in the page: src/scripts/bag.ts copies it for each piece. The bag
+// page lets the visitor change the quantity or remove the piece; the checkout only reads it.
+import { MEDIA } from '../../lib/photos';
+import { href } from '../../config';
+
+interface Props {
+  editable: boolean;
+}
+const { editable } = Astro.props;
+const collections = href('collections');
+---
+<li class="bag_item" data-line-model data-off>
+  <a href={collections} class="bag_photo" data-line-link tabindex="-1" aria-hidden="true"><img src={`${MEDIA}/images/grain.png`} alt="" width="160" height="200" loading="lazy" data-line-image /></a>
+  <div class="bag_info">
+    <a href={collections} class="bag_name heading-style-h5" data-line-link data-line-name>Piece</a>
+    <span class="text-style-label" data-line-size>One size</span>
+    {editable
+      ? <button type="button" class="bag_remove text-style-label" data-line-act="remove" data-line-label="Remove">Remove</button>
+      : <span class="text-style-label" data-line-qty="Quantity ">Quantity 1</span>}
+  </div>
+  {editable && (
+    <div class="bag-stepper">
+      <button type="button" class="bag-stepper_button" data-line-act="less" data-line-label="Remove one">−</button>
+      <span class="bag-stepper_count" data-line-qty>1</span>
+      <button type="button" class="bag-stepper_button" data-line-act="more" data-line-label="Add one more">+</button>
+    </div>
+  )}
+  <span class="bag_price" data-line-price>EUR 0</span>
+</li>

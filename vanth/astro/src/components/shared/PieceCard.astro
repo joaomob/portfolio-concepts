@@ -1,0 +1,17 @@
+---
+// A card of a piece: its photograph, name, kind and price; the whole card is a link to the product page.
+import Photo from './Photo.astro';
+
+interface Props {
+  href: string;
+  image: string;
+  alt: string;
+  name: string;
+  kind: string;
+  price: string;
+  /** the id the dots of the looks point at ("piece-01"), on the collection pages */
+  id?: string;
+}
+const { href, image, alt, name, kind, price, id } = Astro.props;
+---
+<li class="piece_item" id={id}><a href={href} class="piece_link"><div class="piece_photo"><Photo name={image} frame="piece" loading="lazy" alt={alt} /></div><div class="piece_caption"><span><span class="piece_name heading-style-h5">{name}</span><span class="text-style-label">{kind}</span></span><span class="piece_price">{price}</span></div></a></li>

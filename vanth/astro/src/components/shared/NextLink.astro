@@ -1,0 +1,24 @@
+---
+// The way out at the end of a collection or a fragrance page: the next thing to see, its name and its photograph, all
+// one link. On a collection page the name is set word by word, like the giant names of the hero.
+import Photo from './Photo.astro';
+import { words } from '../../lib/text';
+
+interface Props {
+  href: string;
+  label: string;
+  name: string;
+  image: string;
+  alt: string;
+  byWord?: boolean;
+}
+const { href, label, name, image, alt, byWord = false } = Astro.props;
+const wordSpans = words(name).map((w) => `<span class="collection-hero_word">${w}</span>`).join(' ');
+---
+<section class="section_next">
+  <a href={href} class="next_link">
+    <span class="text-style-label">{label}</span>
+    {byWord ? <span class="next_name" set:html={wordSpans} /> : <span class="next_name">{name}</span>}
+    <span class="next_photo"><Photo name={image} loading="lazy" alt={alt} /></span>
+  </a>
+</section>

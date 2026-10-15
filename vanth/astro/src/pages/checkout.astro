@@ -1,0 +1,45 @@
+---
+// The test checkout of the concept store: the details are filled in and read only, and nothing is charged.
+import ShopPage from '../components/templates/ShopPage.astro';
+import EmptyBag from '../components/shop/EmptyBag.astro';
+import BagLine from '../components/shop/BagLine.astro';
+import ShopTotals from '../components/shop/ShopTotals.astro';
+import ShopField from '../components/shop/ShopField.astro';
+import OrderThanks from '../components/shop/OrderThanks.astro';
+import { href } from '../config';
+---
+<ShopPage title="Checkout" description="The checkout of the Vanth concept store, with the details of a test order already filled in. Nothing is charged." page="checkout">
+  <h1 class="heading-style-h1">Checkout</h1>
+  <EmptyBag />
+  <div class="shop_layout" data-bag-filled data-off>
+    <form class="shop_form" data-order-form data-wf-custom>
+      <p class="shop_notice">Concept store. The details below are filled in for the test, and nothing is&nbsp;charged.</p>
+      <fieldset class="shop_group">
+        <legend class="heading-style-h5">Contact</legend>
+        <ShopField label="Email" name="email" value="guest@vanth.example" type="email" wide />
+      </fieldset>
+      <fieldset class="shop_group">
+        <legend class="heading-style-h5">Delivery</legend>
+        <ShopField label="Name" name="name" value="Guest of the house" wide />
+        <ShopField label="Address" name="address" value="Musterstrasse 1" wide />
+        <ShopField label="Postcode" name="postcode" value="10119" />
+        <ShopField label="City" name="city" value="Berlin" />
+        <ShopField label="Country" name="country" value="Germany" wide />
+      </fieldset>
+      <fieldset class="shop_group">
+        <legend class="heading-style-h5">Payment</legend>
+        <ShopField label="Card number" name="card" value="4242 4242 4242 4242" wide />
+        <ShopField label="Expiry" name="expiry" value="12 / 29" />
+        <ShopField label="Security code" name="code" value="123" />
+      </fieldset>
+      <button type="submit" class="button is-brand">Place the test order</button>
+    </form>
+    <aside class="shop_summary" aria-label="Order summary">
+      <h2 class="heading-style-h5">Your order</h2>
+      <ul class="bag_list is-compact" role="list" data-bag-list="read"><BagLine editable={false} /></ul>
+      <ShopTotals />
+      <a href={href('bag')} class="bag-buy_link text-style-label">Back to the bag</a>
+    </aside>
+  </div>
+  <OrderThanks slot="after" />
+</ShopPage>

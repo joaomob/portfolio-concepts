@@ -1,0 +1,21 @@
+---
+// Four pieces of line 01, each a link to its product page.
+import PieceCard from '../shared/PieceCard.astro';
+import { selectedPieces } from '../../data/home';
+import { href } from '../../config';
+---
+<section id="pieces" class="section_pieces background-color-paper">
+  <div class="padding-global">
+    <div class="container-large">
+      <div class="padding-section-large">
+        <div class="pieces_header">
+          <h2 class="heading-style-h1">Selected pieces</h2>
+          <a href={href('collection', '#pieces')} class="button">Shop Iron Court</a>
+        </div>
+        <ul class="pieces_list is-four" role="list">
+          {selectedPieces.map((p) => <PieceCard href={href(p.page)} image={p.image} alt={p.alt} name={p.name} kind={p.kind} price={p.price} />)}
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>

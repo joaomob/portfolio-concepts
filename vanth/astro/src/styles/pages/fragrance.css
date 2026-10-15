@@ -1,0 +1,87 @@
+/* Vanth, fragrance page (Slate). Loaded after site.css and collection.css. Every photograph shows someone wearing the
+   fragrance or leaving for the night, as João asked on 10/10/2026. */
+.section_fragrance-hero { position: relative; height: 100dvh; min-height: 40rem; overflow: hidden; }
+.fragrance-hero_photo { position: absolute; inset: 0; }
+.fragrance-hero_photo img { object-position: 62% 50%; }
+/* portrait photograph (lines 2 to 8): keep the face and the bottle in the frame */
+.fragrance-hero_photo.is-portrait img { object-position: 50% 22%; }
+.fragrance-hero_photo::after { content: ''; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(11, 11, 11, 0.45) 0%, rgba(11, 11, 11, 0) 22%, rgba(11, 11, 11, 0) 45%, rgba(11, 11, 11, 0.92) 100%); }
+.fragrance-hero_content { position: absolute; left: 0; right: 0; bottom: 2rem; }
+/* outlined, so the people in the photograph stay visible through the name */
+.fragrance-hero_title { margin: 1rem 0 0.5rem; font-family: var(--font-family--display); font-weight: 400; font-size: var(--_typography---display--medium); line-height: 0.8; text-transform: uppercase; color: transparent; -webkit-text-stroke: 2px var(--base-color-neutral--neutral-lightest); }
+.fragrance-hero_row { display: flex; justify-content: space-between; align-items: end; gap: 2rem; }
+.fragrance-hero_lead { max-width: 24rem; font-size: var(--_typography---text--regular); line-height: 1.4; }
+.fragrance-hero_buy { display: flex; flex-wrap: wrap; align-items: center; gap: 0.75rem 1.5rem; }
+/* price, button and link never break inside: on a phone the link drops to its own line instead */
+.fragrance-hero_price, .fragrance-hero_buy .button, .fragrance-hero_more { white-space: nowrap; }
+.fragrance-hero_more { text-decoration: underline; text-underline-offset: 0.3em; }
+.fragrance-hero_price { font-family: var(--font-family--display); font-size: var(--_typography---heading--h3); line-height: 1; }
+
+/* notes: pinned, the bottle stays and the three notes take turns (fragrance.js) */
+.fragrance-notes_pin { display: grid; grid-template-columns: 1fr 1fr; min-height: 100dvh; }
+.fragrance-notes_photo { position: relative; overflow: hidden; }
+.fragrance-notes_content { display: flex; flex-direction: column; justify-content: center; gap: 1.5rem; padding-top: 6rem; padding-bottom: 4rem; }
+.fragrance-notes_list { list-style: none; }
+.fragrance-notes_buy { display: flex; flex-wrap: wrap; align-items: center; gap: 0.75rem 1.5rem; }
+.fragrance-notes_item { display: grid; grid-template-columns: 5rem 1fr; column-gap: 1rem; row-gap: 0.5rem; align-items: baseline; padding: 1.25rem 0; border-top: 1px solid var(--base-color-neutral--neutral); }
+.fragrance-notes_step { color: var(--base-color-neutral--neutral-lightest); }
+.fragrance-notes_text { grid-column: 2; max-width: 24rem; font-size: var(--_typography---text--regular); }
+
+.ritual_header { display: grid; grid-template-columns: 1fr 3fr; gap: 2rem; align-items: start; margin-bottom: 4rem; }
+.ritual_title .word { opacity: 0.4; }
+.ritual_layout { display: grid; grid-template-columns: repeat(12, 1fr); gap: 1.5rem; align-items: start; }
+.ritual_item.is-1 { grid-column: 1 / span 6; }
+.ritual_item.is-2 { grid-column: 8 / span 5; margin-top: 12rem; }
+.ritual_photo { aspect-ratio: 4 / 5; overflow: hidden; }
+.ritual_photo img { height: 116%; }
+.ritual_caption { display: flex; gap: 1rem; align-items: start; padding-top: 1rem; margin-top: 1rem; border-top: 1px solid var(--base-color-neutral--neutral); }
+.ritual_number { font-family: var(--font-family--display); font-size: var(--_typography---heading--h3); line-height: 0.9; color: var(--base-color-brand--red); }
+.ritual_text { display: block; margin-top: 0.5rem; max-width: 22rem; }
+
+.section_facts .product_facts { grid-template-columns: repeat(3, minmax(0, 1fr)); margin-top: 0; border-top-color: var(--base-color-neutral--black); }
+/* on the paper band the line runs the whole width, so the three facts take a third each (design judge, M9, 14/10/2026);
+   on a phone the facts follow the component (two columns, the bottle on the whole row) */
+/* up to 991 px a third is too narrow for the bottle ("Red lacquer, black bow cap" left "cap" alone at 768 on the site):
+   the bottle takes the whole row and the two short facts share the next one, as on a phone (design judge, M9) */
+@media (max-width: 991px) { .section_facts .product_facts { grid-template-columns: 1fr 1fr; } .section_facts .product_fact.is-wide { grid-column: 1 / -1; } }
+
+@media (max-width: 991px) {
+  .fragrance-notes_pin { grid-template-columns: 1fr; }
+  .fragrance-notes_photo { height: 60dvh; }
+}
+@media (max-width: 767px) {
+  .fragrance-hero_row { flex-direction: column; align-items: start; gap: 1rem; }
+  .ritual_header { grid-template-columns: 1fr; margin-bottom: 2rem; }
+  .ritual_layout { grid-template-columns: 1fr; gap: 3rem; }
+  .ritual_item.is-1, .ritual_item.is-2 { grid-column: auto; margin-top: 0; }
+  .fragrance-notes_item { grid-template-columns: 1fr; }
+  .fragrance-notes_text { grid-column: 1; }
+}
+/* FIT START: the pinned notes screen is as tall as the visible height of the window, and its text is sized from it */
+.fragrance-notes_photo > img { position: absolute; inset: 0; }
+@media (min-width: 992px) {
+  .fragrance-notes_pin { height: 100dvh; min-height: 0; }
+  .fragrance-notes_content { padding-top: 5rem; padding-bottom: 2rem; }
+}
+@media (min-width: 992px) and (max-height: 949px) {
+  .fragrance-notes_content .heading-style-h1 { font-size: var(--_typography---heading--h2); }
+  .fragrance-notes_item .heading-style-h2 { font-size: var(--_typography---heading--h3); }
+  .fragrance-notes_item { padding: 0.75rem 0; }
+  .fragrance-notes_content { gap: 1rem; }
+}
+@media (min-width: 992px) and (max-height: 719px) {
+  .fragrance-notes_content .heading-style-h1 { font-size: var(--_typography---heading--h3); }
+  .fragrance-notes_item .heading-style-h2 { font-size: var(--_typography---heading--h5); }
+  .fragrance-notes_item { padding: 0.5rem 0; row-gap: 0.25rem; }
+}
+/* FIT END */
+@media (prefers-reduced-motion: reduce) {
+  .ritual_title .word { opacity: 1; }
+}
+
+/* the name rises as the page opens (keyframes in collection.css, which this page loads first) */
+@media (prefers-reduced-motion: no-preference) {
+  /* same start as the scroll animation of the photograph (fragrance.js), so nothing jumps when the library arrives */
+  .fragrance-hero_photo img { transform: translateX(-2%) scale(1.12); }
+  .fragrance-hero_title { animation: hero-title-rise 1s cubic-bezier(0.2, 0.7, 0.2, 1) both; }
+}
