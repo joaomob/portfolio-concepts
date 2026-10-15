@@ -1,0 +1,14 @@
+---
+// The cookie preferences panel (fs-cc preferences): essential, analytics and marketing.
+// Markup ported word for word from the original index.html.
+---
+<div class="cookie_preferences" fs-cc="preferences" role="dialog" aria-modal="true" aria-label="Cookie settings">
+      <div class="modal_card is-legal">
+        <div class="modal_close" fs-cc="close" role="button" tabindex="0" aria-label="Close">×</div>
+        <p class="modal_title">Cookie settings</p>
+        <div class="cookie_pref-row"><div><p class="legal_heading">Essential</p><p class="legal_text">Needed for upload, checkout and security. Always on.</p></div><span class="pill is-gray">Always on</span></div>
+        <label class="cookie_pref-row"><div><p class="legal_heading">Analytics</p><p class="legal_text">Anonymous traffic measurement that helps us improve the site.</p></div><input class="cookie_checkbox" type="checkbox" fs-cc-checkbox="analytics"></label>
+        <label class="cookie_pref-row"><div><p class="legal_heading">Marketing</p><p class="legal_text">Measures which ads bring physicians to Redline MD.</p></div><input class="cookie_checkbox" type="checkbox" fs-cc-checkbox="marketing"></label>
+        <div class="spacer-small"></div><a class="button is-full" href="#" fs-cc="submit"><span class="button_content">Save preferences</span></a>
+      </div>
+    </div>

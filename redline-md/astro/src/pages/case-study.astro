@@ -1,0 +1,37 @@
+---
+// The case study page: the project bar and one main with two tabs, the case study (16 sections) and the style
+// guide (14 sections, shown under html.is-sg). The section order comes from data/sections.ts.
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ProjectBar from '../components/shared/ProjectBar.astro';
+import { caseStudySections, styleGuideSections } from '../data/sections';
+import '../styles/fonts.css';
+import '../styles/base.css';
+import '../styles/case-study.css';
+
+const caseStudy = import.meta.glob<{ default: any }>('../components/case-study/*.astro', { eager: true });
+const styleGuide = import.meta.glob<{ default: any }>('../components/style-guide/*.astro', { eager: true });
+const pick = (mods: Record<string, { default: any }>, folder: string, names: readonly string[]) =>
+  names.map((n) => {
+    const mod = mods[`../components/${folder}/${n}.astro`];
+    if (!mod) throw new Error(`missing component ${folder}/${n}`);
+    return mod.default;
+  });
+const sections = [...pick(caseStudy, 'case-study', caseStudySections), ...pick(styleGuide, 'style-guide', styleGuideSections)];
+---
+<BaseLayout
+  title="Redline MD · Case study"
+  description="How I redesigned the Redline MD landing page for Google Ads, and its design system."
+  path="case-study"
+  styleGuideSwitch
+>
+  <div class="page-wrapper">
+    <ProjectBar />
+    <main class="main-wrapper" id="top">
+      {sections.map((Section) => <Section />)}
+    </main>
+  </div>
+  <script>
+    import { startCaseStudy } from '../scripts/case-study.js';
+    startCaseStudy();
+  </script>
+</BaseLayout>

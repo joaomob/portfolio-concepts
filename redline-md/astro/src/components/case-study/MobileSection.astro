@@ -1,0 +1,27 @@
+---
+// Case study section: Built for the phone first
+// Markup ported word for word from the original case-study.html.
+import { asset } from '../../lib/site';
+---
+<section class="section_case-study-mobile" data-pane="case-study">
+      <div class="section-frame"><div class="section-card is-texture">
+        <div class="padding-global padding-section-medium"><div class="container-large">
+          <div class="case-study_block-content is-wide" data-anim="">
+            <span class="text-style-eyebrow text-color-brand">10 · Mobile</span>
+            <h2 class="heading-style-h3">Built for the phone first</h2>
+            <div class="case-study_list is-grid">
+              <div class="case-study_list-item"><span class="case-study_list-dot"></span>A fixed CTA that appears after the hero and hides at the final CTA</div>
+              <div class="case-study_list-item"><span class="case-study_list-dot"></span>Upload in 3 steps (file, email, payment), with no account</div>
+              <div class="case-study_list-item"><span class="case-study_list-dot"></span>Testimonials as a carousel with dots and arrows</div>
+              <div class="case-study_list-item"><span class="case-study_list-dot"></span>A small opt-in cookie card with preferences</div>
+            </div>
+          </div>
+          <div class="case-study_phones" data-anim-group="">
+            <div class="case-study_phone"><img class="case-study_shot-image" src={asset('cs/sticky-m.webp')} alt="Fixed CTA on mobile" width="780" height="1688"></div>
+            <div class="case-study_phone"><img class="case-study_shot-image" src={asset('cs/upload-m.webp')} alt="Upload modal on mobile" width="780" height="1688"></div>
+            <div class="case-study_phone"><img class="case-study_shot-image" src={asset('cs/testimonials-m.webp')} alt="Testimonials carousel on mobile" width="780" height="1442"></div>
+            <div class="case-study_phone"><img class="case-study_shot-image" src={asset('cs/cookie-m.webp')} alt="Cookie card on mobile" width="780" height="1688"></div>
+          </div>
+        </div></div>
+      </div></div>
+    </section>

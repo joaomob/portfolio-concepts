@@ -1,0 +1,67 @@
+---
+// The Redline MD landing: the project bar, the navbar, the twelve sections, the footer and the overlays (sticky
+// call, cookie banner, the five modals and the cookie preferences).
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ProjectBar from '../components/shared/ProjectBar.astro';
+import SiteNav from '../components/home/SiteNav.astro';
+import HeroSection from '../components/home/HeroSection.astro';
+import ProblemSection from '../components/home/ProblemSection.astro';
+import HowSection from '../components/home/HowSection.astro';
+import ReportSection from '../components/home/ReportSection.astro';
+import DemoSection from '../components/home/DemoSection.astro';
+import TermsSection from '../components/home/TermsSection.astro';
+import PricingSection from '../components/home/PricingSection.astro';
+import SecuritySection from '../components/home/SecuritySection.astro';
+import TestimonialsSection from '../components/home/TestimonialsSection.astro';
+import FounderSection from '../components/home/FounderSection.astro';
+import FaqSection from '../components/home/FaqSection.astro';
+import CtaSection from '../components/home/CtaSection.astro';
+import SiteFooter from '../components/home/SiteFooter.astro';
+import StickyCta from '../components/home/StickyCta.astro';
+import CookieBanner from '../components/home/CookieBanner.astro';
+import UploadModal from '../components/home/UploadModal.astro';
+import ReportModal from '../components/home/ReportModal.astro';
+import LegalModal from '../components/home/LegalModal.astro';
+import CookiePreferences from '../components/home/CookiePreferences.astro';
+import { legal } from '../data/legal';
+import '../styles/fonts.css';
+import '../styles/base.css';
+import '../styles/home.css';
+---
+<BaseLayout
+  title="RedlineMD · Physician Contract Review for $199"
+  description="Know what your physician employment contract costs before you sign it. Redlines and a financial analysis within 24 hours. Flat $199."
+  path=""
+>
+  <div class="page-wrapper">
+    <ProjectBar />
+    <SiteNav />
+    <main class="main-wrapper" id="top">
+      <HeroSection />
+      <ProblemSection />
+      <HowSection />
+      <ReportSection />
+      <DemoSection />
+      <TermsSection />
+      <PricingSection />
+      <SecuritySection />
+      <TestimonialsSection />
+      <FounderSection />
+      <FaqSection />
+      <CtaSection />
+    </main>
+    <SiteFooter />
+    <section class="overlays_component">
+      <StickyCta />
+      <CookieBanner />
+      <UploadModal />
+      <ReportModal />
+      {legal.map((m) => <LegalModal {...m} />)}
+      <CookiePreferences />
+    </section>
+  </div>
+  <script>
+    import { startHome } from '../scripts/home.js';
+    startHome();
+  </script>
+</BaseLayout>

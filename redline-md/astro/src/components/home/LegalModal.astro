@@ -1,0 +1,18 @@
+---
+// One legal modal (fs-modal, fade): the title, the date and the heading and text pairs, from data/legal.ts.
+interface Props {
+  instance: string;
+  title: string;
+  date: string;
+  sections: { heading: string; text: string }[];
+}
+const { instance, title, date, sections } = Astro.props;
+---
+<div class="modal_component" fs-modal-element="modal" fs-modal-instance={instance} fs-modal-animation="fade" role="dialog" aria-modal="true" aria-label={title}>
+      <div class="modal_card is-legal">
+        <div class="modal_close" fs-modal-element="close" fs-modal-instance={instance} role="button" tabindex="0" aria-label="Close">×</div>
+        <p class="modal_title">{title}</p>
+        <p class="legal_date">{date}</p>
+        <div class="legal_body">{sections.map((s) => <><p class="legal_heading">{s.heading}</p><p class="legal_text">{s.text}</p></>)}</div>
+      </div>
+    </div>

@@ -1,0 +1,17 @@
+---
+// The FAQ: a single mode accordion (fs-accordion, run by finsweet-lite.js), the first item open, from data/faq.ts.
+import { faq } from '../../data/faq';
+---
+<section class="section_faq" id="faq">
+      <div class="padding-global padding-section-large"><div class="container-small">
+        <div class="heading_component is-center" data-anim=""><h2 class="heading-style-h2">{faq.heading}</h2></div>
+        <div class="faq_list" data-anim="" fs-accordion-element="group" fs-accordion-single="true">
+          {faq.items.map((item) => (
+          <div class="faq_item" fs-accordion-element="accordion">
+            <div class="faq_question" fs-accordion-element="trigger">{item.question}<div class="faq_icon" fs-accordion-element="arrow">+</div></div>
+            <div class="faq_answer-wrapper" fs-accordion-element="content"><div class="faq_answer">{item.answer.map((text) => <p class="faq_answer-text">{text}</p>)}</div></div>
+          </div>
+          ))}
+        </div>
+      </div></div>
+    </section>

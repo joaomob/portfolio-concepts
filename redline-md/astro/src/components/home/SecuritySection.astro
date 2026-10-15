@@ -1,0 +1,12 @@
+---
+// Security is our core: one card per standard with its line icon, from data/security.ts.
+import { security } from '../../data/security';
+---
+<section class="section_security">
+      <div class="padding-global padding-section-large"><div class="container-large">
+        <div class="heading_component is-center" data-anim=""><h2 class="heading-style-h2">{security.heading}</h2></div>
+        <div class="security_component" data-anim-group="">
+          {security.items.map((item) => <div class="security_card"><div class="security_icon-wrapper"><svg class="security_icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" set:html={item.icon} /></div><div class="security_card-content"><h3 class="heading-style-h4">{item.title}</h3><p class="text-color-secondary">{item.text}</p></div></div>)}
+        </div>
+      </div></div>
+    </section>

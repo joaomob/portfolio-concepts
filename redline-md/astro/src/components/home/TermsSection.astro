@@ -1,0 +1,12 @@
+---
+// Six clauses we always check: one card per clause with its line icon, from data/terms.ts.
+import { terms } from '../../data/terms';
+---
+<section class="section_terms">
+      <div class="padding-global padding-section-large"><div class="container-large">
+        <div class="heading_component is-center" data-anim=""><h2 class="heading-style-h2">{terms.heading}</h2></div>
+        <div class="terms_component" data-anim-group="">
+          {terms.items.map((item) => <div class="terms_card"><div class="terms_icon-wrapper"><svg class="terms_icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" set:html={item.icon} /></div><div class="terms_card-content"><h3 class="heading-style-h4">{item.title}</h3><p class="text-color-secondary">{item.text}</p></div></div>)}
+        </div>
+      </div></div>
+    </section>

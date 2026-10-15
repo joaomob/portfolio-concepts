@@ -1,0 +1,35 @@
+---
+// The demo: the sample contract with its redlines, the four flags and the tail calculator (fs-rangeslider).
+// Markup ported word for word from the original index.html.
+---
+<section class="section_demo" id="demo">
+      <div class="section-frame"><div class="section-card">
+        <div class="padding-global padding-section-large"><div class="container-large">
+          <div class="heading_component is-center" data-anim=""><h2 class="heading-style-h2">Try it on a sample contract</h2><p class="text-size-large text-color-secondary">Tap a flagged term to see the redline.</p></div>
+          <div class="demo_component" data-anim="">
+            <article class="demo_contract" aria-label="Sample physician employment contract">
+              <div class="demo_contract-head"><span class="demo_contract-title">Employment Agreement</span><span class="pill is-gray">Fictional sample</span></div>
+              <p class="demo_clause is-flag is-active" data-clause="tail"><span class="demo_clause-number">4.2</span>Upon termination, Physician shall <span class="demo_strike">pay for</span><span class="demo_redline is-show" data-redline="tail"> <span class="demo_insert">share equally with the Practice the cost of</span></span> tail coverage for claims arising during employment.</p>
+              <p class="demo_clause is-flag" data-clause="noncompete"><span class="demo_clause-number">6.1</span>For <span class="demo_strike">24 months</span><span class="demo_redline" data-redline="noncompete"> <span class="demo_insert">12 months</span></span> after termination, Physician shall not practice within <span class="demo_strike">25 miles</span><span class="demo_redline" data-redline="noncompete"> <span class="demo_insert">10 miles</span></span> of any Practice location.</p>
+              <p class="demo_clause is-flag" data-clause="notice"><span class="demo_clause-number">7.3</span>Either party may terminate without cause upon <span class="demo_strike">30 days'</span><span class="demo_redline" data-redline="notice"> <span class="demo_insert">90 days'</span></span> written notice.</p>
+              <p class="demo_clause is-flag" data-clause="bonus"><span class="demo_clause-number">3.4</span>Physician may receive a productivity bonus <span class="demo_strike">at the Practice's discretion</span><span class="demo_redline" data-redline="bonus"> <span class="demo_insert">of $45 per wRVU above 4,800 per year</span></span>.</p>
+            </article>
+            <aside class="demo_review" aria-label="Review summary">
+              <p class="demo_review-title">4 terms flagged</p>
+              <div class="demo_flag is-active" data-flag="tail" role="button" tabindex="0"><span class="demo_flag-dot"></span>Tail coverage paid by you<span class="demo_flag-level">High</span></div>
+              <div class="demo_flag" data-flag="noncompete" role="button" tabindex="0"><span class="demo_flag-dot"></span>Broad non-compete<span class="demo_flag-level">High</span></div>
+              <div class="demo_flag" data-flag="notice" role="button" tabindex="0"><span class="demo_flag-dot is-mid"></span>Short notice period<span class="demo_flag-level">Medium</span></div>
+              <div class="demo_flag" data-flag="bonus" role="button" tabindex="0"><span class="demo_flag-dot is-mid"></span>Undefined bonus<span class="demo_flag-level">Medium</span></div>
+              <div class="demo_calc">
+                <div class="demo_range" fs-rangeslider-element="wrapper" fs-rangeslider-min="5000" fs-rangeslider-max="40000" fs-rangeslider-step="1000">
+                  <div class="demo_calc-row"><span class="demo_calc-label"><span class="demo_calc-term">Annual malpractice <span class="tooltip_trigger-wrapper">premium<span class="tooltip_component" tabindex="0" role="button" aria-label="What does this mean?">i<span class="tooltip_bubble" role="tooltip">The yearly price of your malpractice insurance, which pays for your defense if a patient sues. Most policies only cover claims filed while the policy is active.</span></span></span></span><span class="demo_calc-sub">What your malpractice insurance costs per year</span></span><span class="demo_calc-premium" data-premium-out="">$15,000</span><span class="demo_calc-raw" fs-rangeslider-element="display-value" data-premium="">15000</span></div>
+                  <div class="demo_range-track" fs-rangeslider-element="track"><div class="demo_range-fill" fs-rangeslider-element="fill"></div><div class="demo_range-handle" fs-rangeslider-element="handle" fs-rangeslider-start="15000"></div></div>
+                </div>
+                                <div class="demo_calc-row is-result"><span class="demo_calc-label"><span class="demo_calc-term">Tail <span class="tooltip_trigger-wrapper">coverage<span class="tooltip_component" tabindex="0" role="button" aria-label="What does this mean?">i<span class="tooltip_bubble" role="tooltip">Also called extended reporting coverage. A one-time purchase that keeps you insured for claims filed after you leave, about care you gave while employed. It can cost up to 2× your annual premium, paid once (source: AMA Insurance).</span></span></span></span><span class="demo_calc-sub">What you pay when you leave, if the contract says so</span></span><span class="demo_calc-result" data-tail="">$30,000</span></div>
+                <a class="button is-accent is-full" href="#" fs-modal-element="open" fs-modal-instance="upload"><span class="button_content">Check my contract · $199</span></a>
+              </div>
+            </aside>
+          </div>
+        </div></div>
+      </div></div>
+    </section>

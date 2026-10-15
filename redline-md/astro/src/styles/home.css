@@ -1,0 +1,16 @@
+/* Landing only: the three rules the original index.html has and case-study.html does not, plus the rule Finsweet
+   Cookie Consent injects at run time (the cookie layers stay hidden until the script shows the banner). */
+@media (max-width: 991px) {
+  .testimonials_component { overflow-y: hidden; }
+}
+@media (max-width: 767px) {
+  .sample_head { flex-direction: column; align-items: flex-start; }
+  .cookie_preferences { align-items: flex-end; padding: 0; }
+}
+
+/* reduced motion: no hover or scroll transitions (Webflow Interactions stop in the page scripts) */
+@media (prefers-reduced-motion: reduce) {
+  html *, html *::before, html *::after { transition-duration: 0.01ms !important; scroll-behavior: auto !important; }
+}
+
+[fs-cc="banner"], [fs-cc="manager"], [fs-cc="preferences"], [fs-cc="interaction"] { display: none; }

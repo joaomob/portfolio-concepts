@@ -1,0 +1,14 @@
+---
+// Three steps to a better contract: one numbered card per step, from data/how.ts.
+import { how } from '../../data/how';
+---
+<section class="section_how" id="how">
+      <div class="section-frame"><div class="section-card is-texture">
+        <div class="padding-global padding-section-large"><div class="container-large">
+          <div class="heading_component is-center" data-anim=""><h2 class="heading-style-h2">{how.heading}</h2></div>
+          <div class="how_component" data-anim-group="">
+            {how.steps.map((step) => <div class="how_card"><div class="how_number">{step.number}</div><div class="how_card-content"><h3 class="heading-style-h4">{step.title}</h3><p class="text-color-secondary">{step.text}</p></div></div>)}
+          </div>
+        </div></div>
+      </div></div>
+    </section>

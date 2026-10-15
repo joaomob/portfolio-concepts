@@ -1,0 +1,16 @@
+---
+// The navbar: the logo, the three section links and the upload button.
+// Markup ported word for word from the original index.html.
+import { asset } from '../../lib/site';
+---
+<header class="navbar_component">
+    <div class="navbar_container">
+      <a class="brand_link" href="#top" aria-label="RedlineMD home"><img class="brand_logo" src={asset('logo.webp')} alt="Redline MD, Medical Contract Review" width="560" height="136"></a>
+      <nav class="navbar_menu" aria-label="Main">
+        <a class="navbar_link" href="#how">How it works</a>
+        <a class="navbar_link" href="#pricing">Pricing</a>
+        <a class="navbar_link" href="#faq">FAQ</a>
+        <a class="button is-small" href="#" fs-modal-element="open" fs-modal-instance="upload"><span class="button_content">Upload contract</span><span class="button_hover"></span></a>
+      </nav>
+    </div>
+  </header>

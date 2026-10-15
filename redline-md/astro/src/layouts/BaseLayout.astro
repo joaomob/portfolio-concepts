@@ -1,0 +1,37 @@
+---
+// The document shell of both pages: title, description, robots, canonical, icon and the two small head scripts the
+// original runs before paint (the reveal switch and, on the case study, the style guide tab switch).
+// The concept build is noindex and points its canonical at joaomob.com.
+import { canonicalFor, asset } from '../lib/site';
+import { ANIM_ON_SCRIPT } from '../scripts/reveal.js';
+import { SG_HEAD_SCRIPT } from '../scripts/case-study.js';
+
+interface Props {
+  title: string;
+  description: string;
+  /** page path under the base, '' for the landing */
+  path: string;
+  /** the case study page also switches to the style guide tab before paint when the hash asks for it */
+  styleGuideSwitch?: boolean;
+}
+
+const { title, description, path, styleGuideSwitch = false } = Astro.props;
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    {styleGuideSwitch && <script is:inline set:html={SG_HEAD_SCRIPT} />}
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="robots" content="noindex" />
+    <link rel="canonical" href={canonicalFor(path)} />
+    <link rel="icon" href={asset('seo/favicon-256.png')} type="image/png" />
+    <script is:inline set:html={ANIM_ON_SCRIPT} />
+    <slot name="head" />
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>

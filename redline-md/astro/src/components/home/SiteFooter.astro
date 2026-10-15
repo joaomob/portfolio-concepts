@@ -1,0 +1,21 @@
+---
+// The footer: the logo, the brand line, the product, legal and contact columns, and the disclaimer, from
+// data/footer.ts. The legal links open the modals through their fs-modal and fs-cc attributes.
+import { footer } from '../../data/footer';
+import { asset } from '../../lib/site';
+---
+<footer class="footer_component">
+    <div class="padding-global"><div class="container-large">
+      <div class="footer_top">
+        <div class="footer_brand">
+          <a class="brand_link" href="#top" aria-label="RedlineMD home"><img class="brand_logo" src={asset('logo-light.webp')} alt="Redline MD, Medical Contract Review" width="560" height="136"></a>
+          <p class="footer_text">{footer.text}</p>
+        </div>
+        {footer.columns.map((column) => <div class="footer_column"><p class="footer_heading">{column.heading}</p>{column.links.map((link) => <a class="footer_link" href={link.href} {...link.attrs}>{link.label}</a>)}</div>)}
+      </div>
+      <div class="footer_bottom">
+        <p class="footer_disclaimer">{footer.disclaimer}</p>
+        <span>{footer.copyright}</span>
+      </div>
+    </div></div>
+  </footer>
