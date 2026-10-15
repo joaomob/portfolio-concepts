@@ -6,3 +6,6 @@ storybook-static/
 .astro/
 *.log
 .env*
+
+# media copied from the original prototype at build time (scripts/sync-assets), already in the flowforge git
+*/astro/public/assets/
