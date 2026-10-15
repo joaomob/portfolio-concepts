@@ -30,7 +30,7 @@ export default function BuildSection() {
                     Webflow and Client-First
                   </p>
                   <p className="text-color-secondary">
-                    Built from the Longevity template's visual system, with the code rewritten in Client-First classes.
+                    Every class follows the Client-First naming, from the page structure to the components.
                   </p>
                 </div>
                 {' '}

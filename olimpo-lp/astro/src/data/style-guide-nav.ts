@@ -23,26 +23,26 @@ export const heroNav: NavLink[] = [
 export const sectionIndex: NavLink[] = [
   {
     "href": "#typography",
-    "label": "01 — Typography"
+    "label": "01 · Typography"
   },
   {
     "href": "#richtext",
-    "label": "02 — Rich Text"
+    "label": "02 · Rich Text"
   },
   {
     "href": "#color",
-    "label": "03 — Color"
+    "label": "03 · Color"
   },
   {
     "href": "#spacing",
-    "label": "04 — Spacing"
+    "label": "04 · Spacing"
   },
   {
     "href": "#sizing",
-    "label": "05 — Sizing"
+    "label": "05 · Sizing"
   },
   {
     "href": "#components",
-    "label": "06 — Components"
+    "label": "06 · Components"
   }
 ];

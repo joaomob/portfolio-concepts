@@ -19,7 +19,7 @@ export default function ButtonsSection() {
                   Buttons
                 </h2>
                 <p className="text-color-secondary">
-                  Black pills from the Longevity system. On hover a red layer (button-hover) slides up from the bottom and the button scales to 0.98.
+                  Black pills. On hover a red layer (button-hover) slides up from the bottom and the button scales to 0.98.
                 </p>
               </div>
               {' '}

@@ -137,7 +137,7 @@ export default function ColorsSection() {
                   #696868 · background-color-gray-600
                 </p>
                 <p className="style-guide_usage">
-                  Body text, the Longevity text color
+                  Body text color
                 </p>
               </div>
             </div>
