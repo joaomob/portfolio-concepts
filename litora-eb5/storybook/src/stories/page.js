@@ -1,0 +1,60 @@
+// Reads the built pages (astro/dist) as text and takes one section out of them for a story. The pages link one
+// external stylesheet (/concepts/litora-eb5/_astro/site.<hash>.css), so the story adds that same <link> to the
+// preview; Storybook serves astro/dist at /concepts/litora-eb5/ (see .storybook/main.js).
+import webinar from '../../../astro/dist/webinar-visto-eb5.html?raw';
+import event from '../../../astro/dist/evento-visto-eb5-sao-paulo.html?raw';
+import thankYou from '../../../astro/dist/webinar-visto-eb5/obrigado.html?raw';
+import privacy from '../../../astro/dist/privacidade.html?raw';
+import { pages, sections } from '../sections.js';
+
+const sources = { webinar, event, thankYou, privacy };
+const parsed = {};
+const doc = (page) => (parsed[page] ??= new DOMParser().parseFromString(sources[page], 'text/html'));
+const entryOf = (page, id) => sections[page].find((s) => s.id === id);
+
+/** Adds the page's stylesheet links to the preview once and sets the page language; resolves when they are loaded. */
+export function applyStyles(page = 'webinar') {
+  const source = doc(page);
+  const loads = [...source.querySelectorAll('head link[rel="stylesheet"]')].map((link) => {
+    const href = link.getAttribute('href');
+    let tag = document.head.querySelector(`link[rel="stylesheet"][href="${href}"]`);
+    if (tag?.sheet) return Promise.resolve();
+    if (!tag) {
+      tag = document.createElement('link');
+      tag.rel = 'stylesheet';
+      tag.href = href;
+      document.head.append(tag);
+    }
+    return new Promise((resolve) => { tag.addEventListener('load', resolve, { once: true }); tag.addEventListener('error', resolve, { once: true }); });
+  });
+  document.documentElement.lang = source.documentElement.lang;
+  return Promise.all(loads);
+}
+
+// One section of a page inside the wrappers it has on the page (.page-wrapper, and <main> for the sections of main).
+// The page scripts do not run here, so every piece of content shows in its final state, as with reduced motion.
+export const section = (page, id) => () => {
+  const entry = entryOf(page, id);
+  const source = doc(page).querySelector(entry.selector);
+  if (!source) throw new Error(`${entry.selector} is not in ${pages[page]}`);
+  applyStyles(page);
+  const node = document.importNode(source, true);
+  node.classList.remove('is-hidden');
+  const wrapper = document.createElement('div');
+  wrapper.className = 'page-wrapper';
+  if (entry.selector.startsWith('main')) {
+    const main = document.createElement('main');
+    main.className = 'main-wrapper';
+    main.append(node);
+    wrapper.append(main);
+  } else {
+    wrapper.append(node);
+  }
+  return wrapper;
+};
+
+export const note = (page, id) => {
+  const entry = entryOf(page, id);
+  return { docs: { description: { story: `${entry.text}\n\nTaken from \`astro/dist/${pages[page]}\` with \`${entry.selector}\`.` } } };
+};
+

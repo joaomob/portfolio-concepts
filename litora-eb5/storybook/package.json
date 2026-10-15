@@ -1,0 +1,9 @@
+{
+  "name": "litora-eb5-storybook",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node ../../node_modules/storybook/dist/bin/dispatcher.js build -c .storybook -o storybook-static --disable-telemetry",
+    "dev": "node ../../node_modules/storybook/dist/bin/dispatcher.js dev -c .storybook -p 4633 --no-open --disable-telemetry"
+  }
+}
