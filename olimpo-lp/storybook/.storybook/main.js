@@ -8,4 +8,7 @@ export default {
   addons: ['@storybook/addon-a11y'],
   staticDirs: [{ from: '../../astro/dist', to: '/concepts/olimpo-lp' }],
   core: { disableTelemetry: true },
+  // the catalogue is published on joaomob.com and stays out of search, like the builds
+  managerHead: (head) => `${head}<meta name="robots" content="noindex">`,
+  previewHead: (head) => `${head}<meta name="robots" content="noindex">`,
 };

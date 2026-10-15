@@ -1,10 +1,10 @@
 {
-  "date": "2026-10-15T19:22:36.166Z",
+  "date": "2026-10-15T19:42:46.060Z",
   "rows": [
     {
       "page": "home",
       "width": "1440",
-      "build": "next",
+      "build": "astro",
       "pass": true,
       "height": "17048/17048",
       "drift": "0.00%",
@@ -20,7 +20,7 @@
     {
       "page": "home",
       "width": "375",
-      "build": "next",
+      "build": "astro",
       "pass": true,
       "height": "15684/15684",
       "drift": "0.00%",
@@ -36,7 +36,7 @@
     {
       "page": "style-guide",
       "width": "1440",
-      "build": "next",
+      "build": "astro",
       "pass": true,
       "height": "20098/20098",
       "drift": "0.00%",
@@ -53,7 +53,7 @@
     {
       "page": "style-guide",
       "width": "375",
-      "build": "next",
+      "build": "astro",
       "pass": true,
       "height": "19492/19492",
       "drift": "0.00%",
@@ -80,13 +80,13 @@
       "problems": []
     },
     {
-      "build": "next",
+      "build": "astro",
       "width": "1440",
       "canvas": 2,
       "problems": []
     },
     {
-      "build": "next",
+      "build": "astro",
       "width": "375",
       "canvas": 2,
       "problems": []
