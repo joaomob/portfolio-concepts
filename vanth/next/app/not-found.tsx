@@ -5,7 +5,9 @@ import { lines, collectionPage } from '@shared/lib/catalog';
 import { href } from '@/lib/config';
 import { pageMeta } from '@/lib/meta';
 
-export const metadata = pageMeta('Page not found | Vanth', 'Page not found at Vanth. Go back to the house or open one of the eight lines.', '404');
+// Next writes its own noindex on the not found page, so the shared robots entry is left out to keep a single tag
+const { robots: _robots, ...meta } = pageMeta('Page not found | Vanth', 'Page not found at Vanth. Go back to the house or open one of the eight lines.', '404');
+export const metadata = meta;
 
 export default function NotFound() {
   return (
