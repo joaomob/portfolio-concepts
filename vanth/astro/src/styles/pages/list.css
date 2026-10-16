@@ -9,7 +9,7 @@
 .list_item:nth-child(even) { margin-top: 8rem; }
 .list_link { display: flex; flex-direction: column; gap: 1.5rem; }
 .list_photo { position: relative; aspect-ratio: 4 / 5; overflow: hidden; background-color: var(--base-color-neutral--neutral); }
-.list_photo img { object-position: 50% 20%; transition: transform 0.8s cubic-bezier(0.2, 0.7, 0.2, 1); }
+.list_photo img { object-position: 50% 20%; transition: transform 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94); }
 .list_link:hover .list_photo img { transform: scale(1.04); }
 .list_caption { display: grid; grid-template-columns: auto 1fr; gap: 1.5rem; align-items: start; padding-top: 1.5rem; border-top: 1px solid var(--base-color-neutral--neutral); }
 .list_number { font-family: var(--font-family--display); font-size: var(--_typography---heading--h2); line-height: 0.95; color: var(--base-color-brand--red); }

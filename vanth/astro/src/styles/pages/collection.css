@@ -62,7 +62,7 @@
 /* a list with full length garments: taller frame, and the photograph that is not full length is shown whole */
 .pieces_list.is-tall .piece_photo { aspect-ratio: 1 / 2; background-color: #1b1b1b; }
 .pieces_list.is-tall .piece_photo.is-contained img { object-fit: contain; }
-.piece_photo img { transition: transform 0.8s cubic-bezier(0.2, 0.7, 0.2, 1); }
+.piece_photo img { transition: transform 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94); }
 .piece_item:hover .piece_photo img { transform: scale(1.04); }
 /* a grid item can shrink under the width of its caption (at 1024 px the fourth card ran past the window) */
 .piece_item { min-width: 0; }

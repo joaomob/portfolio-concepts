@@ -28,7 +28,7 @@
 .look_item { width: 24rem; flex: none; }
 .look_link { display: block; }
 .look_photo { aspect-ratio: 4 / 5; overflow: hidden; background-color: var(--base-color-neutral--neutral); }
-.look_photo img { transition: transform 0.8s cubic-bezier(0.2, 0.7, 0.2, 1); }
+.look_photo img { transition: transform 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94); }
 .look_link:hover .look_photo img { transform: scale(1.05); }
 .look_caption { display: flex; gap: 1rem; align-items: start; padding-top: 1rem; border-top: 1px solid var(--_theme---border-color--border-primary); margin-top: 1rem; }
 .look_number { font-family: var(--font-family--display); font-size: var(--_typography---heading--h3); line-height: 0.9; color: var(--_theme---text-color--text-brand); }

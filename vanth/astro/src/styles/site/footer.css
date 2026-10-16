@@ -1,5 +1,5 @@
 .footer_component { position: relative; overflow: hidden; padding-top: 3rem; }
-.footer_top { display: flex; justify-content: space-between; align-items: center; gap: 2rem; flex-wrap: wrap; }
+.footer_top { position: relative; z-index: 1; display: flex; justify-content: space-between; align-items: center; gap: 2rem; flex-wrap: wrap; }
 .footer_links { display: flex; gap: 2rem; flex-wrap: wrap; }
 .footer_credit { text-decoration: underline; text-underline-offset: 0.2em; }
 /* design judge, 14/10/2026 (M4): the word VANTH is 2.33 times its font size wide, so between the steps of display/large
